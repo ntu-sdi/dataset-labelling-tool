@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Coursework"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\test\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/ivica/C++/Coursework"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/ivica/C++/Coursework"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dataset-labeling-tool">
+				<Option output="/home/ivica/C++/Coursework/dataset-labeling-tool" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ivica/C++/Coursework"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/ivica/C++/Coursework/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 dataset-labeling-tool"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dataset-labeling-tool/fast">
+				<Option output="/home/ivica/C++/Coursework/dataset-labeling-tool" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ivica/C++/Coursework"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/ivica/C++/Coursework/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 dataset-labeling-tool/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/ivica/C++/Coursework"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Boost_Tests">
+				<Option output="/home/ivica/C++/Coursework/test/Boost_Tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ivica/C++/Coursework/test"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/ivica/C++/Coursework/include"/>
+					<Add directory="/home/ivica/C++/Coursework/test/../include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/test/Makefile&quot;  VERBOSE=1 Boost_Tests"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Boost_Tests/fast">
+				<Option output="/home/ivica/C++/Coursework/test/Boost_Tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ivica/C++/Coursework/test"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/ivica/C++/Coursework/include"/>
+					<Add directory="/home/ivica/C++/Coursework/test/../include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/test/Makefile&quot;  VERBOSE=1 Boost_Tests/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/ivica/C++/Coursework/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/ivica/C++/Coursework/src/dummyclass.cpp">
+			<Option target="dataset-labeling-tool"/>
+			<Option target="Boost_Tests"/>
+		</Unit>
+		<Unit filename="/home/ivica/C++/Coursework/src/main.cpp">
+			<Option target="dataset-labeling-tool"/>
+		</Unit>
+		<Unit filename="/home/ivica/C++/Coursework/test/test1.cpp">
+			<Option target="Boost_Tests"/>
+		</Unit>
+		<Unit filename="/home/ivica/C++/Coursework/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/ivica/C++/Coursework/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
