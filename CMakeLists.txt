@@ -11,10 +11,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include_directories(include)
 
+set (CMAKE_PREFIX_PATH /opt/Qt5.13.2/5.13.2/gcc_64/lib/cmake)
 #-------INCLUDING ADDITIONAL LIBs-------#
 #first you must clone them from github then build and install using cmake
 #after that you find them by find package and link them to your main file
 #!--sqlite3 does not need a package because it is a header only library--!
+
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 find_package(fmt REQUIRED)
 find_package(nlohmann_json REQUIRED)
