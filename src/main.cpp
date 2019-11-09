@@ -1,11 +1,21 @@
-#include <iostream>
-#include "dummyclass.h"
-#include <fmt/format.h>
-#include <sqlite3.h>
-#include <nlohmann/json.hpp>
-using json = nlohmann::json;
+//#include <iostream>
+//#include "dummyclass.h"
+//#include <fmt/format.h>
+//#include <sqlite3.h>
+//#include <nlohmann/json.hpp>
+#include <gui.h>
+///using json = nlohmann::json;
 
-int main() {
+#include <QApplication>
+
+int main(int argc, char** argv)
+{
+    QApplication a(argc, argv);
+    gui w;
+    w.show();
+    return a.exec();
+
+    /*
     std::cout << "Hello, World!" << std::endl;
     dummyclass a;
     std::string s = fmt::format("I'd rather be {1} than {0}.\n", "right", "happy");
@@ -19,6 +29,7 @@ int main() {
     j["pi"][0] = 2;
     j["pi"][1] = 4;
 
-    std::cout<<j["pi"][1];
+    std::cout<<j["pi"][1];*/
     return 0;
 }
+
