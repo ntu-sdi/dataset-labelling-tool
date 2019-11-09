@@ -7,6 +7,11 @@ add_subdirectory(test) #comment this to disable tests showing up in target selec
 add_executable(dataset-labeling-tool src/main.cpp
         src/dummyclass.cpp
         )
+set_target_properties(
+        dataset-labeling-tool
+        PROPERTIES
+        SUFFIX ".o"
+)
 
 #-------INCLUDING ADDITIONAL LIBs-------#
 #first you must clone them from github then build and install using cmake

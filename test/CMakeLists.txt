@@ -10,4 +10,10 @@ add_executable (Boost_Tests test1.cpp
         ../src/dummyclass.cpp
         )
 
+set_target_properties(
+        Boost_Tests
+        PROPERTIES
+        SUFFIX ".o"
+)
+
 target_link_libraries (Boost_Tests ${Boost_LIBRARIES})
