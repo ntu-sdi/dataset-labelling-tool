@@ -1,0 +1,6 @@
+sqlite3 - https://github.com/LuaDist/libsqlite3/blob/master/sqlite3.h
+fmt - https://github.com/fmtlib/fmt
+nlohmann_json - https://github.com/nlohmann/json
+qt5 - https://www.qt.io/offline-installers
+
+
