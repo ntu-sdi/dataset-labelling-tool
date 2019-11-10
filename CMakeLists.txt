@@ -25,6 +25,7 @@ add_executable(dataset-labeling-tool
         src/main.cpp
         src/gui.cpp
         include/gui.h
+        include/ui_gui.h
         )
 
 target_link_libraries(dataset-labeling-tool PRIVATE Qt5::Widgets sqlite3 fmt nlohmann_json)

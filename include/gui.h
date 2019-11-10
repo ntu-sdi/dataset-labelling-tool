@@ -15,6 +15,9 @@ public:
     gui(QWidget *parent = nullptr);
     ~gui();
 
+private slots:
+    void on_btn1_clicked();
+
 private:
     Ui::gui *ui;
 };
