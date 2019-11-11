@@ -7,7 +7,6 @@ include_directories (${Boost_INCLUDE_DIRS})
 
 include_directories(../include)
 add_executable (Boost_Tests test1.cpp
-        ../src/dummyclass.cpp
         )
 
 set_target_properties(
