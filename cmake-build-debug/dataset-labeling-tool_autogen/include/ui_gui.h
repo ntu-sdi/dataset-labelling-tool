@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'gui.ui'
 **
-** Created by: Qt User Interface Compiler version 5.13.2
+** Created by: Qt User Interface Compiler version 5.12.5
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -235,20 +235,20 @@ public:
 
     void retranslateUi(QMainWindow *gui)
     {
-        gui->setWindowTitle(QCoreApplication::translate("gui", "gui", nullptr));
-        label_7->setText(QCoreApplication::translate("gui", "Bboxes:", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("gui", "Browse...", nullptr));
-        label_8->setText(QCoreApplication::translate("gui", "N......", nullptr));
-        label_5->setText(QCoreApplication::translate("gui", "Classes:", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("gui", "Browse...", nullptr));
-        label_6->setText(QCoreApplication::translate("gui", "No fi...ted.", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("gui", "Save YOLO", nullptr));
-        pushButton_6->setText(QCoreApplication::translate("gui", "Restore", nullptr));
+        gui->setWindowTitle(QApplication::translate("gui", "gui", nullptr));
+        label_7->setText(QApplication::translate("gui", "Bboxes:", nullptr));
+        pushButton_4->setText(QApplication::translate("gui", "Browse...", nullptr));
+        label_8->setText(QApplication::translate("gui", "N......", nullptr));
+        label_5->setText(QApplication::translate("gui", "Classes:", nullptr));
+        pushButton_3->setText(QApplication::translate("gui", "Browse...", nullptr));
+        label_6->setText(QApplication::translate("gui", "No fi...ted.", nullptr));
+        pushButton_5->setText(QApplication::translate("gui", "Save YOLO", nullptr));
+        pushButton_6->setText(QApplication::translate("gui", "Restore", nullptr));
         label_10->setText(QString());
         label_9->setText(QString());
-        label_2->setText(QCoreApplication::translate("gui", "1280x719, 258.18 KB", nullptr));
-        label_4->setText(QCoreApplication::translate("gui", "Images:", nullptr));
-        label_3->setText(QCoreApplication::translate("gui", "Search:", nullptr));
+        label_2->setText(QApplication::translate("gui", "1280x719, 258.18 KB", nullptr));
+        label_4->setText(QApplication::translate("gui", "Images:", nullptr));
+        label_3->setText(QApplication::translate("gui", "Search:", nullptr));
     } // retranslateUi
 
 };
