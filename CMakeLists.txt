@@ -18,8 +18,6 @@ set (CMAKE_PREFIX_PATH /opt/Qt5.13.2/5.13.2/gcc_64/lib/cmake)
 #!--sqlite3 does not need a package because it is a header only library--!
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
-find_package(fmt REQUIRED)
-find_package(nlohmann_json REQUIRED)
 
 add_executable(dataset-labeling-tool
         src/main.cpp
@@ -28,7 +26,7 @@ add_executable(dataset-labeling-tool
         include/ui_gui.h
         )
 
-target_link_libraries(dataset-labeling-tool PRIVATE Qt5::Widgets sqlite3 fmt nlohmann_json)
+target_link_libraries(dataset-labeling-tool PRIVATE Qt5::Widgets)
 
 add_subdirectory(test) #comment this to disable tests showing up in target selection
 
