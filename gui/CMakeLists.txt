@@ -21,3 +21,8 @@ add_executable(gui
 )
 
 target_link_libraries(gui PRIVATE Qt5::Widgets)
+execute_process (
+    COMMAND bash -c "cp gui_autogen/include/ui_gui.h ../include"
+)
+
+#this only runs on pasing cmake file, how to make it run on build?

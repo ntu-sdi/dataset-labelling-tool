@@ -111,7 +111,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="ImageFileLabel">
+       <widget class="QLabel" name="ImageFolderLabel">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -406,7 +406,7 @@
       </item>
      </layout>
     </widget>
-    <widget class="QPushButton" name="CropSaveButton_2">
+    <widget class="QPushButton" name="SaveYOLOButton">
      <property name="geometry">
       <rect>
        <x>250</x>
@@ -419,7 +419,7 @@
       <string>Save YOLO</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="CropSaveButton_3">
+    <widget class="QPushButton" name="RestoreButton">
      <property name="geometry">
       <rect>
        <x>350</x>
