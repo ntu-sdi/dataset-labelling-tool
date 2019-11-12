@@ -1,8 +1,9 @@
 #include "gui.h"
 #include "./ui_gui.h"
+#include <iostream>
+#include <string>
 #include <QtCore>
 #include <QtGui>
-#include <iostream>
 
 gui::gui(QWidget *parent)
         : QMainWindow(parent)
@@ -46,5 +47,13 @@ void gui::on_SaveYOLOButton_clicked()
 
 void gui::on_RestoreButton_clicked()
 {
+
+}
+
+void gui::setImageFolderLabel(const QString &text) {
+    ui->ImageFolderLabel->setText(text);
+}
+
+void gui::imageListAdd(std::string &text) {
 
 }

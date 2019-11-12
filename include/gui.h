@@ -1,6 +1,7 @@
 #ifndef GUI_H
 #define GUI_H
-
+#include <iostream>
+#include <string>
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -15,6 +16,9 @@ public:
     gui(QWidget *parent = nullptr);
     ~gui();
 private:
+    void setImageFolderLabel(const QString &text);
+    void imageListAdd(std::string &text);
+    //todo create function which takes LinkedList as input
 
 private slots:
     void on_ImageBrowseButton_clicked();
