@@ -2,6 +2,9 @@
 #include "./ui_gui.h"
 #include <QtCore>
 #include <QtGui>
+#include <QList>
+#include <QListWidget>
+#include <QListWidgetItem>
 
 gui::gui(QWidget *parent)
     : QMainWindow(parent)
@@ -42,6 +45,26 @@ void gui::on_SaveYOLOButton_clicked()
 }
 
 void gui::on_RestoreButton_clicked()
+{
+
+}
+
+void gui::on_ImageList_itemClicked(QListWidgetItem *item)
+{
+
+}
+
+void gui::on_ImageList_itemDoubleClicked(QListWidgetItem *item)
+{
+
+}
+
+void gui::on_ClassesList_itemClicked(QListWidgetItem *item)
+{
+
+}
+
+void gui::on_ClassesList_itemDoubleClicked(QListWidgetItem *item)
 {
 
 }
