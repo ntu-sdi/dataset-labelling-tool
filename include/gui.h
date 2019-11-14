@@ -45,7 +45,7 @@ private:
     void setImageFolderLabel(const QString& text);
     void imageListAdd(const QString& text);
     void imageListAdd(std::string& text);
-    //todo create function which takes LinkedList developed by Cian as input
+    //todo create function which takes LinkedList as input
     void setImageInfoLabel(std::string& text);
     void setImageInfoLabel(std::string& resolution, std::string& size);
     void setImageInfoLabel(unsigned short& resoultion_x, unsigned short& resoultion_y, unsigned short& size, std::string& size_units);

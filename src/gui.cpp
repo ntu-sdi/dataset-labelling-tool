@@ -1,4 +1,3 @@
-
 #include "gui.h"
 #include "ui_gui.h"
 #include <fmt/format.h>
@@ -46,12 +45,10 @@ void gui::on_RestoreButton_clicked()
 //------On click on a item in a list pane------//
 void gui::on_ImageList_itemClicked(QListWidgetItem* item)
 {
-    std::cout << item->text().toStdString();
 }
 
 void gui::on_ImageList_itemDoubleClicked(QListWidgetItem* item)
 {
-    std::cout << item->text().toStdString();
 }
 
 void gui::on_ClassesList_itemClicked(QListWidgetItem* item)
