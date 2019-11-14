@@ -27,4 +27,4 @@ add_executable(dataset-labeling-tool
         )
 
 target_link_libraries(dataset-labeling-tool PRIVATE Qt5::Widgets fmt)
-add_subdirectory(test/gui_tests)
+add_subdirectory(test)
