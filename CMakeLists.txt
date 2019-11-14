@@ -6,7 +6,7 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include_directories(include)
@@ -18,14 +18,14 @@ set (CMAKE_PREFIX_PATH /opt/Qt5.13.2/5.13.2/gcc_64/lib/cmake)
 #!--sqlite3 does not need a package because it is a header only library--!
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
-find_package( OpenCV REQUIRED )
+find_package(OpenCV REQUIRED)
 
 add_executable(dataset-labeling-tool
         src/main.cpp
         src/gui.cpp
         include/gui.h
         include/ui_gui.h
-        )
+        src/ImageBrowser.cpp include/ImageBrowser.h)
 
 target_link_libraries(dataset-labeling-tool PRIVATE Qt5::Widgets fmt ${OpenCV_LIBS})
 add_subdirectory(test)

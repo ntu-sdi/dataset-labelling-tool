@@ -6,7 +6,9 @@ include_directories (${Boost_INCLUDE_DIRS})
 # 'test1.cpp tests2.cpp' are source files with tests
 
 include_directories(../include ../src)
-add_executable (Boost_Tests  test.cpp)
+add_executable (Boost_Tests imageBrowserTests.cpp
+        ../src/ImageBrowser.cpp
+        ../include/ImageBrowser.h)
 
 set_target_properties(
         Boost_Tests
