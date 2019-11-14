@@ -5,14 +5,14 @@ include_directories (${Boost_INCLUDE_DIRS})
 # 'Boost_Tests_run' is the target name
 # 'test1.cpp tests2.cpp' are source files with tests
 
-include_directories(../include)
-add_executable (Boost_Tests test1.cpp
+include_directories(../../include)
+add_executable (gui_test gui_test.cpp
         )
 
 set_target_properties(
-        Boost_Tests
+        gui_test
         PROPERTIES
         SUFFIX ".o"
 )
 
-target_link_libraries (Boost_Tests ${Boost_LIBRARIES})
+target_link_libraries (gui_test ${Boost_LIBRARIES})
