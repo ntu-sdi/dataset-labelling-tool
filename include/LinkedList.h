@@ -5,6 +5,11 @@
 #ifndef DATASET_LABELING_TOOL_LINKEDLIST_H
 #define DATASET_LABELING_TOOL_LINKEDLIST_H
 
+/*
+ * The function definitions have to be defined in the header file
+ * because C++ doesn't allow for templates to be used in method
+ * definitions in the .cpp file
+ */
 template <class T>
 class LinkedList
 {
