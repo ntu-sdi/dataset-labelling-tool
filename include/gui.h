@@ -9,6 +9,8 @@
 #include <QListWidget>
 #include <QListWidgetItem>
 
+#include <ImageBrowser.h>
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
     class gui;
@@ -39,6 +41,7 @@ private slots:
 
 private:
     Ui::gui* ui;
+    ImageBrowser* imageBrowser;
     //------On Buttons Click Callbacks------//
     void setImageFolderLabel(const QString& text);
     void imageListAdd(const QString& text);

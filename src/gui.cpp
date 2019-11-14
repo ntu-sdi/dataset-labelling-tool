@@ -9,6 +9,7 @@ gui::gui(QWidget* parent)
         , ui(new Ui::gui)
 {
     ui->setupUi(this);
+    imageBrowser = new ImageBrowser;
 }
 
 gui::~gui()
@@ -19,6 +20,7 @@ gui::~gui()
 //------On Buttons Click Callbacks------//
 void gui::on_ImageBrowseButton_clicked()
 {
+    imageBrowser->browseFolderForSuportedFiles("/home/ivica/dataset-labeling-tool/dataset-labelling-tool/test/folderTestData");
 }
 
 void gui::on_CropSaveButton_clicked()

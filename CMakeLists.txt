@@ -6,7 +6,7 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include_directories(include)
@@ -25,7 +25,8 @@ add_executable(dataset-labeling-tool
         src/gui.cpp
         include/gui.h
         include/ui_gui.h
-        src/ImageBrowser.cpp include/ImageBrowser.h)
+        src/ImageBrowser.cpp
+        include/ImageBrowser.h)
 
 target_link_libraries(dataset-labeling-tool PRIVATE Qt5::Widgets fmt ${OpenCV_LIBS})
 add_subdirectory(test)
