@@ -5,11 +5,6 @@
 #ifndef DATASET_LABELING_TOOL_LINKEDLISTNODE_H
 #define DATASET_LABELING_TOOL_LINKEDLISTNODE_H
 
-template <class T>
-struct Node
-{
-    T data;
-    Node* next;
-};
+
 
 #endif //DATASET_LABELING_TOOL_LINKEDLISTNODE_H

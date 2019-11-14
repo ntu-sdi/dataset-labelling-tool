@@ -6,8 +6,8 @@ include_directories (${Boost_INCLUDE_DIRS})
 # 'test1.cpp tests2.cpp' are source files with tests
 
 include_directories(../include ../src)
-add_executable (Boost_Tests linkedlist_test.cpp
-                ../src/linkedlist.cpp ../include/linkedlist.h)
+add_executable (Boost_Tests LinkedListTest.cpp
+                ../src/LinkedList.cpp ../include/LinkedList.h)
 
 set_target_properties(
         Boost_Tests

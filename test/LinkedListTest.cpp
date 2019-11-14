@@ -7,7 +7,7 @@
 #define BOOST_TEST_MODULE "LinkedListTestModule"
 //VERY IMPORTANT - include this last
 #include <iostream>
-#include "../include/linkedlist.h"
+#include "../include/LinkedList.h"
 #include <boost/test/unit_test.hpp>
 
 BOOST_AUTO_TEST_CASE(EmptyListTest)
@@ -22,3 +22,87 @@ BOOST_AUTO_TEST_CASE(TestInsertAtHead)
     l.insertNode(0, 1);
     BOOST_CHECK_EQUAL(l.isEmpty(), false);
 }
+
+BOOST_AUTO_TEST_CASE(TestAt)
+{
+    LinkedList<double> l;
+    l.insertNode(0, 1);
+    BOOST_CHECK_EQUAL(l.at(0), 1);
+
+    l.insertNode(1, 2);
+    BOOST_CHECK_EQUAL(l.at(1), 2);
+}
+
+BOOST_AUTO_TEST_CASE(TestInsertAtEnd)
+{
+    LinkedList<double> l;
+    l.insertNode(0, 1);
+    l.insertNode(1, 2);
+    BOOST_CHECK_EQUAL(l.at(0), 1);
+    BOOST_CHECK_EQUAL(l.at(1), 2);
+}
+
+BOOST_AUTO_TEST_CASE(TestInsertInMiddle)
+{
+    LinkedList<double> l;
+    l.insertNode(0, 1);
+    l.insertNode(1, 2);
+    l.insertNode(1, 3);
+    BOOST_CHECK_EQUAL(l.at(0), 1);
+    BOOST_CHECK_EQUAL(l.at(1), 3);
+    BOOST_CHECK_EQUAL(l.at(2), 2);
+}
+
+BOOST_AUTO_TEST_CASE(TestGetNodeIndex)
+{
+    LinkedList<double> l;
+    l.insertNode(0, 1);
+    l.insertNode(1, 2);
+    l.insertNode(1, 3);
+    BOOST_CHECK_EQUAL(l.getNodeIndex(1), 0);
+    BOOST_CHECK_EQUAL(l.getNodeIndex(2), 2);
+    BOOST_CHECK_EQUAL(l.getNodeIndex(3), 1);
+}
+
+BOOST_AUTO_TEST_CASE(TestDeleteNodeByIndex)
+{
+    LinkedList<double> l;
+    l.insertNode(0, 1);
+    l.insertNode(1, 2);
+    l.insertNode(1, 3);
+
+    l.removeNodeByIndex(0);
+    BOOST_CHECK_EQUAL(l.length(), 2);
+
+    l.insertNode(0, 1);
+    l.removeNodeByIndex(1);
+    BOOST_CHECK_EQUAL(l.length(), 2);
+
+    l.removeNodeByIndex(1);
+    BOOST_CHECK_EQUAL(l.length(), 1);
+
+    l.removeNodeByIndex(0);
+    BOOST_CHECK_EQUAL(l.length(), 0);
+}
+
+BOOST_AUTO_TEST_CASE(TestDeleteNodeByData)
+{
+    LinkedList<double> l;
+    l.insertNode(0, 1);
+    l.insertNode(1, 2);
+    l.insertNode(1, 3);
+
+    l.removeNodeByData(1);
+    BOOST_CHECK_EQUAL(l.length(), 2);
+
+    l.insertNode(0, 1);
+    l.removeNodeByData(2);
+    BOOST_CHECK_EQUAL(l.length(), 2);
+
+    l.removeNodeByData(3);
+    BOOST_CHECK_EQUAL(l.length(), 1);
+
+    l.removeNodeByData(1);
+    BOOST_CHECK_EQUAL(l.length(), 0);
+}
+

@@ -5,13 +5,17 @@
 #ifndef DATASET_LABELING_TOOL_LINKEDLIST_H
 #define DATASET_LABELING_TOOL_LINKEDLIST_H
 
-#include "LinkedListNode.h"
-
 template <class T>
 class LinkedList
 {
 private:
-    Node<T>* head;
+    struct Node
+    {
+        T data;
+        Node* next;
+    };
+    Node* head;
+    int len {0};
 
 public:
     LinkedList() { head = nullptr; }
@@ -19,25 +23,129 @@ public:
     // Con/de/structors
 
     bool isEmpty() { return head == nullptr; }
-    Node<T>* insertNode(int index, T data)
+
+    Node* insertNode(int index, T data)
     {
-        if (head == nullptr)
+        if (index < 0) return nullptr; // TODO: this should throw IndexOutOfBounds
+
+        int currentIndex = 1;
+        Node* currentNode = head;
+        while (currentNode && index > currentIndex)
         {
-            auto* newNode = new Node<T>;
-            newNode->data = data;
-            newNode->next = nullptr;
-
-            head = newNode;
-
-            return newNode;
+            currentNode = currentNode->next;
+            ++currentIndex;
         }
-        return nullptr;
+
+        if (index > 0 && currentNode == nullptr) return nullptr; // TODO: this should throw IndexOutOfBounds
+
+        Node* newNode = new Node;
+        newNode->data = data;
+        if (index == 0)
+        {
+            newNode->next = head;
+            head = newNode;
+            ++len;
+        }
+        else
+        {
+            newNode->next = currentNode->next;
+            currentNode->next = newNode;
+            ++len;
+        }
+        return newNode;
     }
 
-    int getNodeIndex(T data);
-    T getNodeData(int index);
-    T removeNodeByIndex(int index);
-    int removeNodeByData(T data);
+    double at(int index)
+    {
+        Node* currentNode = head;
+        int currentIndex {0};
+
+        while (currentIndex < index)
+        {
+            if (currentNode->next == nullptr) return -1; // TODO: This needs to throw an error
+            currentNode = currentNode->next;
+            ++currentIndex;
+        }
+        return currentNode->data;
+    }
+
+    int length()
+    {
+        return len;
+    }
+
+    int getNodeIndex(T data)
+    {
+        int currentIndex = 0;
+        Node* currentNode = head;
+
+        while (currentNode != nullptr)
+        {
+            if (currentNode->data == data) return currentIndex;
+            ++currentIndex;
+            currentNode = currentNode->next;
+        }
+        return -1; // TODO: this should throw an error
+    }
+
+    int removeNodeByIndex(int index)
+    {
+        Node* currentNode = head;
+        Node* prevNode = nullptr;
+        int currentIndex {0};
+
+        while (currentIndex < index)
+        {
+            if (currentNode->next == nullptr) return -1; // TODO: This needs to throw an error
+            prevNode = currentNode;
+            currentNode = currentNode->next;
+            ++currentIndex;
+        }
+        if (index == 0)
+        {
+            head = currentNode->next;
+            --len;
+        }
+        else if (prevNode != nullptr)
+        {
+            prevNode->next = currentNode->next;
+            --len;
+        }
+        else return -1; // TODO: this needs to throw an error
+
+        delete currentNode;
+
+        return currentIndex; // This needs to be void, only returning to be consistent
+    }
+
+    int removeNodeByData(T data)
+    {
+        int currentIndex = 0;
+        Node* currentNode = head;
+        Node* prevNode = nullptr;
+
+        while (currentNode != nullptr)
+        {
+            if (currentNode->data == data) break;
+            ++currentIndex;
+            prevNode = currentNode;
+            currentNode = currentNode->next;
+        }
+        if (currentNode == nullptr) return -1; // TODO: this needs to throw an error
+        else if (currentIndex == 0)
+        {
+            head = currentNode->next;
+            --len;
+        }
+        else if (prevNode != nullptr)
+        {
+            prevNode->next = currentNode->next;
+            --len;
+        }
+        else return -1; // TODO: this needs to throw an error
+
+        delete currentNode;
+    }
 };
 
 
