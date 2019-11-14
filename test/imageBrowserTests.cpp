@@ -9,7 +9,7 @@
 BOOST_AUTO_TEST_CASE(SearchFolderForFiles)
 {
     ImageBrowser* imageBrowser = new ImageBrowser;
-    imageBrowser->browseFolderForSuportedFiles("../../test/folderTestData");
+    imageBrowser->browseFolderForSupportedFiles("../../test/folderTestData");
     std::unordered_map<std::string,std::string>b = imageBrowser->listImageFiles();
     std::unordered_map<std::string,std::string>a = {{"img2.bmp","../../test/folderTestData/img2.bmp"},{"img1.jpg","../../test/folderTestData/img1.jpg"}};
     BOOST_TEST(a == b);

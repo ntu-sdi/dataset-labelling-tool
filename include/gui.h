@@ -46,6 +46,7 @@ private:
     void setImageFolderLabel(const QString& text);
     void imageListAdd(const QString& text);
     void imageListAdd(std::string& text);
+    void imageListAdd(std::unordered_map<std::string,std::string> &m);
     //TODO: create function which takes LinkedList as input
     void setImageInfoLabel(std::string& text);
     void setImageInfoLabel(std::string& resolution, std::string& size);

@@ -6,21 +6,21 @@
 #include <filesystem>
 #include <sys/types.h>
 #include <dirent.h>
+#include <fstream>
 #include <unordered_map>
 #include <fmt/format.h>
 
 class ImageBrowser {
 public:
-    void browseFolderForSuportedFiles(std::string folderPath);
+    void browseFolderForSupportedFiles(std::string folderPath);
     std::unordered_map<std::string,std::string>listImageFiles();
 
 private:
-    std::unordered_map<std::string, std::string> imageFiles; //hash map, filename,filepath
     std::string getFileExtension(std::string& FileName);
-    bool isFileSuported(std::string fileName);
+    unsigned long getFileSize(std::string &filename); //returns filesize in bytes
+    bool isFileSupported(std::string fileName);
     std::string validExtensions[3] = {"jpg","bmp","png"};
-
+    std::unordered_map<std::string, std::string> imageFiles; //hash map, filename,filepath
 };
-
 
 #endif //DATASET_LABELING_TOOL_IMAGEBROWSER_H

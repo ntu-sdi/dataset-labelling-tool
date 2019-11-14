@@ -4,13 +4,13 @@
 
 #include "ImageBrowser.h"
 
-void ImageBrowser::browseFolderForSuportedFiles(std::string folderPath) {
+void ImageBrowser::browseFolderForSupportedFiles(std::string folderPath) {
     DIR *dp;
     struct dirent *dirp;
     dp  = opendir(folderPath.c_str());
     while ((dirp = readdir(dp)) != NULL) {
-        std::string fileName(dirp->d_name);
-        if(isFileSuported(fileName)){
+        if(isFileSupported(dirp->d_name)){
+            std::string fileName = dirp->d_name;
             std::string separator;
             #ifdef _WIN32
                         separator ='\\';
@@ -18,7 +18,7 @@ void ImageBrowser::browseFolderForSuportedFiles(std::string folderPath) {
                         separator= '/';
             #endif
             std::string filePath = fmt::format("{0}{1}{2}",folderPath,separator,fileName);
-            imageFiles.insert({fileName,filePath});
+            imageFiles.insert({dirp->d_name,filePath});
         }
     }
     closedir(dp);
@@ -30,7 +30,11 @@ std::string ImageBrowser::getFileExtension(std::string &FileName) {
     return "";
 }
 
-bool ImageBrowser::isFileSuported(std::string fileName) {
+unsigned long ImageBrowser::getFileSize(std::string &filename) {
+    return 1;
+}
+
+bool ImageBrowser::isFileSupported(std::string fileName) {
     std::string extension = getFileExtension(fileName);
     for (int i = 0; i<sizeof(validExtensions)/sizeof(validExtensions[0]);i++){
         if(extension == validExtensions[i]) return true;
@@ -41,3 +45,5 @@ bool ImageBrowser::isFileSuported(std::string fileName) {
 std::unordered_map<std::string, std::string> ImageBrowser::listImageFiles() {
     return imageFiles;
 }
+
+

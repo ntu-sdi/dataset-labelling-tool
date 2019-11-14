@@ -20,9 +20,9 @@ gui::~gui()
 //------On Buttons Click Callbacks------//
 void gui::on_ImageBrowseButton_clicked()
 {
-    imageBrowser->browseFolderForSuportedFiles("/home/ivica/dataset-labeling-tool/dataset-labelling-tool/test/folderTestData");
-    std::unordered_map<std::string,std::string> supportedFiles = imageBrowser->listImageFiles();
-
+    imageBrowser->browseFolderForSupportedFiles("/home/ivica/dataset-labeling-tool/dataset-labelling-tool/test/folderTestData");
+    std::unordered_map<std::string,std::string> a = imageBrowser->listImageFiles();
+    imageListAdd(a);
 }
 
 void gui::on_CropSaveButton_clicked()
@@ -73,6 +73,13 @@ void gui::imageListAdd(const QString& text)
     ui->ImageList->addItem(text);
 }
 
+void gui::imageListAdd(std::unordered_map<std::string, std::string> &m) {
+    for(auto it=m.begin();it!=m.end();it++) {
+        std::string temp =(it->first);
+        imageListAdd(temp);
+    }
+}
+
 void gui::setImageInfoLabel(std::string& text)
 {
     ui->ImageInfoLabel->setText(strToQstr(text));
@@ -101,3 +108,4 @@ void gui::setImageFolderLabel(const QString& text)
 {
     ui->ImageFolderLabel->setText(text);
 }
+
