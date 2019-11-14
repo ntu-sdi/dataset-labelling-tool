@@ -21,6 +21,8 @@ gui::~gui()
 void gui::on_ImageBrowseButton_clicked()
 {
     imageBrowser->browseFolderForSuportedFiles("/home/ivica/dataset-labeling-tool/dataset-labelling-tool/test/folderTestData");
+    std::unordered_map<std::string,std::string> supportedFiles = imageBrowser->listImageFiles();
+
 }
 
 void gui::on_CropSaveButton_clicked()

@@ -16,4 +16,4 @@ set_target_properties(
         SUFFIX ".o"
 )
 
-target_link_libraries (Boost_Tests ${Boost_LIBRARIES})
+target_link_libraries (Boost_Tests fmt ${Boost_LIBRARIES})

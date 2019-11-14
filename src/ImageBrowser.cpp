@@ -11,7 +11,14 @@ void ImageBrowser::browseFolderForSuportedFiles(std::string folderPath) {
     while ((dirp = readdir(dp)) != NULL) {
         std::string fileName(dirp->d_name);
         if(isFileSuported(fileName)){
-            std::cout<<fileName<<std::endl;
+            std::string separator;
+            #ifdef _WIN32
+                        separator ='\\';
+            #else
+                        separator= '/';
+            #endif
+            std::string filePath = fmt::format("{0}{1}{2}",folderPath,separator,fileName);
+            imageFiles.insert({fileName,filePath});
         }
     }
     closedir(dp);
@@ -25,6 +32,12 @@ std::string ImageBrowser::getFileExtension(std::string &FileName) {
 
 bool ImageBrowser::isFileSuported(std::string fileName) {
     std::string extension = getFileExtension(fileName);
-    std::cout<<validExtensions[1]<<std::endl;
+    for (int i = 0; i<sizeof(validExtensions)/sizeof(validExtensions[0]);i++){
+        if(extension == validExtensions[i]) return true;
+    }
     return false;
+}
+
+std::unordered_map<std::string, std::string> ImageBrowser::listImageFiles() {
+    return imageFiles;
 }
