@@ -1,7 +1,6 @@
 #include "gui.h"
 #include "ui_gui.h"
 #include <fmt/format.h>
-#include <iostream>
 #include <string>
 
 //------GUI initialization functions------//

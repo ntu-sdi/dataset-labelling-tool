@@ -38,17 +38,18 @@ private slots:
     void on_ClassesList_itemDoubleClicked(QListWidgetItem *item);
 
 private:
-    //------Private variables------//
     Ui::gui* ui;
-    QString strToQstr(std::string& text);
     //------On Buttons Click Callbacks------//
     void setImageFolderLabel(const QString& text);
     void imageListAdd(const QString& text);
     void imageListAdd(std::string& text);
-    //todo create function which takes LinkedList as input
+    //TODO: create function which takes LinkedList as input
     void setImageInfoLabel(std::string& text);
     void setImageInfoLabel(std::string& resolution, std::string& size);
     void setImageInfoLabel(unsigned short& resoultion_x, unsigned short& resoultion_y, unsigned short& size, std::string& size_units);
+    //------Helper Functions------//
+    QString strToQstr(std::string& text);
+
 
 };
 #endif // GUI_H
