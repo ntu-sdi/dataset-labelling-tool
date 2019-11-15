@@ -18,14 +18,15 @@ set (CMAKE_PREFIX_PATH /opt/Qt5.13.2/5.13.2/gcc_64/lib/cmake)
 #!--sqlite3 does not need a package because it is a header only library--!
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
-find_package( OpenCV REQUIRED )
+
+find_package(OpenCV REQUIRED)
 
 add_executable(dataset-labeling-tool
         src/main.cpp
         src/gui.cpp
         include/gui.h
         include/ui_gui.h
-        )
+        include/LinkedList.h include/exceptions.h)
 
 target_link_libraries(dataset-labeling-tool PRIVATE Qt5::Widgets fmt ${OpenCV_LIBS})
 add_subdirectory(test)
