@@ -98,6 +98,7 @@ public:
         Node* currentNode = head;
         Node* prevNode = nullptr;
         int currentIndex {0};
+        if (len == 0) return -1; // TODO: this needs to throw error
 
         while (currentIndex < index)
         {
