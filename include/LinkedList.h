@@ -29,7 +29,7 @@ public:
 
     bool isEmpty() { return head == nullptr; }
 
-    Node* insertNode(int index, T data)
+    Node* insert(int index, T data)
     {
         if (index < 0) return nullptr; // TODO: this should throw IndexOutOfBounds
 
@@ -79,7 +79,7 @@ public:
         return len;
     }
 
-    int getNodeIndex(T data)
+    int getIndex(T data)
     {
         int currentIndex = 0;
         Node* currentNode = head;
@@ -93,7 +93,7 @@ public:
         return -1; // TODO: this should throw an error
     }
 
-    int removeNodeByIndex(int index)
+    int removeAt(int index)
     {
         Node* currentNode = head;
         Node* prevNode = nullptr;
@@ -124,7 +124,7 @@ public:
         return currentIndex; // This needs to be void, only returning to be consistent
     }
 
-    int removeNodeByData(T data)
+    int remove(T data)
     {
         int currentIndex = 0;
         Node* currentNode = head;
