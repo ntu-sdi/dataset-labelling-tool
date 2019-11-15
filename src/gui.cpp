@@ -20,7 +20,8 @@ gui::~gui()
 //------On Buttons Click Callbacks------//
 void gui::on_ImageBrowseButton_clicked()
 {
-    imageBrowser->browseFolderForSupportedFiles("/home/ivica/dataset-labeling-tool/dataset-labelling-tool/test/folderTestData");
+
+    imageBrowser->browseFolderForSupportedFiles("../tsest/folderTestData");
     std::unordered_map<std::string,std::string> a = imageBrowser->listImageFiles();
     imageListAdd(a);
 }

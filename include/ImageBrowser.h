@@ -17,7 +17,6 @@ public:
 
 private:
     std::string getFileExtension(std::string& FileName);
-    unsigned long getFileSize(std::string &filename); //returns filesize in bytes
     bool isFileSupported(std::string fileName);
     std::string validExtensions[3] = {"jpg","bmp","png"};
     std::unordered_map<std::string, std::string> imageFiles; //hash map, filename,filepath
