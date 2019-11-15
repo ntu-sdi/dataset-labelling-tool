@@ -5,6 +5,8 @@
 #ifndef DATASET_LABELING_TOOL_LINKEDLIST_H
 #define DATASET_LABELING_TOOL_LINKEDLIST_H
 
+#include "exceptions.h"
+
 /*
  * The function definitions have to be defined in the header file
  * because C++ doesn't allow for templates to be used in method
@@ -29,9 +31,11 @@ public:
 
     bool isEmpty() { return head == nullptr; }
 
+    T &operator[] (int index) { return at(index); }
+
     Node* insert(int index, T data)
     {
-        if (index < 0) return nullptr; // TODO: this should throw IndexOutOfBounds
+        if (index < 0) throw IndexOutOfBoundsError(); // TODO: this should throw IndexOutOfBounds
 
         int currentIndex = 1;
         Node* currentNode = head;
@@ -41,7 +45,7 @@ public:
             ++currentIndex;
         }
 
-        if (index > 0 && currentNode == nullptr) return nullptr; // TODO: this should throw IndexOutOfBounds
+        if (index > 0 && currentNode == nullptr) throw IndexOutOfBoundsError(); // TODO: this should throw IndexOutOfBounds
 
         Node* newNode = new Node;
         newNode->data = data;
@@ -67,7 +71,7 @@ public:
 
         while (currentIndex < index)
         {
-            if (currentNode->next == nullptr) return -1; // TODO: This needs to throw an error
+            if (currentNode->next == nullptr) throw IndexOutOfBoundsError(); // TODO: This needs to throw an error
             currentNode = currentNode->next;
             ++currentIndex;
         }
@@ -90,19 +94,19 @@ public:
             ++currentIndex;
             currentNode = currentNode->next;
         }
-        return -1; // TODO: this should throw an error
+        throw ValueNotFoundError(); // TODO: this should throw an error
     }
 
-    int removeAt(int index)
+    void removeAt(int index)
     {
         Node* currentNode = head;
         Node* prevNode = nullptr;
         int currentIndex {0};
-        if (len == 0) return -1; // TODO: this needs to throw error
+        if (len == 0) throw ArrayEmptyError(); // TODO: this needs to throw error
 
         while (currentIndex < index)
         {
-            if (currentNode->next == nullptr) return -1; // TODO: This needs to throw an error
+            if (currentNode->next == nullptr) throw IndexOutOfBoundsError(); // TODO: This needs to throw an error
             prevNode = currentNode;
             currentNode = currentNode->next;
             ++currentIndex;
@@ -117,14 +121,12 @@ public:
             prevNode->next = currentNode->next;
             --len;
         }
-        else return -1; // TODO: this needs to throw an error
+        else throw std::exception(); // This should never happen
 
         delete currentNode;
-
-        return currentIndex; // This needs to be void, only returning to be consistent
     }
 
-    int remove(T data)
+    void remove(T data)
     {
         int currentIndex = 0;
         Node* currentNode = head;
@@ -137,7 +139,7 @@ public:
             prevNode = currentNode;
             currentNode = currentNode->next;
         }
-        if (currentNode == nullptr) return -1; // TODO: this needs to throw an error
+        if (currentNode == nullptr) throw ValueNotFoundError(); // TODO: this needs to throw an error
         else if (currentIndex == 0)
         {
             head = currentNode->next;
@@ -148,7 +150,7 @@ public:
             prevNode->next = currentNode->next;
             --len;
         }
-        else return -1; // TODO: this needs to throw an error
+        else throw std::exception(); // This should never happen
 
         delete currentNode;
     }

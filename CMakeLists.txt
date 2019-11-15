@@ -25,7 +25,7 @@ add_executable(dataset-labeling-tool
         src/gui.cpp
         include/gui.h
         include/ui_gui.h
-        include/LinkedList.h src/LinkedList.cpp)
+        include/LinkedList.h include/exceptions.h)
 
 target_link_libraries(dataset-labeling-tool PRIVATE Qt5::Widgets ${OpenCV_LIBS})
 
