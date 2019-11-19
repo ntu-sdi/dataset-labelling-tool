@@ -31,8 +31,6 @@ public:
 
     bool isEmpty() { return head == nullptr; }
 
-    T &operator[] (int index) { return at(index); }
-
     Node* insert(int index, T data)
     {
         if (index < 0) throw IndexOutOfBoundsError(); // TODO: this should throw IndexOutOfBounds
