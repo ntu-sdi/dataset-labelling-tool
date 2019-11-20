@@ -112,8 +112,7 @@ BOOST_AUTO_TEST_SUITE( LinkedListTest )
         l.remove(1);
         BOOST_CHECK_EQUAL(l.length(), 0);
     }
-<<<<<<< HEAD
-=======
+
     BOOST_AUTO_TEST_CASE(TestDifferentTypes)
     {
         LinkedList<std::string> l;
@@ -148,6 +147,6 @@ BOOST_AUTO_TEST_SUITE( LinkedListTest )
         BOOST_CHECK_EQUAL(l.contains("hello"), true);
         BOOST_CHECK_EQUAL(l.contains("world"), false);
     }
->>>>>>> master
+
 
 BOOST_AUTO_TEST_SUITE_END()

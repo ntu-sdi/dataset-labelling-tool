@@ -49,7 +49,7 @@ private:
     void setImageFolderLabel(const QString& text);
     void imageListAdd(const QString& text);
     void imageListAdd(std::string text);
-    void imageListAdd(const std::vector<std::string>& a);
+    void imageListAdd(LinkedList<std::basic_string<char>> *a);
     //TODO: create function which takes LinkedList as input
     void setImageInfoLabel(std::string& text);
     void setImageInfoLabel(std::string& resolution, std::string& size);

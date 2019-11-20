@@ -15,11 +15,11 @@
 class ImageBrowser {
 public:
 
-    void browseFolderForSupportedFiles(const std::string& folderPath);
-    std::vector<std::string> returnImages();
-    std::string returnImageName(const std::string& a);
-    std::string returnImageExtension(const std::string& a);
-    long returnImageFilesize(const std::string& a);
+    void browseFolderForSupportedFiles(std::basic_string<char> folderPath);
+    LinkedList<std::basic_string<char>> returnImages();
+    std::string returnImageName(std::basic_string<char> a);
+    std::string returnImageExtension( std::string& a);
+    long returnImageFilesize( std::string& a);
 
 private:
     struct imageContainer{
@@ -30,8 +30,8 @@ private:
     std::unordered_map<std::string, imageContainer> loadedImages;
     std::string validExtensions[3] = {"jpg","bmp","png"};
     static std::string getFileExtension(const std::string& fileName);
-    bool isFileSupported(const std::string& fileName);
-    long returnFilesize(const std::string &a);
+    bool isFileSupported( const std::string& fileName);
+    long returnFilesize( const std::string &a);
 
 };
 

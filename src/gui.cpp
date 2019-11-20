@@ -25,7 +25,8 @@ void gui::on_ImageBrowseButton_clicked()
     QString directory = QFileDialog::getExistingDirectory(this,
                                                           tr("Find Files"), QDir::currentPath());
     imageBrowser->browseFolderForSupportedFiles(directory.toStdString());
-    imageListAdd(imageBrowser->returnImages());
+    auto i =imageBrowser->returnImages();
+    imageListAdd(&i);
 
 
 }
@@ -78,10 +79,11 @@ void gui::imageListAdd(const QString& text)
     ui->ImageList->addItem(text);
 }
 
-void gui::imageListAdd(const std::vector<std::string>& a)
+void gui::imageListAdd(LinkedList<std::basic_string<char>> *a)
 {
-    for(const auto& i : a) {
-        imageListAdd(imageBrowser->returnImageName(i));
+    for(int i = 0; i<a->length();i++){
+
+        imageListAdd(imageBrowser->returnImageName(a->at(i)));
     }
 }
 
