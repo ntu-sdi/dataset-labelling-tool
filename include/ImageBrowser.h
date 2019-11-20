@@ -4,6 +4,7 @@
 #include <string>
 #include <filesystem>
 #include <sys/types.h>
+#include <sys/stat.h>
 #include <dirent.h>
 #include <fstream>
 #include <unordered_map>
@@ -30,6 +31,7 @@ private:
     std::string validExtensions[3] = {"jpg","bmp","png"};
     static std::string getFileExtension(const std::string& fileName);
     bool isFileSupported(const std::string& fileName);
+    long returnFilesize(const std::string &a);
 
 };
 

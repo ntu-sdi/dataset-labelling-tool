@@ -22,6 +22,7 @@ void ImageBrowser::browseFolderForSupportedFiles(const std::string& folderPath){
                     imageContainer a;
                     a.imageName = fileName;
                     a.extension = getFileExtension(filePath);
+                    a.filesize = returnFilesize(fileName);
                     loadedImages[filePath] = a;
                 }
             }
@@ -50,6 +51,12 @@ bool ImageBrowser::isFileSupported(const std::string& fileName)
     return false;
 }
 
+long ImageBrowser::returnFilesize(const std::string &a) {
+    struct stat stat_buf;
+    int rc = stat(a.c_str(), &stat_buf);
+    return rc == 0 ? stat_buf.st_size : -1;
+}
+
 std::vector<std::string> ImageBrowser::returnImages() {
     std::vector<std::string> a;
     for(auto & loadedImage : loadedImages) {
@@ -62,6 +69,7 @@ std::string ImageBrowser::returnImageName(const std::string& a) {
     return(loadedImages.at(a).imageName);
 }
 
+
 std::string ImageBrowser::returnImageExtension(const std::string& a) {
     return(loadedImages.at(a).extension);
 }
@@ -69,5 +77,6 @@ std::string ImageBrowser::returnImageExtension(const std::string& a) {
 long ImageBrowser::returnImageFilesize(const std::string& a) {
     return(loadedImages.at(a).filesize);
 }
+
 
 

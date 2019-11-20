@@ -94,8 +94,8 @@ public:
             ++currentIndex;
             currentNode = currentNode->next;
         }
-        //throw ValueNotFoundError(); // TODO: this should throw an error
-        return -1;
+        throw ValueNotFoundError(); // TODO: this should throw an error
+
     }
 
     void removeAt(int index)
