@@ -32,4 +32,13 @@ class ArrayEmptyError : public std::exception
     }
 };
 
+class FileNotFoundError : public std::exception
+{
+public:
+    const char * what () const throw ()
+    {
+        return "Error: Image file could not be found";
+    }
+};
+
 #endif //DATASET_LABELING_TOOL_EXCEPTIONS_H

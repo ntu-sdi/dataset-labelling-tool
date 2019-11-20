@@ -7,6 +7,7 @@
 #define BOOST_TEST_MODULE Main
 #endif
 #include "../include/LinkedList.h"
+#include <string>
 #include<boost/test/unit_test.hpp>
 
 // TODO: rename the test cases
@@ -110,6 +111,40 @@ BOOST_AUTO_TEST_SUITE( LinkedListTest )
 
         l.remove(1);
         BOOST_CHECK_EQUAL(l.length(), 0);
+    }
+    BOOST_AUTO_TEST_CASE(TestDifferentTypes)
+    {
+        LinkedList<std::string> l;
+        l.insert(0, "hello");
+        l.insert(1, "world");
+
+        BOOST_CHECK_EQUAL(l.at(0), "hello");
+        BOOST_CHECK_EQUAL(l.at(1), "world");
+
+        BOOST_CHECK_EQUAL(l.getIndex("hello"), 0);
+        BOOST_CHECK_EQUAL(l.getIndex("world"), 1);
+
+        l.remove("world");
+        l.removeAt(0);
+        BOOST_CHECK_EQUAL(l.length(), 0);
+    }
+    BOOST_AUTO_TEST_CASE(TestPush)
+    {
+        LinkedList<std::string> l;
+        l.push("hello");
+        l.push("world");
+
+        BOOST_CHECK_EQUAL(l.at(0), "hello");
+        BOOST_CHECK_EQUAL(l.at(1), "world");
+    }
+    
+    BOOST_AUTO_TEST_CASE(TestContains)
+    {
+        LinkedList<std::string> l;
+        l.push("hello");
+        
+        BOOST_CHECK_EQUAL(l.contains("hello"), true);
+        BOOST_CHECK_EQUAL(l.contains("world"), false);
     }
 
 BOOST_AUTO_TEST_SUITE_END()

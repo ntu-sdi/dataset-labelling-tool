@@ -64,7 +64,7 @@ public:
         return newNode;
     }
 
-    double at(int index)
+    T at(int index)
     {
         Node* currentNode = head;
         int currentIndex {0};
@@ -95,6 +95,20 @@ public:
             currentNode = currentNode->next;
         }
         throw ValueNotFoundError(); // TODO: this should throw an error
+    }
+
+    bool contains(T data)
+    {
+        int currentIndex = 0;
+        Node* currentNode = head;
+
+        while (currentNode != nullptr)
+        {
+            if (currentNode->data == data) return true;
+            ++currentIndex;
+            currentNode = currentNode->next;
+        }
+        return false;
     }
 
     void removeAt(int index)
@@ -153,6 +167,17 @@ public:
         else throw std::exception(); // This should never happen
 
         delete currentNode;
+    }
+
+    Node* push(T data)
+    {
+        int insertIdx;
+        
+        if (this->isEmpty()) insertIdx = 0;
+        else insertIdx = this->length();
+
+        Node* n = this->insert(insertIdx, data);
+        return n;
     }
 };
 
