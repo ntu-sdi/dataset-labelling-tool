@@ -20,6 +20,8 @@ set (CMAKE_PREFIX_PATH /opt/Qt5.13.2/5.13.2/gcc_64/lib/cmake)
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 find_package(OpenCV REQUIRED)
 
+
+
 add_executable(dataset-labeling-tool
         src/main.cpp
         src/gui.cpp
@@ -29,5 +31,6 @@ add_executable(dataset-labeling-tool
         include/ImageBrowser.h
         include/LinkedList.h include/exceptions.h)
 
+add_subdirectory(test) #comment this to disable tests showing up in target selection
 target_link_libraries(dataset-labeling-tool PRIVATE Qt5::Widgets fmt ${OpenCV_LIBS})
 add_subdirectory(test)

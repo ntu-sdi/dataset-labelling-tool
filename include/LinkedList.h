@@ -98,6 +98,21 @@ public:
 
     }
 
+    bool contains(T data)
+    {
+        int currentIndex = 0;
+        Node* currentNode = head;
+
+        while (currentNode != nullptr)
+        {
+            if (currentNode->data == data) return true;
+            ++currentIndex;
+            currentNode = currentNode->next;
+        }
+        return false;
+
+    }
+
     void removeAt(int index)
     {
         Node* currentNode = head;
@@ -154,6 +169,18 @@ public:
         else throw std::exception(); // This should never happen
 
         delete currentNode;
+    }
+
+
+    Node* push(T data)
+    {
+        int insertIdx;
+        
+        if (this->isEmpty()) insertIdx = 0;
+        else insertIdx = this->length();
+
+        Node* n = this->insert(insertIdx, data);
+        return n;
     }
 };
 
