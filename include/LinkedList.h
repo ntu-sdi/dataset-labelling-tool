@@ -64,7 +64,7 @@ public:
         return newNode;
     }
 
-    double at(int index)
+    T at(int index)
     {
         Node* currentNode = head;
         int currentIndex {0};
@@ -94,7 +94,8 @@ public:
             ++currentIndex;
             currentNode = currentNode->next;
         }
-        throw ValueNotFoundError(); // TODO: this should throw an error
+        //throw ValueNotFoundError(); // TODO: this should throw an error
+        return -1;
     }
 
     void removeAt(int index)

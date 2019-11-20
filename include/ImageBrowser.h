@@ -1,6 +1,5 @@
 #ifndef DATASET_LABELING_TOOL_IMAGEBROWSER_H
 #define DATASET_LABELING_TOOL_IMAGEBROWSER_H
-
 #include <iostream>
 #include <string>
 #include <filesystem>
@@ -9,17 +8,29 @@
 #include <fstream>
 #include <unordered_map>
 #include <fmt/format.h>
+#include <LinkedList.h>
+#include <vector>
 
 class ImageBrowser {
 public:
-    void browseFolderForSupportedFiles(std::string folderPath);
-    std::unordered_map<std::string,std::string>listImageFiles();
+
+    void browseFolderForSupportedFiles(const std::string& folderPath);
+    std::vector<std::string> returnImages();
+    std::string returnImageName(const std::string& a);
+    std::string returnImageExtension(const std::string& a);
+    long returnImageFilesize(const std::string& a);
 
 private:
-    std::string getFileExtension(std::string& FileName);
-    bool isFileSupported(std::string fileName);
+    struct imageContainer{
+        std::string imageName;
+        std::string extension;
+        long filesize;
+    };
+    std::unordered_map<std::string, imageContainer> loadedImages;
     std::string validExtensions[3] = {"jpg","bmp","png"};
-    std::unordered_map<std::string, std::string> imageFiles; //hash map, filename,filepath
+    static std::string getFileExtension(const std::string& fileName);
+    bool isFileSupported(const std::string& fileName);
+
 };
 
 #endif //DATASET_LABELING_TOOL_IMAGEBROWSER_H

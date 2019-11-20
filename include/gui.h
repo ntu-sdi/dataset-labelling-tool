@@ -8,8 +8,10 @@
 #include <QList>
 #include <QListWidget>
 #include <QListWidgetItem>
-
+#include <QFileDialog>
+#include <QLineEdit>
 #include <ImageBrowser.h>
+#include <LinkedList.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -28,31 +30,32 @@ public:
 private slots:
     //------On Buttons Click Callbacks------//
     void on_ImageBrowseButton_clicked();
-    void on_CropSaveButton_clicked();
-    void on_ClassBrowseButton_clicked();
-    void on_BBoxBrowseButton_clicked();
-    void on_SaveYOLOButton_clicked();
-    void on_RestoreButton_clicked();
+    static void on_CropSaveButton_clicked();
+    static void on_ClassBrowseButton_clicked();
+    static void on_BBoxBrowseButton_clicked();
+    static void on_SaveYOLOButton_clicked();
+    static void on_RestoreButton_clicked();
     //------On click on a item in a list pane------//
-    void on_ImageList_itemClicked(QListWidgetItem* item);
-    void on_ImageList_itemDoubleClicked(QListWidgetItem* item);
-    void on_ClassesList_itemClicked(QListWidgetItem *item);
-    void on_ClassesList_itemDoubleClicked(QListWidgetItem *item);
+    static void on_ImageList_itemClicked(QListWidgetItem* item);
+    static void on_ImageList_itemDoubleClicked(QListWidgetItem* item);
+    static void on_ClassesList_itemClicked(QListWidgetItem *item);
+    static void on_ClassesList_itemDoubleClicked(QListWidgetItem *item);
 
 private:
     Ui::gui* ui;
-    ImageBrowser* imageBrowser;
+    ImageBrowser* imageBrowser{};
+    LinkedList<std::string> loadedFiles;
     //------On Buttons Click Callbacks------//
     void setImageFolderLabel(const QString& text);
     void imageListAdd(const QString& text);
-    void imageListAdd(std::string& text);
-    void imageListAdd(std::unordered_map<std::string,std::string> &m);
+    void imageListAdd(std::string text);
+    void imageListAdd(const std::vector<std::string>& a);
     //TODO: create function which takes LinkedList as input
     void setImageInfoLabel(std::string& text);
     void setImageInfoLabel(std::string& resolution, std::string& size);
     void setImageInfoLabel(unsigned short& resoultion_x, unsigned short& resoultion_y, unsigned short& size, std::string& size_units);
     //------Helper Functions------//
-    QString strToQstr(std::string& text);
+    static QString strToQstr(std::string& text);
 
 
 };

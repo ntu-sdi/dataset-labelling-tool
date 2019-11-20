@@ -10,6 +10,7 @@ gui::gui(QWidget* parent)
 {
     ui->setupUi(this);
     imageBrowser = new ImageBrowser;
+
 }
 
 gui::~gui()
@@ -20,10 +21,13 @@ gui::~gui()
 //------On Buttons Click Callbacks------//
 void gui::on_ImageBrowseButton_clicked()
 {
+    imageBrowser = new ImageBrowser;
+    QString directory = QFileDialog::getExistingDirectory(this,
+                                                          tr("Find Files"), QDir::currentPath());
+    imageBrowser->browseFolderForSupportedFiles(directory.toStdString());
+    imageListAdd(imageBrowser->returnImages());
 
-    imageBrowser->browseFolderForSupportedFiles("../tsest/folderTestData");
-    std::unordered_map<std::string,std::string> a = imageBrowser->listImageFiles();
-    imageListAdd(a);
+
 }
 
 void gui::on_CropSaveButton_clicked()
@@ -64,7 +68,7 @@ void gui::on_ClassesList_itemDoubleClicked(QListWidgetItem* item)
 }
 
 //------Functions to change text of labels------//
-void gui::imageListAdd(std::string& text)
+void gui::imageListAdd(std::string text)
 {
     ui->ImageList->addItem(strToQstr(text));
 }
@@ -74,10 +78,10 @@ void gui::imageListAdd(const QString& text)
     ui->ImageList->addItem(text);
 }
 
-void gui::imageListAdd(std::unordered_map<std::string, std::string> &m) {
-    for(auto it=m.begin();it!=m.end();it++) {
-        std::string temp =(it->first);
-        imageListAdd(temp);
+void gui::imageListAdd(const std::vector<std::string>& a)
+{
+    for(const auto& i : a) {
+        imageListAdd(imageBrowser->returnImageName(i));
     }
 }
 
@@ -109,4 +113,3 @@ void gui::setImageFolderLabel(const QString& text)
 {
     ui->ImageFolderLabel->setText(text);
 }
-
