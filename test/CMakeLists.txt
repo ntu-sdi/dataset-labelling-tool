@@ -3,6 +3,7 @@ set (Boost_USE_STATIC_LIBS OFF)
 find_package (Boost REQUIRED COMPONENTS unit_test_framework)
 include_directories (${Boost_INCLUDE_DIRS})
 
+find_package(OpenCV REQUIRED)
 include_directories(../include ../src)
 add_executable (Tests
                 TheAbsoluteUnit.cpp
@@ -17,4 +18,4 @@ set_target_properties(
         SUFFIX ".o"
 )
 
-target_link_libraries (Tests fmt ${Boost_LIBRARIES})
+target_link_libraries (Tests fmt ${OpenCV_LIBS} ${Boost_LIBRARIES} )

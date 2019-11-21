@@ -26,24 +26,22 @@ void ImageBrowser::browseFolderForSupportedFiles(std::string folderPath)
                 a.extension = getFileExtension(filePath);
                 a.filesize = getFilesize(filePath);
                 loadedImages[filePath] = a;
-
-
             }
         }
         closedir(dp);
 
 }
 
-std::string ImageBrowser::getFileExtension(const std::string& fileName)
+std::string ImageBrowser::getFileExtension(const std::string& filePath)
 {
-    if (fileName.find_last_of('.') != std::string::npos)
-        return fileName.substr(fileName.find_last_of('.') + 1);
+    if (filePath.find_last_of('.') != std::string::npos)
+        return filePath.substr(filePath.find_last_of('.') + 1);
     return "";
 }
 
-bool ImageBrowser::isFileSupported( const std::string& fileName)
+bool ImageBrowser::isFileSupported( const std::string& filePath)
 {
-    std::string extension = getFileExtension(fileName);
+    std::string extension = getFileExtension(filePath);
     for ( auto& validExtension : validExtensions) {
         if (extension == validExtension)
             return true;
@@ -51,10 +49,10 @@ bool ImageBrowser::isFileSupported( const std::string& fileName)
     return false;
 }
 
-long ImageBrowser::getFilesize(const std::string& a)
+long ImageBrowser::getFilesize(const std::string& filePath)
 {
     FILE *p_file = NULL;
-    p_file = fopen(a.c_str(),"rb");
+    p_file = fopen(filePath.c_str(), "rb");
     fseek(p_file,0,SEEK_END);
     long size = ftell(p_file);
     fclose(p_file);
@@ -70,9 +68,9 @@ LinkedList<std::string> ImageBrowser::returnImages()
     return a;
 }
 
-std::string ImageBrowser::returnImageName(std::string &a)
+std::string ImageBrowser::returnImageName(std::string &imagePath)
 {
-    return (loadedImages.at(a).imageName);
+    return (loadedImages.at(imagePath).imageName);
 }
 
 std::string ImageBrowser::returnImagePath(std::string &imageName){
@@ -83,20 +81,20 @@ std::string ImageBrowser::returnImagePath(std::string &imageName){
     throw FileNotFoundError();
 }
 
-std::string ImageBrowser::returnImageExtension( std::string& a)
+std::string ImageBrowser::returnImageExtension( std::string& imagePath)
 {
-    return (loadedImages.at(a).extension);
+    return (loadedImages.at(imagePath).extension);
 }
 
-long ImageBrowser::returnImageFilesize( std::string& a)
+long ImageBrowser::returnImageFilesize( std::string& imagePath)
 {
-    return (loadedImages.at(a).filesize);
+    return (loadedImages.at(imagePath).filesize);
 }
 
-LinkedList<int> ImageBrowser::returnResolution(const std::string &filename) {
+LinkedList<int> ImageBrowser::returnResolution(const std::string &imagePath) {
     LinkedList<int> res;
     Mat image;
-    image = imread( filename, IMREAD_GRAYSCALE ); // Read the file
+    image = imread(imagePath, 0 ); // Read the file
     Size size;
     size = image.size();
     res.push(size.width);
