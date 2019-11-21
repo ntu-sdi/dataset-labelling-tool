@@ -32,6 +32,4 @@ add_executable(dataset-labeling-tool
 target_link_libraries(dataset-labeling-tool PRIVATE Qt5::Widgets)
 
 add_subdirectory(test) #comment this to disable tests showing up in target selection
-
 target_link_libraries(dataset-labeling-tool PRIVATE Qt5::Widgets fmt ${OpenCV_LIBS})
-add_subdirectory(test)
