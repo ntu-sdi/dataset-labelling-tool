@@ -30,30 +30,28 @@ public:
 private slots:
     //------On Buttons Click Callbacks------//
     void on_ImageBrowseButton_clicked();
-    static void on_CropSaveButton_clicked();
-    static void on_ClassBrowseButton_clicked();
-    static void on_BBoxBrowseButton_clicked();
-    static void on_SaveYOLOButton_clicked();
-    static void on_RestoreButton_clicked();
+    void on_CropSaveButton_clicked();
+    void on_ClassBrowseButton_clicked();
+    void on_BBoxBrowseButton_clicked();
+    void on_SaveYOLOButton_clicked();
+    void on_RestoreButton_clicked();
     //------On click on a item in a list pane------//
-    static void on_ImageList_itemClicked(QListWidgetItem* item);
-    static void on_ImageList_itemDoubleClicked(QListWidgetItem* item);
-    static void on_ClassesList_itemClicked(QListWidgetItem *item);
-    static void on_ClassesList_itemDoubleClicked(QListWidgetItem *item);
+    void on_ImageList_itemClicked(QListWidgetItem* item);
+    void on_ImageList_itemDoubleClicked(QListWidgetItem* item);
+    void on_ClassesList_itemClicked(QListWidgetItem *item);
+    void on_ClassesList_itemDoubleClicked(QListWidgetItem *item);
 
 private:
     Ui::gui* ui;
-    ImageBrowser* imageBrowser{};
+    ImageBrowser* imageBrowser;
     LinkedList<std::string> loadedFiles;
+    void clearGui();
     //------On Buttons Click Callbacks------//
-    void setImageFolderLabel(const QString& text);
     void imageListAdd(const QString& text);
     void imageListAdd(std::string text);
-    void imageListAdd(LinkedList<std::basic_string<char>> *a);
+    void imageListAdd(LinkedList<std::string> *a);
     //TODO: create function which takes LinkedList as input
-    void setImageInfoLabel(std::string& text);
-    void setImageInfoLabel(std::string& resolution, std::string& size);
-    void setImageInfoLabel(unsigned short& resoultion_x, unsigned short& resoultion_y, unsigned short& size, std::string& size_units);
+    void setImageInfoLabel(int resoultion_x, int resoultion_y, long size, std::string size_units);
     //------Helper Functions------//
     static QString strToQstr(std::string& text);
 

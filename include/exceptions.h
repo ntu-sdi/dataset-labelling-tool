@@ -42,4 +42,13 @@ public:
     }
 };
 
+class FolderNotFoundError : public std::exception
+{
+public:
+    const char * what () const throw ()
+    {
+        return "Error: Folder could not be found";
+    }
+};
+
 #endif //DATASET_LABELING_TOOL_EXCEPTIONS_H

@@ -6,7 +6,10 @@ include_directories (${Boost_INCLUDE_DIRS})
 include_directories(../include ../src)
 add_executable (Tests
                 TheAbsoluteUnit.cpp
-                linkedListTest.cpp)
+                linkedListTest.cpp
+                ImageBrowserTests.cpp
+                ../src/ImageBrowser.cpp
+        )
 
 set_target_properties(
         Tests
@@ -14,4 +17,4 @@ set_target_properties(
         SUFFIX ".o"
 )
 
-target_link_libraries (Tests ${Boost_LIBRARIES})
+target_link_libraries (Tests fmt ${Boost_LIBRARIES})
