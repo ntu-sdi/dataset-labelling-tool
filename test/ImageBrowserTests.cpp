@@ -22,7 +22,7 @@ BOOST_AUTO_TEST_SUITE(ImageBrowserTests)
     {
         ImageBrowser browser;
         std::string path = "../../test/folderTestData";
-        BOOST_CHECK_NO_THROW(browser.browseFolderForSupportedFiles(path));
+        browser.browseFolderForSupportedFiles(path);
         BOOST_CHECK_EQUAL(browser.returnImages().length(), 2);
     }
     BOOST_AUTO_TEST_CASE(OpeningEmptyFolder)
@@ -94,7 +94,7 @@ BOOST_AUTO_TEST_SUITE(ImageBrowserTests)
         }
     }
 
-    BOOST_AUTO_TEST_CASE(CheckReturiningImageFileSize)
+    BOOST_AUTO_TEST_CASE(CheckReturningImageFileSize)
     {
         ImageBrowser browser;
         std::string path = "../../test/folderTestData";
@@ -117,8 +117,6 @@ BOOST_AUTO_TEST_SUITE(ImageBrowserTests)
         LinkedList<int> imgsResolutions;
         imgsResolutions.insert(0, 1000);
         imgsResolutions.insert(1, 833);
-        imgsResolutions.insert(2, 1419);
-        imgsResolutions.insert(3, 1001);
 
         std::string imgPath = imgs.at(0);
         int res_x = browser.returnResolution(imgPath).at(0);

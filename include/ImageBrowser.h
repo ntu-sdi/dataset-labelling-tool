@@ -26,7 +26,9 @@ public:
     std::string returnImagePath(std::string& imageName); //returns full path to image from image name
     std::string returnImageExtension(std::string& imagePath); //returns file extension of the image
     long returnImageFilesize(std::string& imagePath); //returns filesize of image in bytes
+    //TODO: Make returnResolution return tuple
     LinkedList<int> returnResolution(const std::string& imagePath); //returns resolution of the image in linked list format: x,y
+
 
 private:
     struct imageContainer {
