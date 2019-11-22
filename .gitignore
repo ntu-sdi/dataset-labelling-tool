@@ -60,6 +60,7 @@ cmake*/
 *.cbp
 *.autosave
 *.db
+<<<<<<< HEAD
 *.sqlite3
 
 # C++ objects and libs
@@ -115,3 +116,5 @@ compile_commands.json
 # QtCreator local machine specific files for imported projects
 *creator.user*
 *.sqlite3
+
+

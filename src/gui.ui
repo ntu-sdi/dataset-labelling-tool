@@ -46,7 +46,7 @@
       <rect>
        <x>20</x>
        <y>20</y>
-       <width>261</width>
+       <width>201</width>
        <height>25</height>
       </rect>
      </property>
@@ -107,19 +107,6 @@
         </property>
         <property name="text">
          <string>Browse...</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="ImageFolderLabel">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>DSC_...jpg</string>
         </property>
        </widget>
       </item>

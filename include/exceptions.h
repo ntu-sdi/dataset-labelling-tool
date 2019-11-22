@@ -32,12 +32,22 @@ class ArrayEmptyError : public std::exception
     }
 };
 
+
 class FileNotFoundError : public std::exception
 {
 public:
     const char * what () const throw ()
     {
         return "Error: Image file could not be found";
+    }
+};
+
+class FolderNotFoundError : public std::exception
+{
+public:
+    const char * what () const throw ()
+    {
+        return "Error: Folder could not be found";
     }
 };
 

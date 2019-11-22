@@ -95,6 +95,7 @@ public:
             currentNode = currentNode->next;
         }
         throw ValueNotFoundError(); // TODO: this should throw an error
+
     }
 
     bool contains(T data)
@@ -109,6 +110,7 @@ public:
             currentNode = currentNode->next;
         }
         return false;
+
     }
 
     void removeAt(int index)
@@ -168,6 +170,7 @@ public:
 
         delete currentNode;
     }
+
 
     Node* push(T data)
     {

@@ -33,7 +33,6 @@ public:
     QHBoxLayout *horizontalLayout;
     QLabel *ImagesLabel;
     QPushButton *ImageBrowseButton;
-    QLabel *ImageFolderLabel;
     QPushButton *CropSaveButton;
     QFrame *ImageSearchFrame;
     QHBoxLayout *horizontalLayout_2;
@@ -78,7 +77,7 @@ public:
         MainContainer->setLineWidth(0);
         ImageBrowsingFrame = new QFrame(MainContainer);
         ImageBrowsingFrame->setObjectName(QString::fromUtf8("ImageBrowsingFrame"));
-        ImageBrowsingFrame->setGeometry(QRect(20, 20, 261, 25));
+        ImageBrowsingFrame->setGeometry(QRect(20, 20, 201, 25));
         QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
@@ -111,13 +110,6 @@ public:
         ImageBrowseButton->setSizePolicy(sizePolicy3);
 
         horizontalLayout->addWidget(ImageBrowseButton);
-
-        ImageFolderLabel = new QLabel(ImageBrowsingFrame);
-        ImageFolderLabel->setObjectName(QString::fromUtf8("ImageFolderLabel"));
-        sizePolicy2.setHeightForWidth(ImageFolderLabel->sizePolicy().hasHeightForWidth());
-        ImageFolderLabel->setSizePolicy(sizePolicy2);
-
-        horizontalLayout->addWidget(ImageFolderLabel);
 
         CropSaveButton = new QPushButton(MainContainer);
         CropSaveButton->setObjectName(QString::fromUtf8("CropSaveButton"));
@@ -245,7 +237,6 @@ public:
         actionOpen_folder->setText(QCoreApplication::translate("gui", "Open folder", nullptr));
         ImagesLabel->setText(QCoreApplication::translate("gui", "Image Folder:", nullptr));
         ImageBrowseButton->setText(QCoreApplication::translate("gui", "Browse...", nullptr));
-        ImageFolderLabel->setText(QCoreApplication::translate("gui", "DSC_...jpg", nullptr));
         CropSaveButton->setText(QCoreApplication::translate("gui", "Crop and Save", nullptr));
         SearchLabel->setText(QCoreApplication::translate("gui", "Search:", nullptr));
         ImageInfoLabel->setText(QCoreApplication::translate("gui", "1280x719, 258.18 KB", nullptr));
