@@ -28,7 +28,7 @@ BOOST_AUTO_TEST_SUITE(ImageBrowserTests)
     BOOST_AUTO_TEST_CASE(OpeningEmptyFolder)
     {
         ImageBrowser browser;
-        std::string path = "../../test/folderTestData/emptyFolder";
+        std::string path = "../../test/folderTestData/emptyfolder";
         browser.browseFolderForSupportedFiles(path);
         BOOST_CHECK_EQUAL(browser.returnImages().length(), 0);
     }
