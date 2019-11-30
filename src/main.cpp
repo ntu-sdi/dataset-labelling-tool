@@ -1,11 +1,5 @@
 #include <iostream>
-//#include "dummyclass.h"
-//#include <fmt/format.h>
-//#include <sqlite3.h>
-//#include <nlohmann/json.hpp>
 #include <gui.h>
-///using json = nlohmann::json;
-
 #include <QApplication>
 
 int main(int argc, char** argv)

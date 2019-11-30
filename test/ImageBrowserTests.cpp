@@ -12,7 +12,7 @@
 
 BOOST_AUTO_TEST_SUITE(ImageBrowserTests)
 
-    BOOST_AUTO_TEST_CASE(OpeningInvalidFolder)
+   BOOST_AUTO_TEST_CASE(OpeningInvalidFolder)
     {
         ImageBrowser browser;
         std::string path = "../../test/folderTestDataINVALID"; //invalid path on purpose
@@ -126,5 +126,6 @@ BOOST_AUTO_TEST_SUITE(ImageBrowserTests)
         BOOST_CHECK_EQUAL(res_x, x);
         BOOST_CHECK_EQUAL(res_y, y);
     }
+	
 
 BOOST_AUTO_TEST_SUITE_END()
