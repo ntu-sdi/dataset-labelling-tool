@@ -12,7 +12,7 @@
 
 BOOST_AUTO_TEST_SUITE(ImageBrowserTests)
 
-    BOOST_AUTO_TEST_CASE(OpeningInvalidFolder)
+   BOOST_AUTO_TEST_CASE(OpeningInvalidFolder)
     {
         ImageBrowser browser;
         std::string path = "../../test/folderTestDataINVALID"; //invalid path on purpose
@@ -28,7 +28,7 @@ BOOST_AUTO_TEST_SUITE(ImageBrowserTests)
     BOOST_AUTO_TEST_CASE(OpeningEmptyFolder)
     {
         ImageBrowser browser;
-        std::string path = "../../test/folderTestData/emptyFolder";
+        std::string path = "../../test/folderTestData/emptyfolder";
         browser.browseFolderForSupportedFiles(path);
         BOOST_CHECK_EQUAL(browser.returnImages().length(), 0);
     }
@@ -54,8 +54,14 @@ BOOST_AUTO_TEST_SUITE(ImageBrowserTests)
         std::string path = "../../test/folderTestData";
         browser.browseFolderForSupportedFiles(path);
         LinkedList<std::string> files;
-        files.push("../../test/folderTestData/img1.jpg");
-        files.push("../../test/folderTestData/img2.bmp");
+		#if defined (WIN32)
+		files.push("../../test/folderTestData\\img1.jpg");
+		files.push("../../test/folderTestData\\img2.bmp");
+		#else
+		files.push("../../test/folderTestData/img1.jpg");
+		files.push("../../test/folderTestData/img2.bmp");
+		#endif
+        
         BOOST_CHECK_EQUAL(browser.returnImages().length(), files.length());
         for (int i = 0; i < files.length(); i++)
             BOOST_CHECK_EQUAL(files.at(i), browser.returnImages().at(i));
@@ -126,5 +132,6 @@ BOOST_AUTO_TEST_SUITE(ImageBrowserTests)
         BOOST_CHECK_EQUAL(res_x, x);
         BOOST_CHECK_EQUAL(res_y, y);
     }
+	
 
 BOOST_AUTO_TEST_SUITE_END()

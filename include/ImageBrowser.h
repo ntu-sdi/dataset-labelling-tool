@@ -5,7 +5,13 @@
 #include <filesystem>
 #include <sys/types.h>
 #include <sys/stat.h>
+
+#ifdef _WIN32
+#include "win_dirent.h"
+#else
 #include <dirent.h>
+#endif
+
 #include <fstream>
 #include <unordered_map>
 #include <vector>
