@@ -54,8 +54,14 @@ BOOST_AUTO_TEST_SUITE(ImageBrowserTests)
         std::string path = "../../test/folderTestData";
         browser.browseFolderForSupportedFiles(path);
         LinkedList<std::string> files;
-        files.push("../../test/folderTestData/img1.jpg");
-        files.push("../../test/folderTestData/img2.bmp");
+		#if defined (WIN32)
+		files.push("../../test/folderTestData\\img1.jpg");
+		files.push("../../test/folderTestData\\img2.bmp");
+		#else
+		files.push("../../test/folderTestData/img1.jpg");
+		files.push("../../test/folderTestData/img2.bmp");
+		#endif
+        
         BOOST_CHECK_EQUAL(browser.returnImages().length(), files.length());
         for (int i = 0; i < files.length(); i++)
             BOOST_CHECK_EQUAL(files.at(i), browser.returnImages().at(i));
