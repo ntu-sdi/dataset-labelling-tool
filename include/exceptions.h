@@ -5,7 +5,7 @@
 #ifndef DATASET_LABELING_TOOL_EXCEPTIONS_H
 #define DATASET_LABELING_TOOL_EXCEPTIONS_H
 
-#include <bits/exception.h>
+#include <exception>
 #include <stdexcept>
 
 class ValueNotFoundError : public std::exception
