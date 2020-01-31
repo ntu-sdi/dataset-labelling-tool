@@ -10,8 +10,8 @@
 #include <QListWidgetItem>
 #include <QFileDialog>
 #include <QLineEdit>
-#include <ImageBrowser.h>
-#include <LinkedList.h>
+//#include <ImageBrowser.h>
+//#include <LinkedList.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -43,13 +43,13 @@ private slots:
 
 private:
     Ui::gui* ui;
-    ImageBrowser* imageBrowser;
-    LinkedList<std::string> loadedFiles;
+    //ImageBrowser* imageBrowser;
+    //LinkedList<std::string> loadedFiles;
     void clearGui();
     //------On Buttons Click Callbacks------//
     void imageListAdd(const QString& text);
     void imageListAdd(std::string text);
-    void imageListAdd(LinkedList<std::string> *a);
+    //void imageListAdd(LinkedList<std::string> *a);
     //TODO: create function which takes LinkedList as input
     void setImageInfoLabel(int resoultion_x, int resoultion_y, long size, std::string size_units);
     //------Helper Functions------//

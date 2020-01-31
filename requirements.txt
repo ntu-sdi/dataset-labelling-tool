@@ -1,8 +1,0 @@
-sqlite3 - https://github.com/LuaDist/libsqlite3/blob/master/sqlite3.h
-fmt - https://github.com/fmtlib/fmt
-nlohmann_json - https://github.com/nlohmann/json
-qt5 - https://www.qt.io/offline-installers
-boost - https://www.boost.org/
-opencv - https://docs.opencv.org/master/df/d65/tutorial_table_of_content_introduction.html
-
-
