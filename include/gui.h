@@ -1,5 +1,6 @@
 #ifndef GUI_H
 #define GUI_H
+#include "maincontroller.h"
 #include <iostream>
 #include <string>
 #include <QMainWindow>
@@ -10,8 +11,7 @@
 #include <QListWidgetItem>
 #include <QFileDialog>
 #include <QLineEdit>
-//#include <ImageBrowser.h>
-//#include <LinkedList.h>
+#include "ui_gui.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -43,18 +43,8 @@ private slots:
 
 private:
     Ui::gui* ui;
-    //ImageBrowser* imageBrowser;
-    //LinkedList<std::string> loadedFiles;
     void clearGui();
-    //------On Buttons Click Callbacks------//
-    void imageListAdd(const QString& text);
-    void imageListAdd(std::string text);
-    //void imageListAdd(LinkedList<std::string> *a);
-    //TODO: create function which takes LinkedList as input
-    void setImageInfoLabel(int resoultion_x, int resoultion_y, long size, std::string size_units);
-    //------Helper Functions------//
-    static QString strToQstr(std::string& text);
-
+    MainController *controller;
 
 };
 #endif // GUI_H

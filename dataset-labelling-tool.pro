@@ -17,10 +17,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     src/main.cpp \
-    src/gui.cpp
+    src/gui.cpp \
+    src/maincontroller.cpp
 
 HEADERS += \
-    include/gui.h
+    include/gui.h \
+    include/maincontroller.h
 
 INCLUDEPATH += include/
 
