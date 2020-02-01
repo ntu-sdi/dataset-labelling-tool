@@ -1,5 +1,4 @@
 #include "gui.h"
-#include "ui_gui.h"
 #include <string>
 
 //------GUI initialization functions------//

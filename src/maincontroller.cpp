@@ -1,5 +1,4 @@
 #include "maincontroller.h"
-#include "ui_gui.h"
 
 MainController::MainController()
 {
