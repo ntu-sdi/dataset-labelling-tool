@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(gui LANGUAGES CXX)
+project(dataset-labeling-tool LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -14,17 +14,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 include_directories(src/ include/)
-add_executable(gui
+add_executable(MainView
   src/main.cpp
-  src/gui.cpp
-  src/maincontroller.cpp
-  include/gui.ui
-  include/gui.h
-  include/maincontroller.h
+  src/MainView.cpp
+  src/MainController.cpp
+  include/MainView.ui
+  include/MainView.h
+  include/MainController.h
  
 )
 
-target_link_libraries(gui PRIVATE Qt5::Widgets)
+target_link_libraries(MainView PRIVATE Qt5::Widgets)
 
 
 #this only runs on pasing cmake file, how to make it run on build?

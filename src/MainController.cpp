@@ -1,10 +1,10 @@
-#include "maincontroller.h"
+#include "MainController.h"
 
 MainController::MainController()
 {
 }
 
-void  MainController::passViewToController(Ui::gui * ui){
+void  MainController::passViewToController(Ui::MainView * ui){
     userInterfaceView = ui;
 }
 

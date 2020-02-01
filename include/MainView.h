@@ -1,6 +1,6 @@
-#ifndef GUI_H
-#define GUI_H
-#include "maincontroller.h"
+#ifndef MainView_H
+#define MainView_H
+#include "MainController.h"
 #include <iostream>
 #include <string>
 #include <QMainWindow>
@@ -11,21 +11,21 @@
 #include <QListWidgetItem>
 #include <QFileDialog>
 #include <QLineEdit>
-#include "ui_gui.h"
+#include "ui_MainView.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-    class gui;
+    class MainView;
 }
 QT_END_NAMESPACE
 
-class gui : public QMainWindow {
+class MainView : public QMainWindow {
 Q_OBJECT
 
 public:
-    //------GUI initialization functions------//
-    gui(QWidget* parent = nullptr);
-    ~gui();
+    //------MainView initialization functions------//
+    MainView(QWidget* parent = nullptr);
+    ~MainView();
 
 private slots:
     //------On Buttons Click Callbacks------//
@@ -42,9 +42,9 @@ private slots:
     void on_ClassesList_itemDoubleClicked(QListWidgetItem *item);
 
 private:
-    Ui::gui* ui;
-    void clearGui();
+    Ui::MainView* ui;
+    void clearMainView();
     MainController *controller;
 
 };
-#endif // GUI_H
+#endif // MainView_H
