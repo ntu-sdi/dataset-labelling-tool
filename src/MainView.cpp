@@ -10,6 +10,19 @@ MainView::MainView(QWidget* parent)
     controller = new MainController();
     controller->passViewToController(ui);
     clearMainView();
+    ui->ImageList->addItem("Image1.jpg");
+    ui->ImageList->addItem("Image2.png");
+    ui->ImageList->addItem("Image3.jpg");
+    ui->ImageList->addItem("Image24.png");
+    ui->ImageList->addItem("Image1231.jpg");
+    ui->ImageList->addItem("Image32.png");
+    ui->ClassesList->addItem("Car");
+    ui->ClassesList->addItem("Boat");
+    ui->ClassesList->addItem("Plane");
+    ui->ImageInfoLabel->setText("1920x1080, 5131.21 kB");
+    ui->ClassFileLabel->setText("someclasses.class");
+    ui->AnnotationFileLabel->setText("annots.annotation");
+
 
 }
 
