@@ -31,25 +31,14 @@ void MainView::on_ImageBrowseButton_clicked()
     controller->loadImagesFromFolder();
 }
 
-void MainView::on_CropSaveButton_clicked()
-{
-}
-
 void MainView::on_ClassBrowseButton_clicked()
 {
 }
 
-void MainView::on_BBoxBrowseButton_clicked()
+void MainView::on_AnnotationBrowseButton_clicked()
 {
 }
 
-void MainView::on_SaveYOLOButton_clicked()
-{
-}
-
-void MainView::on_RestoreButton_clicked()
-{
-}
 
 //------On click on a item in a list pane------//
 void MainView::on_ImageList_itemClicked(QListWidgetItem* item)
@@ -71,4 +60,12 @@ void MainView::on_ClassesList_itemDoubleClicked(QListWidgetItem* item)
 
 
 
+void MainView::on_ImageListSortBox_currentTextChanged(const QString &arg1)
+{
 
+}
+
+void MainView::on_ClassListSortBox_currentTextChanged(const QString &arg1)
+{
+
+}

@@ -30,16 +30,17 @@ public:
 private slots:
     //------On Buttons Click Callbacks------//
     void on_ImageBrowseButton_clicked();
-    void on_CropSaveButton_clicked();
     void on_ClassBrowseButton_clicked();
-    void on_BBoxBrowseButton_clicked();
-    void on_SaveYOLOButton_clicked();
-    void on_RestoreButton_clicked();
+    void on_AnnotationBrowseButton_clicked();
     //------On click on a item in a list pane------//
     void on_ImageList_itemClicked(QListWidgetItem* item);
     void on_ImageList_itemDoubleClicked(QListWidgetItem* item);
     void on_ClassesList_itemClicked(QListWidgetItem *item);
     void on_ClassesList_itemDoubleClicked(QListWidgetItem *item);
+
+    void on_ImageListSortBox_currentTextChanged(const QString &arg1);
+
+    void on_ClassListSortBox_currentTextChanged(const QString &arg1);
 
 private:
     Ui::MainView* ui;
