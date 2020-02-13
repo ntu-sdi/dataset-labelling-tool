@@ -18,10 +18,23 @@ add_executable(MainView
   src/main.cpp
   src/MainView.cpp
   src/MainController.cpp
+  src/ImageController.cpp
+  src/ClassController.cpp
+  src/AnnotationController.cpp
+  src/ImageModel.cpp
+  src/ClassModel.cpp
+  src/AnnotationModel.cpp
   include/MainView.ui
   include/MainView.h
   include/MainController.h
- 
+  include/ImageController.h
+  include/ClassController.h
+  include/AnnotationController.h
+  include/ImageModel.h
+  include/ClassModel.h
+  include/AnnotationModel.h
+  include/LinkedList.h
+  include/exceptions.h
 )
 
 target_link_libraries(MainView PRIVATE Qt5::Widgets)

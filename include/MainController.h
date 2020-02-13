@@ -5,10 +5,11 @@
 
 class MainController
 {
+private:
+
+
 public:
     MainController();
-
-private:
 };
 
 #endif
