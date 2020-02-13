@@ -19,7 +19,7 @@ class MainView : public QMainWindow
 Q_OBJECT
 
 public:
-    MainView(MainController*, QWidget* parent = nullptr);
+    MainView(const MainController&, QWidget* parent = nullptr);
     ~MainView();
 
 private slots:
@@ -36,7 +36,7 @@ private slots:
 private:
     Ui::MainView* ui;
     void clearMainView();
-    MainController* controller;
+    MainController controller;
 };
 
 #endif
