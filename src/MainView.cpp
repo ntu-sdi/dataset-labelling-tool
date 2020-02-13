@@ -13,10 +13,7 @@ MainView::~MainView()
     delete ui;
 }
 
-void MainView::on_ImageBrowseButton_clicked()
-{
-    controller->loadImagesFromFolder();
-}
+void MainView::on_ImageBrowseButton_clicked() {}
 
 void MainView::on_ClassBrowseButton_clicked() {}
 
