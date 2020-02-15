@@ -1,10 +1,12 @@
+#pragma once
+
 #include "ClassModel.h"
-#include "MainView.h"
+#include "ui_MainView.h"
 
 class ClassController
 {
 private:
-    Ui::MainView ui;
+    Ui_MainView* ui;
     ClassModel model;
 
 public:

@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 #include <QFileSystemModel>
 
@@ -6,7 +8,7 @@
 class ClassModel
 {
 private:
-    QFileSystemModel fileSystemModel;
+    QFileSystemModel fileSystemModel();
     LinkedList<std::string> supportedFileFormats;
     std::string selectedClass;
     std::string currentFilePath;

@@ -1,10 +1,12 @@
+#pragma once
+
 #include "AnnotationModel.h"
-#include "MainView.h"
+#include "ui_MainView.h"
 
 class AnnotationController
 {
 private:
-    Ui::MainView ui;
+    Ui_MainView* ui;
     AnnotationModel model;
     std::vector<Point> points;
 

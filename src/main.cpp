@@ -1,3 +1,6 @@
+#include "AnnotationController.h"
+#include "ClassController.h"
+#include "ImageController.h"
 #include "MainView.h"
 #include "MainController.h"
 
@@ -6,7 +9,10 @@
 int main(int argc, char *argv[])
 {
     QApplication application(argc, argv);
-    MainController mainController;
+    AnnotationController annotationController;
+    ClassController classController;
+    ImageController imageController;
+    MainController mainController(annotationController, classController, imageController);
     MainView mainView(mainController);
     mainView.show();
     return application.exec();

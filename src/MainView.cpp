@@ -2,10 +2,11 @@
 
 #include <string>
 
-MainView::MainView(const MainController& controller, QWidget* parent) : QMainWindow(parent), ui(new Ui::MainView)
+MainView::MainView(const MainController& c, QWidget* parent) : QMainWindow(parent),
+                                                               ui(new Ui::MainView),
+                                                               controller(c)
 {
     ui->setupUi(this);
-    this->controller = controller;
 }
 
 MainView::~MainView()

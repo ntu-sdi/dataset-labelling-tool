@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 #include <utility>
 #include <QFileSystemModel>
@@ -10,7 +12,7 @@ using Shape = LinkedList<Point>;
 class AnnotationModel
 {
 private:
-    QFileSystemModel fileSystemModel;
+    QFileSystemModel fileSystemModel();
     LinkedList<std::string> supportedFileFormats;
     std::string currentFilePath;
 

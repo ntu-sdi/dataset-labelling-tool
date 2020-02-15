@@ -1,10 +1,12 @@
-#include "MainView.h"
+#pragma once
+
 #include "ImageModel.h"
+#include "ui_MainView.h"
 
 class ImageController
 {
 private:
-    Ui::MainView ui;
+    Ui_MainView ui;
     ImageModel model;
 
 public:

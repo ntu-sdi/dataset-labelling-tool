@@ -1,5 +1,4 @@
-#ifndef MainView_H
-#define MainView_H
+#pragma once
 
 #include "MainController.h"
 #include "ui_MainView.h"
@@ -38,5 +37,3 @@ private:
     void clearMainView();
     MainController controller;
 };
-
-#endif

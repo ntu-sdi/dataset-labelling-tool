@@ -1,3 +1,5 @@
+#pragma once
+
 #include <map>
 #include <string>
 #include <utility>
@@ -10,7 +12,7 @@
 class ImageModel
 {
 private:
-    QFileSystemModel fileSystemModel;
+    QFileSystemModel fileSystemModel();
     std::map<std::string, std::string> loadedImages;
 
 public:

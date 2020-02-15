@@ -1,15 +1,16 @@
-#ifndef MAINController_H
-#define MAINController_H
+#pragma once
 
-#include "ui_MainView.h"
+#include "AnnotationController.h"
+#include "ClassController.h"
+#include "ImageController.h"
 
 class MainController
 {
 private:
-
+    AnnotationController annotationController;
+    ClassController classController;
+    ImageController imageController;
 
 public:
-    MainController();
+    MainController(AnnotationController&, ClassController&, ImageController&);
 };
-
-#endif
