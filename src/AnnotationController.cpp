@@ -6,4 +6,7 @@ void AnnotationController::addPoint(Point) {}
 
 void AnnotationController::finishShape() {}
 
+/**
+ * @brief AnnotationController::cancelShape
+ */
 void AnnotationController::cancelShape() {}
