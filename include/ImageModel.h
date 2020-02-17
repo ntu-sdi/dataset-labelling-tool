@@ -11,8 +11,8 @@
 class ImageModel
 {
 private:
-    QFileSystemModel fileSystemModel();
     std::map<std::string, std::string> loadedImages;
+    QFileSystemModel fileSystemModel();
 
 public:
     void browseFolder();

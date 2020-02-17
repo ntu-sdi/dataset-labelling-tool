@@ -34,6 +34,7 @@ private slots:
 
 private:
     Ui::MainView* ui;
-    void clearMainView();
     MainController controller;
+    void clearMainView();
+
 };

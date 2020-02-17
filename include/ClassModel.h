@@ -8,10 +8,10 @@
 class ClassModel
 {
 private:
-    QFileSystemModel fileSystemModel();
     LinkedList<std::string> supportedFileFormats;
     std::string selectedClass;
     std::string currentFilePath;
+    QFileSystemModel fileSystemModel();
     void save();
 
 public:

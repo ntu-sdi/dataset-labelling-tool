@@ -1,31 +1,15 @@
 #include "ImageModel.h"
 
-void ImageModel::browseFolder()
-{
-    // TODO
-}
+QFileSystemModel ImageModel::fileSystemModel() {}
 
-LinkedList<std::string> ImageModel::searchLoaded(const std::string& pathName)
-{
-    // TODO
-}
+void ImageModel::browseFolder() {}
 
-std::pair<int, int> ImageModel::getResolution(const std::string& pathName)
-{
-    // TODO
-}
+LinkedList<std::string> ImageModel::searchLoaded(const std::string&) {}
 
-long ImageModel::getFileSize(const std::string& pathName)
-{
-    // TODO
-}
+std::pair<int, int> ImageModel::getResolution(const std::string&) {}
 
-LinkedList<std::string> ImageModel::getAll()
-{
-    // TODO
-}
+long ImageModel::getFileSize(const std::string&) {}
 
-QImage ImageModel::getImage(const std::string& pathName)
-{
-    // TODO
-}
+LinkedList<std::string> ImageModel::getAll() {}
+
+QImage ImageModel::getImage(const std::string&) {}

@@ -1,4 +1,16 @@
-#ifndef CLASSCONTOLLER_CPP
-#define CLASSCONTOLLER_CPP
+#include "ClassController.h"
 
-#endif // CLASSCONTOLLER_CPP
+void ClassController::browse() {}
+
+void ClassController::create(const std::string&) {}
+
+void ClassController::sortLoaded() {}
+
+void ClassController::add(const std::string&) {}
+
+void ClassController::select(const std::string&) {}
+
+void ClassController::remove(const std::string&) {}
+
+void ClassController::getSelected() {}
+

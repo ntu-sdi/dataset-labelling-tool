@@ -12,9 +12,9 @@ using Shape = LinkedList<Point>;
 class AnnotationModel
 {
 private:
-    QFileSystemModel fileSystemModel();
     LinkedList<std::string> supportedFileFormats;
     std::string currentFilePath;
+    QFileSystemModel fileSystemModel();
     void save();
 
 public:
