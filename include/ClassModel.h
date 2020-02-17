@@ -12,7 +12,6 @@ private:
     LinkedList<std::string> supportedFileFormats;
     std::string selectedClass;
     std::string currentFilePath;
-
     void save();
 
 public:

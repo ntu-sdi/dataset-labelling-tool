@@ -11,8 +11,8 @@ private:
 
 public:
     void browse();
-    LinkedList<std::string> searchLoaded(const std::string&);
-    LinkedList<std::string> sortLoaded();
-    std::string select(const std::string&);
+    void searchLoaded(const std::string&);
+    void sortLoaded();
+    void select(const std::string&);
     void open();
 };

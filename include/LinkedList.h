@@ -1,7 +1,3 @@
-//
-// Created by 22ru on 11/11/19.
-//
-
 #pragma once
 
 #include "exceptions.h"

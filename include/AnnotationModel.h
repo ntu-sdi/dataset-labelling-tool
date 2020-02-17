@@ -15,7 +15,6 @@ private:
     QFileSystemModel fileSystemModel();
     LinkedList<std::string> supportedFileFormats;
     std::string currentFilePath;
-
     void save();
 
 public:
