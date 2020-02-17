@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['maincontroller_2ecpp',['MainController.cpp',['../MainController_8cpp.html',1,'']]],
-  ['maincontroller_2eh',['MainController.h',['../MainController_8h.html',1,'']]],
-  ['mainview_2ecpp',['MainView.cpp',['../MainView_8cpp.html',1,'']]],
-  ['mainview_2eh',['MainView.h',['../MainView_8h.html',1,'']]]
+  ['annotationcontroller_2ecpp',['AnnotationController.cpp',['../AnnotationController_8cpp.html',1,'']]],
+  ['annotationcontroller_2eh',['AnnotationController.h',['../AnnotationController_8h.html',1,'']]],
+  ['annotationmodel_2ecpp',['AnnotationModel.cpp',['../AnnotationModel_8cpp.html',1,'']]],
+  ['annotationmodel_2eh',['AnnotationModel.h',['../AnnotationModel_8h.html',1,'']]]
 ];
