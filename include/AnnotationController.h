@@ -15,7 +15,4 @@ public:
     void addPoint(Point);
     void finishShape();
     void cancelShape();
-    // Do these need to take a shape object
-    // as a parameter to know what shape is
-    // being modified?
 };

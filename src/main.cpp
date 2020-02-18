@@ -1,10 +1,10 @@
+#include <QApplication>
+
 #include "AnnotationController.h"
 #include "ClassController.h"
 #include "ImageController.h"
 #include "MainView.h"
 #include "MainController.h"
-
-#include <QApplication>
 
 int main(int argc, char *argv[])
 {

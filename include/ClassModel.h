@@ -3,7 +3,7 @@
 #include <string>
 #include <QFileSystemModel>
 
-#include <LinkedList.h>
+#include "LinkedList.h"
 
 class ClassModel
 {

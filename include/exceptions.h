@@ -1,7 +1,3 @@
-//
-// Created by 22ru on 11/15/19.
-//
-
 #ifndef DATASET_LABELING_TOOL_EXCEPTIONS_H
 #define DATASET_LABELING_TOOL_EXCEPTIONS_H
 

@@ -1,10 +1,9 @@
-#include "MainView.h"
-
 #include <string>
 
-MainView::MainView(const MainController& c, QWidget* parent) : QMainWindow(parent),
-                                                               ui(new Ui::MainView),
-                                                               controller(c)
+#include "MainView.h"
+
+MainView::MainView(const MainController& c, QWidget* parent)
+    : QMainWindow(parent), ui(new Ui::MainView), controller(c)
 {
     ui->setupUi(this);
 }

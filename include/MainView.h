@@ -1,10 +1,10 @@
 #pragma once
 
-#include "MainController.h"
-#include "ui_MainView.h"
-
 #include <QMainWindow>
 #include <QListWidgetItem>
+
+#include "MainController.h"
+#include "ui_MainView.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui
