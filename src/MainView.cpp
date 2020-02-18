@@ -17,6 +17,11 @@ void MainView::on_ImageBrowseButton_clicked() {}
 
 void MainView::on_ClassBrowseButton_clicked() {}
 
+void MainView::on_ClassCreateButton_clicked()
+{
+    this->controller.createClassFile();
+}
+
 void MainView::on_AnnotationBrowseButton_clicked() {}
 
 void MainView::on_ImageList_itemClicked(QListWidgetItem*) {}

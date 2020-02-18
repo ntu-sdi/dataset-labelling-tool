@@ -2,6 +2,9 @@
 
 #include <string>
 #include <QFileSystemModel>
+#include <QFileDialog>
+#include <iostream>
+#include <fstream>
 
 #include "LinkedList.h"
 
@@ -16,7 +19,7 @@ private:
 
 public:
     void browse();
-    void create(const std::string&);
+    void create();
     void addClass(const std::string&);
     void removeClass(const std::string&);
     void select(const std::string&);

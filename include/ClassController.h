@@ -11,7 +11,7 @@ private:
 
 public:
     void browse();
-    void create(const std::string&);
+    void create();
     void sortLoaded();
     void add(const std::string&);
     void select(const std::string&);

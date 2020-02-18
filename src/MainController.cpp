@@ -23,7 +23,10 @@ void MainController::browseForClassFile() {}
 
 void MainController::sortLoadedClasses() {}
 
-void MainController::createClassFile(const std::string& ) {}
+void MainController::createClassFile()
+{
+    this->classController.create();
+}
 
 void MainController::addClass(const std::string& ) {}
 

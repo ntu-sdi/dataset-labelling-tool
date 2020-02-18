@@ -2,7 +2,10 @@
 
 void ClassController::browse() {}
 
-void ClassController::create(const std::string&) {}
+void ClassController::create()
+{
+    this->model.create();
+}
 
 void ClassController::sortLoaded() {}
 

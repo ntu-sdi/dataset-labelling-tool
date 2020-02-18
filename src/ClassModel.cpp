@@ -6,7 +6,15 @@ void ClassModel::save() {}
 
 void ClassModel::browse() {}
 
-void ClassModel::create(const std::string&) {}
+void ClassModel::create()
+{
+    QString fileName = QFileDialog::getSaveFileName(nullptr, "New Annotation",
+                                                        "./data/",
+                                                        "Annotaion files (*.annotation)");
+    std::ofstream file(fileName.toStdString());
+    file.close();
+
+}
 
 void ClassModel::addClass(const std::string&) {}
 
