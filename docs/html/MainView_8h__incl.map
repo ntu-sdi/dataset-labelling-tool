@@ -1,11 +1,11 @@
 <map id="include/MainView.h" name="include/MainView.h">
-<area shape="rect" id="node2" href="$MainController_8h.html" title="MainController.h" alt="" coords="267,80,393,107"/>
-<area shape="rect" id="node3" href="$AnnotationController_8h.html" title="AnnotationController.h" alt="" coords="159,155,325,181"/>
-<area shape="rect" id="node13" href="$ClassController_8h.html" title="ClassController.h" alt="" coords="5,155,135,181"/>
-<area shape="rect" id="node15" href="$ImageController_8h.html" title="ImageController.h" alt="" coords="349,155,484,181"/>
-<area shape="rect" id="node4" href="$AnnotationModel_8h.html" title="AnnotationModel.h" alt="" coords="148,229,291,256"/>
-<area shape="rect" id="node8" href="$LinkedList_8h.html" title="LinkedList.h" alt="" coords="273,304,371,331"/>
-<area shape="rect" id="node9" href="$exceptions_8h.html" title="exceptions.h" alt="" coords="271,379,373,405"/>
-<area shape="rect" id="node14" href="$ClassModel_8h.html" title="ClassModel.h" alt="" coords="17,229,123,256"/>
-<area shape="rect" id="node16" href="$ImageModel_8h.html" title="ImageModel.h" alt="" coords="450,229,562,256"/>
+<area shape="rect" id="node4" href="$MainController_8h.html" title="MainController.h" alt="" coords="291,80,416,107"/>
+<area shape="rect" id="node5" href="$AnnotationController_8h.html" title="AnnotationController.h" alt="" coords="183,155,348,181"/>
+<area shape="rect" id="node15" href="$ClassController_8h.html" title="ClassController.h" alt="" coords="29,155,158,181"/>
+<area shape="rect" id="node17" href="$ImageController_8h.html" title="ImageController.h" alt="" coords="373,155,507,181"/>
+<area shape="rect" id="node6" href="$AnnotationModel_8h.html" title="AnnotationModel.h" alt="" coords="171,229,314,256"/>
+<area shape="rect" id="node10" href="$LinkedList_8h.html" title="LinkedList.h" alt="" coords="297,304,394,331"/>
+<area shape="rect" id="node11" href="$exceptions_8h.html" title="exceptions.h" alt="" coords="294,379,397,405"/>
+<area shape="rect" id="node16" href="$ClassModel_8h.html" title="ClassModel.h" alt="" coords="40,229,147,256"/>
+<area shape="rect" id="node18" href="$ImageModel_8h.html" title="ImageModel.h" alt="" coords="473,229,585,256"/>
 </map>
