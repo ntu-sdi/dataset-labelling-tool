@@ -2,14 +2,19 @@
 
 MainController::MainController(AnnotationController& a,
                                ClassController& c,
-                               ImageController& i)
+                               ImageController& i) : annotationController(a),
+                                                     classController(c),
+                                                     imageController(i)
 {
     this -> annotationController = a;
     this -> classController = c;
     this -> imageController = i;
 }
 
-void MainController::browseImages() {}
+void MainController::browseImages()
+{
+    imageController.browseFolder();
+}
 
 void MainController::searchLoadedImages(const std::string& ) {}
 

@@ -2,8 +2,8 @@
 
 #include "MainView.h"
 
-MainView::MainView(const MainController& c, QWidget* parent)
-    : QMainWindow(parent), ui(new Ui::MainView), controller(c)
+MainView::MainView(const MainController& controller, QWidget* parent)
+    : QMainWindow(parent), ui(new Ui::MainView), controller(controller)
 {
     ui->setupUi(this);
 }
@@ -13,7 +13,10 @@ MainView::~MainView()
     delete ui;
 }
 
-void MainView::on_ImageBrowseButton_clicked() {}
+void MainView::on_ImageBrowseButton_clicked()
+{
+    controller.browseImages();
+}
 
 void MainView::on_ClassBrowseButton_clicked() {}
 

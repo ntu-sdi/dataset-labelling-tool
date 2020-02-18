@@ -1,5 +1,11 @@
 #include "ClassController.h"
 
+ClassController::ClassController(const Ui_MainView& ui, const ClassModel& model)
+{
+    this->ui = ui;
+    this->model = model;
+}
+
 void ClassController::browse() {}
 
 void ClassController::create(const std::string&) {}
