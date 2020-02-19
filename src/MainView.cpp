@@ -34,17 +34,17 @@ void MainView::on_ClassAddButton_clicked()
     QString className;
     className = QInputDialog::getText(this, "New Class", "Class name",
                                       QLineEdit::Normal, className, &ok);
-    this->controller.addClass(className.toStdString());
+    this->controller->addClass(className.toStdString());
 }
 
 void MainView::on_ClassBrowseButton_clicked()
 {
-    this->controller.browseForClassFile();
+    this->controller->browseForClassFile();
 }
 
 void MainView::on_ClassCreateButton_clicked()
 {
-    this->controller.createClassFile();
+    this->controller->createClassFile();
 }
 
 void MainView::on_AnnotationBrowseButton_clicked() {}
