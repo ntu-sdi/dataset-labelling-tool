@@ -15,6 +15,7 @@ private:
     std::string selectedClass;
     std::string currentFilePath;
     QFileSystemModel fileSystemModel();
+    void removeLine(const std::string&);
     void save();
 
 public:

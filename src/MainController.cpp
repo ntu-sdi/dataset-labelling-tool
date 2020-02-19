@@ -19,7 +19,10 @@ void MainController::selectImage(const std::string& ) {}
 
 void MainController::openImage() {}
 
-void MainController::browseForClassFile() {}
+void MainController::browseForClassFile()
+{
+    this->classController.browse();
+}
 
 void MainController::sortLoadedClasses() {}
 
@@ -28,7 +31,10 @@ void MainController::createClassFile()
     this->classController.create();
 }
 
-void MainController::addClass(const std::string& ) {}
+void MainController::addClass(const std::string& classname)
+{
+    this->classController.add(classname);
+}
 
 void MainController::selectClass(const std::string& ) {}
 

@@ -1,6 +1,9 @@
 #include "ClassController.h"
 
-void ClassController::browse() {}
+void ClassController::browse()
+{
+    this->model.browse();
+}
 
 void ClassController::create()
 {
@@ -9,7 +12,10 @@ void ClassController::create()
 
 void ClassController::sortLoaded() {}
 
-void ClassController::add(const std::string&) {}
+void ClassController::add(const std::string& classname)
+{
+   this->model.addClass(classname);
+}
 
 void ClassController::select(const std::string&) {}
 

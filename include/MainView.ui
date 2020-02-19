@@ -189,7 +189,7 @@
       <rect>
        <x>20</x>
        <y>330</y>
-       <width>220</width>
+       <width>271</width>
        <height>25</height>
       </rect>
      </property>
@@ -257,6 +257,13 @@
         </property>
         <property name="text">
          <string>Create</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ClassAddButton">
+        <property name="text">
+         <string>Add</string>
         </property>
        </widget>
       </item>
@@ -398,9 +405,9 @@
     <widget class="QComboBox" name="ClassListSortBox">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>309</x>
        <y>330</y>
-       <width>160</width>
+       <width>131</width>
        <height>25</height>
       </rect>
      </property>

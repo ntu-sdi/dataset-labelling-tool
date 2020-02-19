@@ -2,6 +2,7 @@
 
 #include <QMainWindow>
 #include <QListWidgetItem>
+#include <QInputDialog>
 
 #include "MainController.h"
 #include "ui_MainView.h"
@@ -23,6 +24,7 @@ public:
 
 private slots:
     void on_ImageBrowseButton_clicked();
+    void on_ClassAddButton_clicked();
     void on_ClassBrowseButton_clicked();
     void on_ClassCreateButton_clicked();
     void on_AnnotationBrowseButton_clicked();

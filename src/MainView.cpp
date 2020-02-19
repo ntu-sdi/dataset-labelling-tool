@@ -15,7 +15,19 @@ MainView::~MainView()
 
 void MainView::on_ImageBrowseButton_clicked() {}
 
-void MainView::on_ClassBrowseButton_clicked() {}
+void MainView::on_ClassAddButton_clicked()
+{
+    bool ok;
+    QString className;
+    className = QInputDialog::getText(this, "New Class", "Class name",
+                                      QLineEdit::Normal, className, &ok);
+    this->controller.addClass(className.toStdString());
+}
+
+void MainView::on_ClassBrowseButton_clicked()
+{
+    this->controller.browseForClassFile();
+}
 
 void MainView::on_ClassCreateButton_clicked()
 {
