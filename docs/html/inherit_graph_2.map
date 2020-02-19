@@ -1,7 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classArrayEmptyError.html" title="ArrayEmptyError" alt="" coords="159,5,287,32"/>
-<area shape="rect" id="node3" href="$classFileNotFoundError.html" title="FileNotFoundError" alt="" coords="156,56,291,83"/>
-<area shape="rect" id="node4" href="$classFolderNotFoundError.html" title="FolderNotFoundError" alt="" coords="146,107,301,133"/>
-<area shape="rect" id="node5" href="$classIndexOutOfBoundsError.html" title="IndexOutOfBoundsError" alt="" coords="137,157,309,184"/>
-<area shape="rect" id="node6" href="$classValueNotFoundError.html" title="ValueNotFoundError" alt="" coords="148,208,299,235"/>
-</map>

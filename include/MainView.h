@@ -19,8 +19,11 @@ class MainView : public QMainWindow
 Q_OBJECT
 
 public:
-    MainView(const MainController&, QWidget* parent = nullptr);
+    MainView(QWidget* parent = nullptr);
     ~MainView();
+    Ui::MainView returnReferenceOfUi();
+    void useController(MainController *);
+
 
 private slots:
     void on_ImageBrowseButton_clicked();
@@ -37,7 +40,7 @@ private slots:
 
 private:
     Ui::MainView* ui;
-    MainController controller;
+    MainController* controller;
     void clearMainView();
 
 };

@@ -5,6 +5,12 @@ void ClassController::browse()
     this->model.browse();
 }
 
+ClassController::ClassController(const Ui_MainView& ui, const ClassModel& model)
+{
+    this->ui = ui;
+    this->model = model;
+}
+
 void ClassController::create()
 {
     this->model.create();
