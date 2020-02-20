@@ -5,13 +5,13 @@
 #include<boost/test/unit_test.hpp>
 #include "../include/AnnotationModel.h"
 
-BOOST_AUTO_TEST_SUITE( suiteName )
+BOOST_AUTO_TEST_SUITE( suiteNameb )
 
-BOOST_AUTO_TEST_CASE( first ) {
+BOOST_AUTO_TEST_CASE( firstb ) {
 
 }
 
-BOOST_AUTO_TEST_CASE( second ) {
+BOOST_AUTO_TEST_CASE( secondb ) {
 
 }
 
