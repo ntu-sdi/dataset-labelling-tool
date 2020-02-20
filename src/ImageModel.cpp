@@ -14,9 +14,11 @@ void ImageModel::browseFolder()
                                                               "Find Folders",
                                                               QDir::currentPath(),
                                                               QFileDialog::ShowDirsOnly);
-    QDir directory = QDir(directoryPath);
-    directory.setNameFilters(SUPPORTED_FORMATS);
-    loadedImages = directory.entryList();
+    if(!directoryPath.isEmpty()&& !directoryPath.isNull()){
+        QDir directory = QDir(directoryPath);
+        directory.setNameFilters(SUPPORTED_FORMATS);
+        loadedImages = directory.entryList();
+    }
 }
 
 LinkedList<std::string> ImageModel::searchLoaded(const std::string&) {}
