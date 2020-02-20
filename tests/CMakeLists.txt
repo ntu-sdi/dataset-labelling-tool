@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 set (Boost_USE_STATIC_LIBS OFF)
 find_package (Boost REQUIRED COMPONENTS unit_test_framework)
+find_package(Qt5 COMPONENTS Widgets REQUIRED)
+
 
 include_directories(../include ../src)
 add_executable (Tests
@@ -15,3 +17,4 @@ add_executable (Tests
         )
 
 target_link_libraries (Tests PRIVATE ${Boost_LIBRARIES} )
+target_link_libraries(Tests PRIVATE Qt5::Widgets)
