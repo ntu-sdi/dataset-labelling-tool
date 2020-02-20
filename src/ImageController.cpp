@@ -42,6 +42,12 @@ void ImageController::sortLoaded() {}
 
 void ImageController::select(const QString&) {}
 
+/**
+ * Gets a filename from the MainControler, opens image with help from ImageModel and
+ * displays image in the MainView
+ *
+ * @param filename
+ */
 void ImageController::open(const QString& filename) {
       QGraphicsScene *scene =  new QGraphicsScene;
       QPixmap pixmap = model.getImage(filename);

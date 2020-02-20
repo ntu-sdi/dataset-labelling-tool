@@ -33,6 +33,10 @@ void MainController::sortLoadedImages() {}
 
 void MainController::selectImage(const QString&) {}
 
+/**
+ * Gets the image filename from the MainView and passes request to open image to MainController
+ * @param filename
+ */
 void MainController::openImage(const QString& filename) {
     imageController.open(filename);
 }

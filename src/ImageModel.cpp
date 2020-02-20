@@ -41,6 +41,12 @@ QStringList ImageModel::getAll()
     return loadedImages.keys();
 }
 
+/**
+ * Gets name of the image from ImageController, searches for file path usin image file name
+ * from internal map. After that it creates Image object and returns it to ImageController
+ * @param filename
+ * @return QPixmap of image provided via image filename
+ */
 QPixmap ImageModel::getImage(const QString& filename) {
     QPixmap img(loadedImages[filename].filePath());
     return img;
