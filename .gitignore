@@ -16,6 +16,8 @@ idea*/
 build*/
 cmake*/
 
+docs*/
+
 # Prerequisites
 *.d
 
