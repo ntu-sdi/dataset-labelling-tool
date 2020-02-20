@@ -3,15 +3,15 @@
 #define BOOST_TEST_MODULE Main
 #endif
 #include<boost/test/unit_test.hpp>
-#include "../include/ClassModel.h"
+#include "../include/ImageController.h"
 
-BOOST_AUTO_TEST_SUITE( suiteName )
+BOOST_AUTO_TEST_SUITE( suiteNamee )
 
-BOOST_AUTO_TEST_CASE( first ) {
+BOOST_AUTO_TEST_CASE( firste ) {
 
 }
 
-BOOST_AUTO_TEST_CASE( second ) {
+BOOST_AUTO_TEST_CASE( seconde ) {
 
 }
 
