@@ -4,6 +4,10 @@
 
 QFileSystemModel ImageModel::fileSystemModel() {}
 
+/**
+ * Opens a system file dialog window and promps the user for an image folder,
+ * then loads from it any compatible image files.
+ */
 void ImageModel::browseFolder()
 {
     QString directoryPath = QFileDialog::getExistingDirectory(nullptr,
@@ -21,6 +25,11 @@ std::pair<int, int> ImageModel::getResolution(const std::string&) {}
 
 long ImageModel::getFileSize(const std::string&) {}
 
+/**
+ * Returns the names of all loaded images in the ImageModel.
+ *
+ * @return QStringList of the names of all loaded images.
+ */
 QStringList ImageModel::getAll()
 {
     return loadedImages;

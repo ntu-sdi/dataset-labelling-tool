@@ -11,18 +11,22 @@ int main(int argc, char *argv[])
 {
     QApplication application(argc, argv);
 
+    // Initialise Views
     MainView mainView;
-    Ui_MainView ui_MainView = mainView.returnReferenceOfUi();
+    Ui_MainView ui_MainView = mainView.getUi();
+
+    // Initialise Models
     ImageModel imageModel;
     ClassModel classModel;
     AnnotationModel annotationModel;
+
+    // Initialise Controllers
     AnnotationController annotationController(ui_MainView, annotationModel);
     ClassController classController(ui_MainView, classModel);
     ImageController imageController(ui_MainView, imageModel);
     MainController mainController(annotationController, classController, imageController);
+
     mainView.useController(&mainController);
-
-
     mainView.show();
     return application.exec();
 }

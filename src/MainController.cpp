@@ -1,16 +1,27 @@
 #include "MainController.h"
 
-MainController::MainController(AnnotationController& a,
-                               ClassController& c,
-                               ImageController& i) : annotationController(a),
-                                                     classController(c),
-                                                     imageController(i)
+/**
+ * Constructs a MainController, taking in references to each type of sub-controller.
+ *
+ * @param annotationController
+ * @param classController
+ * @param imageController
+ */
+MainController::MainController(AnnotationController& annotationController,
+                               ClassController& classController,
+                               ImageController& imageController) :
+                               annotationController(annotationController),
+                               classController(classController),
+                               imageController(imageController)
 {
-    this -> annotationController = a;
-    this -> classController = c;
-    this -> imageController = i;
+    this->annotationController = annotationController;
+    this->classController = classController;
+    this->imageController = imageController;
 }
 
+/**
+ * Delegates the image folder browsing event to the ImageController.
+ */
 void MainController::browseImages()
 {
     imageController.browseFolder();

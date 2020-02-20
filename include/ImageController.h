@@ -3,6 +3,10 @@
 #include "ImageModel.h"
 #include "ui_MainView.h"
 
+/**
+ * Sub-controller, which gets delegated tasks, relating to loading, storing and updating images.
+ * Communicates directly with the ImageModel.
+ */
 class ImageController
 {
 private:

@@ -23,6 +23,10 @@ const QStringList SUPPORTED_FORMATS = {
     "*.jpeg"
 };
 
+/**
+ * Model, which is responsible for file handling of images. Maintains an internal list of the
+ * currently loaded images.
+ */
 class ImageModel
 {
 private:

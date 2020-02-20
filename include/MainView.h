@@ -20,7 +20,7 @@ Q_OBJECT
 public:
     MainView(QWidget* parent = nullptr);
     ~MainView();
-    Ui::MainView returnReferenceOfUi();
+    Ui::MainView getUi();
     void useController(MainController *);
 
 

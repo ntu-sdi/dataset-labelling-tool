@@ -2,6 +2,11 @@
 
 #include "MainView.h"
 
+/**
+ * Creates a new internal Ui::MainView object and sets up the GUI.
+ *
+ * @param parent
+ */
 MainView::MainView(QWidget* parent)
     : QMainWindow(parent), ui(new Ui::MainView)
 {
@@ -13,16 +18,28 @@ MainView::~MainView()
     delete ui;
 }
 
-Ui::MainView MainView::returnReferenceOfUi()
+/**
+ * Returns a pointer to the internal Ui::MainView object, which is used for processing callbacks.
+ */
+Ui::MainView MainView::getUi()
 {
     return *ui;
 }
 
-void MainView::useController(MainController * cnt)
+/**
+ * Passes a MainController pointer to the MainView, which it uses to process callbacks.
+ *
+ * @param controller
+ */
+void MainView::useController(MainController * controller)
 {
-    controller = cnt;
+    this->controller = controller;
 }
 
+/**
+ * Callback function, which is triggered by the user clicking the "Browse"
+ * button in the image panel.
+ */
 void MainView::on_ImageBrowseButton_clicked()
 {
     controller->browseImages();
