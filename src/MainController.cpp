@@ -27,7 +27,7 @@ void MainController::browseImages()
     imageController.browseFolder();
 }
 
-void MainController::searchLoadedImages(const std::string& ) {}
+void MainController::searchLoadedImages(const QString& ) {}
 
 void MainController::sortLoadedImages() {}
 
@@ -41,17 +41,17 @@ void MainController::browseForClassFile() {}
 
 void MainController::sortLoadedClasses() {}
 
-void MainController::createClassFile(const std::string& ) {}
+void MainController::createClassFile(const QString& ) {}
 
-void MainController::addClass(const std::string& ) {}
+void MainController::addClass(const QString& ) {}
 
-void MainController::selectClass(const std::string& ) {}
+void MainController::selectClass(const QString& ) {}
 
-void MainController::removeClass(const std::string& ) {}
+void MainController::removeClass(const QString& ) {}
 
 void MainController::browseForAnnotationFile() {}
 
-void MainController::createAnnotationFile(const std::string& ) {}
+void MainController::createAnnotationFile(const QString& ) {}
 
 void MainController::addPoint(Point) {}
 

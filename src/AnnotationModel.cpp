@@ -6,8 +6,8 @@ void AnnotationModel::save() {}
 
 void AnnotationModel::browse() {}
 
-void AnnotationModel::create(const std::string&) {}
+void AnnotationModel::create(const QString&) {}
 
-void AnnotationModel::add(const std::string&, const int, const LinkedList<Shape>&) {}
+void AnnotationModel::add(const QString&, const int, const LinkedList<Shape>&) {}
 
 

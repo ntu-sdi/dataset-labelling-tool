@@ -25,11 +25,11 @@ void ImageModel::browseFolder()
     }
 }
 
-LinkedList<std::string> ImageModel::searchLoaded(const std::string&) {}
+LinkedList<std::string> ImageModel::searchLoaded(const QString&) {}
 
-std::pair<int, int> ImageModel::getResolution(const std::string&) {}
+std::pair<int, int> ImageModel::getResolution(const QString&) {}
 
-long ImageModel::getFileSize(const std::string&) {}
+long ImageModel::getFileSize(const QString&) {}
 
 /**
  * Returns the names of all loaded images in the ImageModel.

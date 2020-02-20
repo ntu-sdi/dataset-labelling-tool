@@ -19,6 +19,6 @@ private:
 
 public:
     void browse();
-    void create(const std::string&);
-    void add(const std::string&, const int, const LinkedList<Shape>&);
+    void create(const QString&);
+    void add(const QString&, const int, const LinkedList<Shape>&);
 };

@@ -12,10 +12,10 @@ private:
 public:
     ClassController(const Ui_MainView&, const ClassModel&);
     void browse();
-    void create(const std::string&);
+    void create(const QString&);
     void sortLoaded();
-    void add(const std::string&);
-    void select(const std::string&);
-    void remove(const std::string&);
+    void add(const QString&);
+    void select(const QString&);
+    void remove(const QString&);
     void getSelected();
 };

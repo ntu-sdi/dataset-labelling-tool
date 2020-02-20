@@ -16,10 +16,10 @@ private:
 
 public:
     void browse();
-    void create(const std::string&);
-    void addClass(const std::string&);
-    void removeClass(const std::string&);
-    void select(const std::string&);
+    void create(const QString&);
+    void addClass(const QString&);
+    void removeClass(const QString&);
+    void select(const QString&);
     std::string getSelected();
     LinkedList<std::string> getAll();
 };

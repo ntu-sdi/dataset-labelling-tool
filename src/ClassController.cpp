@@ -8,15 +8,15 @@ ClassController::ClassController(const Ui_MainView& ui, const ClassModel& model)
 
 void ClassController::browse() {}
 
-void ClassController::create(const std::string&) {}
+void ClassController::create(const QString&) {}
 
 void ClassController::sortLoaded() {}
 
-void ClassController::add(const std::string&) {}
+void ClassController::add(const QString&) {}
 
-void ClassController::select(const std::string&) {}
+void ClassController::select(const QString&) {}
 
-void ClassController::remove(const std::string&) {}
+void ClassController::remove(const QString&) {}
 
 void ClassController::getSelected() {}
 

@@ -20,18 +20,18 @@ private:
 public:
     MainController(AnnotationController&, ClassController&, ImageController&);
     void browseImages();
-    void searchLoadedImages(const std::string&);
+    void searchLoadedImages(const QString&);
     void sortLoadedImages();
     void selectImage(const QString&);
     void openImage(const QString&);
     void browseForClassFile();
     void sortLoadedClasses();
-    void createClassFile(const std::string&);
-    void addClass(const std::string&);
-    void selectClass(const std::string&);
-    void removeClass(const std::string&);
+    void createClassFile(const QString&);
+    void addClass(const QString&);
+    void selectClass(const QString&);
+    void removeClass(const QString&);
     void browseForAnnotationFile();
-    void createAnnotationFile(const std::string&);
+    void createAnnotationFile(const QString&);
     void addPoint(Point);
     void finishShape();
     void cancelShape();

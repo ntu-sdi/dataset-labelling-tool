@@ -36,11 +36,11 @@ void ImageController::browseFolder()
     updateView();
 }
 
-void ImageController::searchLoaded(const std::string&) {}
+void ImageController::searchLoaded(const QString&) {}
 
 void ImageController::sortLoaded() {}
 
-void ImageController::select(const std::string&) {}
+void ImageController::select(const QString&) {}
 
 void ImageController::open(const QString& filename) {
       QGraphicsScene *scene =  new QGraphicsScene;
