@@ -5,6 +5,7 @@
 #include <utility>
 #include <QFileSystemModel>
 #include <QImage>
+#include <QPixmap>
 
 #include "LinkedList.h"
 
@@ -30,7 +31,7 @@ const QStringList SUPPORTED_FORMATS = {
 class ImageModel
 {
 private:
-    QStringList loadedImages;
+    QMap <QString,QFileInfo> loadedImages;
     QFileSystemModel fileSystemModel();
 
 public:
@@ -39,5 +40,5 @@ public:
     std::pair<int, int> getResolution(const std::string&);
     long getFileSize(const std::string&);
     QStringList getAll();
-    QImage getImage(const std::string&);
+    QPixmap getImage(const QString&);
 };

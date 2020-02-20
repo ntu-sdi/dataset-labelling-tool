@@ -17,7 +17,11 @@ void ImageModel::browseFolder()
     if(!directoryPath.isEmpty()&& !directoryPath.isNull()){
         QDir directory = QDir(directoryPath);
         directory.setNameFilters(SUPPORTED_FORMATS);
-        loadedImages = directory.entryList();
+        QFileInfoList loaded = directory.entryInfoList();
+
+        for (int i =0; i< loaded.size();i ++){
+              loadedImages[loaded[i].fileName()] = loaded[i];
+        }
     }
 }
 
@@ -34,7 +38,7 @@ long ImageModel::getFileSize(const std::string&) {}
  */
 QStringList ImageModel::getAll()
 {
-    return loadedImages;
+    return loadedImages.keys();
 }
 
-QImage ImageModel::getImage(const std::string&) {}
+QPixmap ImageModel::getImage(const QString&) {}
