@@ -41,4 +41,7 @@ QStringList ImageModel::getAll()
     return loadedImages.keys();
 }
 
-QPixmap ImageModel::getImage(const QString&) {}
+QPixmap ImageModel::getImage(const QString& filename) {
+    QPixmap img(loadedImages[filename].filePath());
+    return img;
+}

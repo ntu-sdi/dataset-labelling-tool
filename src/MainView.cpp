@@ -51,7 +51,9 @@ void MainView::on_AnnotationBrowseButton_clicked() {}
 
 void MainView::on_ImageList_itemClicked(QListWidgetItem*) {}
 
-void MainView::on_ImageList_itemDoubleClicked(QListWidgetItem*) {}
+void MainView::on_ImageList_itemDoubleClicked(QListWidgetItem* filename) {
+    controller->openImage(filename->text());
+}
 
 void MainView::on_ClassesList_itemClicked(QListWidgetItem*) {}
 

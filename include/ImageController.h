@@ -20,5 +20,5 @@ public:
     void searchLoaded(const std::string&);
     void sortLoaded();
     void select(const std::string&);
-    void open();
+    void open(const QString&);
 };

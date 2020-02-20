@@ -31,9 +31,11 @@ void MainController::searchLoadedImages(const std::string& ) {}
 
 void MainController::sortLoadedImages() {}
 
-void MainController::selectImage(const std::string& ) {}
+void MainController::selectImage(const QString&) {}
 
-void MainController::openImage() {}
+void MainController::openImage(const QString& filename) {
+    imageController.open(filename);
+}
 
 void MainController::browseForClassFile() {}
 

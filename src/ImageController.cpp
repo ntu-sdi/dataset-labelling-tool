@@ -1,4 +1,6 @@
 #include "ImageController.h"
+#include "QPixmap"
+#include "QGraphicsItem"
 
 /**
  * Constructs an ImageController, which handles business logic, related to the image files.
@@ -40,5 +42,12 @@ void ImageController::sortLoaded() {}
 
 void ImageController::select(const std::string&) {}
 
-void ImageController::open() {}
+void ImageController::open(const QString& filename) {
+      QGraphicsScene *scene =  new QGraphicsScene;
+      QPixmap pixmap = model.getImage(filename);
+      scene->addPixmap(pixmap);
+      ui.imageView->setScene(scene);
+      ui.imageView->show();
+
+}
 

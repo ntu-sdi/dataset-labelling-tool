@@ -22,8 +22,8 @@ public:
     void browseImages();
     void searchLoadedImages(const std::string&);
     void sortLoadedImages();
-    void selectImage(const std::string&);
-    void openImage();
+    void selectImage(const QString&);
+    void openImage(const QString&);
     void browseForClassFile();
     void sortLoadedClasses();
     void createClassFile(const std::string&);
