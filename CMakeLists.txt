@@ -38,6 +38,7 @@ add_executable(MainView
 )
 
 target_link_libraries(MainView PRIVATE Qt5::Widgets)
+add_subdirectory(tests)
 
 
 #this only runs on pasing cmake file, how to make it run on build?
