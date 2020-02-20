@@ -3,15 +3,15 @@
 #define BOOST_TEST_MODULE Main
 #endif
 #include<boost/test/unit_test.hpp>
-#include "../include/AnnotationModel.h"
+#include "../include/ClassModel.h"
 
-BOOST_AUTO_TEST_SUITE( suiteName )
+BOOST_AUTO_TEST_SUITE( suiteNamed )
 
-BOOST_AUTO_TEST_CASE( first ) {
+BOOST_AUTO_TEST_CASE( firstd ) {
 
 }
 
-BOOST_AUTO_TEST_CASE( second ) {
+BOOST_AUTO_TEST_CASE( secondd ) {
 
 }
 
