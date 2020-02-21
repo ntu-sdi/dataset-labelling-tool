@@ -7,12 +7,13 @@
 
 BOOST_AUTO_TEST_SUITE( suiteNameb )
 
-BOOST_AUTO_TEST_CASE( firstb ) {
+//uncomment below code for test cases. Add or remove cases as per necessity
+/*BOOST_AUTO_TEST_CASE( first ) {
 
 }
 
-BOOST_AUTO_TEST_CASE( secondb ) {
+BOOST_AUTO_TEST_CASE( second ) {
 
-}
+}*/
 
 BOOST_AUTO_TEST_SUITE_END();
