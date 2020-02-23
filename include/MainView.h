@@ -3,6 +3,7 @@
 #include <QMainWindow>
 #include <QListWidgetItem>
 #include <QInputDialog>
+#include <QMenu>
 
 #include "MainController.h"
 #include "ui_MainView.h"
@@ -37,6 +38,7 @@ private slots:
     void on_ClassesList_itemDoubleClicked(QListWidgetItem*);
     void on_ImageListSortBox_currentTextChanged(const QString&);
     void on_ClassListSortBox_currentTextChanged(const QString&);
+    void ProvideContextMenu(const QPoint&);
 
 private:
     Ui::MainView* ui;

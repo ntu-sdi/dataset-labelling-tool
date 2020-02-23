@@ -24,6 +24,9 @@ void MainController::selectImage(const std::string& ) {}
 
 void MainController::openImage() {}
 
+/**
+ * Delegates class folder browsing event to the ClassController.
+ */
 void MainController::browseForClassFile()
 {
     this->classController.browse();
@@ -31,11 +34,18 @@ void MainController::browseForClassFile()
 
 void MainController::sortLoadedClasses() {}
 
+/**
+ * Delegates the creation of a class file to the ClassController.
+ */
 void MainController::createClassFile()
 {
     this->classController.create();
 }
 
+/**
+ * Delegates the addition of a new class to the ClassController.
+ * @param classname Name of the class to add.
+ */
 void MainController::addClass(const std::string& classname)
 {
     this->classController.add(classname);
@@ -43,7 +53,14 @@ void MainController::addClass(const std::string& classname)
 
 void MainController::selectClass(const std::string& ) {}
 
-void MainController::removeClass(const std::string& ) {}
+/**
+ * Delegates the removal of a class to the ClassController.
+ * @param classname Name of the class to remove.
+ */
+void MainController::removeClass(const std::string& classname)
+{
+    this->classController.remove(classname);
+}
 
 void MainController::browseForAnnotationFile() {}
 

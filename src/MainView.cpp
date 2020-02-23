@@ -6,6 +6,9 @@ MainView::MainView(QWidget* parent)
     : QMainWindow(parent), ui(new Ui::MainView)
 {
     ui->setupUi(this);
+    this->ui->ClassesList->setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(this->ui->ClassesList, &QListWidget::customContextMenuRequested,
+            this, &MainView::ProvideContextMenu);
 }
 
 MainView::~MainView()
@@ -60,3 +63,22 @@ void MainView::on_ClassesList_itemDoubleClicked(QListWidgetItem*) {}
 void MainView::on_ImageListSortBox_currentTextChanged(const QString&) {}
 
 void MainView::on_ClassListSortBox_currentTextChanged(const QString&) {}
+
+void MainView::ProvideContextMenu(const QPoint& pos)
+{
+    QPoint globalpos = this->ui->ClassesList->mapToGlobal(pos);
+    QModelIndex index = this->ui->ClassesList->indexAt(globalpos);
+    QMenu submenu;
+    submenu.addAction("Delete");
+    QAction* rightClickItem = submenu.exec(globalpos);
+    if(rightClickItem && rightClickItem->text().contains("Delete")) {
+        try {
+        this->controller->removeClass(
+                        this->ui->ClassesList->itemAt(pos)->text().toStdString()
+                    );
+        this->ui->ClassesList->takeItem(index.row());
+        }  catch (std::exception& e) {
+            QMessageBox::warning(this, "Error", e.what(), QMessageBox::Ok);
+        }
+    }
+}
