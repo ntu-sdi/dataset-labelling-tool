@@ -1,8 +1,14 @@
 #pragma once
 
+#include <QMessageBox>
+
 #include "ClassModel.h"
 #include "ui_MainView.h"
 
+/**
+ * Sub-controller which gets delegated tasks related to creating, adding and removing classes.
+ * Communicates directly with the ClassModel.
+ */
 class ClassController
 {
 private:
@@ -12,10 +18,11 @@ private:
 public:
     ClassController(const Ui_MainView&, const ClassModel&);
     void browse();
-    void create(const std::string&);
+    void create();
     void sortLoaded();
     void add(const std::string&);
     void select(const std::string&);
     void remove(const std::string&);
     void getSelected();
+    void updateView();
 };

@@ -2,6 +2,8 @@
 
 #include <QMainWindow>
 #include <QListWidgetItem>
+#include <QInputDialog>
+#include <QMenu>
 
 #include "MainController.h"
 #include "ui_MainView.h"
@@ -26,7 +28,9 @@ public:
 
 private slots:
     void on_ImageBrowseButton_clicked();
+    void on_ClassAddButton_clicked();
     void on_ClassBrowseButton_clicked();
+    void on_ClassCreateButton_clicked();
     void on_AnnotationBrowseButton_clicked();
     void on_ImageList_itemClicked(QListWidgetItem*);
     void on_ImageList_itemDoubleClicked(QListWidgetItem*);
@@ -34,6 +38,7 @@ private slots:
     void on_ClassesList_itemDoubleClicked(QListWidgetItem*);
     void on_ImageListSortBox_currentTextChanged(const QString&);
     void on_ClassListSortBox_currentTextChanged(const QString&);
+    void ProvideContextMenu(const QPoint&);
 
 private:
     Ui::MainView* ui;

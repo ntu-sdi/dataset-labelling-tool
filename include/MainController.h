@@ -26,7 +26,7 @@ public:
     void openImage();
     void browseForClassFile();
     void sortLoadedClasses();
-    void createClassFile(const std::string&);
+    void createClassFile();
     void addClass(const std::string&);
     void selectClass(const std::string&);
     void removeClass(const std::string&);
