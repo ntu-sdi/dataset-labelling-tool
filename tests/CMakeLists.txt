@@ -10,8 +10,8 @@ endif(UNIX)
 find_package (Boost REQUIRED COMPONENTS unit_test_framework)
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
-include_directories(../include ../src)
-
+include_directories(../include ../src ../build/Dataset-Labelling-Tool_autogen/include)
+ 
 add_executable (Tests
                 Tests.cpp
                 LinkedListsTests.cpp

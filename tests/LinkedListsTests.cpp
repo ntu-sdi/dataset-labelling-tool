@@ -4,6 +4,7 @@
 #endif
 #include "../include/LinkedList.h"
 #include <string>
+#include "ui_MainView.h"
 #include<boost/test/unit_test.hpp>
 
 
