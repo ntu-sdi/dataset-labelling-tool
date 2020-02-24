@@ -44,7 +44,7 @@ void ClassModel::create()
 {
     QString fileName = QFileDialog::getSaveFileName(nullptr, "Create New Class File",
                                                     "./",
-                                                    "Class files (*.class)") + ".class";
+                                                    "Class files (*.class)");
     std::ofstream file(fileName.toStdString()); if (!file) {
         file.close();
         throw std::ofstream::failure("Could not create file");
