@@ -23,6 +23,10 @@ void ClassController::updateView()
     this->ui.ClassesList->clearFocus();
     this->ui.ClassesList->clear();
     this->ui.ClassesList->addItems(classes);
+    std::string currentFilePath = this->model.getCurrentFilePath();
+    if (!currentFilePath.empty()) {
+        this->ui.ClassFileLabel->setText(QString::fromStdString(currentFilePath));
+    }
 }
 
 /**

@@ -30,4 +30,5 @@ public:
     void select(const std::string&);
     std::string getSelected();
     QStringList getAll();
+    std::string getCurrentFilePath();
 };

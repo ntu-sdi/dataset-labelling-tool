@@ -122,3 +122,8 @@ QStringList ClassModel::getAll()
     // If the user chooses a class file, append the class to the file
     throw std::ifstream::failure("No file selected");
 }
+
+std::string ClassModel::getCurrentFilePath()
+{
+    return this->currentFilePath;
+}
