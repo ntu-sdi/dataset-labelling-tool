@@ -18,7 +18,7 @@ endif(UNIX)
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 include_directories(src/ include/)
-add_executable(MainView
+add_executable(Dataset-Labelling-Tool
   src/main.cpp
   src/MainView.cpp
   src/MainController.cpp
@@ -41,7 +41,7 @@ add_executable(MainView
   include/exceptions.h
 )
 
-target_link_libraries(MainView PRIVATE Qt5::Widgets)
+target_link_libraries(Dataset-Labelling-Tool PRIVATE Qt5::Widgets)
 
 
 #this only runs on pasing cmake file, how to make it run on build?

@@ -10,15 +10,12 @@ endif(UNIX)
 find_package (Boost REQUIRED COMPONENTS unit_test_framework)
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
-
-
-SET(AUTOGEN_BUILD_DIR "${CMAKE_CURRENT_BINARY_DIR}/MainView_autogen/include")
-include_directories(../include ../src ${AUTOGEN_BUILD_DIR})
+include_directories(../include ../src)
 
 add_executable (Tests
                 Tests.cpp
                 LinkedListsTests.cpp
-                ${AUTOGEN_BUILD_DIR}/ui_MainView.h
+                ../build/Dataset-Labelling-Tool_autogen/include/ui_MainView.h
         )
 
 target_link_libraries (Tests PRIVATE ${Boost_LIBRARIES} Qt5::Widgets )
