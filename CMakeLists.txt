@@ -8,6 +8,10 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
+if(UNIX)
+	set (CMAKE_PREFIX_PATH /opt/Qt5.13.2/5.13.2/gcc_64/lib/cmake)
+endif(UNIX)
+
 #set(CMAKE_CXX_STANDARD 11)
 #set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -38,7 +42,6 @@ add_executable(MainView
 )
 
 target_link_libraries(MainView PRIVATE Qt5::Widgets)
-add_subdirectory(tests)
 
 
 #this only runs on pasing cmake file, how to make it run on build?
