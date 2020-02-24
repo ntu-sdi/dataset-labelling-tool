@@ -18,7 +18,7 @@ void ClassModel::removeLine(const std::string& line, const std::string& filename
     std::string readLine;
     while (std::getline(in, readLine)) {
         if (readLine != line)
-            out << line << std::endl;
+            out << readLine << std::endl;
     }
     in.close();
     out.close();
