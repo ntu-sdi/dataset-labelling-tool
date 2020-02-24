@@ -20,7 +20,7 @@ BOOST_AUTO_TEST_SUITE( LinkedListTest )
     {
         LinkedList<double> l;
         l.insert(0, 1);
-        BOOST_CHECK_EQUAL(l.isEmpty(), true);
+        BOOST_CHECK_EQUAL(l.isEmpty(), false);
     }
 
     BOOST_AUTO_TEST_CASE(TestInsertAtEnd)
