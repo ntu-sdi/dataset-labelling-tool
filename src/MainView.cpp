@@ -68,6 +68,7 @@ void MainView::ProvideContextMenu(const QPoint& pos)
 {
     QPoint globalpos = this->ui->ClassesList->mapToGlobal(pos);
     QModelIndex index = this->ui->ClassesList->indexAt(globalpos);
+    if (!index.isValid()) return;
     QMenu submenu;
     submenu.addAction("Delete");
     QAction* rightClickItem = submenu.exec(globalpos);
