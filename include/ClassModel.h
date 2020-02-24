@@ -25,7 +25,7 @@ private:
 public:
     void browse();
     void create();
-    void addClass(const std::string&);
+    void addClass(std::string);
     void removeClass(const std::string&);
     void select(const std::string&);
     std::string getSelected();

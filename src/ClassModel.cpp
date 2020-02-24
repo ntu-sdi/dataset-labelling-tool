@@ -59,13 +59,17 @@ void ClassModel::create()
  * the user is prompted by the browse method to select one.
  * @param classname Name of the class to add.
  */
-void ClassModel::addClass(const std::string& classname)
+void ClassModel::addClass(std::string classname)
 {
     if (this->currentFilePath.empty()) {
         this->browse();
     }
     if (!this->currentFilePath.empty()) {
         if (classname.find_first_not_of(' ') != std::string::npos) {
+            size_t startpos = classname.find_first_not_of(" \t");
+            if(std::string::npos != startpos) {
+                classname = classname.substr(startpos);
+            }
             std::ofstream file(this->currentFilePath, std::ios_base::app);
             file << classname << std::endl;
             file.close();
