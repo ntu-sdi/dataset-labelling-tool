@@ -65,9 +65,13 @@ void ClassModel::addClass(const std::string& classname)
         this->browse();
     }
     if (!this->currentFilePath.empty()) {
-        std::ofstream file(this->currentFilePath, std::ios_base::app);
-        file << classname << std::endl;
-        file.close();
+        if (classname.find_first_not_of(' ') != std::string::npos) {
+            std::ofstream file(this->currentFilePath, std::ios_base::app);
+            file << classname << std::endl;
+            file.close();
+        } else {
+            throw std::invalid_argument("Error: class name cannot be empty");
+        }
     }
     // If the file path is empty, user chooses class file.
     // If the user chooses a class file, append the class to the file

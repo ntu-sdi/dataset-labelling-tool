@@ -68,6 +68,8 @@ void ClassController::add(const std::string& classname)
         this->updateView();
     }  catch (std::fstream::failure& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
+    } catch (std::invalid_argument& e) {
+        QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
     }
 }
 
