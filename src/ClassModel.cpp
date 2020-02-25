@@ -1,5 +1,10 @@
 #include "ClassModel.h"
 
+/**
+ * Internal method to write a single line to a file.
+ * @param filename File name to write to.
+ * @param line Line to write.
+ */
 void ClassModel::writeLineToFile(const QString &filename, const QString &line)
 {
     QFile file(filename);
@@ -13,6 +18,11 @@ void ClassModel::writeLineToFile(const QString &filename, const QString &line)
     }
 }
 
+/**
+ * Internal method to write multiple lines to a file.
+ * @param filename File name to write to.
+ * @param lines Lines to write.
+ */
 void ClassModel::writeLinesToFile(const QString &filename, const QStringList &lines)
 {
     QFile file(filename);
@@ -112,9 +122,7 @@ void ClassModel::select(const std::string&) {}
 std::string ClassModel::getSelected() {}
 
 /**
- * Gets a QStringList of all the classes in the current class file. If there is no currrently
- * selected class file, the user is prompted by the browse method to select one.
- * @return
+ * Gets a QStringList of all the classes in the current class file.
  */
 QStringList ClassModel::getAll()
 {
