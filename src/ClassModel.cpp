@@ -1,6 +1,6 @@
 #include "ClassModel.h"
 
-void ClassModel::writeLinetoFile(const QString &filename, const QString &line)
+void ClassModel::writeLineToFile(const QString &filename, const QString &line)
 {
     QFile file(filename);
     if (file.open(QIODevice::WriteOnly)) {
@@ -80,8 +80,8 @@ void ClassModel::addClass(QString classname)
         throw std::invalid_argument("Error: class name cannot be empty");
     else {
         classname = classname.trimmed();
-        this->writeLinetoFile(this->currentFilePath, classname);
         this->classes.append(classname);
+        this->writeLinesToFile(this->currentFilePath, this->classes);
     }
     // If the file path is empty, user chooses class file.
     // If the user chooses a class file, append the class to the file

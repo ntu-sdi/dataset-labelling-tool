@@ -22,7 +22,7 @@ private:
     QFileSystemModel fileSystemModel();
     QStringList classes;
     void save();
-    void writeLinetoFile(const QString& filename, const QString& line);
+    void writeLineToFile(const QString& filename, const QString& line);
     void writeLinesToFile(const QString& filename, const QStringList& lines);
 
 public:
