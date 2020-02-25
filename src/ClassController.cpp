@@ -37,7 +37,7 @@ void ClassController::browse()
     this->model.browse();
     try {
         this->updateView();
-    }  catch (std::ifstream::failure& e) {
+    }  catch (std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
     }
 }
@@ -50,7 +50,7 @@ void ClassController::create()
     try {
         this->model.create();
         this->updateView();
-    }  catch (std::fstream::failure& e) {
+    }  catch (std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
     }
 }
@@ -66,8 +66,6 @@ void ClassController::add(const QString& classname)
     try {
         this->model.addClass(classname);
         this->updateView();
-    }  catch (std::fstream::failure& e) {
-        QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
     } catch (std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
     }
@@ -84,10 +82,9 @@ void ClassController::remove(const QString& classname)
     try {
         this->model.removeClass(classname);
         this->updateView();
-    }  catch (std::fstream::failure& e) {
+    } catch (std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
     }
 }
 
 void ClassController::getSelected() {}
-
