@@ -20,9 +20,9 @@ public:
     void browse();
     void create();
     void sortLoaded();
-    void add(const std::string&);
+    void add(const QString&);
     void select(const std::string&);
-    void remove(const std::string&);
+    void remove(const QString&);
     void getSelected();
     void updateView();
 };

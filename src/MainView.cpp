@@ -1,4 +1,5 @@
 #include <string>
+#include <QDebug>
 
 #include "MainView.h"
 
@@ -51,10 +52,10 @@ void MainView::on_ImageBrowseButton_clicked()
 void MainView::on_ClassAddButton_clicked()
 {
     bool ok;
-    QString className;
-    className = QInputDialog::getText(this, "New Class", "Class name",
-                                      QLineEdit::Normal, className, &ok);
-    this->controller->addClass(className.toStdString());
+    QString classname;
+    classname = QInputDialog::getText(this, "New Class", "Class name",
+                                      QLineEdit::Normal, classname, &ok);
+    this->controller->addClass(classname);
 }
 
 void MainView::on_ClassBrowseButton_clicked()
@@ -83,17 +84,19 @@ void MainView::on_ClassListSortBox_currentTextChanged(const QString&) {}
 
 void MainView::ProvideContextMenu(const QPoint& pos)
 {
-    QPoint globalpos = this->ui->ClassesList->mapToGlobal(pos);
-    QModelIndex index = this->ui->ClassesList->indexAt(globalpos);
+    QPoint globalpos = this->ui->ClassesList->viewport()->mapToGlobal(pos);
+    QModelIndex index = this->ui->ClassesList->indexAt(pos);
+
+    if (!index.isValid()) return;
     QMenu submenu;
     submenu.addAction("Delete");
     QAction* rightClickItem = submenu.exec(globalpos);
+
     if(rightClickItem && rightClickItem->text().contains("Delete")) {
         try {
         this->controller->removeClass(
-                        this->ui->ClassesList->itemAt(pos)->text().toStdString()
+                        this->ui->ClassesList->itemAt(pos)->text()
                     );
-        this->ui->ClassesList->takeItem(index.row());
         }  catch (std::exception& e) {
             QMessageBox::warning(this, "Error", e.what(), QMessageBox::Ok);
         }
