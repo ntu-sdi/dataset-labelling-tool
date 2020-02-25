@@ -57,7 +57,7 @@ void MainController::createClassFile()
  * Delegates the addition of a new class to the ClassController.
  * @param classname Name of the class to add.
  */
-void MainController::addClass(const std::string& classname)
+void MainController::addClass(const QString& classname)
 {
     this->classController.add(classname);
 }
@@ -68,14 +68,14 @@ void MainController::selectClass(const std::string& ) {}
  * Delegates the removal of a class to the ClassController.
  * @param classname Name of the class to remove.
  */
-void MainController::removeClass(const std::string& classname)
+void MainController::removeClass(const QString& classname)
 {
     this->classController.remove(classname);
 }
 
 void MainController::browseForAnnotationFile() {}
 
-void MainController::createAnnotationFile(const std::string& ) {}
+void MainController::createAnnotationFile(const QString& ) {}
 
 void MainController::addPoint(Point) {}
 

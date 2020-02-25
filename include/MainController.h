@@ -27,11 +27,11 @@ public:
     void browseForClassFile();
     void sortLoadedClasses();
     void createClassFile();
-    void addClass(const std::string&);
+    void addClass(const QString&);
     void selectClass(const std::string&);
-    void removeClass(const std::string&);
+    void removeClass(const QString&);
     void browseForAnnotationFile();
-    void createAnnotationFile(const std::string&);
+    void createAnnotationFile(const QString&);
     void addPoint(Point);
     void finishShape();
     void cancelShape();

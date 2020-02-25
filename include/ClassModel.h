@@ -3,6 +3,7 @@
 #include <string>
 #include <QFileSystemModel>
 #include <QFileDialog>
+#include <QTextStream>
 #include <iostream>
 #include <fstream>
 
@@ -17,17 +18,20 @@ class ClassModel
 private:
     LinkedList<std::string> supportedFileFormats;
     std::string selectedClass;
-    std::string currentFilePath;
+    QString currentFilePath;
     QFileSystemModel fileSystemModel();
-    void removeLine(const std::string&, const std::string&);
+    QStringList classes;
     void save();
+    void writeLineToFile(const QString& filename, const QString& line);
+    void writeLinesToFile(const QString& filename, const QStringList& lines);
 
 public:
     void browse();
     void create();
-    void addClass(const std::string&);
-    void removeClass(const std::string&);
+    void addClass(QString);
+    void removeClass(const QString&);
     void select(const std::string&);
     std::string getSelected();
     QStringList getAll();
+    QString getCurrentFilePath();
 };

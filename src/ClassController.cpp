@@ -23,6 +23,10 @@ void ClassController::updateView()
     this->ui.ClassesList->clearFocus();
     this->ui.ClassesList->clear();
     this->ui.ClassesList->addItems(classes);
+    QString currentFilePath = this->model.getCurrentFilePath();
+    if (!currentFilePath.isEmpty()) {
+        this->ui.ClassFileLabel->setText(currentFilePath);
+    }
 }
 
 /**
@@ -33,7 +37,7 @@ void ClassController::browse()
     this->model.browse();
     try {
         this->updateView();
-    }  catch (std::ifstream::failure& e) {
+    }  catch (std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
     }
 }
@@ -46,7 +50,7 @@ void ClassController::create()
     try {
         this->model.create();
         this->updateView();
-    }  catch (std::fstream::failure& e) {
+    }  catch (std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
     }
 }
@@ -57,12 +61,12 @@ void ClassController::sortLoaded() {}
  * Adds a new class, and updates the view to reflect that.
  * @param classname Name of the class to add.
  */
-void ClassController::add(const std::string& classname)
+void ClassController::add(const QString& classname)
 {
     try {
         this->model.addClass(classname);
         this->updateView();
-    }  catch (std::fstream::failure& e) {
+    } catch (std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
     }
 }
@@ -73,15 +77,14 @@ void ClassController::select(const std::string&) {}
  * Removes a class, and updates the view to reflect that.
  * @param classname Name of the class to remove.
  */
-void ClassController::remove(const std::string& classname)
+void ClassController::remove(const QString& classname)
 {
     try {
         this->model.removeClass(classname);
         this->updateView();
-    }  catch (std::fstream::failure& e) {
+    } catch (std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
     }
 }
 
 void ClassController::getSelected() {}
-
