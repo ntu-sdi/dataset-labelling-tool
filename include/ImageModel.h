@@ -1,11 +1,8 @@
 #pragma once
 
-#include <map>
 #include <string>
-#include <utility>
 #include <QFileSystemModel>
 #include <QImage>
-#include <QPixmap>
 
 #include "LinkedList.h"
 
@@ -32,14 +29,12 @@ class ImageModel
 {
 private:
     QMap <QString,QFileInfo> loadedImages;
-    QFileSystemModel fileSystemModel();
 
 public:
     void browseFolder();
     void browseFolder(const QString&);
-    LinkedList<std::string> searchLoaded(const QString&);
     std::pair<int, int> getResolution(const QString&);
     long getFileSize(const QString&);
     QStringList getAll();
-    QPixmap getImage(const QString&);
+    QImage getImage(const QString&);
 };

@@ -1,8 +1,6 @@
 #include "AnnotationModel.h"
 #include<fstream>
 
-QFileSystemModel AnnotationModel::fileSystemModel() {}
-
 void AnnotationModel::save() {}
 
 void AnnotationModel::browse() {}

@@ -50,10 +50,9 @@ void ImageController::select(const QString&) {}
  */
 void ImageController::open(const QString& filename) {
       QGraphicsScene *scene =  new QGraphicsScene;
-      QPixmap pixmap = model.getImage(filename);
-      scene->addPixmap(pixmap);
+      QImage img = model.getImage(filename);
+      scene->addPixmap(QPixmap::fromImage(img));
       ui.imageView->setScene(scene);
       ui.imageView->show();
-
 }
 
