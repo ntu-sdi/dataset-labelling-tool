@@ -68,7 +68,7 @@ void MainController::addClass(const QString& classname)
     this->classController.add(classname);
 }
 
-void MainController::selectClass(const QString& ) {}
+void MainController::selectClass(const std::string& ) {}
 
 /**
  * Delegates the removal of a class to the ClassController.

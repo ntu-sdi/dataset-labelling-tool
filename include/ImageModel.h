@@ -36,6 +36,7 @@ private:
 
 public:
     void browseFolder();
+    void browseFolder(const QString&);
     LinkedList<std::string> searchLoaded(const QString&);
     std::pair<int, int> getResolution(const QString&);
     long getFileSize(const QString&);

@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>MainView</class>
  <widget class="QMainWindow" name="MainView">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -606,8 +609,8 @@
      <rect>
       <x>460</x>
       <y>20</y>
-      <width>500</width>
-      <height>500</height>
+      <width>861</width>
+      <height>701</height>
      </rect>
     </property>
     <property name="sizePolicy">

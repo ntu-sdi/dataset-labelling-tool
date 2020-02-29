@@ -71,7 +71,7 @@ void ClassController::add(const QString& classname)
     }
 }
 
-void ClassController::select(const QString&) {}
+void ClassController::select(const std::string&) {}
 
 /**
  * Removes a class, and updates the view to reflect that.
