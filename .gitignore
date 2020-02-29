@@ -20,7 +20,7 @@ cmake*/
 *.d
 
 # Shell scripts
-*.sh
+
 
 # Image files
 *.jpg

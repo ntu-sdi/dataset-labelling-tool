@@ -26,9 +26,9 @@ public:
     void openImage(const QString&);
     void browseForClassFile();
     void sortLoadedClasses();
-    void createClassFile(const QString&);
+    void createClassFile();
     void addClass(const QString&);
-    void selectClass(const QString&);
+    void selectClass(const std::string&);
     void removeClass(const QString&);
     void browseForAnnotationFile();
     void createAnnotationFile(const QString&);

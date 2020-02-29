@@ -216,7 +216,7 @@
       <rect>
        <x>20</x>
        <y>330</y>
-       <width>220</width>
+       <width>271</width>
        <height>25</height>
       </rect>
      </property>
@@ -287,6 +287,13 @@
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QPushButton" name="ClassAddButton">
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
     <widget class="QListWidget" name="ClassesList">
@@ -303,6 +310,9 @@
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="contextMenuPolicy">
+      <enum>Qt::CustomContextMenu</enum>
      </property>
     </widget>
     <widget class="QFrame" name="AnnotationBrowsingFrame">
@@ -425,9 +435,9 @@
     <widget class="QComboBox" name="ClassListSortBox">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>309</x>
        <y>330</y>
-       <width>160</width>
+       <width>131</width>
        <height>25</height>
       </rect>
      </property>
@@ -573,7 +583,7 @@
       <rect>
        <x>20</x>
        <y>360</y>
-       <width>221</width>
+       <width>411</width>
        <height>25</height>
       </rect>
      </property>

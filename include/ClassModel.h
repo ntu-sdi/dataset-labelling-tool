@@ -2,24 +2,36 @@
 
 #include <string>
 #include <QFileSystemModel>
+#include <QFileDialog>
+#include <QTextStream>
+#include <iostream>
+#include <fstream>
 
 #include "LinkedList.h"
 
+/**
+ * ClassModel, which is responsible for the creating, adding and removing of classes. Maintains internal information
+ * about the current selected class and the current file path of the class file.
+ */
 class ClassModel
 {
 private:
     LinkedList<std::string> supportedFileFormats;
     std::string selectedClass;
-    std::string currentFilePath;
+    QString currentFilePath;
     QFileSystemModel fileSystemModel();
+    QStringList classes;
     void save();
+    void writeLineToFile(const QString& filename, const QString& line);
+    void writeLinesToFile(const QString& filename, const QStringList& lines);
 
 public:
     void browse();
-    void create(const QString&);
-    void addClass(const QString&);
+    void create();
+    void addClass(QString);
     void removeClass(const QString&);
-    void select(const QString&);
+    void select(const std::string&);
     std::string getSelected();
-    LinkedList<std::string> getAll();
+    QStringList getAll();
+    QString getCurrentFilePath();
 };

@@ -41,17 +41,43 @@ void MainController::openImage(const QString& filename) {
     imageController.open(filename);
 }
 
-void MainController::browseForClassFile() {}
+/**
+ * Delegates class folder browsing event to the ClassController.
+ */
+void MainController::browseForClassFile()
+{
+    this->classController.browse();
+}
 
 void MainController::sortLoadedClasses() {}
 
-void MainController::createClassFile(const QString& ) {}
+/**
+ * Delegates the creation of a class file to the ClassController.
+ */
+void MainController::createClassFile()
+{
+    this->classController.create();
+}
 
-void MainController::addClass(const QString& ) {}
+/**
+ * Delegates the addition of a new class to the ClassController.
+ * @param classname Name of the class to add.
+ */
+void MainController::addClass(const QString& classname)
+{
+    this->classController.add(classname);
+}
 
 void MainController::selectClass(const QString& ) {}
 
-void MainController::removeClass(const QString& ) {}
+/**
+ * Delegates the removal of a class to the ClassController.
+ * @param classname Name of the class to remove.
+ */
+void MainController::removeClass(const QString& classname)
+{
+    this->classController.remove(classname);
+}
 
 void MainController::browseForAnnotationFile() {}
 
