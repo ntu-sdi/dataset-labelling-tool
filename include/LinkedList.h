@@ -7,6 +7,10 @@
  * because C++ doesn't allow for templates to be used in method
  * definitions in the .cpp file
  */
+
+/**
+ * Custom implementation of a singly-linked list.
+ */
 template <class T>
 class LinkedList
 {
@@ -21,16 +25,38 @@ private:
 
 public:
     LinkedList() { head = nullptr; }
+<<<<<<< Updated upstream
     ~LinkedList() = default; // TODO: actually write the destructor
+=======
+    ~LinkedList() = default;
+>>>>>>> Stashed changes
 
+    /**
+     * @brief Chceks if the list is empty.
+     * @return bool True if the list is empty, otherwise false.
+     */
     bool isEmpty() { return head == nullptr; }
 
+    /**
+     * @brief operator [] Gets the data of the node at the index specified.
+     *
+     * This method overrides the [] operator, simply calling LinkedList::at.
+     *
+     * @param index Index of the node to get.
+     * @return
+     */
     T &operator[] (int index) { return at(index); }
 
+    /**
+     * @brief Inserts a new node.
+     * @param index Index to insert at.
+     * @param data Data of the new node.
+     * @throws IndexOutOfBoundsError if the index given is out of the bounds of the list.
+     * @return Node* Pointer to the new node.
+     */
     Node* insert(int index, T data)
     {
-        if (index < 0) throw IndexOutOfBoundsError(); // TODO: this should throw IndexOutOfBounds
-
+        if (index < 0) throw IndexOutOfBoundsError();
         int currentIndex = 1;
         Node* currentNode = head;
         while (currentNode && index > currentIndex)
@@ -39,8 +65,7 @@ public:
             ++currentIndex;
         }
 
-        if (index > 0 && currentNode == nullptr) throw IndexOutOfBoundsError(); // TODO: this should throw IndexOutOfBounds
-
+        if (index > 0 && currentNode == nullptr) throw IndexOutOfBoundsError();
         Node* newNode = new Node;
         newNode->data = data;
         if (index == 0)
@@ -58,6 +83,12 @@ public:
         return newNode;
     }
 
+    /**
+     * @brief at Gets the data of the node at the index specified.
+     * @param index The index of the node to get the data.
+     * @throws IndexOutOfBoundsError if the index is out of the bounds of the list.
+     * @return T Data of the node at the index specified.
+     */
     T at(int index)
     {
         Node* currentNode = head;
@@ -65,18 +96,28 @@ public:
 
         while (currentIndex < index)
         {
-            if (currentNode->next == nullptr) throw IndexOutOfBoundsError(); // TODO: This needs to throw an error
+            if (currentNode->next == nullptr) throw IndexOutOfBoundsError();
             currentNode = currentNode->next;
             ++currentIndex;
         }
         return currentNode->data;
     }
 
+    /**
+     * @brief length Gets the length of the list.
+     * @return int The lenght of the list.
+     */
     int length()
     {
         return len;
     }
 
+    /**
+     * @brief getIndex Returns the index of the first node with the given data.
+     * @param data Data of node to get the index of.
+     * @throws ValueNotFoundError if there is no node in the list with the given data.
+     * @return int Index of the first node with the given data.
+     */
     int getIndex(T data)
     {
         int currentIndex = 0;
@@ -88,10 +129,15 @@ public:
             ++currentIndex;
             currentNode = currentNode->next;
         }
-        throw ValueNotFoundError(); // TODO: this should throw an error
+        throw ValueNotFoundError();
 
     }
 
+    /**
+     * @brief contains Checks if the list contains a node with the given data.
+     * @param data Data to check.
+     * @return bool True if the list contains a node with the data, otherwise false.
+     */
     bool contains(T data)
     {
         int currentIndex = 0;
@@ -107,16 +153,21 @@ public:
 
     }
 
+    /**
+     * @brief removeAt Removes the node at the given index.
+     * @param index Index of the node to be removed.
+     * @throws ArrayEmptyError if the list is empty.
+     * @throws IndexOutOfBoundsError if the given index is out of the bounds of the list.
+     */
     void removeAt(int index)
     {
         Node* currentNode = head;
         Node* prevNode = nullptr;
         int currentIndex {0};
-        if (len == 0) throw ArrayEmptyError(); // TODO: this needs to throw error
-
+        if (len == 0) throw ArrayEmptyError();
         while (currentIndex < index)
         {
-            if (currentNode->next == nullptr) throw IndexOutOfBoundsError(); // TODO: This needs to throw an error
+            if (currentNode->next == nullptr) throw IndexOutOfBoundsError();
             prevNode = currentNode;
             currentNode = currentNode->next;
             ++currentIndex;
@@ -131,11 +182,15 @@ public:
             prevNode->next = currentNode->next;
             --len;
         }
-        else throw std::exception(); // This should never happen
-
+        else throw std::exception();
         delete currentNode;
     }
 
+    /**
+     * @brief remove Removes the first node with the given data.
+     * @param data Data of the node to remove.
+     * @throws ValueNotFoundError if there is no node in the list with the given data.
+     */
     void remove(T data)
     {
         int currentIndex = 0;
@@ -149,7 +204,7 @@ public:
             prevNode = currentNode;
             currentNode = currentNode->next;
         }
-        if (currentNode == nullptr) throw ValueNotFoundError(); // TODO: this needs to throw an error
+        if (currentNode == nullptr) throw ValueNotFoundError();
         else if (currentIndex == 0)
         {
             head = currentNode->next;
@@ -160,12 +215,16 @@ public:
             prevNode->next = currentNode->next;
             --len;
         }
-        else throw std::exception(); // This should never happen
-
+        else throw std::exception();
         delete currentNode;
     }
 
 
+    /**
+     * @brief push Inserts a new node to the end of the list.
+     * @param data Data of the node to insert.
+     * @return Node* Pointer to the new node.
+     */
     Node* push(T data)
     {
         int insertIdx;
