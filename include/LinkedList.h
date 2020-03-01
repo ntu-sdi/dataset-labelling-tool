@@ -25,14 +25,11 @@ private:
 
 public:
     LinkedList() { head = nullptr; }
-<<<<<<< Updated upstream
-    ~LinkedList() = default; // TODO: actually write the destructor
-=======
     ~LinkedList() = default;
->>>>>>> Stashed changes
 
     /**
      * @brief Chceks if the list is empty.
+     *
      * @return bool True if the list is empty, otherwise false.
      */
     bool isEmpty() { return head == nullptr; }
@@ -49,9 +46,9 @@ public:
 
     /**
      * @brief Inserts a new node.
+     *
      * @param index Index to insert at.
      * @param data Data of the new node.
-     * @throws IndexOutOfBoundsError if the index given is out of the bounds of the list.
      * @return Node* Pointer to the new node.
      */
     Node* insert(int index, T data)
@@ -85,8 +82,8 @@ public:
 
     /**
      * @brief at Gets the data of the node at the index specified.
+     *
      * @param index The index of the node to get the data.
-     * @throws IndexOutOfBoundsError if the index is out of the bounds of the list.
      * @return T Data of the node at the index specified.
      */
     T at(int index)
@@ -105,6 +102,7 @@ public:
 
     /**
      * @brief length Gets the length of the list.
+     *
      * @return int The lenght of the list.
      */
     int length()
@@ -114,8 +112,8 @@ public:
 
     /**
      * @brief getIndex Returns the index of the first node with the given data.
+     *
      * @param data Data of node to get the index of.
-     * @throws ValueNotFoundError if there is no node in the list with the given data.
      * @return int Index of the first node with the given data.
      */
     int getIndex(T data)
@@ -135,6 +133,7 @@ public:
 
     /**
      * @brief contains Checks if the list contains a node with the given data.
+     *
      * @param data Data to check.
      * @return bool True if the list contains a node with the data, otherwise false.
      */
@@ -155,9 +154,8 @@ public:
 
     /**
      * @brief removeAt Removes the node at the given index.
+     *
      * @param index Index of the node to be removed.
-     * @throws ArrayEmptyError if the list is empty.
-     * @throws IndexOutOfBoundsError if the given index is out of the bounds of the list.
      */
     void removeAt(int index)
     {
@@ -188,8 +186,8 @@ public:
 
     /**
      * @brief remove Removes the first node with the given data.
+     *
      * @param data Data of the node to remove.
-     * @throws ValueNotFoundError if there is no node in the list with the given data.
      */
     void remove(T data)
     {
@@ -222,6 +220,7 @@ public:
 
     /**
      * @brief push Inserts a new node to the end of the list.
+     *
      * @param data Data of the node to insert.
      * @return Node* Pointer to the new node.
      */
