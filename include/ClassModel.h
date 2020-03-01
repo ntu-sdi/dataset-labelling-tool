@@ -24,7 +24,9 @@ private:
     void writeLinesToFile(const QString& filename, const QStringList& lines);
 public:
     void browse();
+    void browse(const QString&);
     void create();
+    void create(const QString&);
     void addClass(QString);
     void removeClass(const QString&);
     void select(const std::string&);

@@ -11,12 +11,14 @@
 BOOST_AUTO_TEST_SUITE( LinkedListTest )
 
     BOOST_AUTO_TEST_CASE(EmptyListTest)
+    // Testing that calling isEmpty returns true when appropriate.
     {
         LinkedList<double> l;
         BOOST_CHECK_EQUAL(l.isEmpty(), true);
     }
 
     BOOST_AUTO_TEST_CASE(TestInsertAtHead)
+    // Testing that inserting a node at the head is successful.
     {
         LinkedList<double> l;
         l.insert(0, 1);
@@ -24,6 +26,7 @@ BOOST_AUTO_TEST_SUITE( LinkedListTest )
     }
 
     BOOST_AUTO_TEST_CASE(TestInsertAtEnd)
+    // Tesing that inserting a node at the end is successful.
     {
         LinkedList<double> l;
         l.insert(0, 1);
@@ -38,6 +41,7 @@ BOOST_AUTO_TEST_SUITE( LinkedListTest )
     }
 
     BOOST_AUTO_TEST_CASE(TestInsertInMiddle)
+    // Testing that inserting a node in the middle is successful.
     {
         LinkedList<double> l;
         l.insert(0, 1);
@@ -49,6 +53,7 @@ BOOST_AUTO_TEST_SUITE( LinkedListTest )
     }
 
     BOOST_AUTO_TEST_CASE(TestGet)
+    // Testing that getting a node's index by its value is successful.
     {
         LinkedList<double> l;
         l.insert(0, 1);
@@ -62,6 +67,8 @@ BOOST_AUTO_TEST_SUITE( LinkedListTest )
     }
 
     BOOST_AUTO_TEST_CASE(TestDeleteByIndex)
+    // Testing that deleting a node by its index is successful,
+    // and throws errors where appropriate.
     {
         LinkedList<double> l;
         l.insert(0, 1);
@@ -87,6 +94,8 @@ BOOST_AUTO_TEST_SUITE( LinkedListTest )
     }
 
     BOOST_AUTO_TEST_CASE(TestDelete)
+    // Testing that removing a node by its value is successful,
+    // and throws errors where appropriate.
     {
         LinkedList<double> l;
         l.insert(0, 1);
@@ -110,6 +119,7 @@ BOOST_AUTO_TEST_SUITE( LinkedListTest )
     }
 
     BOOST_AUTO_TEST_CASE(TestDifferentTypes)
+    // Testing that the linked list works with different types.
     {
         LinkedList<std::string> l;
         l.insert(0, "hello");
@@ -125,7 +135,9 @@ BOOST_AUTO_TEST_SUITE( LinkedListTest )
         l.removeAt(0);
         BOOST_CHECK_EQUAL(l.length(), 0);
     }
+
     BOOST_AUTO_TEST_CASE(TestPush)
+    // Testing that pushing a node to the end is successful.
     {
         LinkedList<std::string> l;
         l.push("hello");
@@ -136,6 +148,7 @@ BOOST_AUTO_TEST_SUITE( LinkedListTest )
     }
     
     BOOST_AUTO_TEST_CASE(TestContains)
+    // Testing that the contains method works.
     {
         LinkedList<std::string> l;
         l.push("hello");

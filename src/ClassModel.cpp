@@ -54,6 +54,7 @@ void ClassModel::browse()
     if(!this->currentFilePath.isEmpty()) {
         QFile file(this->currentFilePath);
         if(file.open(QIODevice::ReadOnly)) {
+            this->classes.clear();
             QTextStream stream(&file);
             while (!stream.atEnd()) {
                 this->classes.append(stream.readLine());
@@ -65,6 +66,17 @@ void ClassModel::browse()
     }
 }
 
+void ClassModel::browse(const QString& filepath)
+{
+    QFile file(filepath);
+    if (file.open(QIODevice::ReadOnly)) {
+        QTextStream stream(&file);
+        while (!stream.atEnd())
+            this->classes.append(stream.readLine());
+    } else throw std::invalid_argument("Could not open file");
+    this->currentFilePath = filepath;
+}
+
 /**
  * @brief Prompts the user for a class file name. Creates a class file using this name.
  */
@@ -73,16 +85,27 @@ void ClassModel::create()
     QString fileName = QFileDialog::getSaveFileName(nullptr, "Create New Class File",
                                                     "./",
                                                     "Class files (*.class)");
-    if(!fileName.contains(".class")) {
-        fileName.append(".class");
-    }
+    
+    fileName = fileName.trimmed();
+    if (!fileName.contains(".class")) fileName.append(".class");
     std::ofstream file(fileName.toStdString());
-    if(!file) {
+    if (!file) {
         file.close();
         throw std::invalid_argument("Could not create file");
     }
     file.close();
     this->currentFilePath = fileName;
+}
+
+void ClassModel::create(const QString& filename)
+{
+    std::ofstream file(filename.toStdString()); if (!file) {
+        file.close();
+        throw std::invalid_argument("Could not create file");
+    }
+
+    file.close();
+    this->currentFilePath = filename;
 }
 
 /**
@@ -95,17 +118,12 @@ void ClassModel::create()
  */
 void ClassModel::addClass(QString className)
 {
-    if(this->currentFilePath.isEmpty()) {
-        this->browse();
-    }
-    if(this->currentFilePath.isEmpty()) {
+    if (this->currentFilePath.isEmpty())
         throw std::invalid_argument("No file selected");
-    }
     else {
         className = className.trimmed();
-        if(className.isEmpty()) {
+        if(className.isEmpty())
             throw std::invalid_argument("Class name cannot be empty");
-        }
         else {
             this->classes.append(className);
             this->writeLinesToFile(this->currentFilePath, this->classes);
@@ -123,12 +141,8 @@ void ClassModel::addClass(QString className)
  */
 void ClassModel::removeClass(const QString& className)
 {
-    if(this->currentFilePath.isEmpty()) {
-        this->browse();
-    }
-    if(this->currentFilePath.isEmpty()) {
+    if (this->currentFilePath.isEmpty())
         throw std::invalid_argument("No file selected");
-    }
     else {
         this->classes.removeAll(className);
         this->writeLinesToFile(this->currentFilePath, this->classes);

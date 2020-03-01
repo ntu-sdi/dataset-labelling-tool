@@ -13,7 +13,10 @@ add_executable (Tests
                 Tests.cpp
                 LinkedListsTests.cpp
                 ImageModelTests.cpp
+                ClassModelTests.cpp
 
+                ../../src/ClassModel.cpp
+                ../../include/ClassModel.h
                 ../../src/ImageModel.cpp
                 ../../include/ImageModel.h
                 ../build/Dataset-Labelling-Tool_autogen/include/ui_MainView.h
