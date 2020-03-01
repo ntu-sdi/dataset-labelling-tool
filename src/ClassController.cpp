@@ -1,7 +1,7 @@
 #include "ClassController.h"
 
 /**
- * Constructs a ClassController which handles logic related to the class files.
+ * @brief Constructs a ClassController which handles logic related to the class files.
  *
  * @param ui The Ui_MainView reference, which is used to update the GUI.
  * @param model The ClassModel that the ClassController accesses.
@@ -13,8 +13,7 @@ ClassController::ClassController(const Ui_MainView& ui, const ClassModel& model)
 }
 
 /**
- * Clears the selection, focus and list of loaded classes in the GUI and refills them from the
- * currently loaded images in the model.
+ * @brief Clears the list of classes in the GUI and refills them from the currently loaded classes.
  */
 void ClassController::updateView()
 {
@@ -30,7 +29,7 @@ void ClassController::updateView()
 }
 
 /**
- * Browses for a new class file, then updates the view to reflect that.
+ * @brief Browses for a new class file, then updates the view to reflect that.
  */
 void ClassController::browse()
 {
@@ -43,7 +42,7 @@ void ClassController::browse()
 }
 
 /**
- * Creates a new class file, and updates the view to reflect that.
+ * @brief Creates a new class file, and updates the view to reflect that.
  */
 void ClassController::create()
 {
@@ -58,7 +57,8 @@ void ClassController::create()
 void ClassController::sortLoaded() {}
 
 /**
- * Adds a new class, and updates the view to reflect that.
+ * @brief Adds a new class, and updates the view to reflect that.
+ *
  * @param classname Name of the class to add.
  */
 void ClassController::add(const QString& classname)
@@ -74,7 +74,8 @@ void ClassController::add(const QString& classname)
 void ClassController::select(const std::string&) {}
 
 /**
- * Removes a class, and updates the view to reflect that.
+ * @brief Removes a class, and updates the view to reflect that.
+ *
  * @param classname Name of the class to remove.
  */
 void ClassController::remove(const QString& classname)

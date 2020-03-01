@@ -3,6 +3,10 @@
 #include "AnnotationModel.h"
 #include "ui_MainView.h"
 
+/**
+ * Sub-controller which gets delegated tasks related to annotation files.
+ * Communicates directly with the AnnotationModel.
+ */
 class AnnotationController
 {
 private:

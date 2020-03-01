@@ -4,7 +4,6 @@
 
 /**
  * @brief Opens a system file dialog window and promps the user for an image folder
- *
  */
 void ImageModel::browseFolder()
 {
@@ -53,6 +52,7 @@ std::pair<int, int> ImageModel::getResolution(const QString& filename) {
 
 /**
  * @brief Provides a way to read file size of a given image file
+ *
  * @param Name of a image file
  * @return File size of image, in bytes
  */
@@ -76,6 +76,7 @@ QStringList ImageModel::getAll()
  *
  * Gets name of the image from ImageController, searches for file path using image file name
  * from internal map. After that it creates Image object and returns it to ImageController
+ *
  * @param Name of a image file
  * @return QImage of image provided via image filename
  */

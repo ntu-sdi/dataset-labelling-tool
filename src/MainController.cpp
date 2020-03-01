@@ -1,7 +1,7 @@
 #include "MainController.h"
 
 /**
- * Constructs a MainController, taking in references to each type of sub-controller.
+ * @brief Constructs a MainController, taking in references to each type of sub-controller.
  *
  * @param annotationController
  * @param classController
@@ -20,7 +20,7 @@ MainController::MainController(AnnotationController& annotationController,
 }
 
 /**
- * Delegates the image folder browsing event to the ImageController.
+ * @brief Delegates the image folder browsing event to the ImageController.
  */
 void MainController::browseImages()
 {
@@ -34,7 +34,8 @@ void MainController::sortLoadedImages() {}
 void MainController::selectImage(const QString&) {}
 
 /**
- * Gets the image filename from the MainView and passes request to open image to MainController
+ * @brief Gets the image filename from the MainView and passes request to open image to MainController
+ *
  * @param filename
  */
 void MainController::openImage(const QString& filename) {
@@ -42,7 +43,7 @@ void MainController::openImage(const QString& filename) {
 }
 
 /**
- * Delegates class folder browsing event to the ClassController.
+ * @brief Delegates class folder browsing event to the ClassController.
  */
 void MainController::browseForClassFile()
 {
@@ -52,7 +53,7 @@ void MainController::browseForClassFile()
 void MainController::sortLoadedClasses() {}
 
 /**
- * Delegates the creation of a class file to the ClassController.
+ * @brief Delegates the creation of a class file to the ClassController.
  */
 void MainController::createClassFile()
 {
@@ -60,7 +61,8 @@ void MainController::createClassFile()
 }
 
 /**
- * Delegates the addition of a new class to the ClassController.
+ * @brief Delegates the addition of a new class to the ClassController.
+ *
  * @param classname Name of the class to add.
  */
 void MainController::addClass(const QString& classname)
@@ -71,7 +73,8 @@ void MainController::addClass(const QString& classname)
 void MainController::selectClass(const std::string& ) {}
 
 /**
- * Delegates the removal of a class to the ClassController.
+ * @brief Delegates the removal of a class to the ClassController.
+ *
  * @param classname Name of the class to remove.
  */
 void MainController::removeClass(const QString& classname)

@@ -3,7 +3,7 @@
 #include "QGraphicsItem"
 
 /**
- * Constructs an ImageController, which handles business logic, related to the image files.
+ * @brief Constructs an ImageController, which handles business logic, related to the image files.
  *
  * @param ui The Ui_MainView reference, which is used to update the GUI.
  * @param model
@@ -15,8 +15,7 @@ ImageController::ImageController(Ui_MainView& ui, ImageModel& model)
 }
 
 /**
- * Clears the selection, focus and list of loaded images in the GUI and refills them from the
- * currently loaded images in the model.
+ * @brief Clears the list of loaded images in the GUI and refills them from the currently loaded images.
  */
 void ImageController::updateView()
 {
@@ -28,7 +27,7 @@ void ImageController::updateView()
 }
 
 /**
- * Browses for a new folder containing images, then updates the view to reflect that.
+ * @brief Browses for a new folder containing images, then updates the view to reflect that.
  */
 void ImageController::browseFolder()
 {
@@ -43,8 +42,7 @@ void ImageController::sortLoaded() {}
 void ImageController::select(const QString&) {}
 
 /**
- * Gets a filename from the MainControler, opens image with help from ImageModel and
- * displays image in the MainView
+ * @brief Gets a filename from the MainControler, opens image and displays it in the MainView.
  *
  * @param filename
  */

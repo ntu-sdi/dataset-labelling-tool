@@ -9,6 +9,9 @@
 using Point = std::pair<int, int>;
 using Shape = LinkedList<Point>;
 
+/**
+ * Model, which is responsible for accessing annotation data.
+ */
 class AnnotationModel
 {
 private:

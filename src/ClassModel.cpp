@@ -1,7 +1,8 @@
 #include "ClassModel.h"
 
 /**
- * Internal method to write a single line to a file.
+ * @brief Internal method to write a single line to a file.
+ *
  * @param filename File name to write to.
  * @param line Line to write.
  */
@@ -19,7 +20,8 @@ void ClassModel::writeLineToFile(const QString &filename, const QString &line)
 }
 
 /**
- * Internal method to write multiple lines to a file.
+ * @brief Internal method to write multiple lines to a file.
+ *
  * @param filename File name to write to.
  * @param lines Lines to write.
  */
@@ -40,7 +42,7 @@ void ClassModel::writeLinesToFile(const QString &filename, const QStringList &li
 void ClassModel::save() {}
 
 /**
- * Opens a file system dialog window and prompts the user to select a class file.
+ * @brief Opens a file system dialog window and prompts the user to select a class file.
  */
 void ClassModel::browse()
 {
@@ -57,7 +59,7 @@ void ClassModel::browse()
 }
 
 /**
- * Opens a file system dialog window and prompts the user for a class file name. Creates a class file using this name.
+ * @brief Prompts the user for a class file name. Creates a class file using this name.
  */
 void ClassModel::create()
 {
@@ -75,8 +77,11 @@ void ClassModel::create()
 }
 
 /**
- * Adds a line to the current class file. If there is no currently selected class file,
+ * @brief Adds a line to the current class file.
+ *
+ * If there is no currently selected class file,
  * the user is prompted by the browse method to select one.
+ *
  * @param classname Name of the class to add.
  */
 void ClassModel::addClass(QString classname)
@@ -98,8 +103,11 @@ void ClassModel::addClass(QString classname)
 }
 
 /**
- * Removes a line from the current class file. If there is no currently selected class file,
+ * @brief Removes a line from the current class file.
+ *
+ * If there is no currently selected class file,
  * the user is promted by the browse method to select one.
+ *
  * @param classname Name of the class to remove.
  */
 void ClassModel::removeClass(const QString& classname)
@@ -120,7 +128,7 @@ void ClassModel::select(const std::string&) {}
 std::string ClassModel::getSelected() {}
 
 /**
- * Gets a QStringList of all the classes in the current class file.
+ * @brief Gets a QStringList of all the classes in the current class file.
  */
 QStringList ClassModel::getAll()
 {
@@ -129,6 +137,9 @@ QStringList ClassModel::getAll()
     else return this->classes;
 }
 
+/**
+ * @brief Returns the currently opened file path.
+ */
 QString ClassModel::getCurrentFilePath()
 {
     return this->currentFilePath;

@@ -5,6 +5,11 @@ void AnnotationModel::save() {}
 
 void AnnotationModel::browse() {}
 
+/**
+ * @brief Create a new annotation file.
+ *
+ * @param fileName
+ */
 void AnnotationModel::create(const std::string& fileName) {
    std::ofstream File(fileName + ".annotations");
 }

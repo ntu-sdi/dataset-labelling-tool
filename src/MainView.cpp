@@ -4,7 +4,7 @@
 #include "MainView.h"
 
 /**
- * Creates a new internal Ui::MainView object and sets up the GUI.
+ * @brief Creates a new internal Ui::MainView object and sets up the GUI.
  *
  * @param parent
  */
@@ -17,13 +17,16 @@ MainView::MainView(QWidget* parent)
             this, &MainView::ProvideContextMenu);
 }
 
+/**
+ * @brief Destructs the internal Ui::MainView object.
+ */
 MainView::~MainView()
 {
     delete ui;
 }
 
 /**
- * Returns a pointer to the internal Ui::MainView object, which is used for processing callbacks.
+ * @brief Returns a pointer to the internal Ui::MainView object, which is used for processing callbacks.
  */
 Ui::MainView MainView::getUi()
 {
@@ -31,7 +34,7 @@ Ui::MainView MainView::getUi()
 }
 
 /**
- * Passes a MainController pointer to the MainView, which it uses to process callbacks.
+ * @brief Passes a MainController pointer to the MainView, which it uses to process callbacks.
  *
  * @param controller
  */
@@ -41,8 +44,7 @@ void MainView::useController(MainController * controller)
 }
 
 /**
- * Callback function, which is triggered by the user clicking the "Browse"
- * button in the image panel.
+ * @brief Callback function, which is triggered by the user clicking the "Browse" button in the image panel.
  */
 void MainView::on_ImageBrowseButton_clicked()
 {
@@ -73,8 +75,8 @@ void MainView::on_AnnotationBrowseButton_clicked() {}
 void MainView::on_ImageList_itemClicked(QListWidgetItem*) {}
 
 /**
- * Callback function, which is triggered by user double clicking on the
- * image file name in the image pannel.
+ * @brief Callback function, which is triggered by user double clicking on the image file name in the image pannel.
+ *
  * Then passes request to open image to MainController.
  *
  * @param filename
@@ -91,6 +93,11 @@ void MainView::on_ImageListSortBox_currentTextChanged(const QString&) {}
 
 void MainView::on_ClassListSortBox_currentTextChanged(const QString&) {}
 
+/**
+ * @brief Creates a context menu on right-click of the classes pane.
+ *
+ * @param pos Position of the cursor.
+ */
 void MainView::ProvideContextMenu(const QPoint& pos)
 {
     QPoint globalpos = this->ui->ClassesList->viewport()->mapToGlobal(pos);

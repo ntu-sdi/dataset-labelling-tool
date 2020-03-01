@@ -22,7 +22,6 @@ private:
 public:
     LinkedList() { head = nullptr; }
     ~LinkedList() = default; // TODO: actually write the destructor
-    // Con/de/structors
 
     bool isEmpty() { return head == nullptr; }
 
