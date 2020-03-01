@@ -1,5 +1,6 @@
-#include "AnnotationModel.h"
 #include<fstream>
+
+#include "AnnotationModel.h"
 
 void AnnotationModel::save() {}
 
@@ -10,7 +11,8 @@ void AnnotationModel::browse() {}
  *
  * @param fileName
  */
-void AnnotationModel::create(const std::string& fileName) {
+void AnnotationModel::create(const std::string& fileName)
+{
    std::ofstream File(fileName + ".annotations");
 }
 

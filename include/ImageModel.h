@@ -29,7 +29,6 @@ class ImageModel
 {
 private:
     QMap <QString,QFileInfo> loadedImages;
-
 public:
     void browseFolder();
     void browseFolder(const QString&);

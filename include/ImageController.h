@@ -13,7 +13,6 @@ private:
     Ui_MainView ui;
     ImageModel model;
     void updateView();
-
 public:
     ImageController(Ui_MainView&, ImageModel&);
     void browseFolder();

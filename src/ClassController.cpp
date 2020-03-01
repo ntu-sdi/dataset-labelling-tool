@@ -23,7 +23,7 @@ void ClassController::updateView()
     this->ui.ClassesList->clear();
     this->ui.ClassesList->addItems(classes);
     QString currentFilePath = this->model.getCurrentFilePath();
-    if (!currentFilePath.isEmpty()) {
+    if(!currentFilePath.isEmpty()) {
         this->ui.ClassFileLabel->setText(currentFilePath);
     }
 }
@@ -36,7 +36,8 @@ void ClassController::browse()
     this->model.browse();
     try {
         this->updateView();
-    }  catch (std::invalid_argument& e) {
+    }
+    catch (std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
     }
 }
@@ -49,7 +50,8 @@ void ClassController::create()
     try {
         this->model.create();
         this->updateView();
-    }  catch (std::invalid_argument& e) {
+    }
+    catch (std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
     }
 }
@@ -61,12 +63,13 @@ void ClassController::sortLoaded() {}
  *
  * @param classname Name of the class to add.
  */
-void ClassController::add(const QString& classname)
+void ClassController::add(const QString& className)
 {
     try {
-        this->model.addClass(classname);
+        this->model.addClass(className);
         this->updateView();
-    } catch (std::invalid_argument& e) {
+    }
+    catch (std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
     }
 }
@@ -78,12 +81,13 @@ void ClassController::select(const std::string&) {}
  *
  * @param classname Name of the class to remove.
  */
-void ClassController::remove(const QString& classname)
+void ClassController::remove(const QString& className)
 {
     try {
-        this->model.removeClass(classname);
+        this->model.removeClass(className);
         this->updateView();
-    } catch (std::invalid_argument& e) {
+    }
+    catch (std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
     }
 }

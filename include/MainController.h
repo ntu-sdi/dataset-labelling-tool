@@ -16,7 +16,6 @@ private:
     ClassController classController;
     ImageController imageController;
     std::string getSelectedClass();
-
 public:
     MainController(AnnotationController&, ClassController&, ImageController&);
     void browseImages();

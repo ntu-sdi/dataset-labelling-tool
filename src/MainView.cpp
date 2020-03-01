@@ -38,7 +38,7 @@ Ui::MainView MainView::getUi()
  *
  * @param controller
  */
-void MainView::useController(MainController * controller)
+void MainView::useController(MainController* controller)
 {
     this->controller = controller;
 }
@@ -54,10 +54,10 @@ void MainView::on_ImageBrowseButton_clicked()
 void MainView::on_ClassAddButton_clicked()
 {
     bool ok;
-    QString classname;
-    classname = QInputDialog::getText(this, "New Class", "Class name",
-                                      QLineEdit::Normal, classname, &ok);
-    this->controller->addClass(classname);
+    QString className;
+    className = QInputDialog::getText(this, "New Class", "Class name",
+                                      QLineEdit::Normal, className, &ok);
+    this->controller->addClass(className);
 }
 
 void MainView::on_ClassBrowseButton_clicked()
@@ -81,8 +81,8 @@ void MainView::on_ImageList_itemClicked(QListWidgetItem*) {}
  *
  * @param filename
  */
-void MainView::on_ImageList_itemDoubleClicked(QListWidgetItem* filename) {
-    controller->openImage(filename->text());
+void MainView::on_ImageList_itemDoubleClicked(QListWidgetItem* fileName) {
+    controller->openImage(fileName->text());
 }
 
 void MainView::on_ClassesList_itemClicked(QListWidgetItem*) {}
@@ -98,23 +98,22 @@ void MainView::on_ClassListSortBox_currentTextChanged(const QString&) {}
  *
  * @param pos Position of the cursor.
  */
-void MainView::ProvideContextMenu(const QPoint& pos)
+void MainView::ProvideContextMenu(const QPoint& position)
 {
-    QPoint globalpos = this->ui->ClassesList->viewport()->mapToGlobal(pos);
-    QModelIndex index = this->ui->ClassesList->indexAt(pos);
-
-    if (!index.isValid()) return;
+    QPoint globalPosition = this->ui->ClassesList->viewport()->mapToGlobal(position);
+    QModelIndex index = this->ui->ClassesList->indexAt(position);
+    if(!index.isValid()) {
+        return;
+    }
     QMenu submenu;
     submenu.addAction("Delete");
-    QAction* rightClickItem = submenu.exec(globalpos);
-
+    QAction* rightClickItem = submenu.exec(globalPosition);
     if(rightClickItem && rightClickItem->text().contains("Delete")) {
         try {
-        this->controller->removeClass(
-                        this->ui->ClassesList->itemAt(pos)->text()
-                    );
-        }  catch (std::exception& e) {
-            QMessageBox::warning(this, "Error", e.what(), QMessageBox::Ok);
+            this->controller->removeClass(this->ui->ClassesList->itemAt(position)->text());
+        }
+        catch (std::exception& exception) {
+            QMessageBox::warning(this, "Error", exception.what(), QMessageBox::Ok);
         }
     }
 }

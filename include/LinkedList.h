@@ -11,8 +11,7 @@
 /**
  * Custom implementation of a singly-linked list.
  */
-template <class T>
-class LinkedList
+template <class T> class LinkedList
 {
 private:
     struct Node
@@ -22,9 +21,12 @@ private:
     };
     Node* head;
     int len {0};
-
 public:
-    LinkedList() { head = nullptr; }
+    LinkedList()
+    {
+        head = nullptr;
+    }
+
     ~LinkedList() = default;
 
     /**
@@ -32,7 +34,10 @@ public:
      *
      * @return bool True if the list is empty, otherwise false.
      */
-    bool isEmpty() { return head == nullptr; }
+    bool isEmpty()
+    {
+        return head == nullptr;
+    }
 
     /**
      * @brief operator [] Gets the data of the node at the index specified.
@@ -42,7 +47,10 @@ public:
      * @param index Index of the node to get.
      * @return T Data of the node at the given index.
      */
-    T &operator[] (int index) { return at(index); }
+    T &operator[] (int index)
+    {
+        return at(index);
+    }
 
     /**
      * @brief Inserts a new node.
@@ -53,26 +61,26 @@ public:
      */
     Node* insert(int index, T data)
     {
-        if (index < 0) throw IndexOutOfBoundsError();
+        if(index < 0) {
+            throw IndexOutOfBoundsError();
+        }
         int currentIndex = 1;
         Node* currentNode = head;
-        while (currentNode && index > currentIndex)
-        {
+        while(currentNode && index > currentIndex) {
             currentNode = currentNode->next;
             ++currentIndex;
         }
-
-        if (index > 0 && currentNode == nullptr) throw IndexOutOfBoundsError();
+        if(index > 0 && currentNode == nullptr) {
+            throw IndexOutOfBoundsError();
+        }
         Node* newNode = new Node;
         newNode->data = data;
-        if (index == 0)
-        {
+        if(index == 0) {
             newNode->next = head;
             head = newNode;
             ++len;
         }
-        else
-        {
+        else {
             newNode->next = currentNode->next;
             currentNode->next = newNode;
             ++len;
@@ -90,10 +98,10 @@ public:
     {
         Node* currentNode = head;
         int currentIndex {0};
-
-        while (currentIndex < index)
-        {
-            if (currentNode->next == nullptr) throw IndexOutOfBoundsError();
+        while(currentIndex < index) {
+            if(currentNode->next == nullptr) {
+                throw IndexOutOfBoundsError();
+            }
             currentNode = currentNode->next;
             ++currentIndex;
         }
@@ -120,15 +128,14 @@ public:
     {
         int currentIndex = 0;
         Node* currentNode = head;
-
-        while (currentNode != nullptr)
-        {
-            if (currentNode->data == data) return currentIndex;
+        while(currentNode != nullptr) {
+            if(currentNode->data == data) {
+                return currentIndex;
+            }
             ++currentIndex;
             currentNode = currentNode->next;
         }
         throw ValueNotFoundError();
-
     }
 
     /**
@@ -141,15 +148,14 @@ public:
     {
         int currentIndex = 0;
         Node* currentNode = head;
-
-        while (currentNode != nullptr)
-        {
-            if (currentNode->data == data) return true;
+        while(currentNode != nullptr) {
+            if(currentNode->data == data) {
+                return true;
+            }
             ++currentIndex;
             currentNode = currentNode->next;
         }
         return false;
-
     }
 
     /**
@@ -162,25 +168,28 @@ public:
         Node* currentNode = head;
         Node* prevNode = nullptr;
         int currentIndex {0};
-        if (len == 0) throw ArrayEmptyError();
-        while (currentIndex < index)
-        {
-            if (currentNode->next == nullptr) throw IndexOutOfBoundsError();
+        if(len == 0) {
+            throw ArrayEmptyError();
+        }
+        while(currentIndex < index) {
+            if(currentNode->next == nullptr) {
+                throw IndexOutOfBoundsError();
+            }
             prevNode = currentNode;
             currentNode = currentNode->next;
             ++currentIndex;
         }
-        if (index == 0)
-        {
+        if(index == 0) {
             head = currentNode->next;
             --len;
         }
-        else if (prevNode != nullptr)
-        {
+        else if(prevNode != nullptr) {
             prevNode->next = currentNode->next;
             --len;
         }
-        else throw std::exception();
+        else {
+            throw std::exception();
+        }
         delete currentNode;
     }
 
@@ -194,26 +203,28 @@ public:
         int currentIndex = 0;
         Node* currentNode = head;
         Node* prevNode = nullptr;
-
-        while (currentNode != nullptr)
-        {
-            if (currentNode->data == data) break;
+        while(currentNode != nullptr) {
+            if(currentNode->data == data) {
+                break;
+            }
             ++currentIndex;
             prevNode = currentNode;
             currentNode = currentNode->next;
         }
-        if (currentNode == nullptr) throw ValueNotFoundError();
-        else if (currentIndex == 0)
-        {
+        if(currentNode == nullptr) {
+            throw ValueNotFoundError();
+        }
+        else if(currentIndex == 0) {
             head = currentNode->next;
             --len;
         }
-        else if (prevNode != nullptr)
-        {
+        else if(prevNode != nullptr) {
             prevNode->next = currentNode->next;
             --len;
         }
-        else throw std::exception();
+        else {
+            throw std::exception();
+        }
         delete currentNode;
     }
 
@@ -227,10 +238,12 @@ public:
     Node* push(T data)
     {
         int insertIdx;
-
-        if (this->isEmpty()) insertIdx = 0;
-        else insertIdx = this->length();
-
+        if(this->isEmpty()) {
+            insertIdx = 0;
+        }
+        else {
+            insertIdx = this->length();
+        }
         Node* n = this->insert(insertIdx, data);
         return n;
     }

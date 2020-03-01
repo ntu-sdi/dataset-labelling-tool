@@ -1,5 +1,4 @@
-#ifndef DATASET_LABELING_TOOL_EXCEPTIONS_H
-#define DATASET_LABELING_TOOL_EXCEPTIONS_H
+#pragma once
 
 #include <exception>
 #include <stdexcept>
@@ -46,5 +45,3 @@ public:
         return "Error: Folder could not be found";
     }
 };
-
-#endif //DATASET_LABELING_TOOL_EXCEPTIONS_H

@@ -22,7 +22,6 @@ private:
     void save();
     void writeLineToFile(const QString& filename, const QString& line);
     void writeLinesToFile(const QString& filename, const QStringList& lines);
-
 public:
     void browse();
     void create();

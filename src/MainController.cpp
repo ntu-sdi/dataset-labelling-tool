@@ -38,8 +38,9 @@ void MainController::selectImage(const QString&) {}
  *
  * @param filename
  */
-void MainController::openImage(const QString& filename) {
-    imageController.open(filename);
+void MainController::openImage(const QString& fileName)
+{
+    imageController.open(fileName);
 }
 
 /**
@@ -65,9 +66,9 @@ void MainController::createClassFile()
  *
  * @param classname Name of the class to add.
  */
-void MainController::addClass(const QString& classname)
+void MainController::addClass(const QString& className)
 {
-    this->classController.add(classname);
+    this->classController.add(className);
 }
 
 void MainController::selectClass(const std::string& ) {}
@@ -77,9 +78,9 @@ void MainController::selectClass(const std::string& ) {}
  *
  * @param classname Name of the class to remove.
  */
-void MainController::removeClass(const QString& classname)
+void MainController::removeClass(const QString& className)
 {
-    this->classController.remove(classname);
+    this->classController.remove(className);
 }
 
 void MainController::browseForAnnotationFile() {}

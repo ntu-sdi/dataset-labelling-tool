@@ -17,7 +17,6 @@ class AnnotationModel
 private:
     std::string currentFilePath;
     void save();
-
 public:
     void browse();
     void create(const std::string&);

@@ -18,14 +18,11 @@ QT_END_NAMESPACE
 class MainView : public QMainWindow
 {
 Q_OBJECT
-
 public:
     MainView(QWidget* parent = nullptr);
     ~MainView();
     Ui::MainView getUi();
     void useController(MainController *);
-
-
 private slots:
     void on_ImageBrowseButton_clicked();
     void on_ClassAddButton_clicked();
@@ -39,10 +36,8 @@ private slots:
     void on_ImageListSortBox_currentTextChanged(const QString&);
     void on_ClassListSortBox_currentTextChanged(const QString&);
     void ProvideContextMenu(const QPoint&);
-
 private:
     Ui::MainView* ui;
     MainController* controller;
     void clearMainView();
-
 };

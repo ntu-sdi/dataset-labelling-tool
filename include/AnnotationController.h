@@ -13,7 +13,6 @@ private:
     Ui_MainView ui;
     AnnotationModel model;
     std::vector<Point> points;
-
 public:
     AnnotationController(const Ui_MainView&, const AnnotationModel&);
     void browse();
