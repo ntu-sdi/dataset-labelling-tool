@@ -72,7 +72,16 @@ void MainView::on_AnnotationBrowseButton_clicked() {}
 
 void MainView::on_ImageList_itemClicked(QListWidgetItem*) {}
 
-void MainView::on_ImageList_itemDoubleClicked(QListWidgetItem*) {}
+/**
+ * Callback function, which is triggered by user double clicking on the
+ * image file name in the image pannel.
+ * Then passes request to open image to MainController.
+ *
+ * @param filename
+ */
+void MainView::on_ImageList_itemDoubleClicked(QListWidgetItem* filename) {
+    controller->openImage(filename->text());
+}
 
 void MainView::on_ClassesList_itemClicked(QListWidgetItem*) {}
 

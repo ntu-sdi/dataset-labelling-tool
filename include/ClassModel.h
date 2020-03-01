@@ -16,10 +16,8 @@
 class ClassModel
 {
 private:
-    LinkedList<std::string> supportedFileFormats;
     std::string selectedClass;
     QString currentFilePath;
-    QFileSystemModel fileSystemModel();
     QStringList classes;
     void save();
     void writeLineToFile(const QString& filename, const QString& line);

@@ -37,8 +37,6 @@ void ClassModel::writeLinesToFile(const QString &filename, const QStringList &li
     }
 }
 
-QFileSystemModel ClassModel::fileSystemModel() {}
-
 void ClassModel::save() {}
 
 /**

@@ -20,10 +20,10 @@ private:
 public:
     MainController(AnnotationController&, ClassController&, ImageController&);
     void browseImages();
-    void searchLoadedImages(const std::string&);
+    void searchLoadedImages(const QString&);
     void sortLoadedImages();
-    void selectImage(const std::string&);
-    void openImage();
+    void selectImage(const QString&);
+    void openImage(const QString&);
     void browseForClassFile();
     void sortLoadedClasses();
     void createClassFile();

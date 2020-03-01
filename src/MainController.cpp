@@ -27,13 +27,19 @@ void MainController::browseImages()
     imageController.browseFolder();
 }
 
-void MainController::searchLoadedImages(const std::string& ) {}
+void MainController::searchLoadedImages(const QString& ) {}
 
 void MainController::sortLoadedImages() {}
 
-void MainController::selectImage(const std::string& ) {}
+void MainController::selectImage(const QString&) {}
 
-void MainController::openImage() {}
+/**
+ * Gets the image filename from the MainView and passes request to open image to MainController
+ * @param filename
+ */
+void MainController::openImage(const QString& filename) {
+    imageController.open(filename);
+}
 
 /**
  * Delegates class folder browsing event to the ClassController.

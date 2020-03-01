@@ -12,6 +12,10 @@ include_directories(../include ../src ../build/Dataset-Labelling-Tool_autogen/in
 add_executable (Tests
                 Tests.cpp
                 LinkedListsTests.cpp
+                ImageModelTests.cpp
+
+                ../../src/ImageModel.cpp
+                ../../include/ImageModel.h
                 ../build/Dataset-Labelling-Tool_autogen/include/ui_MainView.h
         )
 

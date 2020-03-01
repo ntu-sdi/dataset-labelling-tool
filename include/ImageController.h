@@ -17,8 +17,8 @@ private:
 public:
     ImageController(Ui_MainView&, ImageModel&);
     void browseFolder();
-    void searchLoaded(const std::string&);
+    void searchLoaded(const QString&);
     void sortLoaded();
-    void select(const std::string&);
-    void open();
+    void select(const QString&);
+    void open(const QString&);
 };

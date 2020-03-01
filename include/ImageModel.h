@@ -1,8 +1,6 @@
 #pragma once
 
-#include <map>
 #include <string>
-#include <utility>
 #include <QFileSystemModel>
 #include <QImage>
 
@@ -30,14 +28,13 @@ const QStringList SUPPORTED_FORMATS = {
 class ImageModel
 {
 private:
-    QStringList loadedImages;
-    QFileSystemModel fileSystemModel();
+    QMap <QString,QFileInfo> loadedImages;
 
 public:
     void browseFolder();
-    LinkedList<std::string> searchLoaded(const std::string&);
-    std::pair<int, int> getResolution(const std::string&);
-    long getFileSize(const std::string&);
+    void browseFolder(const QString&);
+    std::pair<int, int> getResolution(const QString&);
+    long getFileSize(const QString&);
     QStringList getAll();
-    QImage getImage(const std::string&);
+    QImage getImage(const QString&);
 };

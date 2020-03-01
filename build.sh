@@ -25,7 +25,9 @@ fi
 
 if [[ "$*" == "-runtests" ]]
 then
-./tests/build/Tests
+cd tests/build
+./Tests
+cd ../../
 fi
 
 
