@@ -40,7 +40,7 @@ public:
      * This method overrides the [] operator, simply calling LinkedList::at.
      *
      * @param index Index of the node to get.
-     * @return
+     * @return T Data of the node at the given index.
      */
     T &operator[] (int index) { return at(index); }
 
