@@ -24,6 +24,7 @@ void AnnotationController::create(){
  */
 void AnnotationController::browse() {
     model.browse();
+    ui.AnnotationFileLabel->setText(model.getCurrentFilePath());
 }
 
 void AnnotationController::addPoint(Point) {}

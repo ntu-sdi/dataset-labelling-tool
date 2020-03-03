@@ -83,7 +83,9 @@ void MainController::removeClass(const QString& className)
     this->classController.remove(className);
 }
 
-void MainController::browseForAnnotationFile() {}
+void MainController::browseForAnnotationFile() {
+    this->annotationController.browse();
+}
 
 /**
  * @brief Delegates the creation of annotation file to the AnnotationController.

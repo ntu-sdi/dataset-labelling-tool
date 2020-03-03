@@ -18,6 +18,7 @@ private:
     QString currentFilePath;
 public:
     void browse();
+    void browse(const QString&);
     void create();
     void create(const QString&);
     void add(const QString&, const int, const LinkedList<Shape>&);
