@@ -470,3 +470,5 @@ MigrationBackup/
 
 
 docs/html/
+
+tests/testFiles/

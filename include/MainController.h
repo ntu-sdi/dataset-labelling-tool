@@ -30,7 +30,7 @@ public:
     void selectClass(const std::string&);
     void removeClass(const QString&);
     void browseForAnnotationFile();
-    void createAnnotationFile(const QString&);
+    void createAnnotationFile();
     void addPoint(Point);
     void finishShape();
     void cancelShape();

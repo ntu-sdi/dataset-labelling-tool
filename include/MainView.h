@@ -24,6 +24,9 @@ public:
     Ui::MainView getUi();
     void useController(MainController *);
 private slots:
+    void on_AnnotationCreateButton_clicked();
+
+private slots:
     void on_ImageBrowseButton_clicked();
     void on_ClassAddButton_clicked();
     void on_ClassBrowseButton_clicked();

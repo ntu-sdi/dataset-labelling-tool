@@ -72,6 +72,14 @@ void MainView::on_ClassCreateButton_clicked()
 
 void MainView::on_AnnotationBrowseButton_clicked() {}
 
+/**
+ * @brief Callback function, which is triggered by user clicking on create annotation file button
+ */
+void MainView::on_AnnotationCreateButton_clicked()
+{
+    controller->createAnnotationFile();
+}
+
 void MainView::on_ImageList_itemClicked(QListWidgetItem*) {}
 
 /**
@@ -117,3 +125,5 @@ void MainView::ProvideContextMenu(const QPoint& position)
         }
     }
 }
+
+

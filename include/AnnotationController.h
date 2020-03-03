@@ -15,6 +15,7 @@ private:
     std::vector<Point> points;
 public:
     AnnotationController(const Ui_MainView&, const AnnotationModel&);
+    void create();
     void browse();
     void addPoint(Point);
     void finishShape();
