@@ -1,5 +1,7 @@
-#include "AnnotationController.h"
 #include <iostream>
+#include <QMessageBox>
+#include "AnnotationController.h"
+#include "exceptions.h"
 
 /**
  * @brief Constructs an Annotation Controller, which handles logic related to the annotation files.
@@ -13,18 +15,35 @@ AnnotationController::AnnotationController(const Ui_MainView& ui, const Annotati
     this->model = model;
 }
 
-void AnnotationController::create(){
-    model.create();
-    ui.AnnotationFileLabel->setText(model.getCurrentFilePath());
-
+void AnnotationController::create()
+{
+    try {
+        model.create();
+        ui.AnnotationFileLabel->setText(model.getCurrentFilePath());
+    }
+    catch (std::invalid_argument& e) {
+        QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
+    }
+    catch (OperationCanceled e) {
+        //QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
+    }
 }
 
 /**
  * @brief Creates an annotation file and updates label in the UI accordingly.
  */
-void AnnotationController::browse() {
-    model.browse();
-    ui.AnnotationFileLabel->setText(model.getCurrentFilePath());
+void AnnotationController::browse()
+{
+    try {
+        model.browse();
+        ui.AnnotationFileLabel->setText(model.getCurrentFilePath());
+    }
+    catch (std::invalid_argument& e) {
+        QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
+    }
+    catch (OperationCanceled e) {
+        //QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
+    }
 }
 
 void AnnotationController::addPoint(Point) {}

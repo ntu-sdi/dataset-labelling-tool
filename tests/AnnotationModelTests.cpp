@@ -58,7 +58,7 @@ BOOST_AUTO_TEST_SUITE( ImageModelTests )
         BOOST_CHECK_THROW(model.browse("../testFiles/templateNOT.annotation"),std::invalid_argument);
     }
 
-    BOOST_AUTO_TEST_CASE(CheckCurrentlyActiveFile_OnSave){
+    BOOST_AUTO_TEST_CASE(CheckCurrentlyActiveFile_OnLoad){
         AnnotationModel model;
         model.browse("../testFiles/template.annotation");
         BOOST_CHECK_EQUAL(model.getCurrentFilePath().toStdString(),"../testFiles/template.annotation");
