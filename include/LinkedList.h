@@ -21,6 +21,56 @@ private:
     };
     Node* head;
     int len {0};
+
+    Node* nodeAt(int index)
+    {
+        Node* currentNode = head;
+        int currentIndex = 0;
+        while(currentIndex < index) {
+            if(currentNode->next == nullptr) {
+                throw IndexOutOfBoundsError();
+            }
+            currentNode = currentNode->next;
+            ++currentIndex;
+        }
+        return currentNode;
+    }
+
+    /**
+     * @brief An internal implementation of the quicksort algorithm.
+     *
+     * @param left Starting left bound of the algorithm.
+     * @param right Starting right bound of the algorithm.
+     */
+    void quicksort(int left, int right)
+    {
+        int i = left;
+        int j = right;
+        T pivot = this->at((i + j) / 2);
+        T temp;
+        while(i <= j) {
+            while(this->at(i) < pivot) {
+                ++i;
+            }
+            while(this->at(j) > pivot) {
+                --j;
+            }
+            if(i <= j) {
+                temp = this->at(i);
+                this->replace(i, this->at(j));
+                this->replace(j, temp);
+                ++i;
+                --j;
+            }
+        }
+        if(j > left) {
+            this->quicksort(left, j);
+        }
+        if(i < right) {
+            this->quicksort(i, right);
+        }
+    }
+
 public:
     LinkedList()
     {
@@ -40,7 +90,7 @@ public:
     }
 
     /**
-     * @brief operator [] Gets the data of the node at the index specified.
+     * @brief Gets the data of the node at the index specified.
      *
      * This method overrides the [] operator, simply calling LinkedList::at.
      *
@@ -64,32 +114,25 @@ public:
         if(index < 0) {
             throw IndexOutOfBoundsError();
         }
-        int currentIndex = 1;
-        Node* currentNode = head;
-        while(currentNode && index > currentIndex) {
-            currentNode = currentNode->next;
-            ++currentIndex;
-        }
+        Node* currentNode = this->nodeAt(index - 1);
         if(index > 0 && currentNode == nullptr) {
             throw IndexOutOfBoundsError();
         }
         Node* newNode = new Node;
         newNode->data = data;
         if(index == 0) {
-            newNode->next = head;
-            head = newNode;
-            ++len;
+            newNode->next = this->head;
+            this->head = newNode;
         }
         else {
             newNode->next = currentNode->next;
             currentNode->next = newNode;
-            ++len;
         }
+        ++len;
         return newNode;
     }
-
     /**
-     * @brief at Gets the data of the node at the index specified.
+     * @brief Gets the data of the node at the index specified.
      *
      * @param index The index of the node to get the data.
      * @return T Data of the node at the index specified.
@@ -109,7 +152,7 @@ public:
     }
 
     /**
-     * @brief length Gets the length of the list.
+     * @brief Gets the length of the list.
      *
      * @return int The lenght of the list.
      */
@@ -119,7 +162,7 @@ public:
     }
 
     /**
-     * @brief getIndex Returns the index of the first node with the given data.
+     * @brief Returns the index of the first node with the given data.
      *
      * @param data Data of node to get the index of.
      * @return int Index of the first node with the given data.
@@ -139,7 +182,7 @@ public:
     }
 
     /**
-     * @brief contains Checks if the list contains a node with the given data.
+     * @brief Checks if the list contains a node with the given data.
      *
      * @param data Data to check.
      * @return bool True if the list contains a node with the data, otherwise false.
@@ -158,8 +201,10 @@ public:
         return false;
     }
 
+
+
     /**
-     * @brief removeAt Removes the node at the given index.
+     * @brief Removes the node at the given index.
      *
      * @param index Index of the node to be removed.
      */
@@ -194,7 +239,7 @@ public:
     }
 
     /**
-     * @brief remove Removes the first node with the given data.
+     * @brief Removes the first node with the given data.
      *
      * @param data Data of the node to remove.
      */
@@ -228,9 +273,14 @@ public:
         delete currentNode;
     }
 
+    void replace(int index, T data)
+    {
+        Node* node = this->nodeAt(index);
+        node->data = data;
+    }
 
     /**
-     * @brief push Inserts a new node to the end of the list.
+     * @brief Inserts a new node to the end of the list.
      *
      * @param data Data of the node to insert.
      * @return Node* Pointer to the new node.
@@ -246,5 +296,15 @@ public:
         }
         Node* n = this->insert(insertIdx, data);
         return n;
+    }
+
+    /**
+     * @brief Sorts the linked list in-place.
+     */
+    void sort()
+    {
+        if(this->len > 1) {
+            this->quicksort(0, this->len -1);
+        }
     }
 };
