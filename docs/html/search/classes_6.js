@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['valuenotfounderror',['ValueNotFoundError',['../classValueNotFoundError.html',1,'']]]
+  ['node',['Node',['../structLinkedList_1_1Node.html',1,'LinkedList']]]
 ];

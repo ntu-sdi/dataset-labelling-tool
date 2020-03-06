@@ -60,6 +60,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classAnnotationController-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">AnnotationController Class Reference</div>  </div>
@@ -67,21 +68,52 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="AnnotationController_8h_source.html">AnnotationController.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for AnnotationController:</div>
+<div class="dyncontent">
+<div class="center"><img src="classAnnotationController__coll__graph.png" border="0" usemap="#AnnotationController_coll__map" alt="Collaboration graph"/></div>
+<map name="AnnotationController_coll__map" id="AnnotationController_coll__map">
+<area shape="rect" id="node2" href="classAnnotationModel.html" title="{AnnotationModel\n|&#45; currentFilePath\l|+ browse()\l+ browse()\l+ create()\l+ create()\l+ add()\l+ add()\l+ getCurrentFilePath()\l}" alt="" coords="10,5,161,171"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a28cad1eb39c829d54093a965f59cdb2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnnotationController.html#a28cad1eb39c829d54093a965f59cdb2e">AnnotationController</a> (const Ui_MainView &amp;, const <a class="el" href="classAnnotationModel.html">AnnotationModel</a> &amp;)</td></tr>
+<tr class="memdesc:a28cad1eb39c829d54093a965f59cdb2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an Annotation Controller, which handles logic related to the annotation files.  <a href="#a28cad1eb39c829d54093a965f59cdb2e">More...</a><br /></td></tr>
 <tr class="separator:a28cad1eb39c829d54093a965f59cdb2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa79d79caa93863d2676900cece4cc994"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnnotationController.html#aa79d79caa93863d2676900cece4cc994">browse</a> ()</td></tr>
+<tr class="memitem:a490f659b6a1b6f4740925871689f747b"><td class="memItemLeft" align="right" valign="top"><a id="a490f659b6a1b6f4740925871689f747b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>create</b> ()</td></tr>
+<tr class="separator:a490f659b6a1b6f4740925871689f747b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa79d79caa93863d2676900cece4cc994"><td class="memItemLeft" align="right" valign="top"><a id="aa79d79caa93863d2676900cece4cc994"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnnotationController.html#aa79d79caa93863d2676900cece4cc994">browse</a> ()</td></tr>
+<tr class="memdesc:aa79d79caa93863d2676900cece4cc994"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an annotation file and updates label in the UI accordingly. <br /></td></tr>
 <tr class="separator:aa79d79caa93863d2676900cece4cc994"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03b1715610f84b203e7a5ded7046dcd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnnotationController.html#a03b1715610f84b203e7a5ded7046dcd2">addPoint</a> (<a class="el" href="AnnotationModel_8h.html#aa6876dc1ad8f5564f06ecf7d7f6a1eb0">Point</a>)</td></tr>
+<tr class="memitem:a03b1715610f84b203e7a5ded7046dcd2"><td class="memItemLeft" align="right" valign="top"><a id="a03b1715610f84b203e7a5ded7046dcd2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>addPoint</b> (Point)</td></tr>
 <tr class="separator:a03b1715610f84b203e7a5ded7046dcd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a295ef2113a2ef2201e736240e7a1078a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnnotationController.html#a295ef2113a2ef2201e736240e7a1078a">finishShape</a> ()</td></tr>
+<tr class="memitem:a295ef2113a2ef2201e736240e7a1078a"><td class="memItemLeft" align="right" valign="top"><a id="a295ef2113a2ef2201e736240e7a1078a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>finishShape</b> ()</td></tr>
 <tr class="separator:a295ef2113a2ef2201e736240e7a1078a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff95935a2215c4a52cbeb2674317d17d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnnotationController.html#aff95935a2215c4a52cbeb2674317d17d">cancelShape</a> ()</td></tr>
+<tr class="memitem:aff95935a2215c4a52cbeb2674317d17d"><td class="memItemLeft" align="right" valign="top"><a id="aff95935a2215c4a52cbeb2674317d17d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>cancelShape</b> ()</td></tr>
 <tr class="separator:aff95935a2215c4a52cbeb2674317d17d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad6db968693628859a69bab0667006dc1"><td class="memItemLeft" align="right" valign="top"><a id="ad6db968693628859a69bab0667006dc1"></a>
+Ui_MainView&#160;</td><td class="memItemRight" valign="bottom"><b>ui</b></td></tr>
+<tr class="separator:ad6db968693628859a69bab0667006dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9fc70313798905bf9fca275edfda08e"><td class="memItemLeft" align="right" valign="top"><a id="ac9fc70313798905bf9fca275edfda08e"></a>
+<a class="el" href="classAnnotationModel.html">AnnotationModel</a>&#160;</td><td class="memItemRight" valign="bottom"><b>model</b></td></tr>
+<tr class="separator:ac9fc70313798905bf9fca275edfda08e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4d49b736dedbd57d47c74ab3cef65cc"><td class="memItemLeft" align="right" valign="top"><a id="aa4d49b736dedbd57d47c74ab3cef65cc"></a>
+std::vector&lt; Point &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>points</b></td></tr>
+<tr class="separator:aa4d49b736dedbd57d47c74ab3cef65cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Sub-controller which gets delegated tasks related to annotation files. Communicates directly with the <a class="el" href="classAnnotationModel.html">AnnotationModel</a>. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a28cad1eb39c829d54093a965f59cdb2e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a28cad1eb39c829d54093a965f59cdb2e">&#9670;&nbsp;</a></span>AnnotationController()</h2>
 
@@ -108,81 +140,20 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a03b1715610f84b203e7a5ded7046dcd2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03b1715610f84b203e7a5ded7046dcd2">&#9670;&nbsp;</a></span>addPoint()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AnnotationController::addPoint </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="AnnotationModel_8h.html#aa6876dc1ad8f5564f06ecf7d7f6a1eb0">Point</a>&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa79d79caa93863d2676900cece4cc994"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa79d79caa93863d2676900cece4cc994">&#9670;&nbsp;</a></span>browse()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AnnotationController::browse </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aff95935a2215c4a52cbeb2674317d17d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff95935a2215c4a52cbeb2674317d17d">&#9670;&nbsp;</a></span>cancelShape()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AnnotationController::cancelShape </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a295ef2113a2ef2201e736240e7a1078a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a295ef2113a2ef2201e736240e7a1078a">&#9670;&nbsp;</a></span>finishShape()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AnnotationController::finishShape </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Constructs an Annotation Controller, which handles logic related to the annotation files. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ui</td><td>The Ui_MainView reference, which is used to update the GUI. </td></tr>
+    <tr><td class="paramname">model</td><td>The <a class="el" href="classAnnotationModel.html">AnnotationModel</a> that the <a class="el" href="classAnnotationController.html">AnnotationController</a> accesses. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="AnnotationController_8h_source.html">AnnotationController.h</a></li>
-<li>src/<a class="el" href="AnnotationController_8cpp.html">AnnotationController.cpp</a></li>
+<li>src/AnnotationController.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

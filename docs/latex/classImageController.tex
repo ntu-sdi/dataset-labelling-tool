@@ -1,0 +1,97 @@
+\hypertarget{classImageController}{}\section{Image\+Controller Class Reference}
+\label{classImageController}\index{Image\+Controller@{Image\+Controller}}
+
+
+{\ttfamily \#include $<$Image\+Controller.\+h$>$}
+
+
+
+Collaboration diagram for Image\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classImageController__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classImageController_a317e49c29f50578a1001b73749151e3a}{Image\+Controller} (Ui\+\_\+\+Main\+View \&, \hyperlink{classImageModel}{Image\+Model} \&)
+\begin{DoxyCompactList}\small\item\em Constructs an \hyperlink{classImageController}{Image\+Controller}, which handles business logic, related to the image files. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageController_a203590172b061a2e20d09dc9f8f060b7}\label{classImageController_a203590172b061a2e20d09dc9f8f060b7}} 
+void \hyperlink{classImageController_a203590172b061a2e20d09dc9f8f060b7}{browse\+Folder} ()
+\begin{DoxyCompactList}\small\item\em Browses for a new folder containing images, then updates the view to reflect that. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageController_a29879b8ce218c266f100ef6da70687ca}\label{classImageController_a29879b8ce218c266f100ef6da70687ca}} 
+void {\bfseries search\+Loaded} (const Q\+String \&)
+\item 
+\mbox{\Hypertarget{classImageController_aa27c122f5fa43ed32984077cc0f1871a}\label{classImageController_aa27c122f5fa43ed32984077cc0f1871a}} 
+void {\bfseries sort\+Loaded} ()
+\item 
+\mbox{\Hypertarget{classImageController_a81d44568235778fe6d5dc14fb377499a}\label{classImageController_a81d44568235778fe6d5dc14fb377499a}} 
+void {\bfseries select} (const Q\+String \&)
+\item 
+void \hyperlink{classImageController_a3f5976d87977aa1cda7b5a9a7ad0f03b}{open} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em Gets a filename from the Main\+Controler, opens image and displays it in the \hyperlink{classMainView}{Main\+View}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classImageController_a3a300727ff5e30b19fcc0102427fdb30}\label{classImageController_a3a300727ff5e30b19fcc0102427fdb30}} 
+void \hyperlink{classImageController_a3a300727ff5e30b19fcc0102427fdb30}{update\+View} ()
+\begin{DoxyCompactList}\small\item\em Clears the list of loaded images in the G\+UI and refills them from the currently loaded images. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classImageController_ac4a8d61dbfe0c1a0b63f7cd456b3c1c1}\label{classImageController_ac4a8d61dbfe0c1a0b63f7cd456b3c1c1}} 
+Ui\+\_\+\+Main\+View {\bfseries ui}
+\item 
+\mbox{\Hypertarget{classImageController_a7b83dbab8de169f4c1d394a72280aec5}\label{classImageController_a7b83dbab8de169f4c1d394a72280aec5}} 
+\hyperlink{classImageModel}{Image\+Model} {\bfseries model}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Sub-\/controller, which gets delegated tasks, relating to loading, storing and updating images. Communicates directly with the \hyperlink{classImageModel}{Image\+Model}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classImageController_a317e49c29f50578a1001b73749151e3a}\label{classImageController_a317e49c29f50578a1001b73749151e3a}} 
+\index{Image\+Controller@{Image\+Controller}!Image\+Controller@{Image\+Controller}}
+\index{Image\+Controller@{Image\+Controller}!Image\+Controller@{Image\+Controller}}
+\subsubsection{\texorpdfstring{Image\+Controller()}{ImageController()}}
+{\footnotesize\ttfamily Image\+Controller\+::\+Image\+Controller (\begin{DoxyParamCaption}\item[{Ui\+\_\+\+Main\+View \&}]{ui,  }\item[{\hyperlink{classImageModel}{Image\+Model} \&}]{model }\end{DoxyParamCaption})}
+
+
+
+Constructs an \hyperlink{classImageController}{Image\+Controller}, which handles business logic, related to the image files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui} & The Ui\+\_\+\+Main\+View reference, which is used to update the G\+UI. \\
+\hline
+{\em model} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classImageController_a3f5976d87977aa1cda7b5a9a7ad0f03b}\label{classImageController_a3f5976d87977aa1cda7b5a9a7ad0f03b}} 
+\index{Image\+Controller@{Image\+Controller}!open@{open}}
+\index{open@{open}!Image\+Controller@{Image\+Controller}}
+\subsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void Image\+Controller\+::open (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Gets a filename from the Main\+Controler, opens image and displays it in the \hyperlink{classMainView}{Main\+View}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Image\+Controller.\+h\item 
+src/Image\+Controller.\+cpp\end{DoxyCompactItemize}

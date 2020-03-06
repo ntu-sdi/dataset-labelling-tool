@@ -15,10 +15,13 @@ using Shape = LinkedList<Point>;
 class AnnotationModel
 {
 private:
-    std::string currentFilePath;
-    void save();
+    QString currentFilePath;
 public:
     void browse();
-    void create(const std::string&);
-    void add(const QString&, const int, const LinkedList<Shape>&);
+    void browse(const QString&);
+    void create();
+    void create(const QString&);
+    void add(const QString& jsonFilePath, const QString& imageFilePath, const QString& className, LinkedList<std::pair<int,int>>& coordinates);
+    void add(const QString& imageFilePath,const QString& className, LinkedList<std::pair<int,int>>& coordinates);
+    QString getCurrentFilePath();
 };

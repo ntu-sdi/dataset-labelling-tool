@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['imagecontroller',['ImageController',['../classImageController.html#a317e49c29f50578a1001b73749151e3a',1,'ImageController']]],
-  ['insert',['insert',['../classLinkedList.html#a917c48e728e8243c38d854dc1df9d86d',1,'LinkedList']]],
-  ['isempty',['isEmpty',['../classLinkedList.html#a7ecbb28e82117a680839ed0dc28ebdce',1,'LinkedList']]]
+  ['length',['length',['../classLinkedList.html#a33ccc185173763fde944238f0f269bf0',1,'LinkedList']]]
 ];

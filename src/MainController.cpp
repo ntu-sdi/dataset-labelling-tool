@@ -83,9 +83,16 @@ void MainController::removeClass(const QString& className)
     this->classController.remove(className);
 }
 
-void MainController::browseForAnnotationFile() {}
+void MainController::browseForAnnotationFile() {
+    this->annotationController.browse();
+}
 
-void MainController::createAnnotationFile(const QString& ) {}
+/**
+ * @brief Delegates the creation of annotation file to the AnnotationController.
+ */
+void MainController::createAnnotationFile() {
+    annotationController.create();
+}
 
 void MainController::addPoint(Point) {}
 

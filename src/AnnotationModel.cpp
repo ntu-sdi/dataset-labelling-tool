@@ -1,21 +1,216 @@
-#include<fstream>
+#include <QFileSystemModel>
+#include <QFileDialog>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QJsonValue>
 
+#include "exceptions.h"
 #include "AnnotationModel.h"
 
-void AnnotationModel::save() {}
-
-void AnnotationModel::browse() {}
-
 /**
- * @brief Create a new annotation file.
+ * @brief Prompts user to navigate to a annotation file on the system
  *
- * @param fileName
+ * if entered path is empty, or file could not be oppened, std::invalid_argument
+ * eannotationception  is thrown.
+ *
+ * if operation is canceled custom OperationCanceled eannotationception is thrown
+ *
+ * Location of opened file is saved to a private currentFilePath attribute
+ * in this class
  */
-void AnnotationModel::create(const std::string& fileName)
+void AnnotationModel::browse()
 {
-   std::ofstream File(fileName + ".annotations");
+    QString filePath = QFileDialog::getOpenFileName(nullptr, "Select Annotation File",
+        "./", "Annotation files (*.annotation)");
+    if(filePath.isNull())
+        throw OperationCanceled();
+    if(filePath.isEmpty())
+        throw std::invalid_argument("File path cannot be empty");
+    QFile file(filePath);
+    if(file.open(QIODevice::ReadOnly)) {
+        this->currentFilePath = filePath;
+        file.close();
+    }
+    else {
+        throw FileNotFoundError();
+    }
 }
 
-void AnnotationModel::add(const QString&, const int, const LinkedList<Shape>&) {}
+/**
+ * @brief Provides a way to enter path to annotation file as a parameter (QString)
+ *
+ * if entered path is empty, or file could not be oppened, std::invalid_argument
+ * eannotationception  is thrown.
+ *
+ * Location of opened file is saved to a private currentFilePath attribute
+ * in this class
+ */
+void AnnotationModel::browse(const QString& filePath)
+{
+    if(filePath.isEmpty())
+        throw std::invalid_argument("File path cannot be empty");
+    QFile file(filePath);
+    if(file.open(QIODevice::ReadOnly)) {
+        this->currentFilePath = filePath;
+        file.close();
+    }
+    else {
+        throw FileNotFoundError();
+    }
+}
+/**
+ * @brief Prompts the user for a annotation file name. Creates a file using this name and path.
+ *
+ * if filePath is empty, or file could not be created at wanted location
+ * std::invalid argument eannotationception is thrown
+ *
+ * if operation is canceled custom OperationCanceled eannotationception is thrown
+ *
+ * Location of opened file is saved to a private currentFilePath attribute
+ * in this class
+ */
+void AnnotationModel::create()
+{
+    QString filePath = QFileDialog::getSaveFileName(nullptr, "Create New Annotation File",
+        "./",
+        "Annotation files (*.annotation)");
+    if(filePath.isNull())
+        throw OperationCanceled();
+    if(filePath.isEmpty())
+        throw std::invalid_argument("File path cannot be empty");
+    filePath = filePath.trimmed();
+    if(!filePath.contains(".annotation"))
+        filePath.append(".annotation");
+    QFile file(filePath);
+    if(!file.open(QIODevice::ReadWrite))
+        std::invalid_argument("Could not create file");
+    file.close();
+    this->currentFilePath = filePath;
+}
 
+/**
+ * @brief Provides a way to create annotation file by providing file path as a parameter (QString)
+ *
+ * if filePath is empty, or file could not be created at wanted location
+ * std::invalid argument eannotationception is thrown
+ *
+ * Location of opened file is saved to a private currentFilePath attribute
+ * in this class
+ */
+void AnnotationModel::create(const QString& filePath)
+{
+    if(filePath.isEmpty())
+        throw std::invalid_argument("File path cannot be empty");
+    QString path = filePath;
+    if(!path.contains(".annotation"))
+        path.append(".annotation");
+    QFile file(path);
+    if(!file.open(QIODevice::ReadWrite))
+        std::invalid_argument("Could not create file");
+    file.close();
+    this->currentFilePath = path;
+}
 
+/**
+ * @brief Provides a way to save annotation to annotation file
+ *
+ * Function opens and loads all annotation details from annotation file into memory. After that
+ * it creates a new annotation and adds annotation details to it, or it updates previous annotation
+ * if the image was previously annotated in this annotation file.
+ *
+ * Annotation file which is being edited depends on which file is currently selected,
+ * obtained from getCurrentFile function
+ *
+ * If for some reason that file is not available function throws FileNotFoundError.
+ *
+ * @param imageFilePath QString Path to a image for which annotation is being made.
+ * @param className QString Name of a class which is used for annotating when drawing a shape.
+ * @param coordinates QString LinkedList of all points in a annotation shape, in format x,y (std::pair<int,int>).
+ */
+void AnnotationModel::add(const QString& imageFilePath, const QString& className, LinkedList<std::pair<int,int>>& coordinates) {
+    QFile jsonFile(getCurrentFilePath());
+    if (!jsonFile.exists()){
+        throw FileNotFoundError();
+    }
+    jsonFile.open(QIODevice::ReadOnly); //open file in read mode
+    QByteArray data = jsonFile.readAll();
+    QJsonDocument json = QJsonDocument::fromJson(data); //create json document from file contents
+    jsonFile.close();
+    QJsonObject allAnnotations = json.object(); //get outer json object
+    QJsonObject newAnnotation; //create new annotation object for storing class name and list of points
+    QJsonArray points; //create array for string points
+    for (int i = 0; i < coordinates.length(); i++){
+        int x = coordinates.at(i).first;
+        int y = coordinates.at(i).second;
+        QJsonObject o;
+        o.insert("x",x);
+        o.insert("y",y);
+        points.append(o); //append object of points to array of points
+    }
+    newAnnotation.insert("class",className);
+    newAnnotation.insert("points",points); //fill annotation with data
+    QJsonArray annotationsForThisImage = allAnnotations.value(imageFilePath).toArray(); //get array with all previous annotations for this image
+    annotationsForThisImage.append(newAnnotation); //append all previous annotations with new annotation
+    allAnnotations.insert(imageFilePath,annotationsForThisImage); //set changes to outer json object
+    json.setObject(allAnnotations); //create json document from outer object
+    jsonFile.open(QIODevice::WriteOnly); //write contents to file
+    jsonFile.write(json.toJson());
+    jsonFile.close();
+}
+
+/**
+ * @brief Provides a way to save annotation to annotation file
+ *
+ * Function opens and loads all annotation details from annotation file into memory. After that
+ * it creates a new annotation and adds annotation details to it, or it updates previous annotation
+ * if the image was previously annotated in this annotation file.
+ *
+ * Annotation file which is being edited is passed as 1st parameter to this function.
+ *
+ * If for some reason that file is not available function throws FileNotFoundError.
+ *
+ * @param jsonFilePath QString Path to a annotation file in which annotation is going to be stored to.
+ * @param imageFilePath QString Path to a image for which annotation is being made.
+ * @param className QString Name of a class which is used for annotating when drawing a shape.
+ * @param coordinates LinkedList of all points in a annotation shape, in format x,y (std::pair<int,int>).
+ */
+void AnnotationModel::add(const QString& jsonFilePath,const QString& imageFilePath, const QString& className, LinkedList<std::pair<int,int>>& coordinates) {
+    QFile jsonFile(jsonFilePath); //set file
+    if (!jsonFile.exists()){
+        throw FileNotFoundError();
+    }
+    jsonFile.open(QIODevice::ReadOnly); //open file in read mode
+    QByteArray data = jsonFile.readAll();
+    QJsonDocument json = QJsonDocument::fromJson(data); //create json document from file contents
+    jsonFile.close();
+    QJsonObject allAnnotations = json.object(); //get outer json object
+    QJsonObject newAnnotation; //create new annotation object for storing class name and list of points
+    QJsonArray points; //create array for string points
+    for (int i = 0; i < coordinates.length(); i++){
+        int x = coordinates.at(i).first;
+        int y = coordinates.at(i).second;
+        QJsonObject o;
+        o.insert("x",x);
+        o.insert("y",y);
+        points.append(o); //append object of points to array of points
+    }
+    newAnnotation.insert("class",className);
+    newAnnotation.insert("points",points); //fill annotation with data
+    QJsonArray annotationsForThisImage = allAnnotations.value(imageFilePath).toArray(); //get array with all previous annotations for this image
+    annotationsForThisImage.append(newAnnotation); //append all previous annotations with new annotation
+    allAnnotations.insert(imageFilePath,annotationsForThisImage); //set changes to outer json object
+    json.setObject(allAnnotations); //create json document from outer object
+    jsonFile.open(QIODevice::WriteOnly); //write contents to file
+    jsonFile.write(json.toJson());
+    jsonFile.close();
+}
+
+/**
+ * @brief Returns path of currently active annotation file
+ * @return Path to a annotation file
+ */
+QString AnnotationModel::getCurrentFilePath()
+{
+    return this->currentFilePath;
+}

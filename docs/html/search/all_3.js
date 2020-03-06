@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['exceptions_2eh',['exceptions.h',['../exceptions_8h.html',1,'']]]
+  ['filenotfounderror',['FileNotFoundError',['../classFileNotFoundError.html',1,'']]],
+  ['foldernotfounderror',['FolderNotFoundError',['../classFolderNotFoundError.html',1,'']]]
 ];

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['open',['open',['../classImageController.html#af8a3bc6cab1e1c115ba8af1268733cf0',1,'ImageController']]],
-  ['openimage',['openImage',['../classMainController.html#a841baab32760f1a4b7abcf2231cc194d',1,'MainController']]],
-  ['operator_5b_5d',['operator[]',['../classLinkedList.html#ad5254d9241ff88374dda981c68a320d7',1,'LinkedList']]]
+  ['providecontextmenu',['ProvideContextMenu',['../classMainView.html#aa9d5f1300bd6b2524f611873d68c938b',1,'MainView']]],
+  ['push',['push',['../classLinkedList.html#a3a1e6c2009b611fb4416574178b316a3',1,'LinkedList']]]
 ];

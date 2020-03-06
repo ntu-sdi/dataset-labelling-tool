@@ -37,7 +37,17 @@ public:
     }
 };
 
+
 class FolderNotFoundError : public std::exception
+{
+public:
+    const char * what () const throw ()
+    {
+        return "Error: Folder could not be found";
+    }
+};
+
+class OperationCanceled : public std::exception
 {
 public:
     const char * what () const throw ()

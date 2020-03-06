@@ -5,7 +5,6 @@
 #include "../include/ImageModel.h"
 #include <string>
 #include <iostream>
-#include "ui_MainView.h"
 #include<boost/test/unit_test.hpp>
 
 
@@ -21,7 +20,7 @@ BOOST_AUTO_TEST_SUITE( ImageModelTests )
     BOOST_AUTO_TEST_CASE(OpenInvalidFolder){
         // Testing that trying to open an invalid folder results in an error being thrown.
         ImageModel i;
-        BOOST_CHECK_THROW(i.browseFolder("../NOTEXISTINGFOLDER"),std::runtime_error);
+        BOOST_CHECK_THROW(i.browseFolder("../NOTEXISTINGFOLDERNAME"),std::runtime_error);
     }
 
     BOOST_AUTO_TEST_CASE(OpenFolderWith2Images){
