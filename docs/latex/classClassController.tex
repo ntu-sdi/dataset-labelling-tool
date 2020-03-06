@@ -1,0 +1,114 @@
+\hypertarget{classClassController}{}\section{Class\+Controller Class Reference}
+\label{classClassController}\index{Class\+Controller@{Class\+Controller}}
+
+
+{\ttfamily \#include $<$Class\+Controller.\+h$>$}
+
+
+
+Collaboration diagram for Class\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classClassController__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classClassController_a6edb502072d6d3c5d7f1905ef4c7a81a}{Class\+Controller} (const Ui\+\_\+\+Main\+View \&, const \hyperlink{classClassModel}{Class\+Model} \&)
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{classClassController}{Class\+Controller} which handles logic related to the class files. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClassController_a79b058a17a14de98aced16bbd7b00348}\label{classClassController_a79b058a17a14de98aced16bbd7b00348}} 
+void \hyperlink{classClassController_a79b058a17a14de98aced16bbd7b00348}{browse} ()
+\begin{DoxyCompactList}\small\item\em Browses for a new class file, then updates the view to reflect that. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClassController_a334af2fa2b39883a1499947c7a623d23}\label{classClassController_a334af2fa2b39883a1499947c7a623d23}} 
+void \hyperlink{classClassController_a334af2fa2b39883a1499947c7a623d23}{create} ()
+\begin{DoxyCompactList}\small\item\em Creates a new class file, and updates the view to reflect that. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClassController_aef5112f565abed11ca3eeab4cd9a58a4}\label{classClassController_aef5112f565abed11ca3eeab4cd9a58a4}} 
+void {\bfseries sort\+Loaded} ()
+\item 
+void \hyperlink{classClassController_abd51fbe1d80458b68f2023742bb2723a}{add} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em Adds a new class, and updates the view to reflect that. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClassController_a18ab1138694d7ec3cb20ae6093491584}\label{classClassController_a18ab1138694d7ec3cb20ae6093491584}} 
+void {\bfseries select} (const std\+::string \&)
+\item 
+void \hyperlink{classClassController_ac8d209c4e52899c11020f6a3b35f6416}{remove} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em Removes a class, and updates the view to reflect that. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClassController_af2d0c1757a9f67b7097ff6f4e38cd842}\label{classClassController_af2d0c1757a9f67b7097ff6f4e38cd842}} 
+void {\bfseries get\+Selected} ()
+\item 
+\mbox{\Hypertarget{classClassController_a1a286317364cc2fddb8c5c2419f38134}\label{classClassController_a1a286317364cc2fddb8c5c2419f38134}} 
+void \hyperlink{classClassController_a1a286317364cc2fddb8c5c2419f38134}{update\+View} ()
+\begin{DoxyCompactList}\small\item\em Clears the list of classes in the G\+UI and refills them from the currently loaded classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classClassController_a4c59d251037fb7c71597210e655a9f10}\label{classClassController_a4c59d251037fb7c71597210e655a9f10}} 
+Ui\+\_\+\+Main\+View {\bfseries ui}
+\item 
+\mbox{\Hypertarget{classClassController_ab14c00b28d3a7a7d6178deaa3a2aa88d}\label{classClassController_ab14c00b28d3a7a7d6178deaa3a2aa88d}} 
+\hyperlink{classClassModel}{Class\+Model} {\bfseries model}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Sub-\/controller which gets delegated tasks related to creating, adding and removing classes. Communicates directly with the \hyperlink{classClassModel}{Class\+Model}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classClassController_a6edb502072d6d3c5d7f1905ef4c7a81a}\label{classClassController_a6edb502072d6d3c5d7f1905ef4c7a81a}} 
+\index{Class\+Controller@{Class\+Controller}!Class\+Controller@{Class\+Controller}}
+\index{Class\+Controller@{Class\+Controller}!Class\+Controller@{Class\+Controller}}
+\subsubsection{\texorpdfstring{Class\+Controller()}{ClassController()}}
+{\footnotesize\ttfamily Class\+Controller\+::\+Class\+Controller (\begin{DoxyParamCaption}\item[{const Ui\+\_\+\+Main\+View \&}]{ui,  }\item[{const \hyperlink{classClassModel}{Class\+Model} \&}]{model }\end{DoxyParamCaption})}
+
+
+
+Constructs a \hyperlink{classClassController}{Class\+Controller} which handles logic related to the class files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui} & The Ui\+\_\+\+Main\+View reference, which is used to update the G\+UI. \\
+\hline
+{\em model} & The \hyperlink{classClassModel}{Class\+Model} that the \hyperlink{classClassController}{Class\+Controller} accesses. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classClassController_abd51fbe1d80458b68f2023742bb2723a}\label{classClassController_abd51fbe1d80458b68f2023742bb2723a}} 
+\index{Class\+Controller@{Class\+Controller}!add@{add}}
+\index{add@{add}!Class\+Controller@{Class\+Controller}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Class\+Controller\+::add (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{class\+Name }\end{DoxyParamCaption})}
+
+
+
+Adds a new class, and updates the view to reflect that. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em classname} & Name of the class to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classClassController_ac8d209c4e52899c11020f6a3b35f6416}\label{classClassController_ac8d209c4e52899c11020f6a3b35f6416}} 
+\index{Class\+Controller@{Class\+Controller}!remove@{remove}}
+\index{remove@{remove}!Class\+Controller@{Class\+Controller}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void Class\+Controller\+::remove (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{class\+Name }\end{DoxyParamCaption})}
+
+
+
+Removes a class, and updates the view to reflect that. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em classname} & Name of the class to remove. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Class\+Controller.\+h\item 
+src/Class\+Controller.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,134 @@
+\hypertarget{classImageModel}{}\section{Image\+Model Class Reference}
+\label{classImageModel}\index{Image\+Model@{Image\+Model}}
+
+
+{\ttfamily \#include $<$Image\+Model.\+h$>$}
+
+
+
+Collaboration diagram for Image\+Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classImageModel__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classImageModel_a556093e64b3d118525120e465a7dedf6}\label{classImageModel_a556093e64b3d118525120e465a7dedf6}} 
+void \hyperlink{classImageModel_a556093e64b3d118525120e465a7dedf6}{browse\+Folder} ()
+\begin{DoxyCompactList}\small\item\em Opens a system file dialog window and promps the user for an image folder. \end{DoxyCompactList}\item 
+void \hyperlink{classImageModel_a4923192da890831266d2348ce54b2e45}{browse\+Folder} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em Provides a way to input folder path to the system without loading up the G\+UI. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \hyperlink{classImageModel_af44b02e6974b36d2ede3b1b3f78ebc84}{get\+Resolution} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em Provides a way to read resolution of a given image file. \end{DoxyCompactList}\item 
+long \hyperlink{classImageModel_a38c8d5868b7a8f8acca235c4383c5102}{get\+File\+Size} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em Provides a way to read file size of a given image file. \end{DoxyCompactList}\item 
+Q\+String\+List \hyperlink{classImageModel_a498623ffa9423fd249c62467c01edeee}{get\+All} ()
+\begin{DoxyCompactList}\small\item\em Returns all loaded images in the \hyperlink{classImageModel}{Image\+Model}. \end{DoxyCompactList}\item 
+Q\+Image \hyperlink{classImageModel_ac0021794e5694bd76c76349b8af96428}{get\+Image} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em Provides a way to get an actual image from the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classImageModel_a238323b509f2644dcd2858558a40448a}\label{classImageModel_a238323b509f2644dcd2858558a40448a}} 
+Q\+Map$<$ Q\+String, Q\+File\+Info $>$ {\bfseries loaded\+Images}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Model, which is responsible for file handling of images. Maintains an internal list of the currently loaded images. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classImageModel_a4923192da890831266d2348ce54b2e45}\label{classImageModel_a4923192da890831266d2348ce54b2e45}} 
+\index{Image\+Model@{Image\+Model}!browse\+Folder@{browse\+Folder}}
+\index{browse\+Folder@{browse\+Folder}!Image\+Model@{Image\+Model}}
+\subsubsection{\texorpdfstring{browse\+Folder()}{browseFolder()}}
+{\footnotesize\ttfamily void Image\+Model\+::browse\+Folder (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{folder\+Path }\end{DoxyParamCaption})}
+
+
+
+Provides a way to input folder path to the system without loading up the G\+UI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Path} & to a folder user wants to browse \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classImageModel_a498623ffa9423fd249c62467c01edeee}\label{classImageModel_a498623ffa9423fd249c62467c01edeee}} 
+\index{Image\+Model@{Image\+Model}!get\+All@{get\+All}}
+\index{get\+All@{get\+All}!Image\+Model@{Image\+Model}}
+\subsubsection{\texorpdfstring{get\+All()}{getAll()}}
+{\footnotesize\ttfamily Q\+String\+List Image\+Model\+::get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns all loaded images in the \hyperlink{classImageModel}{Image\+Model}. 
+
+\begin{DoxyReturn}{Returns}
+Q\+String\+List for every loaded image 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImageModel_a38c8d5868b7a8f8acca235c4383c5102}\label{classImageModel_a38c8d5868b7a8f8acca235c4383c5102}} 
+\index{Image\+Model@{Image\+Model}!get\+File\+Size@{get\+File\+Size}}
+\index{get\+File\+Size@{get\+File\+Size}!Image\+Model@{Image\+Model}}
+\subsubsection{\texorpdfstring{get\+File\+Size()}{getFileSize()}}
+{\footnotesize\ttfamily long Image\+Model\+::get\+File\+Size (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Provides a way to read file size of a given image file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Name} & of a image file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+File size of image, in bytes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImageModel_ac0021794e5694bd76c76349b8af96428}\label{classImageModel_ac0021794e5694bd76c76349b8af96428}} 
+\index{Image\+Model@{Image\+Model}!get\+Image@{get\+Image}}
+\index{get\+Image@{get\+Image}!Image\+Model@{Image\+Model}}
+\subsubsection{\texorpdfstring{get\+Image()}{getImage()}}
+{\footnotesize\ttfamily Q\+Image Image\+Model\+::get\+Image (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Provides a way to get an actual image from the system. 
+
+Gets name of the image from \hyperlink{classImageController}{Image\+Controller}, searches for file path using image file name from internal map. After that it creates Image object and returns it to \hyperlink{classImageController}{Image\+Controller}
+
+
+\begin{DoxyParams}{Parameters}
+{\em Name} & of a image file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+Image of image provided via image filename 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImageModel_af44b02e6974b36d2ede3b1b3f78ebc84}\label{classImageModel_af44b02e6974b36d2ede3b1b3f78ebc84}} 
+\index{Image\+Model@{Image\+Model}!get\+Resolution@{get\+Resolution}}
+\index{get\+Resolution@{get\+Resolution}!Image\+Model@{Image\+Model}}
+\subsubsection{\texorpdfstring{get\+Resolution()}{getResolution()}}
+{\footnotesize\ttfamily std\+::pair$<$ int, int $>$ Image\+Model\+::get\+Resolution (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Provides a way to read resolution of a given image file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Name} & of a image file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::pair of image resolution, in format $<$x,y$>$ 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Image\+Model.\+h\item 
+src/Image\+Model.\+cpp\end{DoxyCompactItemize}

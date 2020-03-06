@@ -1,0 +1,168 @@
+\hypertarget{classAnnotationModel}{}\section{Annotation\+Model Class Reference}
+\label{classAnnotationModel}\index{Annotation\+Model@{Annotation\+Model}}
+
+
+{\ttfamily \#include $<$Annotation\+Model.\+h$>$}
+
+
+
+Collaboration diagram for Annotation\+Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classAnnotationModel__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classAnnotationModel_aa43f69c5431ede4dc744ae9b61b49f6c}{browse} ()
+\begin{DoxyCompactList}\small\item\em Prompts user to navigate to a annotation file on the system. \end{DoxyCompactList}\item 
+void \hyperlink{classAnnotationModel_a54f9ffa4151a1bdcaa1d5ab3dee87679}{browse} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em Provides a way to enter path to annotation file as a parameter (Q\+String) \end{DoxyCompactList}\item 
+void \hyperlink{classAnnotationModel_ac4c6850c8d0f704c3bf5bef486992690}{create} ()
+\begin{DoxyCompactList}\small\item\em Prompts the user for a annotation file name. Creates a file using this name and path. \end{DoxyCompactList}\item 
+void \hyperlink{classAnnotationModel_ac5062c8663670a312132929f16e4be64}{create} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em Provides a way to create annotation file by providing file path as a parameter (Q\+String) \end{DoxyCompactList}\item 
+void \hyperlink{classAnnotationModel_a02d0db67913a024ee7a7dde190388bb0}{add} (const Q\+String \&json\+File\+Path, const Q\+String \&image\+File\+Path, const Q\+String \&class\+Name, \hyperlink{classLinkedList}{Linked\+List}$<$ std\+::pair$<$ int, int $>$$>$ \&coordinates)
+\begin{DoxyCompactList}\small\item\em Provides a way to save annotation to annotation file. \end{DoxyCompactList}\item 
+void \hyperlink{classAnnotationModel_a9bae328231474c0214dbdb367624046f}{add} (const Q\+String \&image\+File\+Path, const Q\+String \&class\+Name, \hyperlink{classLinkedList}{Linked\+List}$<$ std\+::pair$<$ int, int $>$$>$ \&coordinates)
+\begin{DoxyCompactList}\small\item\em Provides a way to save annotation to annotation file. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{classAnnotationModel_a704170b9d4cc9e6b62e0bc22d17f6e17}{get\+Current\+File\+Path} ()
+\begin{DoxyCompactList}\small\item\em Returns path of currently active annotation file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAnnotationModel_a204571a62dfdc60a405528ddc1db2a61}\label{classAnnotationModel_a204571a62dfdc60a405528ddc1db2a61}} 
+Q\+String {\bfseries current\+File\+Path}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Model, which is responsible for accessing annotation data. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAnnotationModel_a02d0db67913a024ee7a7dde190388bb0}\label{classAnnotationModel_a02d0db67913a024ee7a7dde190388bb0}} 
+\index{Annotation\+Model@{Annotation\+Model}!add@{add}}
+\index{add@{add}!Annotation\+Model@{Annotation\+Model}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Annotation\+Model\+::add (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{json\+File\+Path,  }\item[{const Q\+String \&}]{image\+File\+Path,  }\item[{const Q\+String \&}]{class\+Name,  }\item[{\hyperlink{classLinkedList}{Linked\+List}$<$ std\+::pair$<$ int, int $>$$>$ \&}]{coordinates }\end{DoxyParamCaption})}
+
+
+
+Provides a way to save annotation to annotation file. 
+
+Function opens and loads all annotation details from annotation file into memory. After that it creates a new annotation and adds annotation details to it, or it updates previous annotation if the image was previously annotated in this annotation file.
+
+Annotation file which is being edited is passed as 1st parameter to this function.
+
+If for some reason that file is not available function throws \hyperlink{classFileNotFoundError}{File\+Not\+Found\+Error}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em json\+File\+Path} & Q\+String Path to a annotation file in which annotation is going to be stored to. \\
+\hline
+{\em image\+File\+Path} & Q\+String Path to a image for which annotation is being made. \\
+\hline
+{\em class\+Name} & Q\+String Name of a class which is used for annotating when drawing a shape. \\
+\hline
+{\em coordinates} & \hyperlink{classLinkedList}{Linked\+List} of all points in a annotation shape, in format x,y (std\+::pair$<$int,int$>$). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnnotationModel_a9bae328231474c0214dbdb367624046f}\label{classAnnotationModel_a9bae328231474c0214dbdb367624046f}} 
+\index{Annotation\+Model@{Annotation\+Model}!add@{add}}
+\index{add@{add}!Annotation\+Model@{Annotation\+Model}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Annotation\+Model\+::add (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{image\+File\+Path,  }\item[{const Q\+String \&}]{class\+Name,  }\item[{\hyperlink{classLinkedList}{Linked\+List}$<$ std\+::pair$<$ int, int $>$$>$ \&}]{coordinates }\end{DoxyParamCaption})}
+
+
+
+Provides a way to save annotation to annotation file. 
+
+Function opens and loads all annotation details from annotation file into memory. After that it creates a new annotation and adds annotation details to it, or it updates previous annotation if the image was previously annotated in this annotation file.
+
+Annotation file which is being edited depends on which file is currently selected, obtained from get\+Current\+File function
+
+If for some reason that file is not available function throws \hyperlink{classFileNotFoundError}{File\+Not\+Found\+Error}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+File\+Path} & Q\+String Path to a image for which annotation is being made. \\
+\hline
+{\em class\+Name} & Q\+String Name of a class which is used for annotating when drawing a shape. \\
+\hline
+{\em coordinates} & Q\+String \hyperlink{classLinkedList}{Linked\+List} of all points in a annotation shape, in format x,y (std\+::pair$<$int,int$>$). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnnotationModel_aa43f69c5431ede4dc744ae9b61b49f6c}\label{classAnnotationModel_aa43f69c5431ede4dc744ae9b61b49f6c}} 
+\index{Annotation\+Model@{Annotation\+Model}!browse@{browse}}
+\index{browse@{browse}!Annotation\+Model@{Annotation\+Model}}
+\subsubsection{\texorpdfstring{browse()}{browse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Annotation\+Model\+::browse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prompts user to navigate to a annotation file on the system. 
+
+if entered path is empty, or file could not be oppened, std\+::invalid\+\_\+argument eannotationception is thrown.
+
+if operation is canceled custom \hyperlink{classOperationCanceled}{Operation\+Canceled} eannotationception is thrown
+
+Location of opened file is saved to a private current\+File\+Path attribute in this class \mbox{\Hypertarget{classAnnotationModel_a54f9ffa4151a1bdcaa1d5ab3dee87679}\label{classAnnotationModel_a54f9ffa4151a1bdcaa1d5ab3dee87679}} 
+\index{Annotation\+Model@{Annotation\+Model}!browse@{browse}}
+\index{browse@{browse}!Annotation\+Model@{Annotation\+Model}}
+\subsubsection{\texorpdfstring{browse()}{browse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Annotation\+Model\+::browse (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Path }\end{DoxyParamCaption})}
+
+
+
+Provides a way to enter path to annotation file as a parameter (Q\+String) 
+
+if entered path is empty, or file could not be oppened, std\+::invalid\+\_\+argument eannotationception is thrown.
+
+Location of opened file is saved to a private current\+File\+Path attribute in this class \mbox{\Hypertarget{classAnnotationModel_ac4c6850c8d0f704c3bf5bef486992690}\label{classAnnotationModel_ac4c6850c8d0f704c3bf5bef486992690}} 
+\index{Annotation\+Model@{Annotation\+Model}!create@{create}}
+\index{create@{create}!Annotation\+Model@{Annotation\+Model}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Annotation\+Model\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prompts the user for a annotation file name. Creates a file using this name and path. 
+
+if file\+Path is empty, or file could not be created at wanted location std\+::invalid argument eannotationception is thrown
+
+if operation is canceled custom \hyperlink{classOperationCanceled}{Operation\+Canceled} eannotationception is thrown
+
+Location of opened file is saved to a private current\+File\+Path attribute in this class \mbox{\Hypertarget{classAnnotationModel_ac5062c8663670a312132929f16e4be64}\label{classAnnotationModel_ac5062c8663670a312132929f16e4be64}} 
+\index{Annotation\+Model@{Annotation\+Model}!create@{create}}
+\index{create@{create}!Annotation\+Model@{Annotation\+Model}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Annotation\+Model\+::create (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Path }\end{DoxyParamCaption})}
+
+
+
+Provides a way to create annotation file by providing file path as a parameter (Q\+String) 
+
+if file\+Path is empty, or file could not be created at wanted location std\+::invalid argument eannotationception is thrown
+
+Location of opened file is saved to a private current\+File\+Path attribute in this class \mbox{\Hypertarget{classAnnotationModel_a704170b9d4cc9e6b62e0bc22d17f6e17}\label{classAnnotationModel_a704170b9d4cc9e6b62e0bc22d17f6e17}} 
+\index{Annotation\+Model@{Annotation\+Model}!get\+Current\+File\+Path@{get\+Current\+File\+Path}}
+\index{get\+Current\+File\+Path@{get\+Current\+File\+Path}!Annotation\+Model@{Annotation\+Model}}
+\subsubsection{\texorpdfstring{get\+Current\+File\+Path()}{getCurrentFilePath()}}
+{\footnotesize\ttfamily Q\+String Annotation\+Model\+::get\+Current\+File\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns path of currently active annotation file. 
+
+\begin{DoxyReturn}{Returns}
+Path to a annotation file 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Annotation\+Model.\+h\item 
+src/Annotation\+Model.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,163 @@
+\hypertarget{classMainController}{}\section{Main\+Controller Class Reference}
+\label{classMainController}\index{Main\+Controller@{Main\+Controller}}
+
+
+{\ttfamily \#include $<$Main\+Controller.\+h$>$}
+
+
+
+Collaboration diagram for Main\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classMainController__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMainController_a1ec0f2ef4a8efce169354c525afec025}{Main\+Controller} (\hyperlink{classAnnotationController}{Annotation\+Controller} \&, \hyperlink{classClassController}{Class\+Controller} \&, \hyperlink{classImageController}{Image\+Controller} \&)
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{classMainController}{Main\+Controller}, taking in references to each type of sub-\/controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainController_a9839c3a1b6fac7c4ee47479f86666c2b}\label{classMainController_a9839c3a1b6fac7c4ee47479f86666c2b}} 
+void \hyperlink{classMainController_a9839c3a1b6fac7c4ee47479f86666c2b}{browse\+Images} ()
+\begin{DoxyCompactList}\small\item\em Delegates the image folder browsing event to the \hyperlink{classImageController}{Image\+Controller}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainController_a9513dcff8f9540bba40a69b858596961}\label{classMainController_a9513dcff8f9540bba40a69b858596961}} 
+void {\bfseries search\+Loaded\+Images} (const Q\+String \&)
+\item 
+\mbox{\Hypertarget{classMainController_a1a2d138aa215dc8e2577cc44956595af}\label{classMainController_a1a2d138aa215dc8e2577cc44956595af}} 
+void {\bfseries sort\+Loaded\+Images} ()
+\item 
+\mbox{\Hypertarget{classMainController_a528a8b9b2aeee5dd416dc1e57da56693}\label{classMainController_a528a8b9b2aeee5dd416dc1e57da56693}} 
+void {\bfseries select\+Image} (const Q\+String \&)
+\item 
+void \hyperlink{classMainController_a44cb414d5932db864383b9cb17c6f0b1}{open\+Image} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em Gets the image filename from the \hyperlink{classMainView}{Main\+View} and passes request to open image to \hyperlink{classMainController}{Main\+Controller}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainController_aa717950c16ef5d01ab4edf77a9a27f82}\label{classMainController_aa717950c16ef5d01ab4edf77a9a27f82}} 
+void \hyperlink{classMainController_aa717950c16ef5d01ab4edf77a9a27f82}{browse\+For\+Class\+File} ()
+\begin{DoxyCompactList}\small\item\em Delegates class folder browsing event to the \hyperlink{classClassController}{Class\+Controller}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainController_a082a8c3ba40b0303d3e28757134a6cfa}\label{classMainController_a082a8c3ba40b0303d3e28757134a6cfa}} 
+void {\bfseries sort\+Loaded\+Classes} ()
+\item 
+\mbox{\Hypertarget{classMainController_a6cdee58a8c4ed59ab9a05ab5a15456a6}\label{classMainController_a6cdee58a8c4ed59ab9a05ab5a15456a6}} 
+void \hyperlink{classMainController_a6cdee58a8c4ed59ab9a05ab5a15456a6}{create\+Class\+File} ()
+\begin{DoxyCompactList}\small\item\em Delegates the creation of a class file to the \hyperlink{classClassController}{Class\+Controller}. \end{DoxyCompactList}\item 
+void \hyperlink{classMainController_aede8e00b0ad8f75018f6b62e1cb5e301}{add\+Class} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em Delegates the addition of a new class to the \hyperlink{classClassController}{Class\+Controller}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainController_a8a0f5b26e0037dc3ec3abe885b199370}\label{classMainController_a8a0f5b26e0037dc3ec3abe885b199370}} 
+void {\bfseries select\+Class} (const std\+::string \&)
+\item 
+void \hyperlink{classMainController_ad639a2fd588d6fe011701a5168184883}{remove\+Class} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em Delegates the removal of a class to the \hyperlink{classClassController}{Class\+Controller}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainController_a018730fa763bed9ef77bb7c2fc994bb8}\label{classMainController_a018730fa763bed9ef77bb7c2fc994bb8}} 
+void {\bfseries browse\+For\+Annotation\+File} ()
+\item 
+\mbox{\Hypertarget{classMainController_adcab0ecd57994728c1ad67dafc844179}\label{classMainController_adcab0ecd57994728c1ad67dafc844179}} 
+void \hyperlink{classMainController_adcab0ecd57994728c1ad67dafc844179}{create\+Annotation\+File} ()
+\begin{DoxyCompactList}\small\item\em Delegates the creation of annotation file to the \hyperlink{classAnnotationController}{Annotation\+Controller}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainController_a319b25b145b9067d55d8b1967fb4b381}\label{classMainController_a319b25b145b9067d55d8b1967fb4b381}} 
+void {\bfseries add\+Point} (Point)
+\item 
+\mbox{\Hypertarget{classMainController_afa0ea947f033ff9fac5b798378d03667}\label{classMainController_afa0ea947f033ff9fac5b798378d03667}} 
+void {\bfseries finish\+Shape} ()
+\item 
+\mbox{\Hypertarget{classMainController_a7855f2a07593bd632e36bed1452386b2}\label{classMainController_a7855f2a07593bd632e36bed1452386b2}} 
+void {\bfseries cancel\+Shape} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMainController_ac2599267b4e51136efc57d7d0f1e3aa2}\label{classMainController_ac2599267b4e51136efc57d7d0f1e3aa2}} 
+std\+::string {\bfseries get\+Selected\+Class} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMainController_af065a8fdd42311f90d96b68f77f2248f}\label{classMainController_af065a8fdd42311f90d96b68f77f2248f}} 
+\hyperlink{classAnnotationController}{Annotation\+Controller} {\bfseries annotation\+Controller}
+\item 
+\mbox{\Hypertarget{classMainController_a5061629143625f07d1131a4ea8d39d73}\label{classMainController_a5061629143625f07d1131a4ea8d39d73}} 
+\hyperlink{classClassController}{Class\+Controller} {\bfseries class\+Controller}
+\item 
+\mbox{\Hypertarget{classMainController_a6553221dd7d26251572bd730fdd9aae5}\label{classMainController_a6553221dd7d26251572bd730fdd9aae5}} 
+\hyperlink{classImageController}{Image\+Controller} {\bfseries image\+Controller}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processes callbacks from the G\+UI by delegating to the specific sub-\/controllers. Servers as an added layer of separation between the views and controllers to decrease coupling and handle business logic, which spans multiple controllers and models. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMainController_a1ec0f2ef4a8efce169354c525afec025}\label{classMainController_a1ec0f2ef4a8efce169354c525afec025}} 
+\index{Main\+Controller@{Main\+Controller}!Main\+Controller@{Main\+Controller}}
+\index{Main\+Controller@{Main\+Controller}!Main\+Controller@{Main\+Controller}}
+\subsubsection{\texorpdfstring{Main\+Controller()}{MainController()}}
+{\footnotesize\ttfamily Main\+Controller\+::\+Main\+Controller (\begin{DoxyParamCaption}\item[{\hyperlink{classAnnotationController}{Annotation\+Controller} \&}]{annotation\+Controller,  }\item[{\hyperlink{classClassController}{Class\+Controller} \&}]{class\+Controller,  }\item[{\hyperlink{classImageController}{Image\+Controller} \&}]{image\+Controller }\end{DoxyParamCaption})}
+
+
+
+Constructs a \hyperlink{classMainController}{Main\+Controller}, taking in references to each type of sub-\/controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em annotation\+Controller} & \\
+\hline
+{\em class\+Controller} & \\
+\hline
+{\em image\+Controller} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMainController_aede8e00b0ad8f75018f6b62e1cb5e301}\label{classMainController_aede8e00b0ad8f75018f6b62e1cb5e301}} 
+\index{Main\+Controller@{Main\+Controller}!add\+Class@{add\+Class}}
+\index{add\+Class@{add\+Class}!Main\+Controller@{Main\+Controller}}
+\subsubsection{\texorpdfstring{add\+Class()}{addClass()}}
+{\footnotesize\ttfamily void Main\+Controller\+::add\+Class (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{class\+Name }\end{DoxyParamCaption})}
+
+
+
+Delegates the addition of a new class to the \hyperlink{classClassController}{Class\+Controller}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em classname} & Name of the class to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMainController_a44cb414d5932db864383b9cb17c6f0b1}\label{classMainController_a44cb414d5932db864383b9cb17c6f0b1}} 
+\index{Main\+Controller@{Main\+Controller}!open\+Image@{open\+Image}}
+\index{open\+Image@{open\+Image}!Main\+Controller@{Main\+Controller}}
+\subsubsection{\texorpdfstring{open\+Image()}{openImage()}}
+{\footnotesize\ttfamily void Main\+Controller\+::open\+Image (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Gets the image filename from the \hyperlink{classMainView}{Main\+View} and passes request to open image to \hyperlink{classMainController}{Main\+Controller}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMainController_ad639a2fd588d6fe011701a5168184883}\label{classMainController_ad639a2fd588d6fe011701a5168184883}} 
+\index{Main\+Controller@{Main\+Controller}!remove\+Class@{remove\+Class}}
+\index{remove\+Class@{remove\+Class}!Main\+Controller@{Main\+Controller}}
+\subsubsection{\texorpdfstring{remove\+Class()}{removeClass()}}
+{\footnotesize\ttfamily void Main\+Controller\+::remove\+Class (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{class\+Name }\end{DoxyParamCaption})}
+
+
+
+Delegates the removal of a class to the \hyperlink{classClassController}{Class\+Controller}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em classname} & Name of the class to remove. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Main\+Controller.\+h\item 
+src/Main\+Controller.\+cpp\end{DoxyCompactItemize}
