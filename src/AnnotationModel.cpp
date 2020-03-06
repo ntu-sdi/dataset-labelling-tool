@@ -1,5 +1,10 @@
 #include <QFileSystemModel>
 #include <QFileDialog>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QTextStream>
+#include <iostream>
 #include "exceptions.h"
 
 #include "AnnotationModel.h"
@@ -108,7 +113,51 @@ void AnnotationModel::create(const QString& filePath)
     this->currentFilePath = path;
 }
 
-void AnnotationModel::add(const QString&, const int, const LinkedList<Shape>&) {}
+void AnnotationModel::add(const QString& imageFilePath, const QString& className, LinkedList<std::pair<int,int>>& coordinates) {
+    QJsonObject annotationDetails;
+    annotationDetails.insert("class",className);
+    QJsonArray points;
+    for (int i = 0; i < coordinates.length(); i++){
+        int x = coordinates.at(i).first;
+        int y = coordinates.at(i).second;
+        QJsonObject o;
+        o.insert("x",x);
+        o.insert("y",y);
+        points.append(o);
+    }
+    annotationDetails.insert("points",points);
+    QJsonObject annotation;
+    annotation.insert(imageFilePath,annotationDetails);
+    QJsonDocument json;
+    json.setObject(annotation);
+    QFile jsonFile(getCurrentFilePath());
+    jsonFile.open(QIODevice::WriteOnly | QIODevice::Append);
+    jsonFile.write(json.toJson());
+    jsonFile.close();
+}
+
+void AnnotationModel::add(const QString& jsonFilePath,const QString& imageFilePath, const QString& className, LinkedList<std::pair<int,int>>& coordinates) {
+    QJsonObject annotationDetails;
+    annotationDetails.insert("class",className);
+    QJsonArray points;
+    for (int i = 0; i < coordinates.length(); i++){
+        int x = coordinates.at(i).first;
+        int y = coordinates.at(i).second;
+        QJsonObject o;
+        o.insert("x",x);
+        o.insert("y",y);
+        points.append(o);
+    }
+    annotationDetails.insert("points",points);
+    QJsonObject annotation;
+    annotation.insert(imageFilePath,annotationDetails);
+    QJsonDocument json;
+    json.setObject(annotation);
+    QFile jsonFile(jsonFilePath);
+    jsonFile.open(QIODevice::WriteOnly | QIODevice::Append);
+    jsonFile.write(json.toJson());
+    jsonFile.close();
+}
 
 /**
  * @brief Returns path of currently active annotation file

@@ -3,6 +3,7 @@
 #define BOOST_TEST_MODULE Main
 #endif
 #include "../include/AnnotationModel.h"
+#include "../include/LinkedList.h"
 #include <string>
 #include <boost/test/unit_test.hpp>
 
@@ -64,5 +65,12 @@ BOOST_AUTO_TEST_SUITE( ImageModelTests )
         BOOST_CHECK_EQUAL(model.getCurrentFilePath().toStdString(),"../testFiles/template.annotation");
     }
 
+    BOOST_AUTO_TEST_CASE(WriteAnnotation){
+        AnnotationModel model;
+        LinkedList<std::pair<int,int>> cords;
+        for (int i = 1; i<5;i++)
+            cords.push(std::make_pair(123*i,312*i));
+        model.add("../testFiles/annotations.annotation","image1.png","className2",cords);
+    }
 
 BOOST_AUTO_TEST_SUITE_END()
