@@ -4,9 +4,18 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QJsonValue>
-
+#include <iostream>
 #include "exceptions.h"
 #include "AnnotationModel.h"
+
+/**
+ * @brief Returns path of currently active annotation file
+ * @return Path to a annotation file
+ */
+QString AnnotationModel::getCurrentFilePath()
+{
+    return this->currentFilePath;
+}
 
 /**
  * @brief Prompts user to navigate to a annotation file on the system
@@ -206,11 +215,34 @@ void AnnotationModel::add(const QString& jsonFilePath,const QString& imageFilePa
     jsonFile.close();
 }
 
-/**
- * @brief Returns path of currently active annotation file
- * @return Path to a annotation file
- */
-QString AnnotationModel::getCurrentFilePath()
-{
-    return this->currentFilePath;
+QMap <QString,LinkedList<std::pair<int,int>>> AnnotationModel::getClasses(const QString& imageName){
+    std::cout <<  getCurrentFilePath().toStdString()<<std::endl;
+    std::cout<<"Annotation get classes"<<std::endl;
+    QFile jsonFile(getCurrentFilePath()); //set file
+    if (!jsonFile.exists()){
+        throw FileNotFoundError();
+    }
+    jsonFile.open(QIODevice::ReadOnly); //open file in read mode
+    QByteArray data = jsonFile.readAll();
+    QJsonDocument json = QJsonDocument::fromJson(data); //create json document from file contents
+    jsonFile.close();
+    //std::cout<<json[imageName].toString().toStdString();
 }
+
+/*
+QMap <QString,LinkedList<std::pair<int,int>>> AnnotationModel::getClasses(const QString& imageName,const QString& annotationFilePath){
+    //throw (std::invalid_argument("Not implemented"));
+
+    std::cout<<"Annotation get classes"<<std::endl;
+    QFile jsonFile(annotationFilePath); //set file
+    if (!jsonFile.exists()){
+        throw FileNotFoundError();
+    }
+    jsonFile.open(QIODevice::ReadOnly); //open file in read mode
+    QByteArray data = jsonFile.readAll();
+    QJsonDocument json = QJsonDocument::fromJson(data); //create json document from file contents
+    jsonFile.close();
+    std::cout<<"Annotations are"<<std::endl;
+    std::cout<<json[imageName].toString().toStdString();
+}
+*/

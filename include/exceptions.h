@@ -33,7 +33,7 @@ class FileNotFoundError : public std::exception
 public:
     const char * what () const throw ()
     {
-        return "Error: Image file could not be found";
+        return "Error:  File could not be found";
     }
 };
 
