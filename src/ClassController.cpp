@@ -54,6 +54,8 @@ void ClassController::create()
     catch (std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
     }
+    catch (std::runtime_error) {
+    }
 }
 
 void ClassController::sortLoaded() {}

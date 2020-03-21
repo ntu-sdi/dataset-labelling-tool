@@ -86,6 +86,8 @@ void ClassModel::create()
                                                     "./",
                                                     "Class files (*.class)");
     
+    if (fileName.isNull())
+        throw std::runtime_error("Creating cancelled");
     fileName = fileName.trimmed();
     if (!fileName.contains(".class")) fileName.append(".class");
     std::ofstream file(fileName.toStdString());
