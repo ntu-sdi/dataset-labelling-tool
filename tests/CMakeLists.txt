@@ -14,8 +14,7 @@ add_executable (Tests
                 LinkedListsTests.cpp
                 ImageModelTests.cpp
                 ClassModelTests.cpp
-                AnnotationModelTests.cpp
-
+                
                 ../../src/ClassModel.cpp
                 ../../include/ClassModel.h
                 ../../src/ImageModel.cpp

@@ -20,12 +20,12 @@ private:
         Node* next;
     };
     Node* head;
-    size_t len {0};
+    int len {0};
 
-    Node* nodeAt(size_t index)
+    Node* nodeAt(int index)
     {
         Node* currentNode = head;
-        size_t currentIndex = 0;
+        int currentIndex = 0;
         while(currentIndex < index) {
             if(currentNode->next == nullptr) {
                 throw IndexOutOfBoundsError();
@@ -37,15 +37,15 @@ private:
     }
 
     /**
-     * @brief An size_ternal implementation of the quicksort algorithm.
+     * @brief An internal implementation of the quicksort algorithm.
      *
      * @param left Starting left bound of the algorithm.
      * @param right Starting right bound of the algorithm.
      */
-    void quicksort(size_t left, int right)
+    void quicksort(int left, int right)
     {
-        size_t i = left;
-        size_t j = right;
+        int i = left;
+        int j = right;
         T pivot = this->at((i + j) / 2);
         T temp;
         while(i <= j) {
@@ -97,7 +97,7 @@ public:
      * @param index Index of the node to get.
      * @return T Data of the node at the given index.
      */
-    T &operator[] (size_t index)
+    T &operator[] (int index)
     {
         return at(index);
     }
@@ -107,9 +107,9 @@ public:
      *
      * @param index Index to insert at.
      * @param data Data of the new node.
-     * @return Node* Posize_ter to the new node.
+     * @return Node* Pointer to the new node.
      */
-    Node* insert(size_t index, T data)
+    Node* insert(int index, T data)
     {
         if(index < 0) {
             throw IndexOutOfBoundsError();
@@ -137,10 +137,10 @@ public:
      * @param index The index of the node to get the data.
      * @return T Data of the node at the index specified.
      */
-    T at(size_t index)
+    T at(int index)
     {
         Node* currentNode = head;
-        size_t currentIndex {0};
+        int currentIndex {0};
         while(currentIndex < index) {
             if(currentNode->next == nullptr) {
                 throw IndexOutOfBoundsError();
@@ -154,9 +154,9 @@ public:
     /**
      * @brief Gets the length of the list.
      *
-     * @return size_t The lenght of the list.
+     * @return int The lenght of the list.
      */
-    size_t length()
+    int length()
     {
         return len;
     }
@@ -165,11 +165,11 @@ public:
      * @brief Returns the index of the first node with the given data.
      *
      * @param data Data of node to get the index of.
-     * @return size_t Index of the first node with the given data.
+     * @return int Index of the first node with the given data.
      */
-    size_t getIndex(T data)
+    int getIndex(T data)
     {
-        size_t currentIndex = 0;
+        int currentIndex = 0;
         Node* currentNode = head;
         while(currentNode != nullptr) {
             if(currentNode->data == data) {
@@ -189,7 +189,7 @@ public:
      */
     bool contains(T data)
     {
-        size_t currentIndex = 0;
+        int currentIndex = 0;
         Node* currentNode = head;
         while(currentNode != nullptr) {
             if(currentNode->data == data) {
@@ -208,11 +208,11 @@ public:
      *
      * @param index Index of the node to be removed.
      */
-    void removeAt(size_t index)
+    void removeAt(int index)
     {
         Node* currentNode = head;
         Node* prevNode = nullptr;
-        size_t currentIndex {0};
+        int currentIndex {0};
         if(len == 0) {
             throw ArrayEmptyError();
         }
@@ -245,7 +245,7 @@ public:
      */
     void remove(T data)
     {
-        size_t currentIndex = 0;
+        int currentIndex = 0;
         Node* currentNode = head;
         Node* prevNode = nullptr;
         while(currentNode != nullptr) {
@@ -273,7 +273,7 @@ public:
         delete currentNode;
     }
 
-    void replace(size_t index, T data)
+    void replace(int index, T data)
     {
         Node* node = this->nodeAt(index);
         node->data = data;
@@ -283,11 +283,11 @@ public:
      * @brief Inserts a new node to the end of the list.
      *
      * @param data Data of the node to insert.
-     * @return Node* Posize_ter to the new node.
+     * @return Node* Pointer to the new node.
      */
     Node* push(T data)
     {
-        size_t insertIdx;
+        int insertIdx;
         if(this->isEmpty()) {
             insertIdx = 0;
         }
