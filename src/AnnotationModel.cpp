@@ -215,19 +215,17 @@ void AnnotationModel::add(const QString& jsonFilePath,const QString& imageFilePa
     jsonFile.close();
 }
 
+
 QMap <QString,LinkedList<std::pair<int,int>>> AnnotationModel::getClasses(const QString& imageName){
-    std::cout <<  getCurrentFilePath().toStdString()<<std::endl;
-    std::cout<<"Annotation get classes"<<std::endl;
-    QFile jsonFile(getCurrentFilePath()); //set file
-    if (!jsonFile.exists()){
-        throw FileNotFoundError();
-    }
+    QFile jsonFile(getCurrentFilePath());
     jsonFile.open(QIODevice::ReadOnly); //open file in read mode
-    QByteArray data = jsonFile.readAll();
-    QJsonDocument json = QJsonDocument::fromJson(data); //create json document from file contents
-    jsonFile.close();
-    //std::cout<<json[imageName].toString().toStdString();
 }
+
+QMap <QString,LinkedList<std::pair<int,int>>> AnnotationModel::getClasses(const QString& imageName,const QString& filePath ){
+    QFile jsonFile(filePath);
+    jsonFile.open(QIODevice::ReadOnly); //open file in read mode
+}
+
 
 /*
 QMap <QString,LinkedList<std::pair<int,int>>> AnnotationModel::getClasses(const QString& imageName,const QString& annotationFilePath){

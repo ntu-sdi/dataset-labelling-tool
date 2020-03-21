@@ -26,6 +26,6 @@ public:
     void add(const QString& imageFilePath,const QString& className, LinkedList<std::pair<int,int>>& coordinates);
 
     QMap <QString,LinkedList<std::pair<int,int>>> getClasses(const QString&);
-    //QMap <QString,LinkedList<std::pair<int,int>>> getClasses(const QString&, const QString&);
+    QMap <QString,LinkedList<std::pair<int,int>>> getClasses(const QString&, const QString&);
 
 };

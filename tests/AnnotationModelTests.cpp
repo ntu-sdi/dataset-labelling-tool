@@ -97,7 +97,7 @@ BOOST_AUTO_TEST_SUITE( ImageModelTests )
         //Tests if reading annotation file return
         AnnotationModel model;
         model.browse(TESTFILE);
-        model.getClasses("imageExample2.png");
+        model.getClasses("imageExample2.png",TESTFILE);
     }
 
 BOOST_AUTO_TEST_SUITE_END()
