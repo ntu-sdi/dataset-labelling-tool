@@ -8,6 +8,7 @@
 #include <fstream>
 
 #include "LinkedList.h"
+#include "exceptions.h"
 
 /**
  * ClassModel, which is responsible for the creating, adding and removing of classes. Maintains internal information

@@ -7,6 +7,25 @@
 #include "ui_MainView.h"
 #include<boost/test/unit_test.hpp>
 
+template<class T>
+bool isSorted(LinkedList<T>& list)
+{
+    if(list.length() < 2) {
+        return true;
+    }
+    T prev;
+    for (int i = 0; i <= list.length() - 1; ++i) {
+        if (i == 0) {
+            prev = list.at(i);
+            continue;
+        }
+        if(list.at(i) < prev) {
+            return false;
+        }
+        prev = list.at(i);
+    }
+    return true;
+}
 
 BOOST_AUTO_TEST_SUITE( LinkedListTest )
 
@@ -157,5 +176,43 @@ BOOST_AUTO_TEST_SUITE( LinkedListTest )
         BOOST_CHECK_EQUAL(l.contains("world"), false);
     }
 
+    BOOST_AUTO_TEST_CASE(SortWithOneItem)
+    {
+        LinkedList<int> l;
+        l.push(1);
+        l.sort();
+        BOOST_CHECK_EQUAL(isSorted(l), true);
+    }
+
+    BOOST_AUTO_TEST_CASE(SortUnsortedListWithTwoItems)
+    {
+        LinkedList<int> l;
+        l.push(2);
+        l.push(1);
+        l.sort();
+        BOOST_CHECK_EQUAL(isSorted(l), true);
+    }
+
+    BOOST_AUTO_TEST_CASE(SortSortedListWithTwoItems)
+    {
+        LinkedList<int> l;
+        l.push(1);
+        l.push(2);
+        l.sort();
+        BOOST_CHECK_EQUAL(isSorted(l), true);
+
+    }
+
+    BOOST_AUTO_TEST_CASE(SortUnsortedListWithFiveItems)
+    {
+        LinkedList<int> l;
+        l.push(5);
+        l.push(2);
+        l.push(4);
+        l.push(1);
+        l.push(3);
+        l.sort();
+        BOOST_CHECK_EQUAL(isSorted(l), true);
+    }
 
 BOOST_AUTO_TEST_SUITE_END()
