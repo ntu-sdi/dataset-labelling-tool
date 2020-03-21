@@ -20,7 +20,57 @@ private:
         Node* next;
     };
     Node* head;
-    int len {0};
+    size_t len {0};
+
+    Node* nodeAt(size_t index)
+    {
+        Node* currentNode = head;
+        size_t currentIndex = 0;
+        while(currentIndex < index) {
+            if(currentNode->next == nullptr) {
+                throw IndexOutOfBoundsError();
+            }
+            currentNode = currentNode->next;
+            ++currentIndex;
+        }
+        return currentNode;
+    }
+
+    /**
+     * @brief An size_ternal implementation of the quicksort algorithm.
+     *
+     * @param left Starting left bound of the algorithm.
+     * @param right Starting right bound of the algorithm.
+     */
+    void quicksort(size_t left, int right)
+    {
+        size_t i = left;
+        size_t j = right;
+        T pivot = this->at((i + j) / 2);
+        T temp;
+        while(i <= j) {
+            while(this->at(i) < pivot) {
+                ++i;
+            }
+            while(this->at(j) > pivot) {
+                --j;
+            }
+            if(i <= j) {
+                temp = this->at(i);
+                this->replace(i, this->at(j));
+                this->replace(j, temp);
+                ++i;
+                --j;
+            }
+        }
+        if(j > left) {
+            this->quicksort(left, j);
+        }
+        if(i < right) {
+            this->quicksort(i, right);
+        }
+    }
+
 public:
     LinkedList()
     {
@@ -40,14 +90,14 @@ public:
     }
 
     /**
-     * @brief operator [] Gets the data of the node at the index specified.
+     * @brief Gets the data of the node at the index specified.
      *
      * This method overrides the [] operator, simply calling LinkedList::at.
      *
      * @param index Index of the node to get.
      * @return T Data of the node at the given index.
      */
-    T &operator[] (int index)
+    T &operator[] (size_t index)
     {
         return at(index);
     }
@@ -57,47 +107,40 @@ public:
      *
      * @param index Index to insert at.
      * @param data Data of the new node.
-     * @return Node* Pointer to the new node.
+     * @return Node* Posize_ter to the new node.
      */
-    Node* insert(int index, T data)
+    Node* insert(size_t index, T data)
     {
         if(index < 0) {
             throw IndexOutOfBoundsError();
         }
-        int currentIndex = 1;
-        Node* currentNode = head;
-        while(currentNode && index > currentIndex) {
-            currentNode = currentNode->next;
-            ++currentIndex;
-        }
+        Node* currentNode = this->nodeAt(index - 1);
         if(index > 0 && currentNode == nullptr) {
             throw IndexOutOfBoundsError();
         }
         Node* newNode = new Node;
         newNode->data = data;
         if(index == 0) {
-            newNode->next = head;
-            head = newNode;
-            ++len;
+            newNode->next = this->head;
+            this->head = newNode;
         }
         else {
             newNode->next = currentNode->next;
             currentNode->next = newNode;
-            ++len;
         }
+        ++len;
         return newNode;
     }
-
     /**
-     * @brief at Gets the data of the node at the index specified.
+     * @brief Gets the data of the node at the index specified.
      *
      * @param index The index of the node to get the data.
      * @return T Data of the node at the index specified.
      */
-    T at(int index)
+    T at(size_t index)
     {
         Node* currentNode = head;
-        int currentIndex {0};
+        size_t currentIndex {0};
         while(currentIndex < index) {
             if(currentNode->next == nullptr) {
                 throw IndexOutOfBoundsError();
@@ -109,24 +152,24 @@ public:
     }
 
     /**
-     * @brief length Gets the length of the list.
+     * @brief Gets the length of the list.
      *
-     * @return int The lenght of the list.
+     * @return size_t The lenght of the list.
      */
-    int length()
+    size_t length()
     {
         return len;
     }
 
     /**
-     * @brief getIndex Returns the index of the first node with the given data.
+     * @brief Returns the index of the first node with the given data.
      *
      * @param data Data of node to get the index of.
-     * @return int Index of the first node with the given data.
+     * @return size_t Index of the first node with the given data.
      */
-    int getIndex(T data)
+    size_t getIndex(T data)
     {
-        int currentIndex = 0;
+        size_t currentIndex = 0;
         Node* currentNode = head;
         while(currentNode != nullptr) {
             if(currentNode->data == data) {
@@ -139,14 +182,14 @@ public:
     }
 
     /**
-     * @brief contains Checks if the list contains a node with the given data.
+     * @brief Checks if the list contains a node with the given data.
      *
      * @param data Data to check.
      * @return bool True if the list contains a node with the data, otherwise false.
      */
     bool contains(T data)
     {
-        int currentIndex = 0;
+        size_t currentIndex = 0;
         Node* currentNode = head;
         while(currentNode != nullptr) {
             if(currentNode->data == data) {
@@ -158,16 +201,18 @@ public:
         return false;
     }
 
+
+
     /**
-     * @brief removeAt Removes the node at the given index.
+     * @brief Removes the node at the given index.
      *
      * @param index Index of the node to be removed.
      */
-    void removeAt(int index)
+    void removeAt(size_t index)
     {
         Node* currentNode = head;
         Node* prevNode = nullptr;
-        int currentIndex {0};
+        size_t currentIndex {0};
         if(len == 0) {
             throw ArrayEmptyError();
         }
@@ -194,13 +239,13 @@ public:
     }
 
     /**
-     * @brief remove Removes the first node with the given data.
+     * @brief Removes the first node with the given data.
      *
      * @param data Data of the node to remove.
      */
     void remove(T data)
     {
-        int currentIndex = 0;
+        size_t currentIndex = 0;
         Node* currentNode = head;
         Node* prevNode = nullptr;
         while(currentNode != nullptr) {
@@ -228,16 +273,21 @@ public:
         delete currentNode;
     }
 
+    void replace(size_t index, T data)
+    {
+        Node* node = this->nodeAt(index);
+        node->data = data;
+    }
 
     /**
-     * @brief push Inserts a new node to the end of the list.
+     * @brief Inserts a new node to the end of the list.
      *
      * @param data Data of the node to insert.
-     * @return Node* Pointer to the new node.
+     * @return Node* Posize_ter to the new node.
      */
     Node* push(T data)
     {
-        int insertIdx;
+        size_t insertIdx;
         if(this->isEmpty()) {
             insertIdx = 0;
         }
@@ -246,5 +296,15 @@ public:
         }
         Node* n = this->insert(insertIdx, data);
         return n;
+    }
+
+    /**
+     * @brief Sorts the linked list in-place.
+     */
+    void sort()
+    {
+        if(this->len > 1) {
+            this->quicksort(0, this->len -1);
+        }
     }
 };
