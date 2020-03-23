@@ -153,7 +153,9 @@ void ClassModel::removeClass(const QString& className)
 
 void ClassModel::select(const std::string&) {}
 
-std::string ClassModel::getSelected() {}
+std::string ClassModel::getSelected() {
+    return "";
+}
 
 /**
  * @brief Gets a QStringList of all the classes in the current class file.

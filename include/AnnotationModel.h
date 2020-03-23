@@ -6,7 +6,7 @@
 
 #include "LinkedList.h"
 
-using Point = std::pair<int, int>;
+using Point = QPair<int, int>;
 using Shape = LinkedList<Point>;
 
 /**
@@ -22,10 +22,9 @@ public:
     void browse(const QString&);
     void create();
     void create(const QString&);
-    void add(const QString& jsonFilePath, const QString& imageFilePath, const QString& className, LinkedList<std::pair<int,int>>& coordinates);
-    void add(const QString& imageFilePath,const QString& className, LinkedList<std::pair<int,int>>& coordinates);
-
-    QMap <QString,LinkedList<std::pair<int,int>>> getClasses(const QString&);
-    QMap <QString,LinkedList<std::pair<int,int>>> getClasses(const QString&, const QString&);
+    void add(const QString& jsonFilePath, const QString& imageFilePath, const QString& className, LinkedList<QPair<int,int>>& coordinates);
+    void add(const QString& imageFilePath,const QString& className, LinkedList<QPair<int,int>>& coordinates);
+    QMap <QString,Shape> get(const QString&);
+    QMap <QString,Shape> get(const QString&, const QString&);
 
 };

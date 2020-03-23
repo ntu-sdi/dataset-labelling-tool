@@ -55,3 +55,12 @@ public:
         return "Error: Folder could not be found";
     }
 };
+
+class ImageNotAnnotatedYet : public std::exception
+{
+public:
+    const char * what () const throw ()
+    {
+        return "Error: Image is not annotated in this file yet";
+    }
+};

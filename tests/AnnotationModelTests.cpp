@@ -5,12 +5,31 @@
 #include "../include/AnnotationModel.h"
 #include "../include/LinkedList.h"
 #include "../include/exceptions.h"
+#include <QFileSystemModel>
 #include <string>
 #include <iostream>
 #include <boost/test/unit_test.hpp>
 
+using Point = QPair<int, int>;
+using Shape = LinkedList<Point>;
+
 #define TESTFILE "../testFiles/test.annotation"
-BOOST_AUTO_TEST_SUITE( ImageModelTests )
+#define TESTFILENOEXSTENSION "../testFiles/test"
+#define TESTFILEINVALIDEXSTENSION "../testFiles/testnoexstension"
+#define IMAGEONE "exampleImage.png"
+#define CLASSONE "car"
+#define CLASSTWO "boat"
+#define IMAGETWO "exampleImage2.jpg"
+
+LinkedList<Point> createPoints(){
+        LinkedList<Point> cords;
+        for (int i = 1; i<5;i++){
+            cords.push(std::make_pair(100*i,100*i));
+        }
+        return cords;
+}
+
+BOOST_AUTO_TEST_SUITE( AnnotationModelTests )
 
     BOOST_AUTO_TEST_CASE(CreatingAnnotationFile){
         //Test that creating annotation file is sucesfull
@@ -21,7 +40,7 @@ BOOST_AUTO_TEST_SUITE( ImageModelTests )
     BOOST_AUTO_TEST_CASE(CreatingAnnotationFile_notFullName){
         //Tests that creating annotation file, without exstension, is sucesfull
         AnnotationModel model;
-        BOOST_CHECK_NO_THROW(model.create("../testFiles/testWithoutExstenstion"));
+        BOOST_CHECK_NO_THROW(model.create(TESTFILEINVALIDEXSTENSION));
     }
 
     BOOST_AUTO_TEST_CASE(CreatingInvalidAnnotationFile){
@@ -68,10 +87,10 @@ BOOST_AUTO_TEST_SUITE( ImageModelTests )
     BOOST_AUTO_TEST_CASE(WriteAnnotationToFile){
         //Tests if writing annotation to a annotation file is sucesfull
         AnnotationModel model;
-        LinkedList<std::pair<int,int>> cords;
+        LinkedList<QPair<int,int>> cords;
         for (int i = 1; i<5;i++)
-            cords.push(std::make_pair(1223*i,322*i));
-        BOOST_CHECK_NO_THROW(model.add(TESTFILE,"imageExample.png","classExample",cords));
+            cords.push(std::make_pair(100*i,100*i));
+        BOOST_CHECK_NO_THROW(model.add(TESTFILE,IMAGEONE,CLASSONE,cords));
     }
 
     BOOST_AUTO_TEST_CASE(WriteAnnotationToFile_FromActiveFile){
@@ -79,18 +98,18 @@ BOOST_AUTO_TEST_SUITE( ImageModelTests )
         //Annotation file path is not provided, instead it is obtained from browsing for a file
         AnnotationModel model;
         model.browse(TESTFILE);
-        LinkedList<std::pair<int,int>> cords;
+        LinkedList<QPair<int,int>> cords;
         for (int i = 1; i<5;i++)
-            cords.push(std::make_pair(1223*i,322*i));
-        BOOST_CHECK_NO_THROW(model.add("imageExample2.png","classExample2",cords));
+            cords.push(std::make_pair(100*i,200*i));
+        BOOST_CHECK_NO_THROW(model.add(IMAGETWO,CLASSTWO,cords));
     }
 
     BOOST_AUTO_TEST_CASE(WriteAnnotationToFile_nonExistingFile){
         //Tests if writting annotation to a non existing file throws file not found error
         AnnotationModel model;
-        LinkedList<std::pair<int,int>> cords;
+        LinkedList<QPair<int,int>> cords;
         for (int i = 1; i<5;i++)
-        cords.push(std::make_pair(1223*i,322*i));
+        cords.push(std::make_pair(100*i,100*i));
         BOOST_CHECK_THROW(model.add("INVALIDFILE","imageExample2.png","classExample2",cords),FileNotFoundError);
     }
 
@@ -98,7 +117,8 @@ BOOST_AUTO_TEST_SUITE( ImageModelTests )
         //Tests if reading annotation file return
         AnnotationModel model;
         model.browse(TESTFILE);
-        model.getClasses("imageExample2.png");
+        QMap <QString,Shape> annotations =  model.get("imageExample.png");
+
     }
 
 BOOST_AUTO_TEST_SUITE_END()
