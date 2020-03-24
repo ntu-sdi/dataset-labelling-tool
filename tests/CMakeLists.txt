@@ -1,3 +1,4 @@
+project (dataset-labeling-tool-tests)
 cmake_minimum_required(VERSION 3.0)
 set (Boost_USE_STATIC_LIBS OFF)
 
