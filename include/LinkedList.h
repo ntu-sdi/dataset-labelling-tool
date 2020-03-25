@@ -25,8 +25,8 @@ private:
     {
         Node* currentNode = head;
         size_t currentIndex = 0;
-        while (currentIndex < index) {
-            if (currentNode->next == nullptr) {
+        while(currentIndex < index) {
+            if(currentNode->next == nullptr) {
                 throw IndexOutOfBoundsError();
             }
             currentNode = currentNode->next;
@@ -36,7 +36,7 @@ private:
     }
 
     /**
-     * @brief An size_ternal implementation of the quicksort algorithm.
+     * @brief An internal implementation of the quicksort algorithm.
      *
      * @param left Starting left bound of the algorithm.
      * @param right Starting right bound of the algorithm.
@@ -47,14 +47,14 @@ private:
         size_t j = right;
         T pivot = this->at((i + j) / 2);
         T temp;
-        while (i <= j) {
-            while (this->at(i) < pivot) {
+        while(i <= j) {
+            while(this->at(i) < pivot) {
                 ++i;
             }
-            while (this->at(j) > pivot) {
+            while(this->at(j) > pivot) {
                 --j;
             }
-            if (i <= j) {
+            if(i <= j) {
                 temp = this->at(i);
                 this->replace(i, this->at(j));
                 this->replace(j, temp);
@@ -62,26 +62,26 @@ private:
                 --j;
             }
         }
-        if (j > left) {
+        if(j > left) {
             this->quicksort(left, j);
         }
-        if (i < right) {
+        if(i < right) {
             this->quicksort(i, right);
         }
     }
 
     bool isSorted(LinkedList<T>& list)
     {
-        if (list.length() < 2) {
+        if(list.length() < 2) {
             return true;
         }
         T prev;
-        for (int i = 0; i <= list.length() - 1; ++i) {
-            if (i == 0) {
+        for(int i = 0; i <= list.length() - 1; ++i) {
+            if(i == 0) {
                 prev = list.at(i);
                 continue;
             }
-            if (list.at(i) < prev) {
+            if(list.at(i) < prev) {
                 return false;
             }
             prev = list.at(i);
@@ -130,15 +130,15 @@ public:
     Node* insert(size_t index, T data)
     {
         Node* currentNode = this->head;
-        if (index != 0) {
+        if(index != 0) {
             currentNode = this->nodeAt(index - 1);
         }
-        if (index > 0 && currentNode == nullptr) {
+        if(index > 0 && currentNode == nullptr) {
             throw IndexOutOfBoundsError();
         }
         Node* newNode = new Node;
         newNode->data = data;
-        if (index == 0) {
+        if(index == 0) {
             newNode->next = this->head;
             this->head = newNode;
         }
@@ -159,8 +159,8 @@ public:
     {
         Node* currentNode = head;
         size_t currentIndex{ 0 };
-        while (currentIndex < index) {
-            if (currentNode->next == nullptr) {
+        while(currentIndex < index) {
+            if(currentNode->next == nullptr) {
                 throw IndexOutOfBoundsError();
             }
             currentNode = currentNode->next;
@@ -189,8 +189,8 @@ public:
     {
         size_t currentIndex = 0;
         Node* currentNode = head;
-        while (currentNode != nullptr) {
-            if (currentNode->data == data) {
+        while(currentNode != nullptr) {
+            if(currentNode->data == data) {
                 return currentIndex;
             }
             ++currentIndex;
@@ -209,8 +209,8 @@ public:
     {
         size_t currentIndex = 0;
         Node* currentNode = head;
-        while (currentNode != nullptr) {
-            if (currentNode->data == data) {
+        while(currentNode != nullptr) {
+            if(currentNode->data == data) {
                 return true;
             }
             ++currentIndex;
@@ -229,22 +229,22 @@ public:
         Node* currentNode = head;
         Node* prevNode = nullptr;
         size_t currentIndex{ 0 };
-        if (len == 0) {
+        if(len == 0) {
             throw ArrayEmptyError();
         }
-        while (currentIndex < index) {
-            if (currentNode->next == nullptr) {
+        while(currentIndex < index) {
+            if(currentNode->next == nullptr) {
                 throw IndexOutOfBoundsError();
             }
             prevNode = currentNode;
             currentNode = currentNode->next;
             ++currentIndex;
         }
-        if (index == 0) {
+        if(index == 0) {
             head = currentNode->next;
             --len;
         }
-        else if (prevNode != nullptr) {
+        else if(prevNode != nullptr) {
             prevNode->next = currentNode->next;
             --len;
         }
@@ -264,22 +264,22 @@ public:
         size_t currentIndex = 0;
         Node* currentNode = head;
         Node* prevNode = nullptr;
-        while (currentNode != nullptr) {
-            if (currentNode->data == data) {
+        while(currentNode != nullptr) {
+            if(currentNode->data == data) {
                 break;
             }
             ++currentIndex;
             prevNode = currentNode;
             currentNode = currentNode->next;
         }
-        if (currentNode == nullptr) {
+        if(currentNode == nullptr) {
             throw ValueNotFoundError();
         }
-        else if (currentIndex == 0) {
+        else if(currentIndex == 0) {
             head = currentNode->next;
             --len;
         }
-        else if (prevNode != nullptr) {
+        else if(prevNode != nullptr) {
             prevNode->next = currentNode->next;
             --len;
         }
@@ -304,7 +304,7 @@ public:
     Node* push(T data)
     {
         size_t insertIdx;
-        if (this->isEmpty()) {
+        if(this->isEmpty()) {
             insertIdx = 0;
         }
         else {
@@ -319,8 +319,8 @@ public:
      */
     void sort()
     {
-        if (!this->isSorted(*this)) {
-            if (this->len > 1) {
+        if(!this->isSorted(*this)) {
+            if(this->len > 1) {
                 this->quicksort(0, this->len - 1);
             }
         }

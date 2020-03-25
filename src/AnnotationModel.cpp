@@ -30,14 +30,14 @@ void AnnotationModel::browse()
 {
     QString filePath = QFileDialog::getOpenFileName(nullptr, "Select Annotation File",
         "./", "Annotation files (*.annotation)");
-    if (filePath.isNull()) {
+    if(filePath.isNull()) {
         throw OperationCanceled();
     }
-    if (filePath.isEmpty()) {
+    if(filePath.isEmpty()) {
         throw std::invalid_argument("File path cannot be empty");
     }
     QFile file(filePath);
-    if (file.open(QIODevice::ReadOnly)) {
+    if(file.open(QIODevice::ReadOnly)) {
         this->currentFilePath = filePath;
         file.close();
     }
@@ -58,11 +58,11 @@ void AnnotationModel::browse()
  */
 void AnnotationModel::browse(const QString& filePath)
 {
-    if (filePath.isEmpty()) {
+    if(filePath.isEmpty()) {
         throw std::invalid_argument("File path cannot be empty");
     }
     QFile file(filePath);
-    if (file.open(QIODevice::ReadOnly)) {
+    if(file.open(QIODevice::ReadOnly)) {
         this->currentFilePath = filePath;
         file.close();
     }
@@ -84,18 +84,18 @@ void AnnotationModel::create()
     QString filePath = QFileDialog::getSaveFileName(nullptr, "Create New Annotation File",
         "./",
         "Annotation files (*.annotation)");
-    if (filePath.isNull()) {
+    if(filePath.isNull()) {
         throw OperationCanceled();
     }
-    if (filePath.isEmpty()) {
+    if(filePath.isEmpty()) {
         throw std::invalid_argument("File path cannot be empty");
     }
     filePath = filePath.trimmed();
-    if (!filePath.contains(".annotation")) {
+    if(!filePath.contains(".annotation")) {
         filePath.append(".annotation");
     }
     QFile file(filePath);
-    if (!file.open(QIODevice::ReadWrite)) {
+    if(!file.open(QIODevice::ReadWrite)) {
         std::invalid_argument("Could not create file");
     }
     file.close();
@@ -113,15 +113,15 @@ void AnnotationModel::create()
  */
 void AnnotationModel::create(const QString& filePath)
 {
-    if (filePath.isEmpty()) {
+    if(filePath.isEmpty()) {
         throw std::invalid_argument("File path cannot be empty");
     }
     QString path = filePath;
-    if (!path.contains(".annotation")) {
+    if(!path.contains(".annotation")) {
         path.append(".annotation");
     }
     QFile file(path);
-    if (!file.open(QIODevice::ReadWrite)) {
+    if(!file.open(QIODevice::ReadWrite)) {
         std::invalid_argument("Could not create file");
     }
     file.close();
@@ -145,7 +145,7 @@ void AnnotationModel::create(const QString& filePath)
 void AnnotationModel::add(const QString& imageFilePath, const QString& className, LinkedList<QPair<int, int> >& coordinates)
 {
     QFile jsonFile(getCurrentFilePath());
-    if (!jsonFile.exists()) {
+    if(!jsonFile.exists()) {
         throw FileNotFoundError();
     }
     jsonFile.open(QIODevice::ReadOnly); //open file in read mode
@@ -155,7 +155,7 @@ void AnnotationModel::add(const QString& imageFilePath, const QString& className
     QJsonObject allAnnotations = json.object(); //get outer json object
     QJsonObject newAnnotation; //create new annotation object for storing class name and list of points
     QJsonArray points; //create array for string points
-    for (int i = 0; i < coordinates.length(); i++) {
+    for(int i = 0; i < coordinates.length(); i++) {
         int x = coordinates.at(i).first;
         int y = coordinates.at(i).second;
         QJsonObject o;
@@ -191,7 +191,7 @@ void AnnotationModel::add(const QString& imageFilePath, const QString& className
 void AnnotationModel::add(const QString& jsonFilePath, const QString& imageFilePath, const QString& className, LinkedList<QPair<int, int> >& coordinates)
 {
     QFile jsonFile(jsonFilePath); //set file
-    if (!jsonFile.exists()) {
+    if(!jsonFile.exists()) {
         throw FileNotFoundError();
     }
     jsonFile.open(QIODevice::ReadOnly); //open file in read mode
@@ -201,7 +201,7 @@ void AnnotationModel::add(const QString& jsonFilePath, const QString& imageFileP
     QJsonObject allAnnotations = json.object(); //get outer json object
     QJsonObject newAnnotation; //create new annotation object for storing class name and list of points
     QJsonArray points; //create array for string points
-    for (int i = 0; i < coordinates.length(); i++) {
+    for(int i = 0; i < coordinates.length(); i++) {
         int x = coordinates.at(i).first;
         int y = coordinates.at(i).second;
         QJsonObject o;
@@ -237,16 +237,16 @@ QMap<QString, LinkedList<QPair<int, int> > > AnnotationModel::get(const QString&
     QJsonDocument doc(QJsonDocument::fromJson(jsonFile.readAll()));
     jsonFile.close();
     QJsonObject json = doc.object();
-    if (json.value(imageName).toArray().isEmpty()) {
+    if(json.value(imageName).toArray().isEmpty()) {
         throw ImageNotAnnotatedYet();
     }
     QMap<QString, LinkedList<QPair<int, int> > > returnVar;
-    for (QJsonValue i : json.value(imageName).toArray()) {
+    for(QJsonValue i : json.value(imageName).toArray()) {
         QString className;
         LinkedList<QPair<int, int> > coordinates;
         className = i["class"].toString();
         QJsonArray f = i["points"].toArray();
-        for (auto j : f) {
+        for(auto j : f) {
             QJsonObject o = j.toObject();
             QPair<int, int> currentPoint(o["x"].toInt(), o["y"].toInt());
             coordinates.push(currentPoint);
@@ -274,16 +274,16 @@ QMap<QString, LinkedList<QPair<int, int> > > AnnotationModel::get(const QString&
     QJsonDocument doc(QJsonDocument::fromJson(jsonFile.readAll()));
     jsonFile.close();
     QJsonObject json = doc.object();
-    if (json.value(imageName).toArray().isEmpty()) {
+    if(json.value(imageName).toArray().isEmpty()) {
         throw ImageNotAnnotatedYet();
     }
     QMap<QString, LinkedList<QPair<int, int> > > returnVar;
-    for (QJsonValue i : json.value(imageName).toArray()) {
+    for(QJsonValue i : json.value(imageName).toArray()) {
         QString className;
         LinkedList<QPair<int, int> > coordinates;
         className = i["class"].toString();
         QJsonArray f = i["points"].toArray();
-        for (auto j : f) {
+        for(auto j : f) {
             QJsonObject o = j.toObject();
             QPair<int, int> currentPoint(o["x"].toInt(), o["y"].toInt());
             coordinates.push(currentPoint);
