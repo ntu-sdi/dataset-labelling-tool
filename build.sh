@@ -4,7 +4,6 @@ if [[ "$*" == "-clean" ]]
 then
 rm -rf ./build
 rm -rf ./tests/build
-
 rm ./tests/cmake_install.cmake
 rm ./tests/CMakeCache.txt
 fi
