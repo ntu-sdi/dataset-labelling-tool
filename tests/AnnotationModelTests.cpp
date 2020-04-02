@@ -17,7 +17,7 @@ using Annotation = QMap<QString, Shape>;
 Shape createPoints(int multiplier)
 {
     LinkedList<Point> cords;
-    for (int i = 1; i < 5; i++) {
+    for(int i = 1; i < 5; i++) {
         cords.push(qMakePair(100 * i * multiplier, 100 * i * multiplier));
     }
     return cords;
@@ -25,11 +25,11 @@ Shape createPoints(int multiplier)
 
 bool compareShapes(Shape& a, Shape& b)
 {
-    if (a.length() != b.length()) {
+    if(a.length() != b.length()) {
         return false;
     }
-    for (int i = 0; i < a.length(); i++) {
-        if (a.at(i) != b.at(i)) {
+    for(int i = 0; i < a.length(); i++) {
+        if(a.at(i) != b.at(i)) {
             return false;
         }
     }
