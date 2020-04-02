@@ -16,7 +16,7 @@ void ImageModel::browseFolder()
         QDir directory = QDir(directoryPath);
         directory.setNameFilters(SUPPORTED_FORMATS);
         QFileInfoList loaded = directory.entryInfoList();
-        for (int i =0; i< loaded.size();i ++) {
+        for(int i =0; i< loaded.size();i ++) {
             loadedImages[loaded[i].fileName()] = loaded[i];
         }
     }
@@ -35,7 +35,7 @@ void ImageModel::browseFolder(const QString& folderPath)
     }
     directory.setNameFilters(SUPPORTED_FORMATS);
     QFileInfoList loaded = directory.entryInfoList();
-    for (int i =0; i< loaded.size();i ++) {
+    for(int i =0; i< loaded.size();i ++) {
         loadedImages[loaded[i].fileName()] = loaded[i];
     }
 }

@@ -1,3 +1,4 @@
+project (dataset-labeling-tool-tests)
 cmake_minimum_required(VERSION 3.0)
 set (Boost_USE_STATIC_LIBS OFF)
 
@@ -14,7 +15,8 @@ add_executable (Tests
                 LinkedListsTests.cpp
                 ImageModelTests.cpp
                 ClassModelTests.cpp
-                
+                AnnotationModelTests.cpp
+
                 ../../src/ClassModel.cpp
                 ../../include/ClassModel.h
                 ../../src/ImageModel.cpp

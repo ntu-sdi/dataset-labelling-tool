@@ -14,8 +14,8 @@ bool isSorted(LinkedList<T>& list)
         return true;
     }
     T prev;
-    for (int i = 0; i <= list.length() - 1; ++i) {
-        if (i == 0) {
+    for(int i = 0; i <= list.length() - 1; ++i) {
+        if(i == 0) {
             prev = list.at(i);
             continue;
         }

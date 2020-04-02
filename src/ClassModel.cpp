@@ -6,7 +6,7 @@
  * @param filename File name to write to.
  * @param line Line to write.
  */
-void ClassModel::writeLineToFile(const QString &fileName, const QString &line)
+void ClassModel::writeLineToFile(const QString& fileName, const QString& line)
 {
     QFile file(fileName);
     if(file.open(QIODevice::WriteOnly)) {
@@ -26,12 +26,12 @@ void ClassModel::writeLineToFile(const QString &fileName, const QString &line)
  * @param filename File name to write to.
  * @param lines Lines to write.
  */
-void ClassModel::writeLinesToFile(const QString &fileName, const QStringList &lines)
+void ClassModel::writeLinesToFile(const QString& fileName, const QStringList& lines)
 {
     QFile file(fileName);
     if(file.open(QIODevice::WriteOnly)) {
         QTextStream stream(&file);
-        for(auto i: lines) {
+        for(auto i : lines) {
             stream << i << '\n';
         }
         file.close();
@@ -50,13 +50,13 @@ void ClassModel::save() {}
 void ClassModel::browse()
 {
     this->currentFilePath = QFileDialog::getOpenFileName(nullptr, "Select Class File",
-                                                         "./", "Class files (*.class)");
+        "./", "Class files (*.class)");
     if(!this->currentFilePath.isEmpty()) {
         QFile file(this->currentFilePath);
         if(file.open(QIODevice::ReadOnly)) {
             this->classes.clear();
             QTextStream stream(&file);
-            while (!stream.atEnd()) {
+            while(!stream.atEnd()) {
                 this->classes.append(stream.readLine());
             }
         }
@@ -69,11 +69,13 @@ void ClassModel::browse()
 void ClassModel::browse(const QString& filepath)
 {
     QFile file(filepath);
-    if (file.open(QIODevice::ReadOnly)) {
+    if(file.open(QIODevice::ReadOnly)) {
         QTextStream stream(&file);
-        while (!stream.atEnd())
+        while(!stream.atEnd())
             this->classes.append(stream.readLine());
-    } else throw std::invalid_argument("Could not open file");
+    }
+    else
+        throw std::invalid_argument("Could not open file");
     this->currentFilePath = filepath;
 }
 
@@ -83,15 +85,16 @@ void ClassModel::browse(const QString& filepath)
 void ClassModel::create()
 {
     QString fileName = QFileDialog::getSaveFileName(nullptr, "Create New Class File",
-                                                    "./",
-                                                    "Class files (*.class)");
-    
-    if (fileName.isNull())
+        "./",
+        "Class files (*.class)");
+
+    if(fileName.isNull())
         throw std::runtime_error("Creating cancelled");
     fileName = fileName.trimmed();
-    if (!fileName.contains(".class")) fileName.append(".class");
+    if(!fileName.contains(".class"))
+        fileName.append(".class");
     std::ofstream file(fileName.toStdString());
-    if (!file) {
+    if(!file) {
         file.close();
         throw std::invalid_argument("Could not create file");
     }
@@ -101,7 +104,8 @@ void ClassModel::create()
 
 void ClassModel::create(const QString& filename)
 {
-    std::ofstream file(filename.toStdString()); if (!file) {
+    std::ofstream file(filename.toStdString());
+    if(!file) {
         file.close();
         throw std::invalid_argument("Could not create file");
     }
@@ -120,7 +124,7 @@ void ClassModel::create(const QString& filename)
  */
 void ClassModel::addClass(QString className)
 {
-    if (this->currentFilePath.isEmpty())
+    if(this->currentFilePath.isEmpty())
         throw std::invalid_argument("No file selected");
     else {
         className = className.trimmed();
@@ -143,7 +147,7 @@ void ClassModel::addClass(QString className)
  */
 void ClassModel::removeClass(const QString& className)
 {
-    if (this->currentFilePath.isEmpty())
+    if(this->currentFilePath.isEmpty())
         throw std::invalid_argument("No file selected");
     else {
         this->classes.removeAll(className);
@@ -153,7 +157,10 @@ void ClassModel::removeClass(const QString& className)
 
 void ClassModel::select(const std::string&) {}
 
-std::string ClassModel::getSelected() {}
+std::string ClassModel::getSelected()
+{
+    return "";
+}
 
 /**
  * @brief Gets a QStringList of all the classes in the current class file.
