@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['writelinestofile',['writeLinesToFile',['../classClassModel.html#af78dad5b5b8f214b5067fd1dd629b594',1,'ClassModel']]],
-  ['writelinetofile',['writeLineToFile',['../classClassModel.html#a4ef5baaf966305d2ebb44bf2c40ee533',1,'ClassModel']]]
+  ['updateview',['updateView',['../classClassController.html#a1a286317364cc2fddb8c5c2419f38134',1,'ClassController::updateView()'],['../classImageController.html#a3a300727ff5e30b19fcc0102427fdb30',1,'ImageController::updateView()']]],
+  ['usecontroller',['useController',['../classMainView.html#a077240bb5f37693cd4764914d69b98eb',1,'MainView']]]
 ];

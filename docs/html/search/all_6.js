@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['length',['length',['../classLinkedList.html#a33ccc185173763fde944238f0f269bf0',1,'LinkedList']]],
+  ['length',['length',['../classLinkedList.html#a4b766729a31801b6fafdb6170646d318',1,'LinkedList']]],
   ['linkedlist',['LinkedList',['../classLinkedList.html',1,'']]]
 ];

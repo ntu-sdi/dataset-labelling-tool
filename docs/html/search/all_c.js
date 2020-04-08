@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['updateview',['updateView',['../classClassController.html#a1a286317364cc2fddb8c5c2419f38134',1,'ClassController::updateView()'],['../classImageController.html#a3a300727ff5e30b19fcc0102427fdb30',1,'ImageController::updateView()']]],
-  ['usecontroller',['useController',['../classMainView.html#a077240bb5f37693cd4764914d69b98eb',1,'MainView']]]
+  ['remove',['remove',['../classClassController.html#ac8d209c4e52899c11020f6a3b35f6416',1,'ClassController::remove()'],['../classLinkedList.html#ab9aa6e03f271785f6b488d8c4cc3f3c7',1,'LinkedList::remove()']]],
+  ['removeat',['removeAt',['../classLinkedList.html#ae19893f875003b17caf0f71d26167fd4',1,'LinkedList']]],
+  ['removeclass',['removeClass',['../classClassModel.html#afe2266d404da4bab25bf193212fed198',1,'ClassModel::removeClass()'],['../classMainController.html#ad639a2fd588d6fe011701a5168184883',1,'MainController::removeClass()']]]
 ];

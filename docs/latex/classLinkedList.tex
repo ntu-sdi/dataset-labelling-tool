@@ -11,7 +11,7 @@ Collaboration diagram for Linked\+List$<$ T $>$\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=240pt]{classLinkedList__coll__graph}
+\includegraphics[width=258pt]{classLinkedList__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Classes}
@@ -24,32 +24,49 @@ struct \hyperlink{structLinkedList_1_1Node}{Node}
 \item 
 bool \hyperlink{classLinkedList_a7ecbb28e82117a680839ed0dc28ebdce}{is\+Empty} ()
 \begin{DoxyCompactList}\small\item\em Chceks if the list is empty. \end{DoxyCompactList}\item 
-T \& \hyperlink{classLinkedList_ad5254d9241ff88374dda981c68a320d7}{operator\mbox{[}$\,$\mbox{]}} (int index)
-\begin{DoxyCompactList}\small\item\em operator \mbox{[}\mbox{]} Gets the data of the node at the index specified. \end{DoxyCompactList}\item 
-\hyperlink{structLinkedList_1_1Node}{Node} $\ast$ \hyperlink{classLinkedList_a917c48e728e8243c38d854dc1df9d86d}{insert} (int index, T data)
+T \& \hyperlink{classLinkedList_acccbb0e5eaeb88c5a1557fed87131727}{operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Gets the data of the node at the index specified. \end{DoxyCompactList}\item 
+\hyperlink{structLinkedList_1_1Node}{Node} $\ast$ \hyperlink{classLinkedList_ae5e1ea8a9bbb18d9483db99b44479566}{insert} (size\+\_\+t index, T data)
 \begin{DoxyCompactList}\small\item\em Inserts a new node. \end{DoxyCompactList}\item 
-T \hyperlink{classLinkedList_ae3f37e8947f8fc4dd932bcf41d0344ec}{at} (int index)
-\begin{DoxyCompactList}\small\item\em at Gets the data of the node at the index specified. \end{DoxyCompactList}\item 
-int \hyperlink{classLinkedList_a33ccc185173763fde944238f0f269bf0}{length} ()
-\begin{DoxyCompactList}\small\item\em length Gets the length of the list. \end{DoxyCompactList}\item 
-int \hyperlink{classLinkedList_aa881ec96805fb6c0e4d8f8c806bff490}{get\+Index} (T data)
-\begin{DoxyCompactList}\small\item\em get\+Index Returns the index of the first node with the given data. \end{DoxyCompactList}\item 
+T \hyperlink{classLinkedList_a2793ba03677f44075c0529dffe0b0d5a}{at} (size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Gets the data of the node at the index specified. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classLinkedList_a4b766729a31801b6fafdb6170646d318}{length} ()
+\begin{DoxyCompactList}\small\item\em Gets the length of the list. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classLinkedList_ac274901e769cff00d61b52844e96b21e}{get\+Index} (T data)
+\begin{DoxyCompactList}\small\item\em Returns the index of the first node with the given data. \end{DoxyCompactList}\item 
 bool \hyperlink{classLinkedList_a603e1c5a0a4528d82f83b9393f83bf22}{contains} (T data)
-\begin{DoxyCompactList}\small\item\em contains Checks if the list contains a node with the given data. \end{DoxyCompactList}\item 
-void \hyperlink{classLinkedList_a970cd1e84d2b83af40612dd0e75ebd7a}{remove\+At} (int index)
-\begin{DoxyCompactList}\small\item\em remove\+At Removes the node at the given index. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Checks if the list contains a node with the given data. \end{DoxyCompactList}\item 
+void \hyperlink{classLinkedList_ae19893f875003b17caf0f71d26167fd4}{remove\+At} (size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Removes the node at the given index. \end{DoxyCompactList}\item 
 void \hyperlink{classLinkedList_ab9aa6e03f271785f6b488d8c4cc3f3c7}{remove} (T data)
-\begin{DoxyCompactList}\small\item\em remove Removes the first node with the given data. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Removes the first node with the given data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLinkedList_a0a7ce2592ff7566349f68a1cb60bf00b}\label{classLinkedList_a0a7ce2592ff7566349f68a1cb60bf00b}} 
+void {\bfseries replace} (size\+\_\+t index, T data)
+\item 
 \hyperlink{structLinkedList_1_1Node}{Node} $\ast$ \hyperlink{classLinkedList_a3a1e6c2009b611fb4416574178b316a3}{push} (T data)
-\begin{DoxyCompactList}\small\item\em push Inserts a new node to the end of the list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Inserts a new node to the end of the list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLinkedList_a691b27f81c60be3c891fe6d56a4718b4}\label{classLinkedList_a691b27f81c60be3c891fe6d56a4718b4}} 
+void \hyperlink{classLinkedList_a691b27f81c60be3c891fe6d56a4718b4}{sort} ()
+\begin{DoxyCompactList}\small\item\em Sorts the linked list in-\/place. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLinkedList_ae19ff3c4e501a9638fa5caf5cc9d5b05}\label{classLinkedList_ae19ff3c4e501a9638fa5caf5cc9d5b05}} 
+\hyperlink{structLinkedList_1_1Node}{Node} $\ast$ {\bfseries node\+At} (size\+\_\+t index)
+\item 
+void \hyperlink{classLinkedList_a38612b71d816fec54ea379d0b8daec76}{quicksort} (size\+\_\+t left, size\+\_\+t right)
+\begin{DoxyCompactList}\small\item\em An internal implementation of the quicksort algorithm. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLinkedList_ad67db427015a08993372ed5479dde828}\label{classLinkedList_ad67db427015a08993372ed5479dde828}} 
+bool {\bfseries is\+Sorted} (\hyperlink{classLinkedList}{Linked\+List}$<$ T $>$ \&list)
+\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classLinkedList_a2d1f848e19caa3f180b7fa6938125bba}\label{classLinkedList_a2d1f848e19caa3f180b7fa6938125bba}} 
 \hyperlink{structLinkedList_1_1Node}{Node} $\ast$ {\bfseries head}
 \item 
-\mbox{\Hypertarget{classLinkedList_a06b9d1f7914d2c6ca3f46653176b713c}\label{classLinkedList_a06b9d1f7914d2c6ca3f46653176b713c}} 
-int {\bfseries len} \{0\}
+\mbox{\Hypertarget{classLinkedList_a61a7fe2947bd2d1dbf09a9a97bf7b3ce}\label{classLinkedList_a61a7fe2947bd2d1dbf09a9a97bf7b3ce}} 
+size\+\_\+t {\bfseries len} \{ 0 \}
 \end{DoxyCompactItemize}
 
 
@@ -60,16 +77,16 @@ class Linked\+List$<$ T $>$}
 Custom implementation of a singly-\/linked list. 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classLinkedList_ae3f37e8947f8fc4dd932bcf41d0344ec}\label{classLinkedList_ae3f37e8947f8fc4dd932bcf41d0344ec}} 
+\mbox{\Hypertarget{classLinkedList_a2793ba03677f44075c0529dffe0b0d5a}\label{classLinkedList_a2793ba03677f44075c0529dffe0b0d5a}} 
 \index{Linked\+List@{Linked\+List}!at@{at}}
 \index{at@{at}!Linked\+List@{Linked\+List}}
 \subsubsection{\texorpdfstring{at()}{at()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-T \hyperlink{classLinkedList}{Linked\+List}$<$ T $>$\+::at (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+T \hyperlink{classLinkedList}{Linked\+List}$<$ T $>$\+::at (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-at Gets the data of the node at the index specified. 
+Gets the data of the node at the index specified. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -83,12 +100,12 @@ T Data of the node at the index specified.
 \index{Linked\+List@{Linked\+List}!contains@{contains}}
 \index{contains@{contains}!Linked\+List@{Linked\+List}}
 \subsubsection{\texorpdfstring{contains()}{contains()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
+{\footnotesize\ttfamily template$<$class T$>$ \\
 bool \hyperlink{classLinkedList}{Linked\+List}$<$ T $>$\+::contains (\begin{DoxyParamCaption}\item[{T}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-contains Checks if the list contains a node with the given data. 
+Checks if the list contains a node with the given data. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -98,16 +115,16 @@ contains Checks if the list contains a node with the given data.
 \begin{DoxyReturn}{Returns}
 bool True if the list contains a node with the data, otherwise false. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classLinkedList_aa881ec96805fb6c0e4d8f8c806bff490}\label{classLinkedList_aa881ec96805fb6c0e4d8f8c806bff490}} 
+\mbox{\Hypertarget{classLinkedList_ac274901e769cff00d61b52844e96b21e}\label{classLinkedList_ac274901e769cff00d61b52844e96b21e}} 
 \index{Linked\+List@{Linked\+List}!get\+Index@{get\+Index}}
 \index{get\+Index@{get\+Index}!Linked\+List@{Linked\+List}}
 \subsubsection{\texorpdfstring{get\+Index()}{getIndex()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-int \hyperlink{classLinkedList}{Linked\+List}$<$ T $>$\+::get\+Index (\begin{DoxyParamCaption}\item[{T}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+size\+\_\+t \hyperlink{classLinkedList}{Linked\+List}$<$ T $>$\+::get\+Index (\begin{DoxyParamCaption}\item[{T}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-get\+Index Returns the index of the first node with the given data. 
+Returns the index of the first node with the given data. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -115,14 +132,14 @@ get\+Index Returns the index of the first node with the given data.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int Index of the first node with the given data. 
+size\+\_\+t index of the first node with the given data. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classLinkedList_a917c48e728e8243c38d854dc1df9d86d}\label{classLinkedList_a917c48e728e8243c38d854dc1df9d86d}} 
+\mbox{\Hypertarget{classLinkedList_ae5e1ea8a9bbb18d9483db99b44479566}\label{classLinkedList_ae5e1ea8a9bbb18d9483db99b44479566}} 
 \index{Linked\+List@{Linked\+List}!insert@{insert}}
 \index{insert@{insert}!Linked\+List@{Linked\+List}}
 \subsubsection{\texorpdfstring{insert()}{insert()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-\hyperlink{structLinkedList_1_1Node}{Node}$\ast$ \hyperlink{classLinkedList}{Linked\+List}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{T}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{structLinkedList_1_1Node}{Node}$\ast$ \hyperlink{classLinkedList}{Linked\+List}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index,  }\item[{T}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -136,13 +153,13 @@ Inserts a new node.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Node$\ast$ Pointer to the new node. 
+Node$\ast$ Posize\+\_\+ter to the new node. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classLinkedList_a7ecbb28e82117a680839ed0dc28ebdce}\label{classLinkedList_a7ecbb28e82117a680839ed0dc28ebdce}} 
 \index{Linked\+List@{Linked\+List}!is\+Empty@{is\+Empty}}
 \index{is\+Empty@{is\+Empty}!Linked\+List@{Linked\+List}}
 \subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
+{\footnotesize\ttfamily template$<$class T$>$ \\
 bool \hyperlink{classLinkedList}{Linked\+List}$<$ T $>$\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -152,32 +169,32 @@ Chceks if the list is empty.
 \begin{DoxyReturn}{Returns}
 bool True if the list is empty, otherwise false. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classLinkedList_a33ccc185173763fde944238f0f269bf0}\label{classLinkedList_a33ccc185173763fde944238f0f269bf0}} 
+\mbox{\Hypertarget{classLinkedList_a4b766729a31801b6fafdb6170646d318}\label{classLinkedList_a4b766729a31801b6fafdb6170646d318}} 
 \index{Linked\+List@{Linked\+List}!length@{length}}
 \index{length@{length}!Linked\+List@{Linked\+List}}
 \subsubsection{\texorpdfstring{length()}{length()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-int \hyperlink{classLinkedList}{Linked\+List}$<$ T $>$\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+size\+\_\+t \hyperlink{classLinkedList}{Linked\+List}$<$ T $>$\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-length Gets the length of the list. 
+Gets the length of the list. 
 
 \begin{DoxyReturn}{Returns}
-int The lenght of the list. 
+size\+\_\+t The lenght of the list. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classLinkedList_ad5254d9241ff88374dda981c68a320d7}\label{classLinkedList_ad5254d9241ff88374dda981c68a320d7}} 
+\mbox{\Hypertarget{classLinkedList_acccbb0e5eaeb88c5a1557fed87131727}\label{classLinkedList_acccbb0e5eaeb88c5a1557fed87131727}} 
 \index{Linked\+List@{Linked\+List}!operator\mbox{[}\mbox{]}@{operator[]}}
 \index{operator\mbox{[}\mbox{]}@{operator[]}!Linked\+List@{Linked\+List}}
 \subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-T\& \hyperlink{classLinkedList}{Linked\+List}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+T\& \hyperlink{classLinkedList}{Linked\+List}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-operator \mbox{[}\mbox{]} Gets the data of the node at the index specified. 
+Gets the data of the node at the index specified. 
 
-This method overrides the \mbox{[}\mbox{]} operator, simply calling \hyperlink{classLinkedList_ae3f37e8947f8fc4dd932bcf41d0344ec}{Linked\+List\+::at}.
+This method overrides the \mbox{[}\mbox{]} operator, simply calling \hyperlink{classLinkedList_a2793ba03677f44075c0529dffe0b0d5a}{Linked\+List\+::at}.
 
 
 \begin{DoxyParams}{Parameters}
@@ -191,12 +208,12 @@ T Data of the node at the given index.
 \index{Linked\+List@{Linked\+List}!push@{push}}
 \index{push@{push}!Linked\+List@{Linked\+List}}
 \subsubsection{\texorpdfstring{push()}{push()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
+{\footnotesize\ttfamily template$<$class T$>$ \\
 \hyperlink{structLinkedList_1_1Node}{Node}$\ast$ \hyperlink{classLinkedList}{Linked\+List}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{T}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-push Inserts a new node to the end of the list. 
+Inserts a new node to the end of the list. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -204,34 +221,52 @@ push Inserts a new node to the end of the list.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Node$\ast$ Pointer to the new node. 
+Node$\ast$ Posize\+\_\+ter to the new node. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classLinkedList_a38612b71d816fec54ea379d0b8daec76}\label{classLinkedList_a38612b71d816fec54ea379d0b8daec76}} 
+\index{Linked\+List@{Linked\+List}!quicksort@{quicksort}}
+\index{quicksort@{quicksort}!Linked\+List@{Linked\+List}}
+\subsubsection{\texorpdfstring{quicksort()}{quicksort()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \hyperlink{classLinkedList}{Linked\+List}$<$ T $>$\+::quicksort (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{left,  }\item[{size\+\_\+t}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+An internal implementation of the quicksort algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Starting left bound of the algorithm. \\
+\hline
+{\em right} & Starting right bound of the algorithm. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classLinkedList_ab9aa6e03f271785f6b488d8c4cc3f3c7}\label{classLinkedList_ab9aa6e03f271785f6b488d8c4cc3f3c7}} 
 \index{Linked\+List@{Linked\+List}!remove@{remove}}
 \index{remove@{remove}!Linked\+List@{Linked\+List}}
 \subsubsection{\texorpdfstring{remove()}{remove()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
+{\footnotesize\ttfamily template$<$class T$>$ \\
 void \hyperlink{classLinkedList}{Linked\+List}$<$ T $>$\+::remove (\begin{DoxyParamCaption}\item[{T}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-remove Removes the first node with the given data. 
+Removes the first node with the given data. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em data} & Data of the node to remove. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classLinkedList_a970cd1e84d2b83af40612dd0e75ebd7a}\label{classLinkedList_a970cd1e84d2b83af40612dd0e75ebd7a}} 
+\mbox{\Hypertarget{classLinkedList_ae19893f875003b17caf0f71d26167fd4}\label{classLinkedList_ae19893f875003b17caf0f71d26167fd4}} 
 \index{Linked\+List@{Linked\+List}!remove\+At@{remove\+At}}
 \index{remove\+At@{remove\+At}!Linked\+List@{Linked\+List}}
 \subsubsection{\texorpdfstring{remove\+At()}{removeAt()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-void \hyperlink{classLinkedList}{Linked\+List}$<$ T $>$\+::remove\+At (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \hyperlink{classLinkedList}{Linked\+List}$<$ T $>$\+::remove\+At (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-remove\+At Removes the node at the given index. 
+Removes the node at the given index. 
 
 
 \begin{DoxyParams}{Parameters}
