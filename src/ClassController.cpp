@@ -17,11 +17,16 @@ ClassController::ClassController(const Ui_MainView& ui, const ClassModel& model)
  */
 void ClassController::updateView()
 {
-    QStringList classes = this->model.getAll();
+    LinkedList<QString> classes = this->model.getAll();
     this->ui.ClassesList->clearSelection();
     this->ui.ClassesList->clearFocus();
     this->ui.ClassesList->clear();
-    this->ui.ClassesList->addItems(classes);
+    if(!classes.isEmpty()){
+        for(size_t i = 0; i<classes.length();i++){
+            this->ui.ClassesList->addItem(classes.at(i));
+            //std::cout<<"Reading class: "<<classes.at(i).toStdString();
+        }
+    }
     QString currentFilePath = this->model.getCurrentFilePath();
     if(!currentFilePath.isEmpty()) {
         this->ui.ClassFileLabel->setText(currentFilePath);

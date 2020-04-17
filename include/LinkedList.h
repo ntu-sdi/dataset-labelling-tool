@@ -325,4 +325,14 @@ public:
             }
         }
     }
+
+    void clear(){
+        if(this->length()){
+        while(this->length()){
+            try {
+                removeAt(0);
+            } catch (IndexOutOfBoundsError &e) {
+            }
+        }
+    }}
 };
