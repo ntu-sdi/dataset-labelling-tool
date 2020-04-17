@@ -25,4 +25,6 @@ public:
     void remove(const QString&);
     void getSelected();
     void updateView();
+    void updateView(const QString&);
+
 };

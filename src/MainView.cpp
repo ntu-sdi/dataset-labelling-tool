@@ -101,7 +101,9 @@ void MainView::on_ClassesList_itemDoubleClicked(QListWidgetItem*) {}
 
 void MainView::on_ImageListSortBox_currentTextChanged(const QString&) {}
 
-void MainView::on_ClassListSortBox_currentTextChanged(const QString&) {}
+void MainView::on_ClassListSortBox_currentTextChanged(const QString& a) {
+    controller->sortLoadedClasses(a);
+}
 
 /**
  * @brief Creates a context menu on right-click of the classes pane.

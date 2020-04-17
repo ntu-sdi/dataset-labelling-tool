@@ -24,7 +24,6 @@ void ClassController::updateView()
     if(!classes.isEmpty()){
         for(size_t i = 0; i<classes.length();i++){
             this->ui.ClassesList->addItem(classes.at(i));
-            //std::cout<<"Reading class: "<<classes.at(i).toStdString();
         }
     }
     QString currentFilePath = this->model.getCurrentFilePath();
@@ -33,6 +32,25 @@ void ClassController::updateView()
     }
 }
 
+void ClassController::updateView(const QString& sortOption)
+{
+    LinkedList<QString> classes = this->model.getAll();
+    this->ui.ClassesList->clearSelection();
+    this->ui.ClassesList->clearFocus();
+    this->ui.ClassesList->clear();
+    if(sortOption == "Name : Ascending"){
+        classes.sort();
+    }
+    if(!classes.isEmpty()){
+        for(size_t i = 0; i<classes.length();i++){
+            this->ui.ClassesList->addItem(classes.at(i));
+        }
+    }
+    QString currentFilePath = this->model.getCurrentFilePath();
+    if(!currentFilePath.isEmpty()) {
+        this->ui.ClassFileLabel->setText(currentFilePath);
+    }
+}
 /**
  * @brief Browses for a new class file, then updates the view to reflect that.
  */

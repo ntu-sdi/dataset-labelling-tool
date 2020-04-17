@@ -6,7 +6,7 @@
  * @param filename File name to write to.
  * @param lines Lines to write.
  */
-void ClassModel::writeLinesToFile(const QString& fileName, LinkedList<QString>& lines)
+void ClassModel::writeLinesToFile(const QString& fileName,  LinkedList<QString>& lines)
 {
     QFile file(fileName);
     if (file.open(QIODevice::WriteOnly)) {

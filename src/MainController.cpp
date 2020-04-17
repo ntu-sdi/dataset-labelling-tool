@@ -51,7 +51,9 @@ void MainController::browseForClassFile()
     this->classController.browse();
 }
 
-void MainController::sortLoadedClasses() {}
+void MainController::sortLoadedClasses(const QString& sortOption) {
+    this->classController.updateView(sortOption);
+}
 
 /**
  * @brief Delegates the creation of a class file to the ClassController.
