@@ -6,7 +6,7 @@
  * @param filename File name to write to.
  * @param lines Lines to write.
  */
-void ClassModel::writeLinesToFile(const QString& fileName,  LinkedList<QString>& lines)
+void ClassModel::writeLinesToFile(const QString& fileName, LinkedList<QString>& lines)
 {
     QFile file(fileName);
     if (file.open(QIODevice::WriteOnly)) {
@@ -120,8 +120,10 @@ void ClassModel::removeClass(const QString& className)
     if (this->currentFilePath.isEmpty())
         throw std::invalid_argument("No file selected");
     else {
-        this->classes.removeAt(classes.getIndex(className));
-        this->writeLinesToFile(this->currentFilePath, this->classes);
+        if (classes.contains(className)) {
+            this->classes.removeAt(classes.getIndex(className));
+            this->writeLinesToFile(this->currentFilePath, this->classes);
+        }
     }
 }
 

@@ -115,7 +115,7 @@ public:
      * @param index Index of the node to get.
      * @return T Data of the node at the given index.
      */
-    T& operator[](size_t index)
+    T operator[](size_t index)
     {
         return at(index);
     }
