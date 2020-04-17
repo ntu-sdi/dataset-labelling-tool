@@ -72,12 +72,14 @@ void ClassController::updateView(const QString& sortOption)
  */
 void ClassController::browse()
 {
-    this->model.browse();
     try {
+        this->model.browse();
         this->updateView();
     }
     catch (std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
+    }
+    catch (OperationCanceled& e) {
     }
 }
 

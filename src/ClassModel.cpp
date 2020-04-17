@@ -32,6 +32,9 @@ void ClassModel::browse()
 {
     QString filePath = QFileDialog::getOpenFileName(nullptr, "Select Class File",
         "./", "Class files (*.class)");
+    if (filePath.isNull()){
+        throw OperationCanceled();
+    }
     if (!filePath.isEmpty()) {
         this->browse(filePath);
     }
