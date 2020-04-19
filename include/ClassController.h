@@ -21,10 +21,10 @@ public:
     void create();
     void sortLoaded();
     void add(const QString&);
-    void select(const std::string&);
+    void select(const QString&);
     void remove(const QString&);
-    void getSelected();
     void updateView();
     void updateView(const QString&);
+    QString getSelected();
 
 };

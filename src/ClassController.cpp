@@ -20,11 +20,7 @@ void ClassController::updateView()
     this->ui.ClassesList->clearSelection();
     this->ui.ClassesList->clearFocus();
     this->ui.ClassesList->clear();
-    //LinkedList<QString> classes = this->model.getAll(); //when classes get sorted it changes this->model.getAll(), wrong implementation?, they have same head
-    LinkedList<QString> classes;
-    for (size_t i = 0; i<this->model.getAll().length();i++){
-        classes.push(this->model.getAll().at(i));
-    }
+    LinkedList<QString> classes = this->model.getAll().exportCopy();
     if (!classes.isEmpty()) {
         for (size_t i = 0; i < classes.length(); i++) {
             this->ui.ClassesList->addItem(classes.at(i));
@@ -41,12 +37,8 @@ void ClassController::updateView(const QString& sortOption)
     this->ui.ClassesList->clearSelection();
     this->ui.ClassesList->clearFocus();
     this->ui.ClassesList->clear();
-    LinkedList<QString> classes;
-    for (size_t i = 0; i<this->model.getAll().length();i++){
-        classes.push(this->model.getAll().at(i));
-    };
+    LinkedList<QString> classes = this->model.getAll().exportCopy();
     if (sortOption == "Default") {
-        std::cout<<"Triggered default"<<std::endl;
         this->updateView();
     }
     else {
@@ -117,7 +109,9 @@ void ClassController::add(const QString& className)
     }
 }
 
-void ClassController::select(const std::string&) {}
+void ClassController::select(const QString& className) {
+    this->model.select(className);
+}
 
 /**
  * @brief Removes a class, and updates the view to reflect that.
@@ -135,4 +129,6 @@ void ClassController::remove(const QString& className)
     }
 }
 
-void ClassController::getSelected() {}
+QString ClassController::getSelected() {
+    return this->model.getSelected();
+}

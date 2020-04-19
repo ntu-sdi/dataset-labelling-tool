@@ -97,7 +97,9 @@ void MainView::on_ImageList_itemDoubleClicked(QListWidgetItem* fileName) {
     controller->openImage(fileName->text());
 }
 
-void MainView::on_ClassesList_itemClicked(QListWidgetItem*) {}
+void MainView::on_ClassesList_itemClicked(QListWidgetItem* a) {
+    controller->selectClass(a->text());
+}
 
 void MainView::on_ClassesList_itemDoubleClicked(QListWidgetItem*) {}
 
@@ -129,8 +131,6 @@ void MainView::ProvideContextMenu(const QPoint& position)
         }
     }
 }
-
-
 
 void MainView::on_ClassListSortBox_activated(const QString &arg1)
 {
