@@ -84,7 +84,9 @@ void MainView::on_AnnotationCreateButton_clicked()
     controller->createAnnotationFile();
 }
 
-void MainView::on_ImageList_itemClicked(QListWidgetItem*) {}
+void MainView::on_ImageList_itemClicked(QListWidgetItem* a) {
+    controller->selectImage(a->text());
+}
 
 /**
  * @brief Callback function, which is triggered by user double clicking on the image file name in the image pannel.
@@ -97,7 +99,9 @@ void MainView::on_ImageList_itemDoubleClicked(QListWidgetItem* fileName) {
     controller->openImage(fileName->text());
 }
 
-void MainView::on_ClassesList_itemClicked(QListWidgetItem*) {}
+void MainView::on_ClassesList_itemClicked(QListWidgetItem* a) {
+    controller->selectClass(a->text());
+}
 
 void MainView::on_ClassesList_itemDoubleClicked(QListWidgetItem*) {}
 
@@ -135,4 +139,9 @@ void MainView::setMousePosition(QPoint point)
     std::cout << "Got the point!" << std::endl;
     std::cout << point.x() << " " << point.y() << std::endl;
     this->controller->addPoint(point);
+}
+
+void MainView::on_ClassListSortBox_activated(const QString &arg1)
+{
+    controller->sortLoadedClasses(arg1);
 }

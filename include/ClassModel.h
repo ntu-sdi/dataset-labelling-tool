@@ -1,11 +1,8 @@
 #pragma once
-
-#include <string>
+#include <fstream>
 #include <QFileSystemModel>
 #include <QFileDialog>
 #include <QTextStream>
-#include <iostream>
-#include <fstream>
 
 #include "LinkedList.h"
 #include "exceptions.h"
@@ -17,12 +14,12 @@
 class ClassModel
 {
 private:
-    std::string selectedClass;
     QString currentFilePath;
-    QStringList classes;
+    LinkedList<QString> classes;
+    QString selectedClass;
     void save();
     void writeLineToFile(const QString& filename, const QString& line);
-    void writeLinesToFile(const QString& filename, const QStringList& lines);
+    void writeLinesToFile(const QString& filename, LinkedList<QString>&);
 public:
     void browse();
     void browse(const QString&);
@@ -30,8 +27,9 @@ public:
     void create(const QString&);
     void addClass(QString);
     void removeClass(const QString&);
-    void select(const std::string&);
-    std::string getSelected();
-    QStringList getAll();
+    void select(const QString&);
+    void clear();
+    QString getSelected();
+    LinkedList<QString> getAll();
     QString getCurrentFilePath();
 };

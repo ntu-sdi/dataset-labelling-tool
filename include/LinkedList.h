@@ -108,6 +108,21 @@ public:
     }
 
     /**
+     * @brief Creates copy of this linked list
+     *
+     * @return Copied LinkedList
+     */
+    LinkedList copy(){
+        LinkedList<T> copy;
+        if (!this->isEmpty()) {
+            for (size_t i = 0; i < this->length(); i++) {
+                copy.push(this->at(i));
+            }
+        }
+        return copy;
+    }
+
+    /**
      * @brief Gets the data of the node at the index specified.
      *
      * This method overrides the [] operator, simply calling LinkedList::at.
@@ -115,7 +130,7 @@ public:
      * @param index Index of the node to get.
      * @return T Data of the node at the given index.
      */
-    T& operator[](size_t index)
+    T operator[](size_t index)
     {
         return at(index);
     }
@@ -325,4 +340,14 @@ public:
             }
         }
     }
+
+    void clear(){
+        if(this->length()){
+        while(this->length()){
+            try {
+                removeAt(0);
+            } catch (IndexOutOfBoundsError &e) {
+            }
+        }
+    }}
 };

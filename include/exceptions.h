@@ -37,6 +37,23 @@ public:
     }
 };
 
+class ClassNotFoundError : public std::exception
+{
+public:
+    const char * what () const throw ()
+    {
+        return "Error: This class does not exist in currently loaded class file";
+    }
+};
+
+class ClassNotSelectedError : public std::exception
+{
+public:
+    const char * what () const throw ()
+    {
+        return "Error: There is no selected class";
+    }
+};
 
 class FolderNotFoundError : public std::exception
 {

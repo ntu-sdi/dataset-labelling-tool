@@ -24,10 +24,10 @@ public:
     void selectImage(const QString&);
     void openImage(const QString&);
     void browseForClassFile();
-    void sortLoadedClasses();
+    void sortLoadedClasses(const QString&);
     void createClassFile();
     void addClass(const QString&);
-    void selectClass(const std::string&);
+    void selectClass(const QString&);
     void removeClass(const QString&);
     void browseForAnnotationFile();
     void createAnnotationFile();

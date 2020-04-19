@@ -211,7 +211,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>1280x719, 258.18 KB</string>
+      <string/>
      </property>
     </widget>
     <widget class="QFrame" name="ClassBrowsingFrame">

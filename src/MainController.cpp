@@ -31,7 +31,9 @@ void MainController::searchLoadedImages(const QString& ) {}
 
 void MainController::sortLoadedImages() {}
 
-void MainController::selectImage(const QString&) {}
+void MainController::selectImage(const QString& a) {
+    imageController.select(a);
+}
 
 /**
  * @brief Gets the image filename from the MainView and passes request to open image to MainController
@@ -51,7 +53,9 @@ void MainController::browseForClassFile()
     this->classController.browse();
 }
 
-void MainController::sortLoadedClasses() {}
+void MainController::sortLoadedClasses(const QString& sortOption) {
+    this->classController.updateView(sortOption);
+}
 
 /**
  * @brief Delegates the creation of a class file to the ClassController.
@@ -71,7 +75,9 @@ void MainController::addClass(const QString& className)
     this->classController.add(className);
 }
 
-void MainController::selectClass(const std::string& ) {}
+void MainController::selectClass(const QString& className) {
+    this->classController.select(className);
+}
 
 /**
  * @brief Delegates the removal of a class to the ClassController.

@@ -44,6 +44,8 @@ private slots:
     void on_ImageListSortBox_currentTextChanged(const QString&);
     void on_ClassListSortBox_currentTextChanged(const QString&);
     void ProvideContextMenu(const QPoint&);
+    void on_ClassListSortBox_activated(const QString &arg1);
+
 private:
     Ui::MainView* ui;
     MainController* controller;

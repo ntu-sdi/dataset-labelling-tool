@@ -1,5 +1,4 @@
 #include "ClassController.h"
-
 /**
  * @brief Constructs a ClassController which handles logic related to the class files.
  *
@@ -17,28 +16,48 @@ ClassController::ClassController(const Ui_MainView& ui, const ClassModel& model)
  */
 void ClassController::updateView()
 {
-    QStringList classes = this->model.getAll();
+    updateView(ui.ClassListSortBox->currentText());
+}
+
+void ClassController::updateView(const QString& sortOption)
+{
     this->ui.ClassesList->clearSelection();
     this->ui.ClassesList->clearFocus();
     this->ui.ClassesList->clear();
-    this->ui.ClassesList->addItems(classes);
+    LinkedList<QString> classes = this->model.getAll().copy();
+
+    if (!classes.isEmpty()) {
+        if (sortOption == "Name : Ascending") {
+            classes.sort();
+        }
+        else if (sortOption == "Name : Descending") {
+            classes.sort(); //updated this with reverse sort, to be implemented in LinkedList
+        }
+        else if (sortOption == "Default") {
+        }
+        for (size_t i = 0; i < classes.length(); i++) {
+            this->ui.ClassesList->addItem(classes.at(i));
+        }
+    }
+
     QString currentFilePath = this->model.getCurrentFilePath();
-    if(!currentFilePath.isEmpty()) {
+    if (!currentFilePath.isEmpty()) {
         this->ui.ClassFileLabel->setText(currentFilePath);
     }
 }
-
 /**
  * @brief Browses for a new class file, then updates the view to reflect that.
  */
 void ClassController::browse()
 {
-    this->model.browse();
     try {
+        this->model.browse();
         this->updateView();
     }
     catch (std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
+    }
+    catch (OperationCanceled& e) {
     }
 }
 
@@ -58,8 +77,6 @@ void ClassController::create()
     }
 }
 
-void ClassController::sortLoaded() {}
-
 /**
  * @brief Adds a new class, and updates the view to reflect that.
  *
@@ -76,7 +93,15 @@ void ClassController::add(const QString& className)
     }
 }
 
-void ClassController::select(const std::string&) {}
+/**
+ * @brief Funtion delegates request to model in order to set provided class as selected class for annotating the image.
+ *
+ * @param className Name of the class to set as selected.
+ */
+void ClassController::select(const QString& className)
+{
+    this->model.select(className);
+}
 
 /**
  * @brief Removes a class, and updates the view to reflect that.
@@ -94,4 +119,12 @@ void ClassController::remove(const QString& className)
     }
 }
 
-void ClassController::getSelected() {}
+/**
+ * @brief Returns selected class from the model
+ *
+ * @return Selected class
+ */
+QString ClassController::getSelected()
+{
+    return this->model.getSelected();
+}

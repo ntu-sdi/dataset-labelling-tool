@@ -215,4 +215,18 @@ BOOST_AUTO_TEST_SUITE( LinkedListTest )
         BOOST_CHECK_EQUAL(isSorted(l), true);
     }
 
+    BOOST_AUTO_TEST_CASE(CreateCopy){
+        LinkedList<int> l;
+        l.push(5);
+        l.push(2);
+        l.push(4);
+        l.push(1);
+        l.push(3);
+        LinkedList<int> k = l.copy();
+        BOOST_CHECK_EQUAL(k.length(), l.length());
+        for(int i = 0; i < k.length(); i++ ){
+            BOOST_CHECK(k.at(i) == l.at(i));
+        }
+    }
+
 BOOST_AUTO_TEST_SUITE_END()
