@@ -97,8 +97,8 @@ QList<QPoint> ImageController::finishShape(const QString& className)
         throw DrawingIncomplete();
     this->drawLine(this->points.first(), this->points.last());
     QGraphicsTextItem* text = this->scene->addText(className);
-    text->setPos(this->points.first().x() + 10,
-                 this->points.first().y() + 10);
+    text->setPos(this->points.first().x(),
+                 this->points.first().y());
     QList<QPoint> ret = this->points;
     this->points = {};
     return ret;

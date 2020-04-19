@@ -114,8 +114,14 @@ void MainController::addPoint(QPoint point)
 
 void MainController::finishShape()
 {
-    QString className = this->getSelectedClass();
-    this->imageController.finishShape(className);
+    try {
+        QString className = this->getSelectedClass();
+        this->imageController.finishShape(className);
+    }  catch (DrawingIncomplete& e) {
+        QMessageBox::warning(nullptr, "Error", e.what(), QMessageBox::Ok);
+    } catch (ClassNotSelectedError& e) {
+        QMessageBox::warning(nullptr, "Error", e.what(), QMessageBox::Ok);
+    }
 }
 
 void MainController::cancelShape()
