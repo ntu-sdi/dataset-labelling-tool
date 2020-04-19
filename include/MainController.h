@@ -15,7 +15,7 @@ private:
     AnnotationController annotationController;
     ClassController classController;
     ImageController imageController;
-    std::string getSelectedClass();
+    QString getSelectedClass();
 public:
     MainController(AnnotationController&, ClassController&, ImageController&);
     void browseImages();

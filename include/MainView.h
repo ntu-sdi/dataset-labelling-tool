@@ -37,6 +37,8 @@ private slots:
     void on_ClassBrowseButton_clicked();
     void on_ClassCreateButton_clicked();
     void on_AnnotationBrowseButton_clicked();
+    void on_ShapesCancelButton_clicked();
+    void on_ShapesFinishButton_clicked();
     void on_ImageList_itemClicked(QListWidgetItem*);
     void on_ImageList_itemDoubleClicked(QListWidgetItem*);
     void on_ClassesList_itemClicked(QListWidgetItem*);

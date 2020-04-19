@@ -13,6 +13,7 @@ ImageController::ImageController(Ui_MainView& ui, ImageModel& model)
 {
     this->ui = ui;
     this->model = model;
+    this->scene = nullptr;
 }
 
 void ImageController::drawLine(QPoint p1, QPoint p2)
@@ -64,7 +65,7 @@ void ImageController::select(const QString& a)
  */
 void ImageController::open(const QString& fileName)
 {
-<<<<<<< HEAD
+    this->currentFileName = fileName;
     this->scene = new QGraphicsScene;
     this->points = {};
     QImage image = model.getImage(fileName);
@@ -84,11 +85,21 @@ void ImageController::addPoint(const QPoint& point)
                        this->points.at(this->points.length()-2));
     }
 }
-=======
-    QGraphicsScene* scene = new QGraphicsScene;
-    QImage image = model.getImage(fileName);
-    scene->addPixmap(QPixmap::fromImage(image));
-    ui.imageView->setScene(scene);
-    ui.imageView->show();
+
+void ImageController::cancelShape()
+{
+    this->open(this->currentFileName);
 }
->>>>>>> select-retreive-class
+
+QList<QPoint> ImageController::finishShape(const QString& className)
+{
+    if(this->points.length() < 3)
+        throw DrawingIncomplete();
+    this->drawLine(this->points.first(), this->points.last());
+    QGraphicsTextItem* text = this->scene->addText(className);
+    text->setPos(this->points.first().x() + 10,
+                 this->points.first().y() + 10);
+    QList<QPoint> ret = this->points;
+    this->points = {};
+    return ret;
+}

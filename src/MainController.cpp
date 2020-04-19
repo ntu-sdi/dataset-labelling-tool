@@ -79,6 +79,11 @@ void MainController::selectClass(const QString& className) {
     this->classController.select(className);
 }
 
+QString MainController::getSelectedClass()
+{
+    return this->classController.getSelected();
+}
+
 /**
  * @brief Delegates the removal of a class to the ClassController.
  *
@@ -107,6 +112,13 @@ void MainController::addPoint(QPoint point)
     this->imageController.addPoint(point);
 }
 
-void MainController::finishShape() {}
+void MainController::finishShape()
+{
+    QString className = this->getSelectedClass();
+    this->imageController.finishShape(className);
+}
 
-void MainController::cancelShape() {}
+void MainController::cancelShape()
+{
+    this->imageController.cancelShape();
+}

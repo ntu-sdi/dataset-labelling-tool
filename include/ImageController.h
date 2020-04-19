@@ -1,5 +1,7 @@
 #pragma once
 
+#include <QMessageBox>
+
 #include "ImageModel.h"
 #include "ui_MainView.h"
 
@@ -14,6 +16,7 @@ private:
     ImageModel model;
     QGraphicsScene *scene;
     QList<QPoint> points;
+    QString currentFileName;
     void drawLine(QPoint p1, QPoint p2);
     void updateView();
 public:
@@ -24,4 +27,6 @@ public:
     void select(const QString&);
     void open(const QString&);
     void addPoint(const QPoint&);
+    void cancelShape();
+    QList<QPoint> finishShape(const QString&);
 };

@@ -76,6 +76,16 @@ void MainView::on_AnnotationBrowseButton_clicked() {
     controller->browseForAnnotationFile();
 }
 
+void MainView::on_ShapesCancelButton_clicked()
+{
+    this->controller->cancelShape();
+}
+
+void MainView::on_ShapesFinishButton_clicked()
+{
+    this->controller->finishShape();
+}
+
 /**
  * @brief Callback function, which is triggered by user clicking on create annotation file button
  */
