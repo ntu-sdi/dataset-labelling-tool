@@ -1,5 +1,4 @@
 #include "ClassController.h"
-
 /**
  * @brief Constructs a ClassController which handles logic related to the class files.
  *
@@ -26,30 +25,21 @@ void ClassController::updateView(const QString& sortOption)
     this->ui.ClassesList->clearFocus();
     this->ui.ClassesList->clear();
     LinkedList<QString> classes = this->model.getAll().copy();
-    if (sortOption == "Default") {
-        if (!classes.isEmpty()) {
-            for (size_t i = 0; i < classes.length(); i++) {
-                this->ui.ClassesList->addItem(classes.at(i));
-            }
+
+    if (!classes.isEmpty()) {
+        if (sortOption == "Name : Ascending") {
+            classes.sort();
         }
-        QString currentFilePath = this->model.getCurrentFilePath();
-        if (!currentFilePath.isEmpty()) {
-            this->ui.ClassFileLabel->setText(currentFilePath);
+        else if (sortOption == "Name : Descending") {
+            classes.sort(); //updated this with reverse sort, to be implemented in LinkedList
         }
-    }
-    else {
-        if (!classes.isEmpty()) {
-            if (sortOption == "Name : Ascending") {
-                classes.sort();
-            }
-            if (sortOption == "Name : Descending") {
-                classes.sort(); //updated this with reverse sort, to be implemented in LinkedList
-            }
-            for (size_t i = 0; i < classes.length(); i++) {
-                this->ui.ClassesList->addItem(classes.at(i));
-            }
+        else if (sortOption == "Default") {
+        }
+        for (size_t i = 0; i < classes.length(); i++) {
+            this->ui.ClassesList->addItem(classes.at(i));
         }
     }
+
     QString currentFilePath = this->model.getCurrentFilePath();
     if (!currentFilePath.isEmpty()) {
         this->ui.ClassFileLabel->setText(currentFilePath);
