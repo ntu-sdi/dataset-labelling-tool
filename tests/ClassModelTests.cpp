@@ -118,6 +118,29 @@ BOOST_AUTO_TEST_SUITE( ClassModelTests )
         ClassModel c;
         BOOST_CHECK_THROW(c.getAll(), std::invalid_argument);
     }
+    
+    BOOST_AUTO_TEST_CASE(SelectAndRetreiveClass){
+        // Test trying to set a valid class as the selected class for annotating
+        ClassModel c;
+        c.create(QString::fromStdString(TESTFILEPATH));
+        c.addClass("test1");
+        BOOST_CHECK_NO_THROW(c.select("test1"));
+        BOOST_CHECK(c.getSelected() == "test1");
+    }
+
+    BOOST_AUTO_TEST_CASE(SelectNonExistingClass){
+        // Test trying to select class which is not present among classes from class file
+        ClassModel c;
+        c.create(QString::fromStdString(TESTFILEPATH));
+        BOOST_CHECK_THROW(c.select("NONEXISTINGINVALIDCLASSNAME"), ClassNotFoundError);
+    }
+
+    BOOST_AUTO_TEST_CASE(RetreiveClassBeforeSetting){
+        // Test trying to get selected class before it has been set
+        ClassModel c;
+        c.create(QString::fromStdString(TESTFILEPATH));
+        BOOST_CHECK_THROW(c.getSelected(), ClassNotSelectedError);
+    }
 
 BOOST_AUTO_TEST_SUITE_END()
 

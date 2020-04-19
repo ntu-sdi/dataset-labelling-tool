@@ -155,7 +155,7 @@ void AnnotationModel::add(const QString& imageFilePath, const QString& className
     QJsonObject allAnnotations = json.object(); //get outer json object
     QJsonObject newAnnotation; //create new annotation object for storing class name and list of points
     QJsonArray points; //create array for string points
-    for(int i = 0; i < coordinates.length(); i++) {
+    for(size_t i = 0; i < coordinates.length(); i++) {
         int x = coordinates.at(i).first;
         int y = coordinates.at(i).second;
         QJsonObject o;
@@ -201,7 +201,7 @@ void AnnotationModel::add(const QString& jsonFilePath, const QString& imageFileP
     QJsonObject allAnnotations = json.object(); //get outer json object
     QJsonObject newAnnotation; //create new annotation object for storing class name and list of points
     QJsonArray points; //create array for string points
-    for(int i = 0; i < coordinates.length(); i++) {
+    for(size_t i = 0; i < coordinates.length(); i++) {
         int x = coordinates.at(i).first;
         int y = coordinates.at(i).second;
         QJsonObject o;

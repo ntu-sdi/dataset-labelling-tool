@@ -20,7 +20,7 @@ void ClassController::updateView()
     this->ui.ClassesList->clearSelection();
     this->ui.ClassesList->clearFocus();
     this->ui.ClassesList->clear();
-    LinkedList<QString> classes = this->model.getAll().exportCopy();
+    LinkedList<QString> classes = this->model.getAll().copy();
     if (!classes.isEmpty()) {
         for (size_t i = 0; i < classes.length(); i++) {
             this->ui.ClassesList->addItem(classes.at(i));
@@ -37,7 +37,7 @@ void ClassController::updateView(const QString& sortOption)
     this->ui.ClassesList->clearSelection();
     this->ui.ClassesList->clearFocus();
     this->ui.ClassesList->clear();
-    LinkedList<QString> classes = this->model.getAll().exportCopy();
+    LinkedList<QString> classes = this->model.getAll().copy();
     if (sortOption == "Default") {
         this->updateView();
     }
@@ -91,8 +91,6 @@ void ClassController::create()
     }
 }
 
-void ClassController::sortLoaded() {}
-
 /**
  * @brief Adds a new class, and updates the view to reflect that.
  *
@@ -109,7 +107,13 @@ void ClassController::add(const QString& className)
     }
 }
 
-void ClassController::select(const QString& className) {
+/**
+ * @brief Funtion delegates request to model in order to set provided class as selected class for annotating the image.
+ *
+ * @param className Name of the class to set as selected.
+ */
+void ClassController::select(const QString& className)
+{
     this->model.select(className);
 }
 
@@ -129,6 +133,12 @@ void ClassController::remove(const QString& className)
     }
 }
 
-QString ClassController::getSelected() {
+/**
+ * @brief Returns selected class from the model
+ *
+ * @return Selected class
+ */
+QString ClassController::getSelected()
+{
     return this->model.getSelected();
 }

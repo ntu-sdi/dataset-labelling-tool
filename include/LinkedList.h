@@ -112,7 +112,7 @@ public:
      *
      * @return Copied LinkedList
      */
-    LinkedList exportCopy(){
+    LinkedList copy(){
         LinkedList<T> copy;
         if (!this->isEmpty()) {
             for (size_t i = 0; i < this->length(); i++) {

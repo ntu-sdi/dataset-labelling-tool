@@ -42,7 +42,7 @@ class ClassNotFoundError : public std::exception
 public:
     const char * what () const throw ()
     {
-        return "Error: This class does not exsist in currently loaded class file";
+        return "Error: This class does not exist in currently loaded class file";
     }
 };
 
