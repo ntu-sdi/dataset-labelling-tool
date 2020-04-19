@@ -82,7 +82,9 @@ void MainView::on_AnnotationCreateButton_clicked()
     controller->createAnnotationFile();
 }
 
-void MainView::on_ImageList_itemClicked(QListWidgetItem*) {}
+void MainView::on_ImageList_itemClicked(QListWidgetItem* a) {
+    controller->selectImage(a->text());
+}
 
 /**
  * @brief Callback function, which is triggered by user double clicking on the image file name in the image pannel.
@@ -101,9 +103,7 @@ void MainView::on_ClassesList_itemDoubleClicked(QListWidgetItem*) {}
 
 void MainView::on_ImageListSortBox_currentTextChanged(const QString&) {}
 
-void MainView::on_ClassListSortBox_currentTextChanged(const QString& a) {
-    controller->sortLoadedClasses(a);
-}
+void MainView::on_ClassListSortBox_currentTextChanged(const QString& a) {}
 
 /**
  * @brief Creates a context menu on right-click of the classes pane.
@@ -131,3 +131,8 @@ void MainView::ProvideContextMenu(const QPoint& position)
 }
 
 
+
+void MainView::on_ClassListSortBox_activated(const QString &arg1)
+{
+    controller->sortLoadedClasses(arg1);
+}

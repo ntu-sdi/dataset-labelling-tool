@@ -1,6 +1,7 @@
 #include "ImageController.h"
 #include "QPixmap"
 #include "QGraphicsItem"
+#include "iostream"
 
 /**
  * @brief Constructs an ImageController, which handles business logic, related to the image files.
@@ -39,7 +40,16 @@ void ImageController::searchLoaded(const QString&) {}
 
 void ImageController::sortLoaded() {}
 
-void ImageController::select(const QString&) {}
+void ImageController::select(const QString& a) {
+    QString text;
+    text = QString::number(model.getFileSize(a)/1000);
+    text += "kB ";
+    text += QString::number(model.getResolution(a).first);
+    text += "X";
+    text += QString::number(model.getResolution(a).second);
+    ui.ImageInfoLabel->setText(text);
+
+}
 
 /**
  * @brief Gets a filename from the MainControler, opens image and displays it in the MainView.

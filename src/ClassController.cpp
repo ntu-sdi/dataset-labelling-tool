@@ -17,37 +17,53 @@ ClassController::ClassController(const Ui_MainView& ui, const ClassModel& model)
  */
 void ClassController::updateView()
 {
-    LinkedList<QString> classes = this->model.getAll();
     this->ui.ClassesList->clearSelection();
     this->ui.ClassesList->clearFocus();
     this->ui.ClassesList->clear();
-    if(!classes.isEmpty()){
-        for(size_t i = 0; i<classes.length();i++){
+    //LinkedList<QString> classes = this->model.getAll(); //when classes get sorted it changes this->model.getAll(), wrong implementation?, they have same head
+    LinkedList<QString> classes;
+    for (size_t i = 0; i<this->model.getAll().length();i++){
+        classes.push(this->model.getAll().at(i));
+    }
+    if (!classes.isEmpty()) {
+        for (size_t i = 0; i < classes.length(); i++) {
             this->ui.ClassesList->addItem(classes.at(i));
         }
     }
     QString currentFilePath = this->model.getCurrentFilePath();
-    if(!currentFilePath.isEmpty()) {
+    if (!currentFilePath.isEmpty()) {
         this->ui.ClassFileLabel->setText(currentFilePath);
     }
 }
 
 void ClassController::updateView(const QString& sortOption)
 {
-    LinkedList<QString> classes = this->model.getAll();
     this->ui.ClassesList->clearSelection();
     this->ui.ClassesList->clearFocus();
     this->ui.ClassesList->clear();
-    if(sortOption == "Name : Ascending"){
-        classes.sort();
+    LinkedList<QString> classes;
+    for (size_t i = 0; i<this->model.getAll().length();i++){
+        classes.push(this->model.getAll().at(i));
+    };
+    if (sortOption == "Default") {
+        std::cout<<"Triggered default"<<std::endl;
+        this->updateView();
     }
-    if(!classes.isEmpty()){
-        for(size_t i = 0; i<classes.length();i++){
-            this->ui.ClassesList->addItem(classes.at(i));
+    else {
+        if (!classes.isEmpty()) {
+            if (sortOption == "Name : Ascending") {
+                classes.sort();
+            }
+            if (sortOption == "Name : Descending") {
+                classes.sort(); //updated this with reverse sort, to be implemented in LinkedList
+            }
+            for (size_t i = 0; i < classes.length(); i++) {
+                this->ui.ClassesList->addItem(classes.at(i));
+            }
         }
     }
     QString currentFilePath = this->model.getCurrentFilePath();
-    if(!currentFilePath.isEmpty()) {
+    if (!currentFilePath.isEmpty()) {
         this->ui.ClassFileLabel->setText(currentFilePath);
     }
 }
@@ -56,12 +72,14 @@ void ClassController::updateView(const QString& sortOption)
  */
 void ClassController::browse()
 {
-    this->model.browse();
     try {
+        this->model.browse();
         this->updateView();
     }
     catch (std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
+    }
+    catch (OperationCanceled& e) {
     }
 }
 
