@@ -15,6 +15,8 @@ MainView::MainView(QWidget* parent)
     this->ui->ClassesList->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(this->ui->ClassesList, &QListWidget::customContextMenuRequested,
             this, &MainView::ProvideContextMenu);
+    connect(this->ui->imageView, SIGNAL(sendMousePosition(QPoint)),
+            this, SLOT(setMousePosition(QPoint)));
 }
 
 /**
@@ -128,4 +130,9 @@ void MainView::ProvideContextMenu(const QPoint& position)
     }
 }
 
-
+void MainView::setMousePosition(QPoint point)
+{
+    std::cout << "Got the point!" << std::endl;
+    std::cout << point.x() << " " << point.y() << std::endl;
+    this->controller->addPoint(point);
+}

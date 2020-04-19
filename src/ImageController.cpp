@@ -14,6 +14,12 @@ ImageController::ImageController(Ui_MainView& ui, ImageModel& model)
     this->model = model;
 }
 
+void ImageController::drawLine(QPoint p1, QPoint p2)
+{
+    if (this->scene == nullptr) return;
+    this->scene->addLine(p1.x(), p1.y(), p2.x(), p2.y());
+}
+
 /**
  * @brief Clears the list of loaded images in the GUI and refills them from the currently loaded images.
  */
@@ -48,10 +54,22 @@ void ImageController::select(const QString&) {}
  */
 void ImageController::open(const QString& fileName)
 {
-      QGraphicsScene *scene = new QGraphicsScene;
-      QImage image = model.getImage(fileName);
-      scene->addPixmap(QPixmap::fromImage(image));
-      ui.imageView->setScene(scene);
-      ui.imageView->show();
+    this->scene = new QGraphicsScene;
+    this->points = {};
+    QImage image = model.getImage(fileName);
+    scene->addPixmap(QPixmap::fromImage(image));
+    ui.imageView->setScene(this->scene);
+    ui.imageView->show();
 }
 
+void ImageController::addPoint(const QPoint& point)
+{
+    if (this->scene == nullptr) return;
+
+    points.append(point);
+    if (points.length() > 1)
+    {
+        this->drawLine(this->points.last(),
+                       this->points.at(this->points.length()-2));
+    }
+}

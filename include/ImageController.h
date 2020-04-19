@@ -12,6 +12,9 @@ class ImageController
 private:
     Ui_MainView ui;
     ImageModel model;
+    QGraphicsScene *scene;
+    QList<QPoint> points;
+    void drawLine(QPoint p1, QPoint p2);
     void updateView();
 public:
     ImageController(Ui_MainView&, ImageModel&);
@@ -20,4 +23,5 @@ public:
     void sortLoaded();
     void select(const QString&);
     void open(const QString&);
+    void addPoint(const QPoint&);
 };

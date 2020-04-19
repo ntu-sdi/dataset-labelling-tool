@@ -604,7 +604,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGraphicsView" name="imageView">
+   <widget class="GraphicsView" name="imageView">
     <property name="geometry">
      <rect>
       <x>460</x>
@@ -627,6 +627,13 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>GraphicsView</class>
+   <extends>QGraphicsView</extends>
+   <header>GraphicsView.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -31,7 +31,7 @@ public:
     void removeClass(const QString&);
     void browseForAnnotationFile();
     void createAnnotationFile();
-    void addPoint(Point);
+    void addPoint(QPoint);
     void finishShape();
     void cancelShape();
 };

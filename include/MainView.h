@@ -7,6 +7,7 @@
 
 #include "MainController.h"
 #include "ui_MainView.h"
+#include "GraphicsView.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui
@@ -23,6 +24,10 @@ public:
     ~MainView();
     Ui::MainView getUi();
     void useController(MainController *);
+
+public slots:
+    void setMousePosition(QPoint);
+
 private slots:
     void on_AnnotationCreateButton_clicked();
 
