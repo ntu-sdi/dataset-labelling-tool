@@ -136,3 +136,8 @@ void MainView::on_ClassListSortBox_activated(const QString &arg1)
 {
     controller->sortLoadedClasses(arg1);
 }
+
+void MainView::on_ImageListSortBox_activated(const QString &arg1)
+{
+    controller->sortLoadedImages(arg1);
+}

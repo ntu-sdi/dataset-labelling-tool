@@ -20,7 +20,7 @@ public:
     MainController(AnnotationController&, ClassController&, ImageController&);
     void browseImages();
     void searchLoadedImages(const QString&);
-    void sortLoadedImages();
+    void sortLoadedImages(const QString&);
     void selectImage(const QString&);
     void openImage(const QString&);
     void browseForClassFile();

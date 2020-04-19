@@ -15,16 +15,40 @@ ImageController::ImageController(Ui_MainView& ui, ImageModel& model)
     this->model = model;
 }
 
-/**
- * @brief Clears the list of loaded images in the GUI and refills them from the currently loaded images.
- */
+
 void ImageController::updateView()
 {
-    QStringList images = model.getAll();
-    ui.ImageList->clearSelection();
-    ui.ImageList->clearFocus();
-    ui.ImageList->clear();
-    ui.ImageList->addItems(images);
+    this->updateView(ui.ImageListSortBox->currentText());
+}
+
+void ImageController::updateView(const QString& sortOption)
+{
+    this->ui.ImageList->clearSelection();
+    this->ui.ImageList->clearFocus();
+    this->ui.ImageList->clear();
+    if(sortOption == "Default"){
+        QStringList images = model.getAll();
+        ui.ImageList->clearSelection();
+        ui.ImageList->clearFocus();
+        ui.ImageList->clear();
+        ui.ImageList->addItems(images);
+    }
+    else {
+        if(sortOption == "Name : Ascending"){
+            QStringList images = model.getAll();
+            images.sort();
+            ui.ImageList->addItems(images);
+        }
+        else if(sortOption == "Name : Descending"){
+            QStringList images = model.getAll();
+            images.sort();
+            QVector<QString> img = images.toVector();
+            std::reverse(img.begin(),img.end());
+            images = img.toList();
+            ui.ImageList->addItems(images);
+        }
+    }
+
 }
 
 /**

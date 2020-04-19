@@ -29,7 +29,9 @@ void MainController::browseImages()
 
 void MainController::searchLoadedImages(const QString& ) {}
 
-void MainController::sortLoadedImages() {}
+void MainController::sortLoadedImages(const QString& sortOption) {
+    this->imageController.updateView(sortOption);
+}
 
 void MainController::selectImage(const QString& a) {
     imageController.select(a);

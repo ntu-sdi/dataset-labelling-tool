@@ -79,6 +79,11 @@ QStringList ImageModel::getAll()
     return loadedImages.keys();
 }
 
+QMap<QString, QFileInfo> ImageModel::getAllWithDetails()
+{
+    return this->loadedImages;
+}
+
 /**
  * @brief Provides a way to get an actual image from the system
  *

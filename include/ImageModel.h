@@ -35,5 +35,6 @@ public:
     std::pair<int, int> getResolution(const QString&);
     long getFileSize(const QString&);
     QStringList getAll();
+    QMap <QString,QFileInfo> getAllWithDetails();
     QImage getImage(const QString&);
 };
