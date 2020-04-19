@@ -17,19 +17,7 @@ ClassController::ClassController(const Ui_MainView& ui, const ClassModel& model)
  */
 void ClassController::updateView()
 {
-    this->ui.ClassesList->clearSelection();
-    this->ui.ClassesList->clearFocus();
-    this->ui.ClassesList->clear();
-    LinkedList<QString> classes = this->model.getAll().copy();
-    if (!classes.isEmpty()) {
-        for (size_t i = 0; i < classes.length(); i++) {
-            this->ui.ClassesList->addItem(classes.at(i));
-        }
-    }
-    QString currentFilePath = this->model.getCurrentFilePath();
-    if (!currentFilePath.isEmpty()) {
-        this->ui.ClassFileLabel->setText(currentFilePath);
-    }
+    updateView(ui.ClassListSortBox->currentText());
 }
 
 void ClassController::updateView(const QString& sortOption)
@@ -39,7 +27,15 @@ void ClassController::updateView(const QString& sortOption)
     this->ui.ClassesList->clear();
     LinkedList<QString> classes = this->model.getAll().copy();
     if (sortOption == "Default") {
-        this->updateView();
+        if (!classes.isEmpty()) {
+            for (size_t i = 0; i < classes.length(); i++) {
+                this->ui.ClassesList->addItem(classes.at(i));
+            }
+        }
+        QString currentFilePath = this->model.getCurrentFilePath();
+        if (!currentFilePath.isEmpty()) {
+            this->ui.ClassFileLabel->setText(currentFilePath);
+        }
     }
     else {
         if (!classes.isEmpty()) {
