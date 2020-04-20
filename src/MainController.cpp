@@ -8,11 +8,11 @@
  * @param imageController
  */
 MainController::MainController(AnnotationController& annotationController,
-                               ClassController& classController,
-                               ImageController& imageController) :
-                               annotationController(annotationController),
-                               classController(classController),
-                               imageController(imageController)
+    ClassController& classController,
+    ImageController& imageController)
+    : annotationController(annotationController)
+    , classController(classController)
+    , imageController(imageController)
 {
     this->annotationController = annotationController;
     this->classController = classController;
@@ -27,11 +27,15 @@ void MainController::browseImages()
     imageController.browseFolder();
 }
 
-void MainController::searchLoadedImages(const QString& ) {}
+void MainController::searchLoadedImages(const QString&) {}
 
-void MainController::sortLoadedImages() {}
+void MainController::sortLoadedImages(const QString& sortOption, bool srch)
+{
+    this->imageController.updateView(sortOption, srch);
+}
 
-void MainController::selectImage(const QString& a) {
+void MainController::selectImage(const QString& a)
+{
     imageController.select(a);
 }
 
@@ -53,7 +57,8 @@ void MainController::browseForClassFile()
     this->classController.browse();
 }
 
-void MainController::sortLoadedClasses(const QString& sortOption) {
+void MainController::sortLoadedClasses(const QString& sortOption)
+{
     this->classController.updateView(sortOption);
 }
 
@@ -75,7 +80,8 @@ void MainController::addClass(const QString& className)
     this->classController.add(className);
 }
 
-void MainController::selectClass(const QString& className) {
+void MainController::selectClass(const QString& className)
+{
     this->classController.select(className);
 }
 
@@ -89,14 +95,16 @@ void MainController::removeClass(const QString& className)
     this->classController.remove(className);
 }
 
-void MainController::browseForAnnotationFile() {
+void MainController::browseForAnnotationFile()
+{
     this->annotationController.browse();
 }
 
 /**
  * @brief Delegates the creation of annotation file to the AnnotationController.
  */
-void MainController::createAnnotationFile() {
+void MainController::createAnnotationFile()
+{
     annotationController.create();
 }
 

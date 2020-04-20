@@ -12,9 +12,10 @@ class ImageController
 private:
     Ui_MainView ui;
     ImageModel model;
-    void updateView();
 public:
     ImageController(Ui_MainView&, ImageModel&);
+    void updateView();
+    void updateView(const QString&,bool = false);
     void browseFolder();
     void searchLoaded(const QString&);
     void sortLoaded();

@@ -1,6 +1,4 @@
 #include <QFileDialog>
-#include <iostream>
-
 #include "ImageModel.h"
 
 /**
@@ -77,6 +75,11 @@ long ImageModel::getFileSize(const QString& fileName)
 QStringList ImageModel::getAll()
 {
     return loadedImages.keys();
+}
+
+QMap<QString, QFileInfo> ImageModel::getAllWithDetails()
+{
+    return this->loadedImages;
 }
 
 /**

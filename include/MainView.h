@@ -35,11 +35,12 @@ private slots:
     void on_ImageList_itemClicked(QListWidgetItem*);
     void on_ImageList_itemDoubleClicked(QListWidgetItem*);
     void on_ClassesList_itemClicked(QListWidgetItem*);
-    void on_ClassesList_itemDoubleClicked(QListWidgetItem*);
-    void on_ImageListSortBox_currentTextChanged(const QString&);
-    void on_ClassListSortBox_currentTextChanged(const QString&);
     void ProvideContextMenu(const QPoint&);
     void on_ClassListSortBox_activated(const QString &arg1);
+
+    void on_ImageListSortBox_activated(const QString &arg1);
+
+    void on_SearchBox_textChanged(const QString &arg1);
 
 private:
     Ui::MainView* ui;

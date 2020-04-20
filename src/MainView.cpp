@@ -1,6 +1,3 @@
-#include <string>
-#include <QDebug>
-
 #include "MainView.h"
 
 /**
@@ -9,12 +6,13 @@
  * @param parent
  */
 MainView::MainView(QWidget* parent)
-    : QMainWindow(parent), ui(new Ui::MainView)
+    : QMainWindow(parent)
+    , ui(new Ui::MainView)
 {
     ui->setupUi(this);
     this->ui->ClassesList->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(this->ui->ClassesList, &QListWidget::customContextMenuRequested,
-            this, &MainView::ProvideContextMenu);
+        this, &MainView::ProvideContextMenu);
 }
 
 /**
@@ -51,39 +49,58 @@ void MainView::on_ImageBrowseButton_clicked()
     controller->browseImages();
 }
 
+/**
+ * @brief Callback function, triggered by user clicking on add class button.
+ */
 void MainView::on_ClassAddButton_clicked()
 {
     bool ok;
     QString className;
     className = QInputDialog::getText(this, "New Class", "Class name",
-                                      QLineEdit::Normal, className, &ok);
+        QLineEdit::Normal, className, &ok);
     this->controller->addClass(className);
 }
 
+/**
+ * @brief Callback function, triggered when user clicks on browse class file button.
+ */
 void MainView::on_ClassBrowseButton_clicked()
 {
     this->controller->browseForClassFile();
 }
 
+/**
+ * @brief Callback function, triggered when user clicks on create class button
+ */
 void MainView::on_ClassCreateButton_clicked()
 {
     this->controller->createClassFile();
 }
 
-void MainView::on_AnnotationBrowseButton_clicked() {
+/**
+ * @brief Callback function, triggered when users clicks on browse annotation file button.
+ */
+void MainView::on_AnnotationBrowseButton_clicked()
+{
     controller->browseForAnnotationFile();
 }
 
 /**
- * @brief Callback function, which is triggered by user clicking on create annotation file button
+ * @brief Callback function, which is triggered by user clicking on create annotation file button.
  */
 void MainView::on_AnnotationCreateButton_clicked()
 {
     controller->createAnnotationFile();
 }
 
-void MainView::on_ImageList_itemClicked(QListWidgetItem* a) {
-    controller->selectImage(a->text());
+/**
+ * @brief Callback function, triggered by user single clicking image name in image list pane.
+ *
+ * @param imageName Name of the image clicked on.
+ */
+void MainView::on_ImageList_itemClicked(QListWidgetItem* imageName)
+{
+    controller->selectImage(imageName->text());
 }
 
 /**
@@ -93,19 +110,20 @@ void MainView::on_ImageList_itemClicked(QListWidgetItem* a) {
  *
  * @param filename
  */
-void MainView::on_ImageList_itemDoubleClicked(QListWidgetItem* fileName) {
+void MainView::on_ImageList_itemDoubleClicked(QListWidgetItem* fileName)
+{
     controller->openImage(fileName->text());
 }
 
-void MainView::on_ClassesList_itemClicked(QListWidgetItem* a) {
-    controller->selectClass(a->text());
+/**
+ * @brief Callback function, triggered when user single clicks on a class in class  pane.
+ *
+ * @param className Name of the class clicked
+ */
+void MainView::on_ClassesList_itemClicked(QListWidgetItem* className)
+{
+    controller->selectClass(className->text());
 }
-
-void MainView::on_ClassesList_itemDoubleClicked(QListWidgetItem*) {}
-
-void MainView::on_ImageListSortBox_currentTextChanged(const QString&) {}
-
-void MainView::on_ClassListSortBox_currentTextChanged(const QString&) {}
 
 /**
  * @brief Creates a context menu on right-click of the classes pane.
@@ -116,13 +134,13 @@ void MainView::ProvideContextMenu(const QPoint& position)
 {
     QPoint globalPosition = this->ui->ClassesList->viewport()->mapToGlobal(position);
     QModelIndex index = this->ui->ClassesList->indexAt(position);
-    if(!index.isValid()) {
+    if (!index.isValid()) {
         return;
     }
     QMenu submenu;
     submenu.addAction("Delete");
     QAction* rightClickItem = submenu.exec(globalPosition);
-    if(rightClickItem && rightClickItem->text().contains("Delete")) {
+    if (rightClickItem && rightClickItem->text().contains("Delete")) {
         try {
             this->controller->removeClass(this->ui->ClassesList->itemAt(position)->text());
         }
@@ -132,7 +150,37 @@ void MainView::ProvideContextMenu(const QPoint& position)
     }
 }
 
-void MainView::on_ClassListSortBox_activated(const QString &arg1)
+/**
+ * @brief Callback function, triggered when user clicks on class list sort box.
+ *
+ * @param arg1 Sort option.
+ */
+void MainView::on_ClassListSortBox_activated(const QString& arg1)
 {
     controller->sortLoadedClasses(arg1);
+}
+
+/**
+ * @brief Callback function, triggered when user clicks on image list sort box.
+ *
+ * @param arg1 Sort option.
+ */
+void MainView::on_ImageListSortBox_activated(const QString& arg1)
+{
+    controller->sortLoadedImages(arg1);
+}
+
+/**
+ * @brief Callback function, triggered when user types a new letter in image seach box.
+ *
+ * @param arg1 Search query.
+ */
+void MainView::on_SearchBox_textChanged(const QString& arg1)
+{
+    if (arg1.isEmpty()) {
+        controller->sortLoadedImages(ui->ImageListSortBox->currentText());
+    }
+    else {
+        controller->sortLoadedImages(arg1, true);
+    }
 }
