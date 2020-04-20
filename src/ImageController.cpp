@@ -40,15 +40,15 @@ void ImageController::searchLoaded(const QString&) {}
 
 void ImageController::sortLoaded() {}
 
-void ImageController::select(const QString& a) {
+void ImageController::select(const QString& a)
+{
     QString text;
-    text = QString::number(model.getFileSize(a)/1000);
-    text += "kB ";
+    text = QString::number(model.getFileSize(a) / 1000);
+    text += " kB ";
     text += QString::number(model.getResolution(a).first);
-    text += "X";
+    text += " x ";
     text += QString::number(model.getResolution(a).second);
     ui.ImageInfoLabel->setText(text);
-
 }
 
 /**
@@ -58,10 +58,9 @@ void ImageController::select(const QString& a) {
  */
 void ImageController::open(const QString& fileName)
 {
-      QGraphicsScene *scene = new QGraphicsScene;
-      QImage image = model.getImage(fileName);
-      scene->addPixmap(QPixmap::fromImage(image));
-      ui.imageView->setScene(scene);
-      ui.imageView->show();
+    QGraphicsScene* scene = new QGraphicsScene;
+    QImage image = model.getImage(fileName);
+    scene->addPixmap(QPixmap::fromImage(image));
+    ui.imageView->setScene(scene);
+    ui.imageView->show();
 }
-

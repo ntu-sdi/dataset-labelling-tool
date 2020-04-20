@@ -1,5 +1,4 @@
 #include "ClassController.h"
-
 /**
  * @brief Constructs a ClassController which handles logic related to the class files.
  *
@@ -17,23 +16,7 @@ ClassController::ClassController(const Ui_MainView& ui, const ClassModel& model)
  */
 void ClassController::updateView()
 {
-    this->ui.ClassesList->clearSelection();
-    this->ui.ClassesList->clearFocus();
-    this->ui.ClassesList->clear();
-    //LinkedList<QString> classes = this->model.getAll(); //when classes get sorted it changes this->model.getAll(), wrong implementation?, they have same head
-    LinkedList<QString> classes;
-    for (size_t i = 0; i<this->model.getAll().length();i++){
-        classes.push(this->model.getAll().at(i));
-    }
-    if (!classes.isEmpty()) {
-        for (size_t i = 0; i < classes.length(); i++) {
-            this->ui.ClassesList->addItem(classes.at(i));
-        }
-    }
-    QString currentFilePath = this->model.getCurrentFilePath();
-    if (!currentFilePath.isEmpty()) {
-        this->ui.ClassFileLabel->setText(currentFilePath);
-    }
+    updateView(ui.ClassListSortBox->currentText());
 }
 
 void ClassController::updateView(const QString& sortOption)
@@ -41,27 +24,22 @@ void ClassController::updateView(const QString& sortOption)
     this->ui.ClassesList->clearSelection();
     this->ui.ClassesList->clearFocus();
     this->ui.ClassesList->clear();
-    LinkedList<QString> classes;
-    for (size_t i = 0; i<this->model.getAll().length();i++){
-        classes.push(this->model.getAll().at(i));
-    };
-    if (sortOption == "Default") {
-        std::cout<<"Triggered default"<<std::endl;
-        this->updateView();
-    }
-    else {
-        if (!classes.isEmpty()) {
-            if (sortOption == "Name : Ascending") {
-                classes.sort();
-            }
-            if (sortOption == "Name : Descending") {
-                classes.sort(); //updated this with reverse sort, to be implemented in LinkedList
-            }
-            for (size_t i = 0; i < classes.length(); i++) {
-                this->ui.ClassesList->addItem(classes.at(i));
-            }
+    LinkedList<QString> classes = this->model.getAll().copy();
+
+    if (!classes.isEmpty()) {
+        if (sortOption == "Name : Ascending") {
+            classes.sort();
+        }
+        else if (sortOption == "Name : Descending") {
+            classes.sort(); //updated this with reverse sort, to be implemented in LinkedList
+        }
+        else if (sortOption == "Default") {
+        }
+        for (size_t i = 0; i < classes.length(); i++) {
+            this->ui.ClassesList->addItem(classes.at(i));
         }
     }
+
     QString currentFilePath = this->model.getCurrentFilePath();
     if (!currentFilePath.isEmpty()) {
         this->ui.ClassFileLabel->setText(currentFilePath);
@@ -99,8 +77,6 @@ void ClassController::create()
     }
 }
 
-void ClassController::sortLoaded() {}
-
 /**
  * @brief Adds a new class, and updates the view to reflect that.
  *
@@ -117,7 +93,15 @@ void ClassController::add(const QString& className)
     }
 }
 
-void ClassController::select(const std::string&) {}
+/**
+ * @brief Funtion delegates request to model in order to set provided class as selected class for annotating the image.
+ *
+ * @param className Name of the class to set as selected.
+ */
+void ClassController::select(const QString& className)
+{
+    this->model.select(className);
+}
 
 /**
  * @brief Removes a class, and updates the view to reflect that.
@@ -135,4 +119,12 @@ void ClassController::remove(const QString& className)
     }
 }
 
-void ClassController::getSelected() {}
+/**
+ * @brief Returns selected class from the model
+ *
+ * @return Selected class
+ */
+QString ClassController::getSelected()
+{
+    return this->model.getSelected();
+}

@@ -9,14 +9,14 @@
 void ImageModel::browseFolder()
 {
     QString directoryPath = QFileDialog::getExistingDirectory(nullptr,
-                                                              "Find Folders",
-                                                              QDir::currentPath(),
-                                                              QFileDialog::ShowDirsOnly);
-    if(!directoryPath.isEmpty() && !directoryPath.isNull()) {
+        "Find Folders",
+        QDir::currentPath(),
+        QFileDialog::ShowDirsOnly);
+    if (!directoryPath.isEmpty() && !directoryPath.isNull()) {
         QDir directory = QDir(directoryPath);
         directory.setNameFilters(SUPPORTED_FORMATS);
         QFileInfoList loaded = directory.entryInfoList();
-        for(int i =0; i< loaded.size();i ++) {
+        for (int i = 0; i < loaded.size(); i++) {
             loadedImages[loaded[i].fileName()] = loaded[i];
         }
     }
@@ -30,12 +30,12 @@ void ImageModel::browseFolder()
 void ImageModel::browseFolder(const QString& folderPath)
 {
     QDir directory = QDir(folderPath);
-    if(!directory.exists()) {
+    if (!directory.exists()) {
         throw std::runtime_error("Could not open folder");
     }
     directory.setNameFilters(SUPPORTED_FORMATS);
     QFileInfoList loaded = directory.entryInfoList();
-    for(int i =0; i< loaded.size();i ++) {
+    for (int i = 0; i < loaded.size(); i++) {
         loadedImages[loaded[i].fileName()] = loaded[i];
     }
 }
@@ -48,7 +48,7 @@ void ImageModel::browseFolder(const QString& folderPath)
  */
 std::pair<int, int> ImageModel::getResolution(const QString& fileName)
 {
-    if(!loadedImages.contains(fileName)) {
+    if (!loadedImages.contains(fileName)) {
         throw std::runtime_error("Could not find file");
     }
     QImage image(loadedImages[fileName].filePath());
@@ -63,7 +63,7 @@ std::pair<int, int> ImageModel::getResolution(const QString& fileName)
  */
 long ImageModel::getFileSize(const QString& fileName)
 {
-    if(!loadedImages.contains(fileName)) {
+    if (!loadedImages.contains(fileName)) {
         throw std::runtime_error("Could not find file");
     }
     return loadedImages[fileName].size();
@@ -90,7 +90,7 @@ QStringList ImageModel::getAll()
  */
 QImage ImageModel::getImage(const QString& filename)
 {
-    if(!loadedImages.contains(filename)) {
+    if (!loadedImages.contains(filename)) {
         throw std::runtime_error("Could not find file");
     }
     QImage image(loadedImages[filename].filePath());

@@ -32,7 +32,7 @@ void ClassModel::browse()
 {
     QString filePath = QFileDialog::getOpenFileName(nullptr, "Select Class File",
         "./", "Class files (*.class)");
-    if (filePath.isNull()){
+    if (filePath.isNull()) {
         throw OperationCanceled();
     }
     if (!filePath.isEmpty()) {
@@ -129,12 +129,36 @@ void ClassModel::removeClass(const QString& className)
         }
     }
 }
-
-void ClassModel::select(const std::string&) {}
-
-std::string ClassModel::getSelected()
+/**
+ * @brief Sets the given class as selected class for annotating.
+ *
+ * If the selected class is not present among currently loaded classes
+ * custom ClassNotFoundError is thrown.
+ *
+ * @param className Name of the class to set as selected for annotating.
+ */
+void ClassModel::select(const QString& className)
 {
-    return "";
+    if (!this->classes.contains(className)) {
+        throw ClassNotFoundError();
+    }
+    this->selectedClass = className;
+}
+
+/**
+ * @brief Returns the currently selected class.
+ *
+ * If there is no class selected this function throws custom
+ * ClassNotFoundError exception.
+ *
+ * @return Currently selected class name
+ */
+QString ClassModel::getSelected()
+{
+    if (this->selectedClass.isNull()) {
+        throw ClassNotSelectedError();
+    }
+    return this->selectedClass;
 }
 
 /**

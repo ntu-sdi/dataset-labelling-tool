@@ -108,6 +108,21 @@ public:
     }
 
     /**
+     * @brief Creates copy of this linked list
+     *
+     * @return Copied LinkedList
+     */
+    LinkedList copy(){
+        LinkedList<T> copy;
+        if (!this->isEmpty()) {
+            for (size_t i = 0; i < this->length(); i++) {
+                copy.push(this->at(i));
+            }
+        }
+        return copy;
+    }
+
+    /**
      * @brief Gets the data of the node at the index specified.
      *
      * This method overrides the [] operator, simply calling LinkedList::at.

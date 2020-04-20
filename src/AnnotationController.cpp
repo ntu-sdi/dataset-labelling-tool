@@ -1,4 +1,3 @@
-#include <iostream>
 #include <QMessageBox>
 #include "AnnotationController.h"
 #include "exceptions.h"
@@ -15,6 +14,9 @@ AnnotationController::AnnotationController(const Ui_MainView& ui, const Annotati
     this->model = model;
 }
 
+/**
+ * @brief Delegates a request to create a new annotation file to model and updates label in the UI accordingly.
+ */
 void AnnotationController::create()
 {
     try {
@@ -30,7 +32,7 @@ void AnnotationController::create()
 }
 
 /**
- * @brief Creates an annotation file and updates label in the UI accordingly.
+ * @brief Browses for an annotation file and updates label in the UI accordingly.
  */
 void AnnotationController::browse()
 {
