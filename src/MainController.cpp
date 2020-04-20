@@ -138,8 +138,10 @@ void MainController::finishShape()
         this->annotationController.add(this->imageController.getCurrentFileName(),
                                        className, p);
     }  catch (DrawingIncomplete& e) {
+        this->cancelShape();
         QMessageBox::warning(nullptr, "Error", e.what(), QMessageBox::Ok);
     } catch (ClassNotSelectedError& e) {
+        this->cancelShape();
         QMessageBox::warning(nullptr, "Error", e.what(), QMessageBox::Ok);
     }
     this->openImage(this->imageController.getCurrentFileName());

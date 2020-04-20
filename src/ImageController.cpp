@@ -118,6 +118,7 @@ void ImageController::addPoint(const QPoint& point)
 
 void ImageController::cancelShape()
 {
+    this->points = {};
     this->open(this->currentFileName);
 }
 
