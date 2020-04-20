@@ -416,12 +416,12 @@
      </item>
      <item>
       <property name="text">
-       <string>Date : Ascending</string>
+       <string>Date created : Ascending</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Date : Descending</string>
+       <string>Date created : Descending</string>
       </property>
      </item>
      <item>
@@ -431,7 +431,7 @@
      </item>
      <item>
       <property name="text">
-       <string>Size : Decsending</string>
+       <string>Size : Descending</string>
       </property>
      </item>
     </widget>

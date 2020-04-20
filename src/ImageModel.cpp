@@ -1,6 +1,4 @@
 #include <QFileDialog>
-#include <iostream>
-
 #include "ImageModel.h"
 
 /**

@@ -15,7 +15,7 @@ private:
 public:
     ImageController(Ui_MainView&, ImageModel&);
     void updateView();
-    void updateView(const QString&);
+    void updateView(const QString&,bool = false);
     void browseFolder();
     void searchLoaded(const QString&);
     void sortLoaded();
