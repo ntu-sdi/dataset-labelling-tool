@@ -34,6 +34,15 @@ void ImageController::updateView()
     ui.ImageList->addItems(images);
 }
 
+QPoint ImageController::mapToImage(QPoint point)
+{
+    double xFactor = this->scene->width() / this->ui.imageView->width();
+    double yFactor = this->scene->height() / this->ui.imageView->height();
+    point.setX(static_cast<int>(point.x() * xFactor));
+    point.setY(static_cast<int>(point.y() * yFactor));
+    return point;
+}
+
 /**
  * @brief Browses for a new folder containing images, then updates the view to reflect that.
  */
@@ -65,12 +74,18 @@ void ImageController::select(const QString& a)
  */
 void ImageController::open(const QString& fileName)
 {
+    this->ui.imageView->resize(871, 711);
     this->currentFileName = fileName;
     this->scene = new QGraphicsScene;
     this->points = {};
     QImage image = model.getImage(fileName);
+    this->imageHeight = image.height();
+    this->imageWidth = image.width();
     scene->addPixmap(QPixmap::fromImage(image));
-    ui.imageView->setScene(this->scene);
+    ui.imageView->setScene(scene);
+    ui.imageView->fitInView(scene->sceneRect(), Qt::KeepAspectRatio);
+    this->ui.imageView->adjustSize();
+    ui.imageView->fitInView(scene->sceneRect(), Qt::KeepAspectRatio);
     ui.imageView->show();
 }
 
@@ -78,7 +93,7 @@ void ImageController::addPoint(const QPoint& point)
 {
     if (this->scene == nullptr) return;
 
-    points.append(point);
+    points.append(this->mapToImage(point));
     if (points.length() > 1)
     {
         this->drawLine(this->points.last(),

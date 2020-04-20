@@ -2,7 +2,7 @@
 
 GraphicsView::GraphicsView(QWidget* parent): QGraphicsView(parent) {}
 
-void GraphicsView::mouseReleaseEvent(QMouseEvent *event)
+void GraphicsView::mouseReleaseEvent(QMouseEvent* event)
 {
     QPoint point = event->pos();
     emit sendMousePosition(point);

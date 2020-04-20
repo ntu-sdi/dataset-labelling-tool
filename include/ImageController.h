@@ -17,8 +17,11 @@ private:
     QGraphicsScene *scene;
     QList<QPoint> points;
     QString currentFileName;
+    int imageHeight;
+    int imageWidth;
     void drawLine(QPoint p1, QPoint p2);
     void updateView();
+    QPoint mapToImage(QPoint);
 public:
     ImageController(Ui_MainView&, ImageModel&);
     void browseFolder();

@@ -14,7 +14,6 @@ public:
 
 signals:
     void sendMousePosition(QPoint);
-
 };
 
 #endif // GRAPHICSVIEW_H

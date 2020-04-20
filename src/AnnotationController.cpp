@@ -53,3 +53,8 @@ void AnnotationController::addPoint(Point) {}
 void AnnotationController::finishShape() {}
 
 void AnnotationController::cancelShape() {}
+
+LinkedList<QPair<QString, Shape>> AnnotationController::get(const QString& imagePath)
+{
+    return this->model.get(imagePath);
+}

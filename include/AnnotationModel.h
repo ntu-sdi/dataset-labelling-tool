@@ -24,7 +24,7 @@ public:
     void create(const QString&);
     void add(const QString& jsonFilePath, const QString& imageFilePath, const QString& className, LinkedList<QPair<int,int>>& coordinates);
     void add(const QString& imageFilePath,const QString& className, LinkedList<QPair<int,int>>& coordinates);
-    QMap <QString,Shape> get(const QString&);
+    LinkedList<QPair<QString, Shape>> get(const QString&);
     QMap <QString,Shape> get(const QString&, const QString&);
 
 };

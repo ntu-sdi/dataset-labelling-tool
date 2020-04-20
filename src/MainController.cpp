@@ -42,6 +42,7 @@ void MainController::selectImage(const QString& a) {
  */
 void MainController::openImage(const QString& fileName)
 {
+    LinkedList<QPair<QString, Shape>> annotations= this->annotationController.get(fileName);
     imageController.open(fileName);
 }
 
@@ -117,6 +118,7 @@ void MainController::finishShape()
     try {
         QString className = this->getSelectedClass();
         this->imageController.finishShape(className);
+        //this->annotationController.add({0,0});
     }  catch (DrawingIncomplete& e) {
         QMessageBox::warning(nullptr, "Error", e.what(), QMessageBox::Ok);
     } catch (ClassNotSelectedError& e) {

@@ -20,4 +20,5 @@ public:
     void addPoint(Point);
     void finishShape();
     void cancelShape();
+    LinkedList<QPair<QString, Shape>> get(const QString&);
 };

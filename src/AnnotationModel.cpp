@@ -230,7 +230,7 @@ void AnnotationModel::add(const QString& jsonFilePath, const QString& imageFileP
  * @param imageName QString name of the image user wants to obtain.
  * @return QMap of annotations, key being class name and value being LinkedList of QPair.
  */
-QMap<QString, LinkedList<QPair<int, int> > > AnnotationModel::get(const QString& imageName)
+LinkedList<QPair<QString, Shape>> AnnotationModel::get(const QString& imageName)
 {
     QFile jsonFile(getCurrentFilePath());
     jsonFile.open(QIODevice::ReadOnly);
@@ -240,18 +240,18 @@ QMap<QString, LinkedList<QPair<int, int> > > AnnotationModel::get(const QString&
     if(json.value(imageName).toArray().isEmpty()) {
         throw ImageNotAnnotatedYet();
     }
-    QMap<QString, LinkedList<QPair<int, int> > > returnVar;
+    LinkedList<QPair<QString, Shape>> returnVar;
     for(QJsonValue i : json.value(imageName).toArray()) {
         QString className;
-        LinkedList<QPair<int, int> > coordinates;
+        Shape coordinates;
         className = i["class"].toString();
         QJsonArray f = i["points"].toArray();
         for(auto j : f) {
             QJsonObject o = j.toObject();
-            QPair<int, int> currentPoint(o["x"].toInt(), o["y"].toInt());
+            Point currentPoint(o["x"].toInt(), o["y"].toInt());
             coordinates.push(currentPoint);
         }
-        returnVar[className] = coordinates;
+        returnVar.push(QPair<QString, Shape> (className, coordinates));
     }
     return returnVar;
 }
