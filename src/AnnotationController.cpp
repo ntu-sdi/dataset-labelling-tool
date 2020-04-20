@@ -48,11 +48,11 @@ void AnnotationController::browse()
     }
 }
 
-void AnnotationController::addPoint(Point) {}
-
-void AnnotationController::finishShape() {}
-
-void AnnotationController::cancelShape() {}
+void AnnotationController::add(const QString& filePath, const QString& className,
+                               LinkedList<QPair<int, int>> shape)
+{
+    this->model.add(filePath, className, shape);
+}
 
 LinkedList<QPair<QString, Shape>> AnnotationController::get(const QString& imagePath)
 {

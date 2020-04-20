@@ -15,13 +15,14 @@ private:
     Ui_MainView ui;
     ImageModel model;
     QGraphicsScene *scene;
-    QList<QPoint> points;
+    QVector<QPointF> points;
     QString currentFileName;
     int imageHeight;
     int imageWidth;
-    void drawLine(QPoint p1, QPoint p2);
+    LinkedList<QPair<QString, QVector<QPointF>>> annotations;
     void updateView();
     QPoint mapToImage(QPoint);
+    void drawAnnotations();
 public:
     ImageController(Ui_MainView&, ImageModel&);
     void browseFolder();
@@ -31,5 +32,7 @@ public:
     void open(const QString&);
     void addPoint(const QPoint&);
     void cancelShape();
-    QList<QPoint> finishShape(const QString&);
+    QVector<QPointF> finishShape(const QString&);
+    void setAnnotations(LinkedList<QPair<QString, LinkedList<QPair<int, int>>>>);
+    QString getCurrentFileName();
 };

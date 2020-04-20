@@ -42,8 +42,17 @@ void MainController::selectImage(const QString& a) {
  */
 void MainController::openImage(const QString& fileName)
 {
-    LinkedList<QPair<QString, Shape>> annotations= this->annotationController.get(fileName);
-    imageController.open(fileName);
+    try {
+        this->imageController.setAnnotations(this->annotationController.get(fileName));
+    }  catch (ImageNotAnnotatedYet) {
+        this->imageController.setAnnotations(
+                    LinkedList<QPair<QString, LinkedList<QPair<int, int>>>>());
+    }
+    catch (IndexOutOfBoundsError) {
+        std::cout << "setannotations is fucked" << std::endl;
+    }
+
+    this->imageController.open(fileName);
 }
 
 /**
@@ -98,6 +107,9 @@ void MainController::removeClass(const QString& className)
 void MainController::browseForAnnotationFile()
 {
     this->annotationController.browse();
+    try {
+        this->openImage(this->imageController.getCurrentFileName());
+    }  catch (std::exception) {}
 }
 
 /**
@@ -117,13 +129,20 @@ void MainController::finishShape()
 {
     try {
         QString className = this->getSelectedClass();
-        this->imageController.finishShape(className);
-        //this->annotationController.add({0,0});
+        QVector<QPointF> points = this->imageController.finishShape(className);
+        LinkedList<QPair<int, int>> p;
+        for (QPointF i: points) {
+            p.push(QPair<int, int>(static_cast<int>(i.x()),
+                                   static_cast<int>(i.y())));
+        }
+        this->annotationController.add(this->imageController.getCurrentFileName(),
+                                       className, p);
     }  catch (DrawingIncomplete& e) {
         QMessageBox::warning(nullptr, "Error", e.what(), QMessageBox::Ok);
     } catch (ClassNotSelectedError& e) {
         QMessageBox::warning(nullptr, "Error", e.what(), QMessageBox::Ok);
     }
+    this->openImage(this->imageController.getCurrentFileName());
 }
 
 void MainController::cancelShape()
