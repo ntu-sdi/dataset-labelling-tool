@@ -42,6 +42,10 @@ void MainController::selectImage(const QString& a) {
  */
 void MainController::openImage(const QString& fileName)
 {
+    if (this->imageController.getCurrentFileName() != fileName &&
+        this->imageController.getCurrentFileName() != nullptr) {
+        this->cancelShape();
+    }
     try {
         this->imageController.setAnnotations(this->annotationController.get(fileName));
     }  catch (ImageNotAnnotatedYet) {
@@ -138,12 +142,14 @@ void MainController::finishShape()
         this->annotationController.add(this->imageController.getCurrentFileName(),
                                        className, p);
     }  catch (DrawingIncomplete& e) {
-        this->cancelShape();
         QMessageBox::warning(nullptr, "Error", e.what(), QMessageBox::Ok);
     } catch (ClassNotSelectedError& e) {
-        this->cancelShape();
         QMessageBox::warning(nullptr, "Error", e.what(), QMessageBox::Ok);
     }
+    catch (FileNotFoundError& e) {
+        QMessageBox::warning(nullptr, "Error", e.what(), QMessageBox::Ok);
+    }
+
     this->openImage(this->imageController.getCurrentFileName());
 }
 
