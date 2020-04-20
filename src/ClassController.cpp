@@ -19,6 +19,11 @@ void ClassController::updateView()
     updateView(ui.ClassListSortBox->currentText());
 }
 
+/**
+ * @brief Updates a class pane in the user interface, based on the sort option provided
+ *
+ * @param sortOption Sort option to sort the class pane with
+ */
 void ClassController::updateView(const QString& sortOption)
 {
     this->ui.ClassesList->clearSelection();
@@ -29,14 +34,22 @@ void ClassController::updateView(const QString& sortOption)
     if (!classes.isEmpty()) {
         if (sortOption == "Name : Ascending") {
             classes.sort();
+            for (size_t i = 0; i < classes.length(); i++) {
+                this->ui.ClassesList->addItem(classes.at(i));
+            }
         }
         else if (sortOption == "Name : Descending") {
-            classes.sort(); //updated this with reverse sort, to be implemented in LinkedList
+            classes.sort();
+            size_t i = classes.length();
+            while (i) {
+                i--;
+                this->ui.ClassesList->addItem(classes.at(i));
+            }
         }
         else if (sortOption == "Default") {
-        }
-        for (size_t i = 0; i < classes.length(); i++) {
-            this->ui.ClassesList->addItem(classes.at(i));
+            for (size_t i = 0; i < classes.length(); i++) {
+                this->ui.ClassesList->addItem(classes.at(i));
+            }
         }
     }
 
