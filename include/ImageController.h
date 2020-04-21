@@ -23,7 +23,6 @@ private:
     int imageHeight;
     int imageWidth;
     LinkedList<QPair<QString, QVector<QPointF>>> annotations;
-    void updateView();
     QPoint mapToImage(QPoint);
     void drawAnnotations();
     void setDrawingSize();
