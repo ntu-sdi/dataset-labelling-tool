@@ -1,14 +1,7 @@
 #include <QMessageBox>
 #include "AnnotationController.h"
 #include "exceptions.h"
-#include <QThread>
-
-
-void annotationSaviour(){
-    while(1){
-        std::cout<<"Thread"<<std::endl;
-    }
-}
+#include <thread>
 
 /**
  * @brief Constructs an Annotation Controller, which handles logic related to the annotation files.
@@ -20,8 +13,6 @@ AnnotationController::AnnotationController(const Ui_MainView& ui, const Annotati
 {
     this->ui = ui;
     this->model = model;
-    QThread *a = QThread::create(annotationSaviour);
-    a->start();
 }
 
 
@@ -63,6 +54,11 @@ void AnnotationController::add(const QString& filePath, const QString& className
                                LinkedList<QPair<int, int>> shape)
 {
     this->model.add(filePath, className, shape);
+}
+
+void AnnotationController::save()
+{
+    this->model.save();
 }
 
 LinkedList<QPair<QString, Shape>> AnnotationController::get(const QString& imagePath)
