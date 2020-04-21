@@ -14,6 +14,10 @@ ImageController::ImageController(Ui_MainView& ui, ImageModel& model)
     this->ui = ui;
     this->model = model;
     this->scene = nullptr;
+
+    this->pen = QPen();
+    this->font = QFont();
+    this->pen.setColor(QColor(255, 0, 0));
 }
 
 /**
@@ -42,10 +46,22 @@ void ImageController::drawAnnotations()
     if(this->scene != nullptr) {
         for(size_t i = 0; i < this->annotations.length(); ++i) {
             this->scene->addPolygon(
-                        QPolygonF(this->annotations.at(i).second));
-            QGraphicsTextItem* text = this->scene->addText(this->annotations.at(i).first);
+                        QPolygonF(this->annotations.at(i).second), this->pen);
+            QGraphicsTextItem* text = this->scene->addText(this->annotations.at(i).first, this->font);
             text->setPos(this->annotations.at(i).second.at(0));
         }
+    }
+}
+
+void ImageController::setDrawingSize()
+{
+    if(this->scene != nullptr) {
+        int lineSize = static_cast<int>(
+                    std::ceil((this->scene->width()+this->scene->height())/500));
+        int fontHeight = static_cast<int>(
+                    std::ceil((this->scene->width()+this->scene->height())/100));
+        this->pen.setWidth(lineSize);
+        this->font.setPixelSize(fontHeight);
     }
 }
 
@@ -80,6 +96,7 @@ void ImageController::select(const QString& a)
  */
 void ImageController::open(const QString& fileName)
 {
+    std::cout << pen.width() << " " << font.pixelSize() << std::endl;
     this->ui.imageView->resize(871, 711);
     this->currentFileName = fileName;
     this->scene = new QGraphicsScene;
@@ -95,6 +112,8 @@ void ImageController::open(const QString& fileName)
     this->ui.imageView->adjustSize();
     ui.imageView->fitInView(scene->sceneRect(), Qt::KeepAspectRatio);
     ui.imageView->show();
+    this->setDrawingSize();
+    std::cout << pen.width() << " " << font.pixelSize() << std::endl;
     this->drawAnnotations();
 }
 
@@ -107,10 +126,10 @@ void ImageController::addPoint(const QPoint& point)
 
     this->open(this->currentFileName);
     if (this->points.length() > 2) {
-        this->scene->addPolygon(points);
+        this->scene->addPolygon(points, this->pen);
     }
     else if (points.length() == 2) {
-        this->scene->addLine(QLineF(this->points.at(0), this->points.at(1)));
+        this->scene->addLine(QLineF(this->points.at(0), this->points.at(1)), this->pen);
     }
     std::cout << "Got here!" << std::endl;
     std::cout << "Length of this->points: " << this->points.length() << std::endl;
@@ -126,7 +145,7 @@ QVector<QPointF> ImageController::finishShape(const QString& className)
 {
     if(this->points.length() < 3)
         throw DrawingIncomplete();
-    QGraphicsTextItem* text = this->scene->addText(className);
+    QGraphicsTextItem* text = this->scene->addText(className, this->font);
     text->setPos(this->points.first().x(),
                  this->points.first().y());
     QVector<QPointF> ret = this->points;

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cmath>
 #include <QMessageBox>
 
 #include "ImageModel.h"
@@ -17,12 +18,15 @@ private:
     QGraphicsScene *scene;
     QVector<QPointF> points;
     QString currentFileName;
+    QPen pen;
+    QFont font;
     int imageHeight;
     int imageWidth;
     LinkedList<QPair<QString, QVector<QPointF>>> annotations;
     void updateView();
     QPoint mapToImage(QPoint);
     void drawAnnotations();
+    void setDrawingSize();
 public:
     ImageController(Ui_MainView&, ImageModel&);
     void browseFolder();
