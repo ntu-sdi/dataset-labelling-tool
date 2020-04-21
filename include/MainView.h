@@ -49,6 +49,8 @@ private slots:
 
     void on_SearchBox_textChanged(const QString &arg1);
 
+    void on_SaveAnnotationFileButton_clicked();
+
 private:
     Ui::MainView* ui;
     MainController* controller;

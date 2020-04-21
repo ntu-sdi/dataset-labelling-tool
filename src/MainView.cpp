@@ -201,3 +201,8 @@ void MainView::on_SearchBox_textChanged(const QString& arg1)
         controller->sortLoadedImages(arg1, true);
     }
 }
+
+void MainView::on_SaveAnnotationFileButton_clicked()
+{
+
+}

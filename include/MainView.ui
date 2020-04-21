@@ -39,7 +39,7 @@
     <property name="geometry">
      <rect>
       <x>-10</x>
-      <y>-20</y>
+      <y>0</y>
       <width>460</width>
       <height>741</height>
      </rect>
@@ -465,7 +465,7 @@
       <rect>
        <x>20</x>
        <y>630</y>
-       <width>261</width>
+       <width>421</width>
        <height>25</height>
       </rect>
      </property>
@@ -483,7 +483,7 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>660</y>
+       <y>650</y>
        <width>301</width>
        <height>61</height>
       </rect>
@@ -497,26 +497,7 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QLabel" name="ShapesLabel">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>60</width>
-        <height>25</height>
-       </rect>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string>Shapes:</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="ShapesRestoreButton">
+     <widget class="QPushButton" name="SaveAnnotationFileButton">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -526,7 +507,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Restore</string>
+       <string>Save</string>
       </property>
      </widget>
      <widget class="QPushButton" name="ShapesCancelButton">
@@ -554,31 +535,6 @@
       <property name="text">
        <string>Finish</string>
       </property>
-     </widget>
-     <widget class="QComboBox" name="ShapesSelector">
-      <property name="geometry">
-       <rect>
-        <x>100</x>
-        <y>0</y>
-        <width>190</width>
-        <height>25</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>Default</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Name : Ascending</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Name : Descending</string>
-       </property>
-      </item>
      </widget>
     </widget>
     <widget class="QLabel" name="ClassFileLabel">

@@ -8,7 +8,7 @@
  * @brief Constructs an ImageController, which handles business logic, related to the image files.
  *
  * @param ui The Ui_MainView reference, which is used to update the GUI.
- * @param model
+ * @param modela
  */
 ImageController::ImageController(Ui_MainView& ui, ImageModel& model)
 {
@@ -21,11 +21,19 @@ ImageController::ImageController(Ui_MainView& ui, ImageModel& model)
     this->pen.setColor(QColor(255, 0, 0));
 }
 
+/**
+ * @brief Updates the view based on the sort option selected in the gui
+ */
 void ImageController::updateView()
 {
     this->updateView(ui.ImageListSortBox->currentText());
 }
 
+/**
+ * @brief ImageController::updateView
+ * @param sortOption
+ * @param search
+ */
 void ImageController::updateView(const QString& sortOption, bool search)
 {
     this->ui.ImageList->clearSelection();
@@ -33,9 +41,8 @@ void ImageController::updateView(const QString& sortOption, bool search)
     this->ui.ImageList->clear();
     if (search) {
         QStringList images = model.getAll();
-        if (images.contains(sortOption)) {
-            ui.ImageList->addItem(sortOption);
-        }
+        QStringList filtered = images.filter(sortOption);
+        ui.ImageList->addItems(filtered);
     }
     else {
         if (sortOption == "Default") {
@@ -119,10 +126,10 @@ QPoint ImageController::mapToImage(QPoint point)
 
 void ImageController::drawAnnotations()
 {
-    if(this->scene != nullptr) {
-        for(size_t i = 0; i < this->annotations.length(); ++i) {
+    if (this->scene != nullptr) {
+        for (size_t i = 0; i < this->annotations.length(); ++i) {
             this->scene->addPolygon(
-                        QPolygonF(this->annotations.at(i).second), this->pen);
+                QPolygonF(this->annotations.at(i).second), this->pen);
             QGraphicsTextItem* text = this->scene->addText(this->annotations.at(i).first, this->font);
             text->setPos(this->annotations.at(i).second.at(0));
         }
@@ -131,11 +138,11 @@ void ImageController::drawAnnotations()
 
 void ImageController::setDrawingSize()
 {
-    if(this->scene != nullptr) {
+    if (this->scene != nullptr) {
         int lineSize = static_cast<int>(
-                    std::ceil((this->scene->width()+this->scene->height())/500));
+            std::ceil((this->scene->width() + this->scene->height()) / 500));
         int fontHeight = static_cast<int>(
-                    std::ceil((this->scene->width()+this->scene->height())/100));
+            std::ceil((this->scene->width() + this->scene->height()) / 100));
         this->pen.setWidth(lineSize);
         this->font.setPixelSize(fontHeight);
     }
@@ -175,7 +182,7 @@ void ImageController::open(const QString& fileName)
     this->ui.imageView->resize(871, 711);
     this->currentFileName = fileName;
     this->scene = new QGraphicsScene;
-    if(this->currentFileName != fileName) {
+    if (this->currentFileName != fileName) {
         this->points = {};
     }
     QImage image = model.getImage(fileName);
@@ -193,7 +200,8 @@ void ImageController::open(const QString& fileName)
 
 void ImageController::addPoint(const QPoint& point)
 {
-    if (this->scene == nullptr) return;
+    if (this->scene == nullptr)
+        return;
 
     QPointF p(this->mapToImage(point));
     this->points.append(p);
@@ -215,23 +223,22 @@ void ImageController::cancelShape()
 
 QVector<QPointF> ImageController::finishShape(const QString& className)
 {
-    if(this->points.length() < 3)
+    if (this->points.length() < 3)
         throw DrawingIncomplete();
     QGraphicsTextItem* text = this->scene->addText(className, this->font);
     text->setPos(this->points.first().x(),
-                 this->points.first().y());
+        this->points.first().y());
     QVector<QPointF> ret = this->points;
     this->points = {};
     return ret;
 }
 
-void ImageController::setAnnotations(LinkedList<QPair<QString, LinkedList<QPair<int, int>>>> a)
+void ImageController::setAnnotations(LinkedList<QPair<QString, LinkedList<QPair<int, int> > > > a)
 {
-    this->annotations = LinkedList<QPair<QString, QVector<QPointF>>>();
-    for(size_t i = 0; i < a.length(); i++) {
-        QPair<QString, QVector<QPointF>> pair =
-                QPair<QString, QVector<QPointF>>(a.at(i).first, QVector<QPointF>());
-        for(size_t j = 0; j < a.at(i).second.length(); j++) {
+    this->annotations = LinkedList<QPair<QString, QVector<QPointF> > >();
+    for (size_t i = 0; i < a.length(); i++) {
+        QPair<QString, QVector<QPointF> > pair = QPair<QString, QVector<QPointF> >(a.at(i).first, QVector<QPointF>());
+        for (size_t j = 0; j < a.at(i).second.length(); j++) {
             QPointF point(a.at(i).second.at(j).first, a.at(i).second.at(j).second);
             pair.second.append(point);
         }
