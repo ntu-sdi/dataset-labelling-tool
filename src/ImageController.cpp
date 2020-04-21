@@ -2,6 +2,7 @@
 #include <QGraphicsItem>
 #include <QFileInfo>
 #include <QDate>
+#include <iostream>
 #include "ImageController.h"
 
 /**
@@ -52,65 +53,57 @@ void ImageController::updateView(const QString& sortOption, bool search)
         else {
             if (sortOption == "Name : Ascending") {
                 QStringList images = model.getAll();
-                images.sort();
+                images.sort(Qt::CaseInsensitive);
                 ui.ImageList->addItems(images);
             }
             else if (sortOption == "Name : Descending") {
                 QStringList images = model.getAll();
-                images.sort();
+                images.sort(Qt::CaseInsensitive);
                 QVector<QString> img = images.toVector();
                 std::reverse(img.begin(), img.end());
                 images = img.toList();
                 ui.ImageList->addItems(images);
             }
-            else if (sortOption == "Date created : Ascending") {
+            else if (sortOption == "Date : Ascending") {
                 QMap<QString, QFileInfo> images = model.getAllWithDetails();
-                QMap<QString, QDateTime> sortedData;
+                QList<QPair<QString,QDateTime>> data;
                 QMap<QString, QFileInfo>::const_iterator i = images.constBegin();
                 while (i != images.constEnd()) {
-                    sortedData[i.key()] = i.value().birthTime();
+                    QPair<QString,QDateTime> temp;
+                    temp.first = i.key();
+                    temp.second = i.value().lastModified();
+                    data.append(temp);
                     ++i;
                 }
-                ui.ImageList->addItems(sortedData.keys());
+                std::sort(data.begin(),data.end(),[](QPair<QString, QDateTime> a , QPair<QString, QDateTime> b ) -> bool
+                {
+                    //return a.second.currentMSecsSinceEpoch() > b.second.currentMSecsSinceEpoch();
+                    return a.second > b.second;
+                });
+                for(auto i:data){
+                    ui.ImageList->addItem(i.first);
+                }
             }
-            else if (sortOption == "Date created : Descending") {
+            else if (sortOption == "Date : Descending") {
                 QMap<QString, QFileInfo> images = model.getAllWithDetails();
-                QMap<QString, QDateTime> sortedData;
+                QList<QPair<QString,QDateTime>> data;
                 QMap<QString, QFileInfo>::const_iterator i = images.constBegin();
                 while (i != images.constEnd()) {
-                    sortedData[i.key()] = i.value().birthTime();
+                    QPair<QString,QDateTime> temp;
+                    temp.first = i.key();
+                    temp.second = i.value().lastModified();
+                    data.append(temp);
                     ++i;
                 }
-                QMap<QString, QDateTime>::const_iterator j = sortedData.constEnd();
-                while (j != sortedData.constBegin()) {
-                    j--;
-                    ui.ImageList->addItem(j.key());
+                std::sort(data.begin(),data.end(),[](QPair<QString, QDateTime> a , QPair<QString, QDateTime> b ) -> bool
+                {
+                    return a.second < b.second;
+                });
+                for(auto i:data){
+                    ui.ImageList->addItem(i.first);
                 }
             }
-            else if (sortOption == "Size : Ascending") {
-                QMap<QString, QFileInfo> images = model.getAllWithDetails();
-                QMap<QString, qint64> sortedData;
-                QMap<QString, QFileInfo>::const_iterator i = images.constBegin();
-                while (i != images.constEnd()) {
-                    sortedData[i.key()] = i.value().size();
-                    ++i;
-                }
-                ui.ImageList->addItems(sortedData.keys());
-            }
-            else if (sortOption == "Size : Descending") {
-                QMap<QString, QFileInfo> images = model.getAllWithDetails();
-                QMap<QString, qint64> sortedData;
-                QMap<QString, QFileInfo>::const_iterator i = images.constBegin();
-                while (i != images.constEnd()) {
-                    sortedData[i.key()] = i.value().size();
-                    ++i;
-                }
-                QMap<QString, qint64>::const_iterator j = sortedData.constEnd();
-                while (j != sortedData.constBegin()) {
-                    j--;
-                    ui.ImageList->addItem(j.key());
-                }
-            }
+            else{}
         }
     }
 }
