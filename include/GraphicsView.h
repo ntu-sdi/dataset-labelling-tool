@@ -10,7 +10,7 @@ class GraphicsView : public QGraphicsView
 Q_OBJECT
 public:
     GraphicsView(QWidget*);
-    void mouseReleaseEvent(QMouseEvent *event);
+    void mousePressEvent(QMouseEvent *event);
 
 signals:
     void sendMousePosition(QPoint);
