@@ -57,7 +57,6 @@ void MainController::openImage(const QString& fileName)
                     LinkedList<QPair<QString, LinkedList<QPair<int, int>>>>());
     }
     catch (IndexOutOfBoundsError) {
-        std::cout << "setannotations is fucked" << std::endl;
     }
 
     this->imageController.open(fileName);
@@ -130,6 +129,11 @@ void MainController::createAnnotationFile()
     annotationController.create();
 }
 
+void MainController::saveAnnotations()
+{
+    this->annotationController.save();
+}
+
 void MainController::addPoint(QPoint point)
 {
     this->imageController.addPoint(point);
@@ -165,4 +169,12 @@ void MainController::finishShape()
 void MainController::cancelShape()
 {
     this->imageController.cancelShape();
+}
+
+void MainController::annotationSavingThread(MainController *controller)
+{
+    while(1){
+        controller->saveAnnotations();
+        std::this_thread::sleep_for(std::chrono::milliseconds(60000));
+    }
 }

@@ -3,7 +3,7 @@
 #include <string>
 #include <utility>
 #include <QFileSystemModel>
-
+#include <QJsonDocument>
 #include "LinkedList.h"
 
 using Point = QPair<int, int>;
@@ -16,10 +16,13 @@ class AnnotationModel
 {
 private:
     QString currentFilePath;
+    QJsonDocument loadedAnnotations;
 public:
     QString getCurrentFilePath();
     void browse();
     void browse(const QString&);
+    void load();
+    void save();
     void create();
     void create(const QString&);
     void add(const QString& jsonFilePath, const QString& imageFilePath, const QString& className, LinkedList<QPair<int,int>>& coordinates);

@@ -6,7 +6,7 @@
 #include <QJsonValue>
 #include "exceptions.h"
 #include "AnnotationModel.h"
-
+#include "iostream"
 /**
  * @brief Returns path of currently active annotation file.
  * @return Path to a annotation file.
@@ -43,6 +43,7 @@ void AnnotationModel::browse()
     else {
         throw FileNotFoundError();
     }
+    this->load();
 }
 
 /**
@@ -64,12 +65,34 @@ void AnnotationModel::browse(const QString& filePath)
     if (file.open(QIODevice::ReadOnly)) {
         this->currentFilePath = filePath;
         file.close();
+        this->load();
     }
     else {
         throw FileNotFoundError();
     }
+    this->load();
 }
 
+void AnnotationModel::load(){
+    QFile jsonFile(getCurrentFilePath());
+    if (!jsonFile.exists()) {
+        throw FileNotFoundError();
+    }
+    jsonFile.open(QIODevice::ReadOnly); //open file in read mode
+    QByteArray data = jsonFile.readAll();
+    QJsonDocument json = QJsonDocument::fromJson(data); //create json document from file contents
+    this->loadedAnnotations = json;
+    jsonFile.close();
+}
+
+void AnnotationModel::save(){
+    if(!getCurrentFilePath().isNull()) {
+        QFile jsonFile(getCurrentFilePath());
+        jsonFile.open(QIODevice::WriteOnly); //write contents to file
+        jsonFile.write(this->loadedAnnotations.toJson());
+        jsonFile.close();
+    }
+}
 /**
  * @brief Prompts the user for a annotation file name. Creates a file using this name and path.
  *
@@ -143,14 +166,7 @@ void AnnotationModel::create(const QString& filePath)
  */
 void AnnotationModel::add(const QString& imageFilePath, const QString& className, LinkedList<QPair<int, int> >& coordinates)
 {
-    QFile jsonFile(getCurrentFilePath());
-    if (!jsonFile.exists()) {
-        throw FileNotFoundError();
-    }
-    jsonFile.open(QIODevice::ReadOnly); //open file in read mode
-    QByteArray data = jsonFile.readAll();
-    QJsonDocument json = QJsonDocument::fromJson(data); //create json document from file contents
-    jsonFile.close();
+    QJsonDocument json = this->loadedAnnotations;
     QJsonObject allAnnotations = json.object(); //get outer json object
     QJsonObject newAnnotation; //create new annotation object for storing class name and list of points
     QJsonArray points; //create array for string points
@@ -168,9 +184,7 @@ void AnnotationModel::add(const QString& imageFilePath, const QString& className
     annotationsForThisImage.append(newAnnotation); //append all previous annotations with new annotation
     allAnnotations.insert(imageFilePath, annotationsForThisImage); //set changes to outer json object
     json.setObject(allAnnotations); //create json document from outer object
-    jsonFile.open(QIODevice::WriteOnly); //write contents to file
-    jsonFile.write(json.toJson());
-    jsonFile.close();
+    this->loadedAnnotations = json;
 }
 
 /**
@@ -231,10 +245,7 @@ void AnnotationModel::add(const QString& jsonFilePath, const QString& imageFileP
  */
 LinkedList<QPair<QString, Shape>> AnnotationModel::get(const QString& imageName)
 {
-    QFile jsonFile(getCurrentFilePath());
-    jsonFile.open(QIODevice::ReadOnly);
-    QJsonDocument doc(QJsonDocument::fromJson(jsonFile.readAll()));
-    jsonFile.close();
+    QJsonDocument doc = this->loadedAnnotations;
     QJsonObject json = doc.object();
     if (json.value(imageName).toArray().isEmpty()) {
         throw ImageNotAnnotatedYet();

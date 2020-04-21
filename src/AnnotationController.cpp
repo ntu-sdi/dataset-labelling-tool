@@ -1,6 +1,7 @@
 #include <QMessageBox>
 #include "AnnotationController.h"
 #include "exceptions.h"
+#include <thread>
 
 /**
  * @brief Constructs an Annotation Controller, which handles logic related to the annotation files.
@@ -13,6 +14,7 @@ AnnotationController::AnnotationController(const Ui_MainView& ui, const Annotati
     this->ui = ui;
     this->model = model;
 }
+
 
 /**
  * @brief Delegates a request to create a new annotation file to model and updates label in the UI accordingly.
@@ -52,6 +54,11 @@ void AnnotationController::add(const QString& filePath, const QString& className
                                LinkedList<QPair<int, int>> shape)
 {
     this->model.add(filePath, className, shape);
+}
+
+void AnnotationController::save()
+{
+    this->model.save();
 }
 
 LinkedList<QPair<QString, Shape>> AnnotationController::get(const QString& imagePath)

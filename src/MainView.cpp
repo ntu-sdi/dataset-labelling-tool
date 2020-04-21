@@ -204,5 +204,5 @@ void MainView::on_SearchBox_textChanged(const QString& arg1)
 
 void MainView::on_SaveAnnotationFileButton_clicked()
 {
-
+    controller->saveAnnotations();
 }
