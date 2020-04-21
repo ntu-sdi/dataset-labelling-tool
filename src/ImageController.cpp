@@ -96,7 +96,6 @@ void ImageController::select(const QString& a)
  */
 void ImageController::open(const QString& fileName)
 {
-    std::cout << pen.width() << " " << font.pixelSize() << std::endl;
     this->ui.imageView->resize(871, 711);
     this->currentFileName = fileName;
     this->scene = new QGraphicsScene;
@@ -113,7 +112,6 @@ void ImageController::open(const QString& fileName)
     ui.imageView->fitInView(scene->sceneRect(), Qt::KeepAspectRatio);
     ui.imageView->show();
     this->setDrawingSize();
-    std::cout << pen.width() << " " << font.pixelSize() << std::endl;
     this->drawAnnotations();
 }
 
@@ -131,8 +129,6 @@ void ImageController::addPoint(const QPoint& point)
     else if (points.length() == 2) {
         this->scene->addLine(QLineF(this->points.at(0), this->points.at(1)), this->pen);
     }
-    std::cout << "Got here!" << std::endl;
-    std::cout << "Length of this->points: " << this->points.length() << std::endl;
 }
 
 void ImageController::cancelShape()
