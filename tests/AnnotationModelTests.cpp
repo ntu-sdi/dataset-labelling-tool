@@ -102,14 +102,6 @@ BOOST_AUTO_TEST_CASE(WriteAnnotationToFile)
     BOOST_CHECK_NO_THROW(model.add("imageExampleTwo.png", "classExampleTwo", shape));
 }
 
-BOOST_AUTO_TEST_CASE(WriteAnnotationToFile_ExternalFile)
-{
-    //Tests if writing annotation to a annotation file is sucesfull
-    AnnotationModel model;
-    Shape shape = createPoints(1);
-    BOOST_CHECK_NO_THROW(model.add("../testFiles/test.annotation", "imageExampleOne.png", "exampleClassOne", shape));
-}
-
 BOOST_AUTO_TEST_CASE(WriteAnnotationToFile_nonExistingFile)
 {
     //Tests if writting annotation to a non existing file throws file not found error
@@ -129,15 +121,6 @@ BOOST_AUTO_TEST_CASE(ReadAnnotationFile)
     BOOST_CHECK(compareShapes(x, y));
 }
 
-BOOST_AUTO_TEST_CASE(ReadAnnotationFile_ExternalFile)
-{
-    //Tests if reading annotation file return what was written to it
-    AnnotationModel model;
-    Annotation readAnnotation = model.get("imageExampleTwo.png", "../testFiles/test.annotation");
-    Shape x = readAnnotation["classExampleTwo"];
-    Shape y = createPoints(2);
-    BOOST_CHECK(compareShapes(x, y));
-}
 
 BOOST_AUTO_TEST_CASE(ReadAnnotationFile_nonAnnotatedImage)
 {
@@ -147,11 +130,6 @@ BOOST_AUTO_TEST_CASE(ReadAnnotationFile_nonAnnotatedImage)
     BOOST_CHECK_THROW(model.get("imageExampleThree.png"), ImageNotAnnotatedYet);
 }
 
-BOOST_AUTO_TEST_CASE(ReadAnnotationFile_ExternalFile_nonAnnotatedImage)
-{
-    //Tests if reading annotation file return what was written to it
-    AnnotationModel model;
-    BOOST_CHECK_THROW(model.get("imageExampleThree.png", "../testFiles/test.annotation"), ImageNotAnnotatedYet);
-}
+
 
 BOOST_AUTO_TEST_SUITE_END()
