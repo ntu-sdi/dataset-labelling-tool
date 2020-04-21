@@ -143,11 +143,14 @@ void MainController::finishShape()
                                        className, p);
     }  catch (DrawingIncomplete& e) {
         QMessageBox::warning(nullptr, "Error", e.what(), QMessageBox::Ok);
+        this->cancelShape();
     } catch (ClassNotSelectedError& e) {
         QMessageBox::warning(nullptr, "Error", e.what(), QMessageBox::Ok);
+        this->cancelShape();
     }
     catch (FileNotFoundError& e) {
         QMessageBox::warning(nullptr, "Error", e.what(), QMessageBox::Ok);
+        this->cancelShape();
     }
 
     this->openImage(this->imageController.getCurrentFileName());
