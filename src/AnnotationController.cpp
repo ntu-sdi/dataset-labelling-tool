@@ -1,6 +1,14 @@
 #include <QMessageBox>
 #include "AnnotationController.h"
 #include "exceptions.h"
+#include <QThread>
+
+
+void annotationSaviour(){
+    while(1){
+        std::cout<<"Thread"<<std::endl;
+    }
+}
 
 /**
  * @brief Constructs an Annotation Controller, which handles logic related to the annotation files.
@@ -12,7 +20,10 @@ AnnotationController::AnnotationController(const Ui_MainView& ui, const Annotati
 {
     this->ui = ui;
     this->model = model;
+    QThread *a = QThread::create(annotationSaviour);
+    a->start();
 }
+
 
 /**
  * @brief Delegates a request to create a new annotation file to model and updates label in the UI accordingly.
