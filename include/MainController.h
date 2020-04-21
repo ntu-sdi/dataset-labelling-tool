@@ -15,7 +15,7 @@ private:
     AnnotationController annotationController;
     ClassController classController;
     ImageController imageController;
-    std::string getSelectedClass();
+    QString getSelectedClass();
 public:
     MainController(AnnotationController&, ClassController&, ImageController&);
     void browseImages();
@@ -31,7 +31,7 @@ public:
     void removeClass(const QString&);
     void browseForAnnotationFile();
     void createAnnotationFile();
-    void addPoint(Point);
+    void addPoint(QPoint);
     void finishShape();
     void cancelShape();
 };

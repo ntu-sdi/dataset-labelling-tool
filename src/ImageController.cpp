@@ -14,6 +14,11 @@ ImageController::ImageController(Ui_MainView& ui, ImageModel& model)
 {
     this->ui = ui;
     this->model = model;
+    this->scene = nullptr;
+
+    this->pen = QPen();
+    this->font = QFont();
+    this->pen.setColor(QColor(255, 0, 0));
 }
 
 void ImageController::updateView()
@@ -103,6 +108,39 @@ void ImageController::updateView(const QString& sortOption, bool search)
     }
 }
 
+QPoint ImageController::mapToImage(QPoint point)
+{
+    double xFactor = this->scene->width() / this->ui.imageView->width();
+    double yFactor = this->scene->height() / this->ui.imageView->height();
+    point.setX(static_cast<int>(point.x() * xFactor));
+    point.setY(static_cast<int>(point.y() * yFactor));
+    return point;
+}
+
+void ImageController::drawAnnotations()
+{
+    if(this->scene != nullptr) {
+        for(size_t i = 0; i < this->annotations.length(); ++i) {
+            this->scene->addPolygon(
+                        QPolygonF(this->annotations.at(i).second), this->pen);
+            QGraphicsTextItem* text = this->scene->addText(this->annotations.at(i).first, this->font);
+            text->setPos(this->annotations.at(i).second.at(0));
+        }
+    }
+}
+
+void ImageController::setDrawingSize()
+{
+    if(this->scene != nullptr) {
+        int lineSize = static_cast<int>(
+                    std::ceil((this->scene->width()+this->scene->height())/500));
+        int fontHeight = static_cast<int>(
+                    std::ceil((this->scene->width()+this->scene->height())/100));
+        this->pen.setWidth(lineSize);
+        this->font.setPixelSize(fontHeight);
+    }
+}
+
 /**
  * @brief Browses for a new folder containing images, then updates the view to reflect that.
  */
@@ -134,9 +172,74 @@ void ImageController::select(const QString& a)
  */
 void ImageController::open(const QString& fileName)
 {
-    QGraphicsScene* scene = new QGraphicsScene;
+    this->ui.imageView->resize(871, 711);
+    this->currentFileName = fileName;
+    this->scene = new QGraphicsScene;
+    if(this->currentFileName != fileName) {
+        this->points = {};
+    }
     QImage image = model.getImage(fileName);
+    this->imageHeight = image.height();
+    this->imageWidth = image.width();
     scene->addPixmap(QPixmap::fromImage(image));
     ui.imageView->setScene(scene);
+    ui.imageView->fitInView(scene->sceneRect(), Qt::KeepAspectRatio);
+    this->ui.imageView->adjustSize();
+    ui.imageView->fitInView(scene->sceneRect(), Qt::KeepAspectRatio);
     ui.imageView->show();
+    this->setDrawingSize();
+    this->drawAnnotations();
+}
+
+void ImageController::addPoint(const QPoint& point)
+{
+    if (this->scene == nullptr) return;
+
+    QPointF p(this->mapToImage(point));
+    this->points.append(p);
+
+    this->open(this->currentFileName);
+    if (this->points.length() > 2) {
+        this->scene->addPolygon(points, this->pen);
+    }
+    else if (points.length() == 2) {
+        this->scene->addLine(QLineF(this->points.at(0), this->points.at(1)), this->pen);
+    }
+}
+
+void ImageController::cancelShape()
+{
+    this->points = {};
+    this->open(this->currentFileName);
+}
+
+QVector<QPointF> ImageController::finishShape(const QString& className)
+{
+    if(this->points.length() < 3)
+        throw DrawingIncomplete();
+    QGraphicsTextItem* text = this->scene->addText(className, this->font);
+    text->setPos(this->points.first().x(),
+                 this->points.first().y());
+    QVector<QPointF> ret = this->points;
+    this->points = {};
+    return ret;
+}
+
+void ImageController::setAnnotations(LinkedList<QPair<QString, LinkedList<QPair<int, int>>>> a)
+{
+    this->annotations = LinkedList<QPair<QString, QVector<QPointF>>>();
+    for(size_t i = 0; i < a.length(); i++) {
+        QPair<QString, QVector<QPointF>> pair =
+                QPair<QString, QVector<QPointF>>(a.at(i).first, QVector<QPointF>());
+        for(size_t j = 0; j < a.at(i).second.length(); j++) {
+            QPointF point(a.at(i).second.at(j).first, a.at(i).second.at(j).second);
+            pair.second.append(point);
+        }
+        this->annotations.push(pair);
+    }
+}
+
+QString ImageController::getCurrentFileName()
+{
+    return this->currentFileName;
 }

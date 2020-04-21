@@ -12,7 +12,9 @@ MainView::MainView(QWidget* parent)
     ui->setupUi(this);
     this->ui->ClassesList->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(this->ui->ClassesList, &QListWidget::customContextMenuRequested,
-        this, &MainView::ProvideContextMenu);
+            this, &MainView::ProvideContextMenu);
+    connect(this->ui->imageView, SIGNAL(sendMousePosition(QPoint)),
+            this, SLOT(setMousePosition(QPoint)));
 }
 
 /**
@@ -85,6 +87,16 @@ void MainView::on_AnnotationBrowseButton_clicked()
     controller->browseForAnnotationFile();
 }
 
+void MainView::on_ShapesCancelButton_clicked()
+{
+    this->controller->cancelShape();
+}
+
+void MainView::on_ShapesFinishButton_clicked()
+{
+    this->controller->finishShape();
+}
+
 /**
  * @brief Callback function, which is triggered by user clicking on create annotation file button.
  */
@@ -148,6 +160,11 @@ void MainView::ProvideContextMenu(const QPoint& position)
             QMessageBox::warning(this, "Error", exception.what(), QMessageBox::Ok);
         }
     }
+}
+
+void MainView::setMousePosition(QPoint point)
+{
+    this->controller->addPoint(point);
 }
 
 /**

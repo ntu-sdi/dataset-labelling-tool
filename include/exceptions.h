@@ -81,3 +81,12 @@ public:
         return "Error: Image is not annotated in this file yet";
     }
 };
+
+class DrawingIncomplete : public std::exception
+{
+public:
+    const char * what () const throw ()
+    {
+        return "Error: Drawing cannot be completed, too few points";
+    }
+};

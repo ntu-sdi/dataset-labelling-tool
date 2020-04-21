@@ -21,6 +21,7 @@ add_executable(Dataset-Labelling-Tool
   src/ImageModel.cpp
   src/ClassModel.cpp
   src/AnnotationModel.cpp
+  src/GraphicsView.cpp
   include/MainView.ui
   include/MainView.h
   include/MainController.h
@@ -32,6 +33,7 @@ add_executable(Dataset-Labelling-Tool
   include/AnnotationModel.h
   include/LinkedList.h
   include/exceptions.h
+  include/GraphicsView.h
 )
 
 target_link_libraries(Dataset-Labelling-Tool PRIVATE Qt5::Widgets)

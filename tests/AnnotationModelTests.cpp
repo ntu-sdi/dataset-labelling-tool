@@ -123,8 +123,8 @@ BOOST_AUTO_TEST_CASE(ReadAnnotationFile)
     //Tests if reading annotation file return what was written to it
     AnnotationModel model;
     model.browse("../testFiles/test.annotation");
-    Annotation readAnnotation = model.get("imageExampleOne.png");
-    Shape x = readAnnotation["exampleClassOne"];
+    LinkedList<QPair<QString, Shape>> readAnnotation = model.get("imageExampleOne.png");
+    Shape x = readAnnotation.at(0).second;
     Shape y = createPoints(1);
     BOOST_CHECK(compareShapes(x, y));
 }

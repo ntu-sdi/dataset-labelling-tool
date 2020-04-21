@@ -46,7 +46,21 @@ void MainController::selectImage(const QString& a)
  */
 void MainController::openImage(const QString& fileName)
 {
-    imageController.open(fileName);
+    if (this->imageController.getCurrentFileName() != fileName &&
+        this->imageController.getCurrentFileName() != nullptr) {
+        this->cancelShape();
+    }
+    try {
+        this->imageController.setAnnotations(this->annotationController.get(fileName));
+    }  catch (ImageNotAnnotatedYet) {
+        this->imageController.setAnnotations(
+                    LinkedList<QPair<QString, LinkedList<QPair<int, int>>>>());
+    }
+    catch (IndexOutOfBoundsError) {
+        std::cout << "setannotations is fucked" << std::endl;
+    }
+
+    this->imageController.open(fileName);
 }
 
 /**
@@ -85,6 +99,11 @@ void MainController::selectClass(const QString& className)
     this->classController.select(className);
 }
 
+QString MainController::getSelectedClass()
+{
+    return this->classController.getSelected();
+}
+
 /**
  * @brief Delegates the removal of a class to the ClassController.
  *
@@ -98,6 +117,9 @@ void MainController::removeClass(const QString& className)
 void MainController::browseForAnnotationFile()
 {
     this->annotationController.browse();
+    try {
+        this->openImage(this->imageController.getCurrentFileName());
+    }  catch (std::exception) {}
 }
 
 /**
@@ -108,8 +130,39 @@ void MainController::createAnnotationFile()
     annotationController.create();
 }
 
-void MainController::addPoint(Point) {}
+void MainController::addPoint(QPoint point)
+{
+    this->imageController.addPoint(point);
+}
 
-void MainController::finishShape() {}
+void MainController::finishShape()
+{
+    try {
+        QString className = this->getSelectedClass();
+        QVector<QPointF> points = this->imageController.finishShape(className);
+        LinkedList<QPair<int, int>> p;
+        for (QPointF i: points) {
+            p.push(QPair<int, int>(static_cast<int>(i.x()),
+                                   static_cast<int>(i.y())));
+        }
+        this->annotationController.add(this->imageController.getCurrentFileName(),
+                                       className, p);
+    }  catch (DrawingIncomplete& e) {
+        QMessageBox::warning(nullptr, "Error", e.what(), QMessageBox::Ok);
+        this->cancelShape();
+    } catch (ClassNotSelectedError& e) {
+        QMessageBox::warning(nullptr, "Error", e.what(), QMessageBox::Ok);
+        this->cancelShape();
+    }
+    catch (FileNotFoundError& e) {
+        QMessageBox::warning(nullptr, "Error", e.what(), QMessageBox::Ok);
+        this->cancelShape();
+    }
 
-void MainController::cancelShape() {}
+    this->openImage(this->imageController.getCurrentFileName());
+}
+
+void MainController::cancelShape()
+{
+    this->imageController.cancelShape();
+}

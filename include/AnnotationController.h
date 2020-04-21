@@ -17,7 +17,6 @@ public:
     AnnotationController(const Ui_MainView&, const AnnotationModel&);
     void create();
     void browse();
-    void addPoint(Point);
-    void finishShape();
-    void cancelShape();
+    void add(const QString& filePath, const QString& className, LinkedList<QPair<int, int>>);
+    LinkedList<QPair<QString, Shape>> get(const QString&);
 };

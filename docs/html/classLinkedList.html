@@ -61,6 +61,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classLinkedList-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -74,7 +75,7 @@ Collaboration diagram for LinkedList&lt; T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLinkedList__coll__graph.png" border="0" usemap="#LinkedList_3_01T_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="LinkedList_3_01T_01_4_coll__map" id="LinkedList_3_01T_01_4_coll__map">
-<area shape="rect" id="node2" href="structLinkedList_1_1Node.html" title="{LinkedList\&lt; T \&gt;::Node\n|+ data\l|}" alt="" coords="5,5,157,83"/>
+<area shape="rect" id="node2" href="structLinkedList_1_1Node.html" title="{LinkedList\&lt; T \&gt;::Node\n|+ data\l|}" alt="" coords="5,5,173,83"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -88,42 +89,61 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7ecbb28e82117a680839ed0dc28ebdce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedList.html#a7ecbb28e82117a680839ed0dc28ebdce">isEmpty</a> ()</td></tr>
 <tr class="memdesc:a7ecbb28e82117a680839ed0dc28ebdce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chceks if the list is empty.  <a href="#a7ecbb28e82117a680839ed0dc28ebdce">More...</a><br /></td></tr>
 <tr class="separator:a7ecbb28e82117a680839ed0dc28ebdce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5254d9241ff88374dda981c68a320d7"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedList.html#ad5254d9241ff88374dda981c68a320d7">operator[]</a> (int index)</td></tr>
-<tr class="memdesc:ad5254d9241ff88374dda981c68a320d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator [] Gets the data of the node at the index specified.  <a href="#ad5254d9241ff88374dda981c68a320d7">More...</a><br /></td></tr>
-<tr class="separator:ad5254d9241ff88374dda981c68a320d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a917c48e728e8243c38d854dc1df9d86d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structLinkedList_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedList.html#a917c48e728e8243c38d854dc1df9d86d">insert</a> (int index, T data)</td></tr>
-<tr class="memdesc:a917c48e728e8243c38d854dc1df9d86d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a new node.  <a href="#a917c48e728e8243c38d854dc1df9d86d">More...</a><br /></td></tr>
-<tr class="separator:a917c48e728e8243c38d854dc1df9d86d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3f37e8947f8fc4dd932bcf41d0344ec"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedList.html#ae3f37e8947f8fc4dd932bcf41d0344ec">at</a> (int index)</td></tr>
-<tr class="memdesc:ae3f37e8947f8fc4dd932bcf41d0344ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">at Gets the data of the node at the index specified.  <a href="#ae3f37e8947f8fc4dd932bcf41d0344ec">More...</a><br /></td></tr>
-<tr class="separator:ae3f37e8947f8fc4dd932bcf41d0344ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33ccc185173763fde944238f0f269bf0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedList.html#a33ccc185173763fde944238f0f269bf0">length</a> ()</td></tr>
-<tr class="memdesc:a33ccc185173763fde944238f0f269bf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">length Gets the length of the list.  <a href="#a33ccc185173763fde944238f0f269bf0">More...</a><br /></td></tr>
-<tr class="separator:a33ccc185173763fde944238f0f269bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa881ec96805fb6c0e4d8f8c806bff490"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedList.html#aa881ec96805fb6c0e4d8f8c806bff490">getIndex</a> (T data)</td></tr>
-<tr class="memdesc:aa881ec96805fb6c0e4d8f8c806bff490"><td class="mdescLeft">&#160;</td><td class="mdescRight">getIndex Returns the index of the first node with the given data.  <a href="#aa881ec96805fb6c0e4d8f8c806bff490">More...</a><br /></td></tr>
-<tr class="separator:aa881ec96805fb6c0e4d8f8c806bff490"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acccbb0e5eaeb88c5a1557fed87131727"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedList.html#acccbb0e5eaeb88c5a1557fed87131727">operator[]</a> (size_t index)</td></tr>
+<tr class="memdesc:acccbb0e5eaeb88c5a1557fed87131727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the data of the node at the index specified.  <a href="#acccbb0e5eaeb88c5a1557fed87131727">More...</a><br /></td></tr>
+<tr class="separator:acccbb0e5eaeb88c5a1557fed87131727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5e1ea8a9bbb18d9483db99b44479566"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structLinkedList_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedList.html#ae5e1ea8a9bbb18d9483db99b44479566">insert</a> (size_t index, T data)</td></tr>
+<tr class="memdesc:ae5e1ea8a9bbb18d9483db99b44479566"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a new node.  <a href="#ae5e1ea8a9bbb18d9483db99b44479566">More...</a><br /></td></tr>
+<tr class="separator:ae5e1ea8a9bbb18d9483db99b44479566"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2793ba03677f44075c0529dffe0b0d5a"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedList.html#a2793ba03677f44075c0529dffe0b0d5a">at</a> (size_t index)</td></tr>
+<tr class="memdesc:a2793ba03677f44075c0529dffe0b0d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the data of the node at the index specified.  <a href="#a2793ba03677f44075c0529dffe0b0d5a">More...</a><br /></td></tr>
+<tr class="separator:a2793ba03677f44075c0529dffe0b0d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b766729a31801b6fafdb6170646d318"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedList.html#a4b766729a31801b6fafdb6170646d318">length</a> ()</td></tr>
+<tr class="memdesc:a4b766729a31801b6fafdb6170646d318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the length of the list.  <a href="#a4b766729a31801b6fafdb6170646d318">More...</a><br /></td></tr>
+<tr class="separator:a4b766729a31801b6fafdb6170646d318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac274901e769cff00d61b52844e96b21e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedList.html#ac274901e769cff00d61b52844e96b21e">getIndex</a> (T data)</td></tr>
+<tr class="memdesc:ac274901e769cff00d61b52844e96b21e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the first node with the given data.  <a href="#ac274901e769cff00d61b52844e96b21e">More...</a><br /></td></tr>
+<tr class="separator:ac274901e769cff00d61b52844e96b21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a603e1c5a0a4528d82f83b9393f83bf22"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedList.html#a603e1c5a0a4528d82f83b9393f83bf22">contains</a> (T data)</td></tr>
-<tr class="memdesc:a603e1c5a0a4528d82f83b9393f83bf22"><td class="mdescLeft">&#160;</td><td class="mdescRight">contains Checks if the list contains a node with the given data.  <a href="#a603e1c5a0a4528d82f83b9393f83bf22">More...</a><br /></td></tr>
+<tr class="memdesc:a603e1c5a0a4528d82f83b9393f83bf22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the list contains a node with the given data.  <a href="#a603e1c5a0a4528d82f83b9393f83bf22">More...</a><br /></td></tr>
 <tr class="separator:a603e1c5a0a4528d82f83b9393f83bf22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a970cd1e84d2b83af40612dd0e75ebd7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedList.html#a970cd1e84d2b83af40612dd0e75ebd7a">removeAt</a> (int index)</td></tr>
-<tr class="memdesc:a970cd1e84d2b83af40612dd0e75ebd7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">removeAt Removes the node at the given index.  <a href="#a970cd1e84d2b83af40612dd0e75ebd7a">More...</a><br /></td></tr>
-<tr class="separator:a970cd1e84d2b83af40612dd0e75ebd7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae19893f875003b17caf0f71d26167fd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedList.html#ae19893f875003b17caf0f71d26167fd4">removeAt</a> (size_t index)</td></tr>
+<tr class="memdesc:ae19893f875003b17caf0f71d26167fd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the node at the given index.  <a href="#ae19893f875003b17caf0f71d26167fd4">More...</a><br /></td></tr>
+<tr class="separator:ae19893f875003b17caf0f71d26167fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9aa6e03f271785f6b488d8c4cc3f3c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedList.html#ab9aa6e03f271785f6b488d8c4cc3f3c7">remove</a> (T data)</td></tr>
-<tr class="memdesc:ab9aa6e03f271785f6b488d8c4cc3f3c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove Removes the first node with the given data.  <a href="#ab9aa6e03f271785f6b488d8c4cc3f3c7">More...</a><br /></td></tr>
+<tr class="memdesc:ab9aa6e03f271785f6b488d8c4cc3f3c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the first node with the given data.  <a href="#ab9aa6e03f271785f6b488d8c4cc3f3c7">More...</a><br /></td></tr>
 <tr class="separator:ab9aa6e03f271785f6b488d8c4cc3f3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a7ce2592ff7566349f68a1cb60bf00b"><td class="memItemLeft" align="right" valign="top"><a id="a0a7ce2592ff7566349f68a1cb60bf00b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>replace</b> (size_t index, T data)</td></tr>
+<tr class="separator:a0a7ce2592ff7566349f68a1cb60bf00b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a1e6c2009b611fb4416574178b316a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structLinkedList_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedList.html#a3a1e6c2009b611fb4416574178b316a3">push</a> (T data)</td></tr>
-<tr class="memdesc:a3a1e6c2009b611fb4416574178b316a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">push Inserts a new node to the end of the list.  <a href="#a3a1e6c2009b611fb4416574178b316a3">More...</a><br /></td></tr>
+<tr class="memdesc:a3a1e6c2009b611fb4416574178b316a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a new node to the end of the list.  <a href="#a3a1e6c2009b611fb4416574178b316a3">More...</a><br /></td></tr>
 <tr class="separator:a3a1e6c2009b611fb4416574178b316a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a691b27f81c60be3c891fe6d56a4718b4"><td class="memItemLeft" align="right" valign="top"><a id="a691b27f81c60be3c891fe6d56a4718b4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedList.html#a691b27f81c60be3c891fe6d56a4718b4">sort</a> ()</td></tr>
+<tr class="memdesc:a691b27f81c60be3c891fe6d56a4718b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the linked list in-place. <br /></td></tr>
+<tr class="separator:a691b27f81c60be3c891fe6d56a4718b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ae19ff3c4e501a9638fa5caf5cc9d5b05"><td class="memItemLeft" align="right" valign="top"><a id="ae19ff3c4e501a9638fa5caf5cc9d5b05"></a>
+<a class="el" href="structLinkedList_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>nodeAt</b> (size_t index)</td></tr>
+<tr class="separator:ae19ff3c4e501a9638fa5caf5cc9d5b05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38612b71d816fec54ea379d0b8daec76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedList.html#a38612b71d816fec54ea379d0b8daec76">quicksort</a> (size_t left, size_t right)</td></tr>
+<tr class="memdesc:a38612b71d816fec54ea379d0b8daec76"><td class="mdescLeft">&#160;</td><td class="mdescRight">An internal implementation of the quicksort algorithm.  <a href="#a38612b71d816fec54ea379d0b8daec76">More...</a><br /></td></tr>
+<tr class="separator:a38612b71d816fec54ea379d0b8daec76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad67db427015a08993372ed5479dde828"><td class="memItemLeft" align="right" valign="top"><a id="ad67db427015a08993372ed5479dde828"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isSorted</b> (<a class="el" href="classLinkedList.html">LinkedList</a>&lt; T &gt; &amp;list)</td></tr>
+<tr class="separator:ad67db427015a08993372ed5479dde828"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a2d1f848e19caa3f180b7fa6938125bba"><td class="memItemLeft" align="right" valign="top"><a id="a2d1f848e19caa3f180b7fa6938125bba"></a>
 <a class="el" href="structLinkedList_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>head</b></td></tr>
 <tr class="separator:a2d1f848e19caa3f180b7fa6938125bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06b9d1f7914d2c6ca3f46653176b713c"><td class="memItemLeft" align="right" valign="top"><a id="a06b9d1f7914d2c6ca3f46653176b713c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>len</b> {0}</td></tr>
-<tr class="separator:a06b9d1f7914d2c6ca3f46653176b713c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61a7fe2947bd2d1dbf09a9a97bf7b3ce"><td class="memItemLeft" align="right" valign="top"><a id="a61a7fe2947bd2d1dbf09a9a97bf7b3ce"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>len</b> { 0 }</td></tr>
+<tr class="separator:a61a7fe2947bd2d1dbf09a9a97bf7b3ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class T&gt;<br />
@@ -131,13 +151,13 @@ class LinkedList&lt; T &gt;</h3>
 
 <p>Custom implementation of a singly-linked list. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae3f37e8947f8fc4dd932bcf41d0344ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3f37e8947f8fc4dd932bcf41d0344ec">&#9670;&nbsp;</a></span>at()</h2>
+<a id="a2793ba03677f44075c0529dffe0b0d5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2793ba03677f44075c0529dffe0b0d5a">&#9670;&nbsp;</a></span>at()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -145,7 +165,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">T <a class="el" href="classLinkedList.html">LinkedList</a>&lt; T &gt;::at </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td></td>
         </tr>
@@ -157,7 +177,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>at Gets the data of the node at the index specified. </p>
+<p>Gets the data of the node at the index specified. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>The index of the node to get the data. </td></tr>
@@ -174,7 +194,7 @@ template&lt;class T &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -194,7 +214,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>contains Checks if the list contains a node with the given data. </p>
+<p>Checks if the list contains a node with the given data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>Data to check. </td></tr>
@@ -205,19 +225,19 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="aa881ec96805fb6c0e4d8f8c806bff490"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa881ec96805fb6c0e4d8f8c806bff490">&#9670;&nbsp;</a></span>getIndex()</h2>
+<a id="ac274901e769cff00d61b52844e96b21e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac274901e769cff00d61b52844e96b21e">&#9670;&nbsp;</a></span>getIndex()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="classLinkedList.html">LinkedList</a>&lt; T &gt;::getIndex </td>
+          <td class="memname">size_t <a class="el" href="classLinkedList.html">LinkedList</a>&lt; T &gt;::getIndex </td>
           <td>(</td>
           <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>data</em></td><td>)</td>
@@ -231,24 +251,24 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>getIndex Returns the index of the first node with the given data. </p>
+<p>Returns the index of the first node with the given data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>Data of node to get the index of. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int Index of the first node with the given data. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>size_t index of the first node with the given data. </dd></dl>
 
 </div>
 </div>
-<a id="a917c48e728e8243c38d854dc1df9d86d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a917c48e728e8243c38d854dc1df9d86d">&#9670;&nbsp;</a></span>insert()</h2>
+<a id="ae5e1ea8a9bbb18d9483db99b44479566"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5e1ea8a9bbb18d9483db99b44479566">&#9670;&nbsp;</a></span>insert()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -256,7 +276,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="structLinkedList_1_1Node.html">Node</a>* <a class="el" href="classLinkedList.html">LinkedList</a>&lt; T &gt;::insert </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em>, </td>
         </tr>
         <tr>
@@ -286,7 +306,7 @@ template&lt;class T &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Node* Pointer to the new node. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Node* Posize_ter to the new node. </dd></dl>
 
 </div>
 </div>
@@ -296,7 +316,7 @@ template&lt;class T &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -320,19 +340,19 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a33ccc185173763fde944238f0f269bf0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33ccc185173763fde944238f0f269bf0">&#9670;&nbsp;</a></span>length()</h2>
+<a id="a4b766729a31801b6fafdb6170646d318"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b766729a31801b6fafdb6170646d318">&#9670;&nbsp;</a></span>length()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="classLinkedList.html">LinkedList</a>&lt; T &gt;::length </td>
+          <td class="memname">size_t <a class="el" href="classLinkedList.html">LinkedList</a>&lt; T &gt;::length </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -345,18 +365,18 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>length Gets the length of the list. </p>
-<dl class="section return"><dt>Returns</dt><dd>int The lenght of the list. </dd></dl>
+<p>Gets the length of the list. </p>
+<dl class="section return"><dt>Returns</dt><dd>size_t The lenght of the list. </dd></dl>
 
 </div>
 </div>
-<a id="ad5254d9241ff88374dda981c68a320d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5254d9241ff88374dda981c68a320d7">&#9670;&nbsp;</a></span>operator[]()</h2>
+<a id="acccbb0e5eaeb88c5a1557fed87131727"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acccbb0e5eaeb88c5a1557fed87131727">&#9670;&nbsp;</a></span>operator[]()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -364,7 +384,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">T&amp; <a class="el" href="classLinkedList.html">LinkedList</a>&lt; T &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td></td>
         </tr>
@@ -376,8 +396,8 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>operator [] Gets the data of the node at the index specified. </p>
-<p>This method overrides the [] operator, simply calling <a class="el" href="classLinkedList.html#ae3f37e8947f8fc4dd932bcf41d0344ec" title="at Gets the data of the node at the index specified. ">LinkedList::at</a>.</p>
+<p>Gets the data of the node at the index specified. </p>
+<p>This method overrides the [] operator, simply calling <a class="el" href="classLinkedList.html#a2793ba03677f44075c0529dffe0b0d5a" title="Gets the data of the node at the index specified. ">LinkedList::at</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>Index of the node to get. </td></tr>
@@ -394,7 +414,7 @@ template&lt;class T &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -414,14 +434,61 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>push Inserts a new node to the end of the list. </p>
+<p>Inserts a new node to the end of the list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>Data of the node to insert. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Node* Pointer to the new node. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Node* Posize_ter to the new node. </dd></dl>
+
+</div>
+</div>
+<a id="a38612b71d816fec54ea379d0b8daec76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38612b71d816fec54ea379d0b8daec76">&#9670;&nbsp;</a></span>quicksort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classLinkedList.html">LinkedList</a>&lt; T &gt;::quicksort </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>An internal implementation of the quicksort algorithm. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>Starting left bound of the algorithm. </td></tr>
+    <tr><td class="paramname">right</td><td>Starting right bound of the algorithm. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -431,7 +498,7 @@ template&lt;class T &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -451,7 +518,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>remove Removes the first node with the given data. </p>
+<p>Removes the first node with the given data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>Data of the node to remove. </td></tr>
@@ -461,13 +528,13 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a970cd1e84d2b83af40612dd0e75ebd7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a970cd1e84d2b83af40612dd0e75ebd7a">&#9670;&nbsp;</a></span>removeAt()</h2>
+<a id="ae19893f875003b17caf0f71d26167fd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae19893f875003b17caf0f71d26167fd4">&#9670;&nbsp;</a></span>removeAt()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -475,7 +542,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classLinkedList.html">LinkedList</a>&lt; T &gt;::removeAt </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td></td>
         </tr>
@@ -487,7 +554,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>removeAt Removes the node at the given index. </p>
+<p>Removes the node at the given index. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>Index of the node to be removed. </td></tr>
