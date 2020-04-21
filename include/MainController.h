@@ -35,4 +35,5 @@ public:
     void addPoint(QPoint);
     void finishShape();
     void cancelShape();
+    static void annotationSavingThread(MainController *);
 };

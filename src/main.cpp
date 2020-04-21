@@ -7,13 +7,6 @@
 #include "MainController.h"
 #include "../include/ui_MainView.h"
 
-void annotationSaver(MainController *controller){
-    while(1){
-        controller->saveAnnotations();
-        std::this_thread::sleep_for(std::chrono::milliseconds(60000));
-    }
-}
-
 int main(int argc, char *argv[])
 {
     QApplication application(argc, argv);
@@ -26,7 +19,7 @@ int main(int argc, char *argv[])
     ClassController classController(ui_MainView, classModel);
     ImageController imageController(ui_MainView, imageModel);
     MainController mainController(annotationController, classController, imageController);
-    std::thread saver(annotationSaver,&mainController);
+    std::thread saver(MainController::annotationSavingThread,&mainController);
     mainView.useController(&mainController);
     mainView.show();
     return application.exec();
