@@ -3,6 +3,9 @@
 #include <exception>
 #include <stdexcept>
 
+/**
+ * Custom exception subclass, which signifies a value not found in an array.
+ */
 class ValueNotFoundError : public std::exception
 {
     const char * what () const throw ()
@@ -11,6 +14,9 @@ class ValueNotFoundError : public std::exception
     }
 };
 
+/**
+ * Custom exception subclass, which signifies an array index out of bounds.
+ */
 class IndexOutOfBoundsError : public std::exception
 {
     const char * what () const throw ()
@@ -19,6 +25,9 @@ class IndexOutOfBoundsError : public std::exception
     }
 };
 
+/**
+ * Custom exception subclass, which signifies an empty array.
+ */
 class ArrayEmptyError : public std::exception
 {
     const char * what () const throw ()
@@ -27,7 +36,9 @@ class ArrayEmptyError : public std::exception
     }
 };
 
-
+/**
+ * Custom exception subclass, which signifies a missing file.
+ */
 class FileNotFoundError : public std::exception
 {
 public:
@@ -37,6 +48,9 @@ public:
     }
 };
 
+/**
+ * Custom exception subclass, which signifies a missing class.
+ */
 class ClassNotFoundError : public std::exception
 {
 public:
@@ -46,6 +60,9 @@ public:
     }
 };
 
+/**
+ * Custom exception subclass, which signifies that no class is selected.
+ */
 class ClassNotSelectedError : public std::exception
 {
 public:
@@ -55,6 +72,9 @@ public:
     }
 };
 
+/**
+ * Custom exception subclass, which signifies a missing folder.
+ */
 class FolderNotFoundError : public std::exception
 {
 public:
@@ -64,15 +84,21 @@ public:
     }
 };
 
+/**
+ * Custom exception subclass, which signifies a cancelled operation.
+ */
 class OperationCanceled : public std::exception
 {
 public:
     const char * what () const throw ()
     {
-        return "Error: Folder could not be found";
+        return "Error: Operation has been cancelled.";
     }
 };
 
+/**
+ * Custom exception subclass, which signifies an image, which hasn't been annotated yet.
+ */
 class ImageNotAnnotatedYet : public std::exception
 {
 public:
@@ -82,6 +108,9 @@ public:
     }
 };
 
+/**
+ * Custom exception subclass, which signifies a lack of vertices for a polygon.
+ */
 class DrawingIncomplete : public std::exception
 {
 public:

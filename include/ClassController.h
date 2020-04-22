@@ -14,7 +14,6 @@ class ClassController
 private:
     Ui_MainView ui;
     ClassModel model;
-
 public:
     ClassController(const Ui_MainView&, const ClassModel&);
     void browse();
@@ -26,5 +25,4 @@ public:
     void updateView();
     void updateView(const QString&);
     QString getSelected();
-
 };

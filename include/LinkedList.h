@@ -5,22 +5,30 @@
 /*
  * The function definitions have to be defined in the header file
  * because C++ doesn't allow for templates to be used in method
- * definitions in the .cpp file
+ * definitions in the .cpp file.
  */
 
 /**
  * Custom implementation of a singly-linked list.
  */
-template <class T>
-class LinkedList {
+template <class T> class LinkedList
+{
 private:
     struct Node {
         T data;
         Node* next;
     };
-    Node* head;
-    size_t len{ 0 };
 
+    Node* head;
+    size_t len{0};
+
+    /**
+     * @brief nodeAt Returns the node at the specified index.
+     *
+     * @param index
+     *
+     * @return
+     */
     Node* nodeAt(size_t index)
     {
         Node* currentNode = head;
@@ -70,6 +78,13 @@ private:
         }
     }
 
+    /**
+     * @brief Checks if a list is sorted.
+     *
+     * @param list The list to check.
+     *
+     * @return bool
+     */
     bool isSorted(LinkedList<T>& list)
     {
         if(list.length() < 2) {
@@ -90,6 +105,9 @@ private:
     }
 
 public:
+    /**
+     * @brief LinkedList Constructor for an empty list.
+     */
     LinkedList()
     {
         head = nullptr;
@@ -98,7 +116,7 @@ public:
     ~LinkedList() = default;
 
     /**
-     * @brief Chceks if the list is empty.
+     * @brief Checks if the list is empty.
      *
      * @return bool True if the list is empty, otherwise false.
      */
@@ -108,14 +126,14 @@ public:
     }
 
     /**
-     * @brief Creates copy of this linked list
+     * @brief Creates copy of this linked list.
      *
-     * @return Copied LinkedList
+     * @return Copied LinkedList.
      */
     LinkedList copy(){
         LinkedList<T> copy;
-        if (!this->isEmpty()) {
-            for (size_t i = 0; i < this->length(); i++) {
+        if(!this->isEmpty()) {
+            for(size_t i = 0; i < this->length(); i++) {
                 copy.push(this->at(i));
             }
         }
@@ -128,6 +146,7 @@ public:
      * This method overrides the [] operator, simply calling LinkedList::at.
      *
      * @param index Index of the node to get.
+     *
      * @return T Data of the node at the given index.
      */
     T operator[](size_t index)
@@ -140,6 +159,7 @@ public:
      *
      * @param index Index to insert at.
      * @param data Data of the new node.
+     *
      * @return Node* Posize_ter to the new node.
      */
     Node* insert(size_t index, T data)
@@ -168,6 +188,7 @@ public:
      * @brief Gets the data of the node at the index specified.
      *
      * @param index The index of the node to get the data.
+     *
      * @return T Data of the node at the index specified.
      */
     T at(size_t index)
@@ -198,6 +219,7 @@ public:
      * @brief Returns the index of the first node with the given data.
      *
      * @param data Data of node to get the index of.
+     *
      * @return size_t index of the first node with the given data.
      */
     size_t getIndex(T data)
@@ -218,6 +240,7 @@ public:
      * @brief Checks if the list contains a node with the given data.
      *
      * @param data Data to check.
+     *
      * @return bool True if the list contains a node with the data, otherwise false.
      */
     bool contains(T data)
@@ -243,7 +266,7 @@ public:
     {
         Node* currentNode = head;
         Node* prevNode = nullptr;
-        size_t currentIndex{ 0 };
+        size_t currentIndex{0};
         if(len == 0) {
             throw ArrayEmptyError();
         }
@@ -304,6 +327,12 @@ public:
         delete currentNode;
     }
 
+    /**
+     * @brief replace Replace a node's data.
+     *
+     * @param index
+     * @param data
+     */
     void replace(size_t index, T data)
     {
         Node* node = this->nodeAt(index);
@@ -314,6 +343,7 @@ public:
      * @brief Inserts a new node to the end of the list.
      *
      * @param data Data of the node to insert.
+     *
      * @return Node* Posize_ter to the new node.
      */
     Node* push(T data)
@@ -341,13 +371,17 @@ public:
         }
     }
 
-    void clear(){
-        if(this->length()){
-        while(this->length()){
-            try {
-                removeAt(0);
-            } catch (IndexOutOfBoundsError &e) {
+    /**
+     * @brief clear Clears the linked list.
+     */
+    void clear() {
+        if(this->length()) {
+            while(this->length()) {
+                try {
+                    removeAt(0);
+                }
+                catch (IndexOutOfBoundsError &e) {
+                }
             }
-        }
-    }}
+    }   }
 };

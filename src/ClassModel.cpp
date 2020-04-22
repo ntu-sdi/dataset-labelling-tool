@@ -9,10 +9,9 @@
 void ClassModel::writeLinesToFile(const QString& fileName, LinkedList<QString>& lines)
 {
     QFile file(fileName);
-    if (file.open(QIODevice::WriteOnly)) {
+    if(file.open(QIODevice::WriteOnly)) {
         QTextStream stream(&file);
-
-        for (size_t i = 0; i < lines.length(); i++) {
+        for(size_t i = 0; i < lines.length(); i++) {
             stream << lines.at(i) << '\n';
         }
         file.close();
@@ -23,8 +22,6 @@ void ClassModel::writeLinesToFile(const QString& fileName, LinkedList<QString>& 
     }
 }
 
-void ClassModel::save() {}
-
 /**
  * @brief Opens a file system dialog window and prompts the user to select a class file.
  */
@@ -32,10 +29,10 @@ void ClassModel::browse()
 {
     QString filePath = QFileDialog::getOpenFileName(nullptr, "Select Class File",
         "./", "Class files (*.class)");
-    if (filePath.isNull()) {
+    if(filePath.isNull()) {
         throw OperationCanceled();
     }
-    if (!filePath.isEmpty()) {
+    if(!filePath.isEmpty()) {
         this->browse(filePath);
     }
     else {
@@ -43,13 +40,18 @@ void ClassModel::browse()
     }
 }
 
+/**
+ * @brief ClassModel::browse Browse for a class file.
+ *
+ * @param filepath
+ */
 void ClassModel::browse(const QString& filepath)
 {
     QFile file(filepath);
-    if (file.open(QIODevice::ReadOnly)) {
+    if(file.open(QIODevice::ReadOnly)) {
         this->classes.clear();
         QTextStream stream(&file);
-        while (!stream.atEnd())
+        while(!stream.atEnd())
             this->classes.push(stream.readLine());
     }
     else
@@ -63,16 +65,16 @@ void ClassModel::browse(const QString& filepath)
 void ClassModel::create()
 {
     QString fileName = QFileDialog::getSaveFileName(nullptr, "Create New Class File",
-        "./",
-        "Class files (*.class)");
-
-    if (fileName.isNull())
+        "./", "Class files (*.class)");
+    if(fileName.isNull()) {
         throw std::runtime_error("Creating cancelled");
+    }
     fileName = fileName.trimmed();
-    if (!fileName.contains(".class"))
+    if(!fileName.contains(".class")) {
         fileName.append(".class");
+    }
     std::ofstream file(fileName.toStdString());
-    if (!file) {
+    if(!file) {
         file.close();
         throw std::invalid_argument("Could not create file");
     }
@@ -80,10 +82,15 @@ void ClassModel::create()
     this->browse(fileName);
 }
 
+/**
+ * @brief ClassModel::create Creates a new class file.
+ *
+ * @param filename
+ */
 void ClassModel::create(const QString& filename)
 {
     std::ofstream file(filename.toStdString());
-    if (!file) {
+    if(!file) {
         file.close();
         throw std::invalid_argument("Could not create file");
     }
@@ -102,8 +109,9 @@ void ClassModel::create(const QString& filename)
 void ClassModel::addClass(QString className)
 {
     className = className.trimmed();
-    if (className.isEmpty())
+    if(className.isEmpty()) {
         throw std::invalid_argument("Class name cannot be empty");
+    }
     else {
         this->classes.push(className);
         this->writeLinesToFile(this->currentFilePath, this->classes);
@@ -120,10 +128,11 @@ void ClassModel::addClass(QString className)
  */
 void ClassModel::removeClass(const QString& className)
 {
-    if (this->currentFilePath.isEmpty())
+    if(this->currentFilePath.isEmpty()) {
         throw std::invalid_argument("No file selected");
+    }
     else {
-        if (classes.contains(className)) {
+        if(classes.contains(className)) {
             this->classes.removeAt(classes.getIndex(className));
             this->writeLinesToFile(this->currentFilePath, this->classes);
         }
@@ -139,7 +148,7 @@ void ClassModel::removeClass(const QString& className)
  */
 void ClassModel::select(const QString& className)
 {
-    if (!this->classes.contains(className)) {
+    if(!this->classes.contains(className)) {
         throw ClassNotFoundError();
     }
     this->selectedClass = className;
@@ -155,7 +164,7 @@ void ClassModel::select(const QString& className)
  */
 QString ClassModel::getSelected()
 {
-    if (this->selectedClass.isNull()) {
+    if(this->selectedClass.isNull()) {
         throw ClassNotSelectedError();
     }
     return this->selectedClass;
@@ -166,7 +175,7 @@ QString ClassModel::getSelected()
  */
 LinkedList<QString> ClassModel::getAll()
 {
-    if (this->currentFilePath.isEmpty()) {
+    if(this->currentFilePath.isEmpty()) {
         throw std::invalid_argument("No file selected");
     }
     else {

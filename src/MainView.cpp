@@ -1,4 +1,4 @@
-#include "MainView.h"
+﻿#include "MainView.h"
 
 /**
  * @brief Creates a new internal Ui::MainView object and sets up the GUI.
@@ -87,11 +87,17 @@ void MainView::on_AnnotationBrowseButton_clicked()
     controller->browseForAnnotationFile();
 }
 
+/**
+ * @brief MainView::on_ShapesCancelButton_clicked Callback function, triggered when users click on the cancel button.
+ */
 void MainView::on_ShapesCancelButton_clicked()
 {
     this->controller->cancelShape();
 }
 
+/**
+ * @brief MainView::on_ShapesFinishButton_clicked Callback function, triggered when users click on the finish button.
+ */
 void MainView::on_ShapesFinishButton_clicked()
 {
     this->controller->finishShape();
@@ -146,22 +152,27 @@ void MainView::ProvideContextMenu(const QPoint& position)
 {
     QPoint globalPosition = this->ui->ClassesList->viewport()->mapToGlobal(position);
     QModelIndex index = this->ui->ClassesList->indexAt(position);
-    if (!index.isValid()) {
+    if(!index.isValid()) {
         return;
     }
     QMenu submenu;
     submenu.addAction("Delete");
     QAction* rightClickItem = submenu.exec(globalPosition);
-    if (rightClickItem && rightClickItem->text().contains("Delete")) {
+    if(rightClickItem && rightClickItem->text().contains("Delete")) {
         try {
             this->controller->removeClass(this->ui->ClassesList->itemAt(position)->text());
         }
-        catch (std::exception& exception) {
+        catch(std::exception& exception) {
             QMessageBox::warning(this, "Error", exception.what(), QMessageBox::Ok);
         }
     }
 }
 
+/**
+ * @brief MainView::setMousePosition Gets called on a mouse press event to add an annotation point.
+ *
+ * @param point
+ */
 void MainView::setMousePosition(QPoint point)
 {
     this->controller->addPoint(point);
@@ -194,7 +205,7 @@ void MainView::on_ImageListSortBox_activated(const QString& arg1)
  */
 void MainView::on_SearchBox_textChanged(const QString& arg1)
 {
-    if (arg1.isEmpty()) {
+    if(arg1.isEmpty()) {
         controller->sortLoadedImages(ui->ImageListSortBox->currentText());
     }
     else {

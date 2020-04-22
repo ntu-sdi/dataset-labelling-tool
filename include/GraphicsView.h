@@ -11,9 +11,8 @@ Q_OBJECT
 public:
     GraphicsView(QWidget*);
     void mousePressEvent(QMouseEvent *event);
-
 signals:
     void sendMousePosition(QPoint);
 };
 
-#endif // GRAPHICSVIEW_H
+#endif

@@ -1,4 +1,5 @@
 #include "ClassController.h"
+
 /**
  * @brief Constructs a ClassController which handles logic related to the class files.
  *
@@ -26,36 +27,36 @@ void ClassController::updateView()
  */
 void ClassController::updateView(const QString& sortOption)
 {
-    if(!this->model.getCurrentFilePath().isNull()){
+    if(!this->model.getCurrentFilePath().isNull()) {
         this->ui.ClassesList->clearSelection();
         this->ui.ClassesList->clearFocus();
         this->ui.ClassesList->clear();
         LinkedList<QString> classes = this->model.getAll().copy();
 
-        if (!classes.isEmpty()) {
-            if (sortOption == "Name : Ascending") {
+        if(!classes.isEmpty()) {
+            if(sortOption == "Name : Ascending") {
                 classes.sort();
-                for (size_t i = 0; i < classes.length(); i++) {
+                for(size_t i = 0; i < classes.length(); i++) {
                     this->ui.ClassesList->addItem(classes.at(i));
                 }
             }
-            else if (sortOption == "Name : Descending") {
+            else if(sortOption == "Name : Descending") {
                 classes.sort();
                 size_t i = classes.length();
-                while (i) {
+                while(i) {
                     i--;
                     this->ui.ClassesList->addItem(classes.at(i));
                 }
             }
-            else if (sortOption == "Default") {
-                for (size_t i = 0; i < classes.length(); i++) {
+            else if(sortOption == "Default") {
+                for(size_t i = 0; i < classes.length(); i++) {
                     this->ui.ClassesList->addItem(classes.at(i));
                 }
             }
         }
 
         QString currentFilePath = this->model.getCurrentFilePath();
-        if (!currentFilePath.isEmpty()) {
+        if(!currentFilePath.isEmpty()) {
             this->ui.ClassFileLabel->setText(currentFilePath);
         }
     }
@@ -69,10 +70,10 @@ void ClassController::browse()
         this->model.browse();
         this->updateView();
     }
-    catch (std::invalid_argument& e) {
+    catch(std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
     }
-    catch (OperationCanceled& e) {
+    catch(OperationCanceled& e) {
     }
 }
 
@@ -85,10 +86,10 @@ void ClassController::create()
         this->model.create();
         this->updateView();
     }
-    catch (std::invalid_argument& e) {
+    catch(std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
     }
-    catch (std::runtime_error) {
+    catch(std::runtime_error) {
     }
 }
 
@@ -103,7 +104,7 @@ void ClassController::add(const QString& className)
         this->model.addClass(className);
         this->updateView();
     }
-    catch (std::invalid_argument& e) {
+    catch(std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
     }
 }
@@ -129,7 +130,7 @@ void ClassController::remove(const QString& className)
         this->model.removeClass(className);
         this->updateView();
     }
-    catch (std::invalid_argument& e) {
+    catch(std::invalid_argument& e) {
         QMessageBox::warning(this->ui.ClassesList, "Error", e.what(), QMessageBox::Ok);
     }
 }

@@ -4,6 +4,7 @@
 #include <utility>
 #include <QFileSystemModel>
 #include <QJsonDocument>
+
 #include "LinkedList.h"
 
 using Point = QPair<int, int>;
@@ -29,5 +30,4 @@ public:
     void add(const QString& imageFilePath,const QString& className, LinkedList<QPair<int,int>>& coordinates);
     LinkedList<QPair<QString, Shape>> get(const QString&);
     QMap <QString,Shape> get(const QString&, const QString&);
-
 };

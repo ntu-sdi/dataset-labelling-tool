@@ -24,13 +24,10 @@ public:
     ~MainView();
     Ui::MainView getUi();
     void useController(MainController *);
-
 public slots:
     void setMousePosition(QPoint);
-
 private slots:
     void on_AnnotationCreateButton_clicked();
-
 private slots:
     void on_ImageBrowseButton_clicked();
     void on_ClassAddButton_clicked();
@@ -44,13 +41,9 @@ private slots:
     void on_ClassesList_itemClicked(QListWidgetItem*);
     void ProvideContextMenu(const QPoint&);
     void on_ClassListSortBox_activated(const QString &arg1);
-
     void on_ImageListSortBox_activated(const QString &arg1);
-
     void on_SearchBox_textChanged(const QString &arg1);
-
     void on_SaveAnnotationFileButton_clicked();
-
 private:
     Ui::MainView* ui;
     MainController* controller;
