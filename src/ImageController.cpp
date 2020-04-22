@@ -131,7 +131,7 @@ void ImageController::drawAnnotations()
             this->scene->addPolygon(
                 QPolygonF(this->annotations.at(i).second), this->pen);
             this->drawLabel(this->annotations.at(i).first,
-                            this->getTextPos(this->annotations.at(i).second));
+                            this->annotations.at(i).second);
         }
     }
 }
@@ -145,7 +145,7 @@ void ImageController::setDrawingSize()
     }
 }
 
-QPointF ImageController::getTextPos(QVector<QPointF> points)
+QPointF ImageController::getTextPos(QVector<QPointF> points, qreal textWidth, qreal textHeight)
 {
     QPointF textPoint;
     double midPoint = this->scene->width() / 2;
@@ -156,11 +156,19 @@ QPointF ImageController::getTextPos(QVector<QPointF> points)
             textPoint = i;
         }
     }
+
+    if(textPoint.x() + textWidth > this->scene->width()) {
+        textPoint.setX(textPoint.x() - textWidth);
+    }
+    if(textPoint.y() + textHeight > this->scene->height()) {
+        textPoint.setY(textPoint.y() - textHeight);
+    }
+
     return textPoint;
 
 }
 
-void ImageController::drawLabel(QString content, QPointF pos)
+void ImageController::drawLabel(QString content, QVector<QPointF> shape)
 {
     QGraphicsTextItem* text = new QGraphicsTextItem();
     int fontHeight = static_cast<int>(
@@ -168,7 +176,16 @@ void ImageController::drawLabel(QString content, QPointF pos)
     text->setHtml("<div style='background-color:#666666; font-size: " +
               QString::fromStdString(std::to_string(fontHeight)) +
               "px;'>" + content + "</div>");
-    text->setPos(pos);
+    QRectF boundingRect = text->boundingRect();
+    while(boundingRect.width() > this->scene->width() && content.length() > 4) {
+        content.truncate(content.length() - 1);
+        content.append("...");
+        text->setHtml("<div style='background-color:#666666; font-size: " +
+                  QString::fromStdString(std::to_string(fontHeight)) +
+                  "px;'>" + content + "</div>");
+    }
+    text->setPos(
+            this->getTextPos(shape, boundingRect.width(), boundingRect.height()));
     this->scene->addItem(text);
 }
 
@@ -249,7 +266,7 @@ QVector<QPointF> ImageController::finishShape(const QString& className)
 {
     if (this->points.length() < 3)
         throw DrawingIncomplete();
-    this->drawLabel(className, this->getTextPos(this->points));
+    this->drawLabel(className, this->points);
     QVector<QPointF> ret = this->points;
     this->points = {};
     return ret;

@@ -26,8 +26,8 @@ private:
     QPoint mapToImage(QPoint);
     void drawAnnotations();
     void setDrawingSize();
-    QPointF getTextPos(QVector<QPointF>);
-    void drawLabel(QString, QPointF);
+    QPointF getTextPos(QVector<QPointF>, qreal, qreal);
+    void drawLabel(QString, QVector<QPointF>);
   
 public:
     ImageController(Ui_MainView&, ImageModel&);
