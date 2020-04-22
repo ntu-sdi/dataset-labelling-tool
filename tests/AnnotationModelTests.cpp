@@ -98,16 +98,9 @@ BOOST_AUTO_TEST_CASE(WriteAnnotationToFile)
     //Annotation file path is not provided, instead it is obtained from browsing for a file
     AnnotationModel model;
     model.browse("../testFiles/test.annotation");
-    Shape shape = createPoints(2);
-    BOOST_CHECK_NO_THROW(model.add("imageExampleTwo.png", "classExampleTwo", shape));
-}
-
-BOOST_AUTO_TEST_CASE(WriteAnnotationToFile_nonExistingFile)
-{
-    //Tests if writting annotation to a non existing file throws file not found error
-    AnnotationModel model;
     Shape shape = createPoints(1);
-    BOOST_CHECK_THROW(model.add("INVALIDFILE", "imageExampleThree.png", "classExampleTwo", shape), FileNotFoundError);
+    BOOST_CHECK_NO_THROW(model.add("imageExampleOne.png", "classExampleTwo", shape));
+    BOOST_CHECK_NO_THROW(model.save());
 }
 
 BOOST_AUTO_TEST_CASE(ReadAnnotationFile)
@@ -120,7 +113,6 @@ BOOST_AUTO_TEST_CASE(ReadAnnotationFile)
     Shape y = createPoints(1);
     BOOST_CHECK(compareShapes(x, y));
 }
-
 
 BOOST_AUTO_TEST_CASE(ReadAnnotationFile_nonAnnotatedImage)
 {
