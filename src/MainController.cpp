@@ -27,7 +27,12 @@ void MainController::browseImages()
     imageController.browseFolder();
 }
 
-// TODO: Either Rename or Refactor
+/**
+ * @brief Sorts the loaded images and updates the view.
+ *
+ * @param sortOption
+ * @param srch
+ */
 void MainController::sortLoadedImages(const QString& sortOption, bool srch)
 {
     this->imageController.updateView(sortOption, srch);
