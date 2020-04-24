@@ -68,7 +68,10 @@ void MainController::openImage(const QString& fileName)
     }
     catch(IndexOutOfBoundsError) {
     }
-    this->imageController.open(fileName);
+    try {
+        this->imageController.open(fileName);
+    }
+    catch (std::runtime_error) {}
 }
 
 /**

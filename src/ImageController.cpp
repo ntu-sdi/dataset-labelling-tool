@@ -284,7 +284,10 @@ void ImageController::addPoint(const QPoint& point)
 void ImageController::cancelShape()
 {
     this->points = {};
-    this->open(this->currentFileName);
+    try {
+        this->open(this->currentFileName);
+    }
+    catch (std::runtime_error) {}
 }
 
 /**

@@ -7,7 +7,6 @@
 
 #include "exceptions.h"
 #include "AnnotationModel.h"
-#include "iostream"
 
 /**
  * @brief Returns path of currently active annotation file.
