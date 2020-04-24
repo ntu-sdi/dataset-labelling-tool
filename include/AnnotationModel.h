@@ -1,6 +1,5 @@
 #pragma once
 
-#include <string>
 #include <utility>
 #include <QFileSystemModel>
 #include <QJsonDocument>

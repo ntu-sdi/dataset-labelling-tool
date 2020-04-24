@@ -2,7 +2,6 @@
 #include <QGraphicsItem>
 #include <QFileInfo>
 #include <QDate>
-#include <iostream>
 
 #include "ImageController.h"
 

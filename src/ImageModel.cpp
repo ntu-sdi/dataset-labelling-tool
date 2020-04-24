@@ -1,4 +1,5 @@
 #include <QFileDialog>
+
 #include "ImageModel.h"
 
 /**
@@ -11,6 +12,7 @@ void ImageModel::browseFolder()
         QDir::currentPath(),
         QFileDialog::ShowDirsOnly);
     if(!directoryPath.isEmpty() && !directoryPath.isNull()) {
+        this->loadedImages.clear();
         QDir directory = QDir(directoryPath);
         directory.setNameFilters(SUPPORTED_FORMATS);
         QFileInfoList loaded = directory.entryInfoList();
@@ -31,6 +33,7 @@ void ImageModel::browseFolder(const QString& folderPath)
     if(!directory.exists()) {
         throw std::runtime_error("Could not open folder");
     }
+    this->loadedImages.clear();
     directory.setNameFilters(SUPPORTED_FORMATS);
     QFileInfoList loaded = directory.entryInfoList();
     for(int i = 0; i < loaded.size(); i++) {
