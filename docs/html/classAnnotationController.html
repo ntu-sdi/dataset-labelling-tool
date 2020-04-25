@@ -73,7 +73,7 @@ Collaboration diagram for AnnotationController:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnnotationController__coll__graph.png" border="0" usemap="#AnnotationController_coll__map" alt="Collaboration graph"/></div>
 <map name="AnnotationController_coll__map" id="AnnotationController_coll__map">
-<area shape="rect" id="node2" href="classAnnotationModel.html" title="{AnnotationModel\n|&#45; currentFilePath\l|+ getCurrentFilePath()\l+ browse()\l+ browse()\l+ create()\l+ create()\l+ add()\l+ add()\l+ get()\l+ get()\l}" alt="" coords="13,5,180,200"/>
+<area shape="rect" id="node2" href="classAnnotationModel.html" title="{AnnotationModel\n|&#45; currentFilePath\l&#45; loadedAnnotations\l|+ getCurrentFilePath()\l+ browse()\l+ browse()\l+ load()\l+ save()\l+ create()\l+ create()\l+ add()\l+ add()\l+ get()\l+ get()\l}" alt="" coords="13,5,180,244"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -83,33 +83,35 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a28cad1eb39c829d54093a965f59cdb2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an Annotation Controller, which handles logic related to the annotation files.  <a href="#a28cad1eb39c829d54093a965f59cdb2e">More...</a><br /></td></tr>
 <tr class="separator:a28cad1eb39c829d54093a965f59cdb2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a490f659b6a1b6f4740925871689f747b"><td class="memItemLeft" align="right" valign="top"><a id="a490f659b6a1b6f4740925871689f747b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>create</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnnotationController.html#a490f659b6a1b6f4740925871689f747b">create</a> ()</td></tr>
+<tr class="memdesc:a490f659b6a1b6f4740925871689f747b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delegates a request to create a new annotation file to model and updates label in the UI accordingly. <br /></td></tr>
 <tr class="separator:a490f659b6a1b6f4740925871689f747b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa79d79caa93863d2676900cece4cc994"><td class="memItemLeft" align="right" valign="top"><a id="aa79d79caa93863d2676900cece4cc994"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnnotationController.html#aa79d79caa93863d2676900cece4cc994">browse</a> ()</td></tr>
-<tr class="memdesc:aa79d79caa93863d2676900cece4cc994"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an annotation file and updates label in the UI accordingly. <br /></td></tr>
+<tr class="memdesc:aa79d79caa93863d2676900cece4cc994"><td class="mdescLeft">&#160;</td><td class="mdescRight">Browses for an annotation file and updates label in the UI accordingly. <br /></td></tr>
 <tr class="separator:aa79d79caa93863d2676900cece4cc994"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03b1715610f84b203e7a5ded7046dcd2"><td class="memItemLeft" align="right" valign="top"><a id="a03b1715610f84b203e7a5ded7046dcd2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addPoint</b> (Point)</td></tr>
-<tr class="separator:a03b1715610f84b203e7a5ded7046dcd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a295ef2113a2ef2201e736240e7a1078a"><td class="memItemLeft" align="right" valign="top"><a id="a295ef2113a2ef2201e736240e7a1078a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>finishShape</b> ()</td></tr>
-<tr class="separator:a295ef2113a2ef2201e736240e7a1078a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff95935a2215c4a52cbeb2674317d17d"><td class="memItemLeft" align="right" valign="top"><a id="aff95935a2215c4a52cbeb2674317d17d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>cancelShape</b> ()</td></tr>
-<tr class="separator:aff95935a2215c4a52cbeb2674317d17d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b9763e234bcf1a85acd0601a572c245"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnnotationController.html#a4b9763e234bcf1a85acd0601a572c245">add</a> (const QString &amp;filePath, const QString &amp;className, <a class="el" href="classLinkedList.html">LinkedList</a>&lt; QPair&lt; int, int &gt;&gt;)</td></tr>
+<tr class="memdesc:a4b9763e234bcf1a85acd0601a572c245"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classAnnotationController.html#a4b9763e234bcf1a85acd0601a572c245" title="AnnotationController::add Adds a new annotation. ">AnnotationController::add</a> Adds a new annotation.  <a href="#a4b9763e234bcf1a85acd0601a572c245">More...</a><br /></td></tr>
+<tr class="separator:a4b9763e234bcf1a85acd0601a572c245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0659045e204686026addab7c9534ed2"><td class="memItemLeft" align="right" valign="top"><a id="af0659045e204686026addab7c9534ed2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnnotationController.html#af0659045e204686026addab7c9534ed2">save</a> ()</td></tr>
+<tr class="memdesc:af0659045e204686026addab7c9534ed2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classAnnotationController.html#af0659045e204686026addab7c9534ed2" title="AnnotationController::save Save all drawn annotations. ">AnnotationController::save</a> Save all drawn annotations. <br /></td></tr>
+<tr class="separator:af0659045e204686026addab7c9534ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a100896bbf893edd041ecad872ebee64f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classLinkedList.html">LinkedList</a>&lt; QPair&lt; QString, <a class="el" href="classLinkedList.html">Shape</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnnotationController.html#a100896bbf893edd041ecad872ebee64f">get</a> (const QString &amp;)</td></tr>
+<tr class="memdesc:a100896bbf893edd041ecad872ebee64f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classAnnotationController.html#a100896bbf893edd041ecad872ebee64f" title="AnnotationController::get Get all annotations for an image. ">AnnotationController::get</a> Get all annotations for an image.  <a href="#a100896bbf893edd041ecad872ebee64f">More...</a><br /></td></tr>
+<tr class="separator:a100896bbf893edd041ecad872ebee64f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ad6db968693628859a69bab0667006dc1"><td class="memItemLeft" align="right" valign="top"><a id="ad6db968693628859a69bab0667006dc1"></a>
 Ui_MainView&#160;</td><td class="memItemRight" valign="bottom"><b>ui</b></td></tr>
 <tr class="separator:ad6db968693628859a69bab0667006dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9fc70313798905bf9fca275edfda08e"><td class="memItemLeft" align="right" valign="top"><a id="ac9fc70313798905bf9fca275edfda08e"></a>
-<a class="el" href="classAnnotationModel.html">AnnotationModel</a>&#160;</td><td class="memItemRight" valign="bottom"><b>model</b></td></tr>
-<tr class="separator:ac9fc70313798905bf9fca275edfda08e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4d49b736dedbd57d47c74ab3cef65cc"><td class="memItemLeft" align="right" valign="top"><a id="aa4d49b736dedbd57d47c74ab3cef65cc"></a>
 std::vector&lt; Point &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>points</b></td></tr>
 <tr class="separator:aa4d49b736dedbd57d47c74ab3cef65cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9fc70313798905bf9fca275edfda08e"><td class="memItemLeft" align="right" valign="top"><a id="ac9fc70313798905bf9fca275edfda08e"></a>
+<a class="el" href="classAnnotationModel.html">AnnotationModel</a>&#160;</td><td class="memItemRight" valign="bottom"><b>model</b></td></tr>
+<tr class="separator:ac9fc70313798905bf9fca275edfda08e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Sub-controller which gets delegated tasks related to annotation files. Communicates directly with the <a class="el" href="classAnnotationModel.html">AnnotationModel</a>. </p>
@@ -148,6 +150,78 @@ std::vector&lt; Point &gt;&#160;</td><td class="memItemRight" valign="bottom"><b
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4b9763e234bcf1a85acd0601a572c245"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b9763e234bcf1a85acd0601a572c245">&#9670;&nbsp;</a></span>add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnnotationController::add </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>filePath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>className</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classLinkedList.html">LinkedList</a>&lt; QPair&lt; int, int &gt;&gt;&#160;</td>
+          <td class="paramname"><em>shape</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classAnnotationController.html#a4b9763e234bcf1a85acd0601a572c245" title="AnnotationController::add Adds a new annotation. ">AnnotationController::add</a> Adds a new annotation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td></td></tr>
+    <tr><td class="paramname">className</td><td></td></tr>
+    <tr><td class="paramname">shape</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a100896bbf893edd041ecad872ebee64f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a100896bbf893edd041ecad872ebee64f">&#9670;&nbsp;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classLinkedList.html">LinkedList</a>&lt; QPair&lt; QString, <a class="el" href="classLinkedList.html">Shape</a> &gt; &gt; AnnotationController::get </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>imagePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classAnnotationController.html#a100896bbf893edd041ecad872ebee64f" title="AnnotationController::get Get all annotations for an image. ">AnnotationController::get</a> Get all annotations for an image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imagePath</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>List of all annotations for an image. </dd></dl>
 
 </div>
 </div>

@@ -60,6 +60,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classMainController-members.html">List of all members</a>  </div>
@@ -74,12 +75,16 @@ Collaboration diagram for MainController:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMainController__coll__graph.png" border="0" usemap="#MainController_coll__map" alt="Collaboration graph"/></div>
 <map name="MainController_coll__map" id="MainController_coll__map">
-<area shape="rect" id="node2" href="classAnnotationController.html" title="{AnnotationController\n|&#45; ui\l&#45; points\l|+ AnnotationController()\l+ create()\l+ browse()\l+ addPoint()\l+ finishShape()\l+ cancelShape()\l}" alt="" coords="5,365,188,531"/>
-<area shape="rect" id="node3" href="classAnnotationModel.html" title="{AnnotationModel\n|&#45; currentFilePath\l|+ getCurrentFilePath()\l+ browse()\l+ browse()\l+ create()\l+ create()\l+ add()\l+ add()\l+ get()\l+ get()\l}" alt="" coords="13,49,180,244"/>
-<area shape="rect" id="node4" href="classImageController.html" title="{ImageController\n|&#45; ui\l|+ ImageController()\l+ browseFolder()\l+ searchLoaded()\l+ sortLoaded()\l+ select()\l+ open()\l&#45; updateView()\l}" alt="" coords="213,365,365,531"/>
-<area shape="rect" id="node5" href="classImageModel.html" title="{ImageModel\n|&#45; loadedImages\l|+ browseFolder()\l+ browseFolder()\l+ getResolution()\l+ getFileSize()\l+ getAll()\l+ getImage()\l}" alt="" coords="219,71,355,222"/>
-<area shape="rect" id="node6" href="classClassController.html" title="{ClassController\n|&#45; ui\l|+ ClassController()\l+ browse()\l+ create()\l+ sortLoaded()\l+ add()\l+ select()\l+ remove()\l+ getSelected()\l+ updateView()\l}" alt="" coords="390,351,537,545"/>
-<area shape="rect" id="node7" href="classClassModel.html" title="{ClassModel\n|&#45; selectedClass\l&#45; currentFilePath\l&#45; classes\l|+ browse()\l+ browse()\l+ create()\l+ create()\l+ addClass()\l+ removeClass()\l+ select()\l+ getSelected()\l+ getAll()\l+ getCurrentFilePath()\l&#45; save()\l&#45; writeLineToFile()\l&#45; writeLinesToFile()\l}" alt="" coords="380,5,547,288"/>
+<area shape="rect" id="node2" href="classAnnotationController.html" title="{AnnotationController\n|&#45; ui\l&#45; points\l|+ AnnotationController()\l+ create()\l+ browse()\l+ add()\l+ save()\l+ get()\l}" alt="" coords="5,1350,188,1515"/>
+<area shape="rect" id="node3" href="classAnnotationModel.html" title="{AnnotationModel\n|&#45; currentFilePath\l&#45; loadedAnnotations\l|+ getCurrentFilePath()\l+ browse()\l+ browse()\l+ load()\l+ save()\l+ create()\l+ create()\l+ add()\l+ add()\l+ get()\l+ get()\l}" alt="" coords="12,931,179,1170"/>
+<area shape="rect" id="node4" href="classImageController.html" title="{ImageController\n|&#45; ui\l&#45; scene\l&#45; points\l&#45; currentFileName\l&#45; pen\l&#45; font\l&#45; imageHeight\l&#45; imageWidth\l|+ ImageController()\l+ updateView()\l+ updateView()\l+ browseFolder()\l+ searchLoaded()\l+ sortLoaded()\l+ select()\l+ open()\l+ addPoint()\l+ cancelShape()\l+ finishShape()\l+ setAnnotations()\l+ getCurrentFileName()\l&#45; mapToImage()\l&#45; drawAnnotations()\l&#45; setDrawingSize()\l&#45; getTextPos()\l&#45; drawLabel()\l}" alt="" coords="393,836,571,1265"/>
+<area shape="rect" id="node5" href="classLinkedList.html" title="{LinkedList\&lt; QPair\&lt;\l QString, QVector\&lt; QPointF \&gt; \&gt; \&gt;\n|&#45; len\l|+ LinkedList()\l+ ~LinkedList()\l+ isEmpty()\l+ copy()\l+ operator[]()\l+ insert()\l+ at()\l+ length()\l+ getIndex()\l+ contains()\land 6 more...\l&#45; nodeAt()\l&#45; quicksort()\l&#45; isSorted()\l}" alt="" coords="579,491,822,773"/>
+<area shape="rect" id="node6" href="structLinkedList_1_1Node.html" title="{LinkedList\&lt; T \&gt;::Node\n|+ data\l|}" alt="" coords="387,5,555,83"/>
+<area shape="rect" id="node7" href="classLinkedList.html" title="{LinkedList\&lt; T \&gt;\n|&#45; len\l|+ LinkedList()\l+ ~LinkedList()\l+ isEmpty()\l+ copy()\l+ operator[]()\l+ insert()\l+ at()\l+ length()\l+ getIndex()\l+ contains()\land 6 more...\l&#45; nodeAt()\l&#45; quicksort()\l&#45; isSorted()\l}" alt="" coords="408,145,535,413"/>
+<area shape="rect" id="node11" href="classLinkedList.html" title="{LinkedList\&lt; QString \&gt;\n|&#45; len\l|+ LinkedList()\l+ ~LinkedList()\l+ isEmpty()\l+ copy()\l+ operator[]()\l+ insert()\l+ at()\l+ length()\l+ getIndex()\l+ contains()\land 6 more...\l&#45; nodeAt()\l&#45; quicksort()\l&#45; isSorted()\l}" alt="" coords="203,498,369,766"/>
+<area shape="rect" id="node8" href="classImageModel.html" title="{ImageModel\n|&#45; loadedImages\l|+ browseFolder()\l+ browseFolder()\l+ getResolution()\l+ getFileSize()\l+ getAll()\l+ getAllWithDetails()\l+ getImage()\l}" alt="" coords="393,549,555,715"/>
+<area shape="rect" id="node9" href="classClassController.html" title="{ClassController\n|&#45; ui\l|+ ClassController()\l+ browse()\l+ create()\l+ sortLoaded()\l+ add()\l+ select()\l+ remove()\l+ updateView()\l+ updateView()\l+ getSelected()\l}" alt="" coords="213,1328,359,1537"/>
+<area shape="rect" id="node10" href="classClassModel.html" title="{ClassModel\n|&#45; currentFilePath\l&#45; selectedClass\l|+ browse()\l+ browse()\l+ create()\l+ create()\l+ addClass()\l+ removeClass()\l+ select()\l+ clear()\l+ getSelected()\l+ getAll()\l+ getCurrentFilePath()\l&#45; save()\l&#45; writeLineToFile()\l&#45; writeLinesToFile()\l}" alt="" coords="203,909,369,1192"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -95,11 +100,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a9513dcff8f9540bba40a69b858596961"><td class="memItemLeft" align="right" valign="top"><a id="a9513dcff8f9540bba40a69b858596961"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>searchLoadedImages</b> (const QString &amp;)</td></tr>
 <tr class="separator:a9513dcff8f9540bba40a69b858596961"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a2d138aa215dc8e2577cc44956595af"><td class="memItemLeft" align="right" valign="top"><a id="a1a2d138aa215dc8e2577cc44956595af"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sortLoadedImages</b> ()</td></tr>
-<tr class="separator:a1a2d138aa215dc8e2577cc44956595af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a528a8b9b2aeee5dd416dc1e57da56693"><td class="memItemLeft" align="right" valign="top"><a id="a528a8b9b2aeee5dd416dc1e57da56693"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>selectImage</b> (const QString &amp;)</td></tr>
+<tr class="memitem:ad131b9aae76e43061554feed80bb13a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainController.html#ad131b9aae76e43061554feed80bb13a2">sortLoadedImages</a> (const QString &amp;, bool=false)</td></tr>
+<tr class="memdesc:ad131b9aae76e43061554feed80bb13a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the loaded images and updates the view.  <a href="#ad131b9aae76e43061554feed80bb13a2">More...</a><br /></td></tr>
+<tr class="separator:ad131b9aae76e43061554feed80bb13a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a528a8b9b2aeee5dd416dc1e57da56693"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainController.html#a528a8b9b2aeee5dd416dc1e57da56693">selectImage</a> (const QString &amp;)</td></tr>
+<tr class="memdesc:a528a8b9b2aeee5dd416dc1e57da56693"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMainController.html#a528a8b9b2aeee5dd416dc1e57da56693" title="MainController::selectImage. ">MainController::selectImage</a>.  <a href="#a528a8b9b2aeee5dd416dc1e57da56693">More...</a><br /></td></tr>
 <tr class="separator:a528a8b9b2aeee5dd416dc1e57da56693"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44cb414d5932db864383b9cb17c6f0b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainController.html#a44cb414d5932db864383b9cb17c6f0b1">openImage</a> (const QString &amp;)</td></tr>
 <tr class="memdesc:a44cb414d5932db864383b9cb17c6f0b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image filename from the <a class="el" href="classMainView.html">MainView</a> and passes request to open image to <a class="el" href="classMainController.html">MainController</a>.  <a href="#a44cb414d5932db864383b9cb17c6f0b1">More...</a><br /></td></tr>
@@ -108,9 +113,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>selectImage</b> (cons
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainController.html#aa717950c16ef5d01ab4edf77a9a27f82">browseForClassFile</a> ()</td></tr>
 <tr class="memdesc:aa717950c16ef5d01ab4edf77a9a27f82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delegates class folder browsing event to the <a class="el" href="classClassController.html">ClassController</a>. <br /></td></tr>
 <tr class="separator:aa717950c16ef5d01ab4edf77a9a27f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a082a8c3ba40b0303d3e28757134a6cfa"><td class="memItemLeft" align="right" valign="top"><a id="a082a8c3ba40b0303d3e28757134a6cfa"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sortLoadedClasses</b> ()</td></tr>
-<tr class="separator:a082a8c3ba40b0303d3e28757134a6cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21e18cb936861042e1603c029f3c006e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainController.html#a21e18cb936861042e1603c029f3c006e">sortLoadedClasses</a> (const QString &amp;)</td></tr>
+<tr class="memdesc:a21e18cb936861042e1603c029f3c006e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMainController.html#a21e18cb936861042e1603c029f3c006e" title="MainController::sortLoadedClasses Sorts the loaded classes. ">MainController::sortLoadedClasses</a> Sorts the loaded classes.  <a href="#a21e18cb936861042e1603c029f3c006e">More...</a><br /></td></tr>
+<tr class="separator:a21e18cb936861042e1603c029f3c006e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cdee58a8c4ed59ab9a05ab5a15456a6"><td class="memItemLeft" align="right" valign="top"><a id="a6cdee58a8c4ed59ab9a05ab5a15456a6"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainController.html#a6cdee58a8c4ed59ab9a05ab5a15456a6">createClassFile</a> ()</td></tr>
 <tr class="memdesc:a6cdee58a8c4ed59ab9a05ab5a15456a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delegates the creation of a class file to the <a class="el" href="classClassController.html">ClassController</a>. <br /></td></tr>
@@ -118,34 +123,47 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:aede8e00b0ad8f75018f6b62e1cb5e301"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainController.html#aede8e00b0ad8f75018f6b62e1cb5e301">addClass</a> (const QString &amp;)</td></tr>
 <tr class="memdesc:aede8e00b0ad8f75018f6b62e1cb5e301"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delegates the addition of a new class to the <a class="el" href="classClassController.html">ClassController</a>.  <a href="#aede8e00b0ad8f75018f6b62e1cb5e301">More...</a><br /></td></tr>
 <tr class="separator:aede8e00b0ad8f75018f6b62e1cb5e301"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a0f5b26e0037dc3ec3abe885b199370"><td class="memItemLeft" align="right" valign="top"><a id="a8a0f5b26e0037dc3ec3abe885b199370"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>selectClass</b> (const std::string &amp;)</td></tr>
-<tr class="separator:a8a0f5b26e0037dc3ec3abe885b199370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2b2e86d0134c9bb413d74efdd926211"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainController.html#aa2b2e86d0134c9bb413d74efdd926211">selectClass</a> (const QString &amp;)</td></tr>
+<tr class="memdesc:aa2b2e86d0134c9bb413d74efdd926211"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMainController.html#aa2b2e86d0134c9bb413d74efdd926211" title="MainController::selectClass Selects a class. ">MainController::selectClass</a> Selects a class.  <a href="#aa2b2e86d0134c9bb413d74efdd926211">More...</a><br /></td></tr>
+<tr class="separator:aa2b2e86d0134c9bb413d74efdd926211"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad639a2fd588d6fe011701a5168184883"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainController.html#ad639a2fd588d6fe011701a5168184883">removeClass</a> (const QString &amp;)</td></tr>
 <tr class="memdesc:ad639a2fd588d6fe011701a5168184883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delegates the removal of a class to the <a class="el" href="classClassController.html">ClassController</a>.  <a href="#ad639a2fd588d6fe011701a5168184883">More...</a><br /></td></tr>
 <tr class="separator:ad639a2fd588d6fe011701a5168184883"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a018730fa763bed9ef77bb7c2fc994bb8"><td class="memItemLeft" align="right" valign="top"><a id="a018730fa763bed9ef77bb7c2fc994bb8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>browseForAnnotationFile</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainController.html#a018730fa763bed9ef77bb7c2fc994bb8">browseForAnnotationFile</a> ()</td></tr>
+<tr class="memdesc:a018730fa763bed9ef77bb7c2fc994bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMainController.html#a018730fa763bed9ef77bb7c2fc994bb8" title="MainController::browseForAnnotationFile Browses for an annotation file. ">MainController::browseForAnnotationFile</a> Browses for an annotation file. <br /></td></tr>
 <tr class="separator:a018730fa763bed9ef77bb7c2fc994bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcab0ecd57994728c1ad67dafc844179"><td class="memItemLeft" align="right" valign="top"><a id="adcab0ecd57994728c1ad67dafc844179"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainController.html#adcab0ecd57994728c1ad67dafc844179">createAnnotationFile</a> ()</td></tr>
 <tr class="memdesc:adcab0ecd57994728c1ad67dafc844179"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delegates the creation of annotation file to the <a class="el" href="classAnnotationController.html">AnnotationController</a>. <br /></td></tr>
 <tr class="separator:adcab0ecd57994728c1ad67dafc844179"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a319b25b145b9067d55d8b1967fb4b381"><td class="memItemLeft" align="right" valign="top"><a id="a319b25b145b9067d55d8b1967fb4b381"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addPoint</b> (Point)</td></tr>
-<tr class="separator:a319b25b145b9067d55d8b1967fb4b381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6051544c31fbdeb375a88715b8406b52"><td class="memItemLeft" align="right" valign="top"><a id="a6051544c31fbdeb375a88715b8406b52"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainController.html#a6051544c31fbdeb375a88715b8406b52">saveAnnotations</a> ()</td></tr>
+<tr class="memdesc:a6051544c31fbdeb375a88715b8406b52"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMainController.html#a6051544c31fbdeb375a88715b8406b52" title="MainController::saveAnnotations Saves annotations. ">MainController::saveAnnotations</a> Saves annotations. <br /></td></tr>
+<tr class="separator:a6051544c31fbdeb375a88715b8406b52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a215cb23587a572993fb00b0c09a393e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainController.html#a215cb23587a572993fb00b0c09a393e2">addPoint</a> (QPoint)</td></tr>
+<tr class="memdesc:a215cb23587a572993fb00b0c09a393e2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMainController.html#a215cb23587a572993fb00b0c09a393e2" title="MainController::addPoint Adds a point. ">MainController::addPoint</a> Adds a point.  <a href="#a215cb23587a572993fb00b0c09a393e2">More...</a><br /></td></tr>
+<tr class="separator:a215cb23587a572993fb00b0c09a393e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa0ea947f033ff9fac5b798378d03667"><td class="memItemLeft" align="right" valign="top"><a id="afa0ea947f033ff9fac5b798378d03667"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>finishShape</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainController.html#afa0ea947f033ff9fac5b798378d03667">finishShape</a> ()</td></tr>
+<tr class="memdesc:afa0ea947f033ff9fac5b798378d03667"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMainController.html#afa0ea947f033ff9fac5b798378d03667" title="MainController::finishShape Finish annotating a shape. ">MainController::finishShape</a> Finish annotating a shape. <br /></td></tr>
 <tr class="separator:afa0ea947f033ff9fac5b798378d03667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7855f2a07593bd632e36bed1452386b2"><td class="memItemLeft" align="right" valign="top"><a id="a7855f2a07593bd632e36bed1452386b2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>cancelShape</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainController.html#a7855f2a07593bd632e36bed1452386b2">cancelShape</a> ()</td></tr>
+<tr class="memdesc:a7855f2a07593bd632e36bed1452386b2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMainController.html#a7855f2a07593bd632e36bed1452386b2" title="MainController::cancelShape Cancel annotating a shape. ">MainController::cancelShape</a> Cancel annotating a shape. <br /></td></tr>
 <tr class="separator:a7855f2a07593bd632e36bed1452386b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ae4fbe8a429f2181ae8e6c721ea7b113b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainController.html#ae4fbe8a429f2181ae8e6c721ea7b113b">annotationSavingThread</a> (<a class="el" href="classMainController.html">MainController</a> *)</td></tr>
+<tr class="memdesc:ae4fbe8a429f2181ae8e6c721ea7b113b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMainController.html#ae4fbe8a429f2181ae8e6c721ea7b113b" title="MainController::annotationSavingThread Thread which saves annotations every minute. ">MainController::annotationSavingThread</a> Thread which saves annotations every minute.  <a href="#ae4fbe8a429f2181ae8e6c721ea7b113b">More...</a><br /></td></tr>
+<tr class="separator:ae4fbe8a429f2181ae8e6c721ea7b113b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:ac2599267b4e51136efc57d7d0f1e3aa2"><td class="memItemLeft" align="right" valign="top"><a id="ac2599267b4e51136efc57d7d0f1e3aa2"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getSelectedClass</b> ()</td></tr>
-<tr class="separator:ac2599267b4e51136efc57d7d0f1e3aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ffca82d85f234d7427385dd28bb2160"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainController.html#a1ffca82d85f234d7427385dd28bb2160">getSelectedClass</a> ()</td></tr>
+<tr class="memdesc:a1ffca82d85f234d7427385dd28bb2160"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMainController.html#a1ffca82d85f234d7427385dd28bb2160" title="MainController::getSelectedClass Returns the selected class. ">MainController::getSelectedClass</a> Returns the selected class.  <a href="#a1ffca82d85f234d7427385dd28bb2160">More...</a><br /></td></tr>
+<tr class="separator:a1ffca82d85f234d7427385dd28bb2160"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -160,7 +178,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a6553221dd7d26251572bd730fdd9aae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Processes callbacks from the GUI by delegating to the specific sub-controllers. Servers as an added layer of separation between the views and controllers to decrease coupling and handle business logic, which spans multiple controllers and models. </p>
+<div class="textblock"><p>Processes callbacks from the GUI by delegating to the specific sub-controllers. Servers as an added layer of separation between the views and controllers to decrease coupling and handles business logic, which spans multiple controllers and models. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1ec0f2ef4a8efce169354c525afec025"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1ec0f2ef4a8efce169354c525afec025">&#9670;&nbsp;</a></span>MainController()</h2>
@@ -233,6 +251,94 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a215cb23587a572993fb00b0c09a393e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a215cb23587a572993fb00b0c09a393e2">&#9670;&nbsp;</a></span>addPoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainController::addPoint </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMainController.html#a215cb23587a572993fb00b0c09a393e2" title="MainController::addPoint Adds a point. ">MainController::addPoint</a> Adds a point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae4fbe8a429f2181ae8e6c721ea7b113b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4fbe8a429f2181ae8e6c721ea7b113b">&#9670;&nbsp;</a></span>annotationSavingThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainController::annotationSavingThread </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMainController.html">MainController</a> *&#160;</td>
+          <td class="paramname"><em>controller</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMainController.html#ae4fbe8a429f2181ae8e6c721ea7b113b" title="MainController::annotationSavingThread Thread which saves annotations every minute. ">MainController::annotationSavingThread</a> Thread which saves annotations every minute. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">controller</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1ffca82d85f234d7427385dd28bb2160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ffca82d85f234d7427385dd28bb2160">&#9670;&nbsp;</a></span>getSelectedClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString MainController::getSelectedClass </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMainController.html#a1ffca82d85f234d7427385dd28bb2160" title="MainController::getSelectedClass Returns the selected class. ">MainController::getSelectedClass</a> Returns the selected class. </p>
+<dl class="section return"><dt>Returns</dt><dd>QString </dd></dl>
+
+</div>
+</div>
 <a id="a44cb414d5932db864383b9cb17c6f0b1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a44cb414d5932db864383b9cb17c6f0b1">&#9670;&nbsp;</a></span>openImage()</h2>
 
@@ -278,7 +384,122 @@ Private Attributes</h2></td></tr>
 <p>Delegates the removal of a class to the <a class="el" href="classClassController.html">ClassController</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">classname</td><td>Name of the class to remove. </td></tr>
+    <tr><td class="paramname">className</td><td>Name of the class to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa2b2e86d0134c9bb413d74efdd926211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2b2e86d0134c9bb413d74efdd926211">&#9670;&nbsp;</a></span>selectClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainController::selectClass </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>className</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMainController.html#aa2b2e86d0134c9bb413d74efdd926211" title="MainController::selectClass Selects a class. ">MainController::selectClass</a> Selects a class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">className</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a528a8b9b2aeee5dd416dc1e57da56693"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a528a8b9b2aeee5dd416dc1e57da56693">&#9670;&nbsp;</a></span>selectImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainController::selectImage </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMainController.html#a528a8b9b2aeee5dd416dc1e57da56693" title="MainController::selectImage. ">MainController::selectImage</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a21e18cb936861042e1603c029f3c006e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21e18cb936861042e1603c029f3c006e">&#9670;&nbsp;</a></span>sortLoadedClasses()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainController::sortLoadedClasses </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>sortOption</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMainController.html#a21e18cb936861042e1603c029f3c006e" title="MainController::sortLoadedClasses Sorts the loaded classes. ">MainController::sortLoadedClasses</a> Sorts the loaded classes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sortOption</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad131b9aae76e43061554feed80bb13a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad131b9aae76e43061554feed80bb13a2">&#9670;&nbsp;</a></span>sortLoadedImages()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainController::sortLoadedImages </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>sortOption</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>srch</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sorts the loaded images and updates the view. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sortOption</td><td></td></tr>
+    <tr><td class="paramname">srch</td><td></td></tr>
   </table>
   </dd>
 </dl>

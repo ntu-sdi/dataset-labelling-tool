@@ -6,11 +6,12 @@
 
 
 
-Collaboration diagram for Class\+Controller\+:\nopagebreak
+Collaboration diagram for Class\+Controller\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=193pt]{classClassController__coll__graph}
+\includegraphics[height=550pt]{classClassController__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -29,17 +30,17 @@ void {\bfseries sort\+Loaded} ()
 \item 
 void \hyperlink{classClassController_abd51fbe1d80458b68f2023742bb2723a}{add} (const Q\+String \&)
 \begin{DoxyCompactList}\small\item\em Adds a new class, and updates the view to reflect that. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classClassController_a18ab1138694d7ec3cb20ae6093491584}\label{classClassController_a18ab1138694d7ec3cb20ae6093491584}} 
-void {\bfseries select} (const std\+::string \&)
-\item 
+void \hyperlink{classClassController_a98a04b6200241406efd95504a2f5fa29}{select} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em Funtion delegates request to model in order to set provided class as selected class for annotating the image. \end{DoxyCompactList}\item 
 void \hyperlink{classClassController_ac8d209c4e52899c11020f6a3b35f6416}{remove} (const Q\+String \&)
 \begin{DoxyCompactList}\small\item\em Removes a class, and updates the view to reflect that. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classClassController_af2d0c1757a9f67b7097ff6f4e38cd842}\label{classClassController_af2d0c1757a9f67b7097ff6f4e38cd842}} 
-void {\bfseries get\+Selected} ()
-\item 
 \mbox{\Hypertarget{classClassController_a1a286317364cc2fddb8c5c2419f38134}\label{classClassController_a1a286317364cc2fddb8c5c2419f38134}} 
 void \hyperlink{classClassController_a1a286317364cc2fddb8c5c2419f38134}{update\+View} ()
-\begin{DoxyCompactList}\small\item\em Clears the list of classes in the G\+UI and refills them from the currently loaded classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Clears the list of classes in the G\+UI and refills them from the currently loaded classes. \end{DoxyCompactList}\item 
+void \hyperlink{classClassController_a7296a8879b4aa942920d1fa77a146d5b}{update\+View} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em Updates a class pane in the user interface, based on the sort option provided. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{classClassController_a9132aaebc5cbc174e6fc3c3a1d46c695}{get\+Selected} ()
+\begin{DoxyCompactList}\small\item\em Returns selected class from the model. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -90,6 +91,19 @@ Adds a new class, and updates the view to reflect that.
 {\em classname} & Name of the class to add. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classClassController_a9132aaebc5cbc174e6fc3c3a1d46c695}\label{classClassController_a9132aaebc5cbc174e6fc3c3a1d46c695}} 
+\index{Class\+Controller@{Class\+Controller}!get\+Selected@{get\+Selected}}
+\index{get\+Selected@{get\+Selected}!Class\+Controller@{Class\+Controller}}
+\subsubsection{\texorpdfstring{get\+Selected()}{getSelected()}}
+{\footnotesize\ttfamily Q\+String Class\+Controller\+::get\+Selected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns selected class from the model. 
+
+\begin{DoxyReturn}{Returns}
+Selected class 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classClassController_ac8d209c4e52899c11020f6a3b35f6416}\label{classClassController_ac8d209c4e52899c11020f6a3b35f6416}} 
 \index{Class\+Controller@{Class\+Controller}!remove@{remove}}
 \index{remove@{remove}!Class\+Controller@{Class\+Controller}}
@@ -103,6 +117,36 @@ Removes a class, and updates the view to reflect that.
 
 \begin{DoxyParams}{Parameters}
 {\em classname} & Name of the class to remove. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classClassController_a98a04b6200241406efd95504a2f5fa29}\label{classClassController_a98a04b6200241406efd95504a2f5fa29}} 
+\index{Class\+Controller@{Class\+Controller}!select@{select}}
+\index{select@{select}!Class\+Controller@{Class\+Controller}}
+\subsubsection{\texorpdfstring{select()}{select()}}
+{\footnotesize\ttfamily void Class\+Controller\+::select (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{class\+Name }\end{DoxyParamCaption})}
+
+
+
+Funtion delegates request to model in order to set provided class as selected class for annotating the image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Name} & Name of the class to set as selected. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classClassController_a7296a8879b4aa942920d1fa77a146d5b}\label{classClassController_a7296a8879b4aa942920d1fa77a146d5b}} 
+\index{Class\+Controller@{Class\+Controller}!update\+View@{update\+View}}
+\index{update\+View@{update\+View}!Class\+Controller@{Class\+Controller}}
+\subsubsection{\texorpdfstring{update\+View()}{updateView()}}
+{\footnotesize\ttfamily void Class\+Controller\+::update\+View (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{sort\+Option }\end{DoxyParamCaption})}
+
+
+
+Updates a class pane in the user interface, based on the sort option provided. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sort\+Option} & Sort option to sort the class pane with \\
 \hline
 \end{DoxyParams}
 

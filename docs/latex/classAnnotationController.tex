@@ -20,31 +20,29 @@ Collaboration diagram for Annotation\+Controller\+:
 \hyperlink{classAnnotationController_a28cad1eb39c829d54093a965f59cdb2e}{Annotation\+Controller} (const Ui\+\_\+\+Main\+View \&, const \hyperlink{classAnnotationModel}{Annotation\+Model} \&)
 \begin{DoxyCompactList}\small\item\em Constructs an Annotation Controller, which handles logic related to the annotation files. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classAnnotationController_a490f659b6a1b6f4740925871689f747b}\label{classAnnotationController_a490f659b6a1b6f4740925871689f747b}} 
-void {\bfseries create} ()
-\item 
+void \hyperlink{classAnnotationController_a490f659b6a1b6f4740925871689f747b}{create} ()
+\begin{DoxyCompactList}\small\item\em Delegates a request to create a new annotation file to model and updates label in the UI accordingly. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classAnnotationController_aa79d79caa93863d2676900cece4cc994}\label{classAnnotationController_aa79d79caa93863d2676900cece4cc994}} 
 void \hyperlink{classAnnotationController_aa79d79caa93863d2676900cece4cc994}{browse} ()
-\begin{DoxyCompactList}\small\item\em Creates an annotation file and updates label in the UI accordingly. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classAnnotationController_a03b1715610f84b203e7a5ded7046dcd2}\label{classAnnotationController_a03b1715610f84b203e7a5ded7046dcd2}} 
-void {\bfseries add\+Point} (Point)
-\item 
-\mbox{\Hypertarget{classAnnotationController_a295ef2113a2ef2201e736240e7a1078a}\label{classAnnotationController_a295ef2113a2ef2201e736240e7a1078a}} 
-void {\bfseries finish\+Shape} ()
-\item 
-\mbox{\Hypertarget{classAnnotationController_aff95935a2215c4a52cbeb2674317d17d}\label{classAnnotationController_aff95935a2215c4a52cbeb2674317d17d}} 
-void {\bfseries cancel\+Shape} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Browses for an annotation file and updates label in the UI accordingly. \end{DoxyCompactList}\item 
+void \hyperlink{classAnnotationController_a4b9763e234bcf1a85acd0601a572c245}{add} (const Q\+String \&file\+Path, const Q\+String \&class\+Name, \hyperlink{classLinkedList}{Linked\+List}$<$ Q\+Pair$<$ int, int $>$$>$)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classAnnotationController_a4b9763e234bcf1a85acd0601a572c245}{Annotation\+Controller\+::add} Adds a new annotation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAnnotationController_af0659045e204686026addab7c9534ed2}\label{classAnnotationController_af0659045e204686026addab7c9534ed2}} 
+void \hyperlink{classAnnotationController_af0659045e204686026addab7c9534ed2}{save} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classAnnotationController_af0659045e204686026addab7c9534ed2}{Annotation\+Controller\+::save} Save all drawn annotations. \end{DoxyCompactList}\item 
+\hyperlink{classLinkedList}{Linked\+List}$<$ Q\+Pair$<$ Q\+String, \hyperlink{classLinkedList}{Shape} $>$ $>$ \hyperlink{classAnnotationController_a100896bbf893edd041ecad872ebee64f}{get} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classAnnotationController_a100896bbf893edd041ecad872ebee64f}{Annotation\+Controller\+::get} Get all annotations for an image. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classAnnotationController_ad6db968693628859a69bab0667006dc1}\label{classAnnotationController_ad6db968693628859a69bab0667006dc1}} 
 Ui\+\_\+\+Main\+View {\bfseries ui}
 \item 
-\mbox{\Hypertarget{classAnnotationController_ac9fc70313798905bf9fca275edfda08e}\label{classAnnotationController_ac9fc70313798905bf9fca275edfda08e}} 
-\hyperlink{classAnnotationModel}{Annotation\+Model} {\bfseries model}
-\item 
 \mbox{\Hypertarget{classAnnotationController_aa4d49b736dedbd57d47c74ab3cef65cc}\label{classAnnotationController_aa4d49b736dedbd57d47c74ab3cef65cc}} 
 std\+::vector$<$ Point $>$ {\bfseries points}
+\item 
+\mbox{\Hypertarget{classAnnotationController_ac9fc70313798905bf9fca275edfda08e}\label{classAnnotationController_ac9fc70313798905bf9fca275edfda08e}} 
+\hyperlink{classAnnotationModel}{Annotation\+Model} {\bfseries model}
 \end{DoxyCompactItemize}
 
 
@@ -69,6 +67,46 @@ Constructs an Annotation Controller, which handles logic related to the annotati
 {\em model} & The \hyperlink{classAnnotationModel}{Annotation\+Model} that the \hyperlink{classAnnotationController}{Annotation\+Controller} accesses. \\
 \hline
 \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAnnotationController_a4b9763e234bcf1a85acd0601a572c245}\label{classAnnotationController_a4b9763e234bcf1a85acd0601a572c245}} 
+\index{Annotation\+Controller@{Annotation\+Controller}!add@{add}}
+\index{add@{add}!Annotation\+Controller@{Annotation\+Controller}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Annotation\+Controller\+::add (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Path,  }\item[{const Q\+String \&}]{class\+Name,  }\item[{\hyperlink{classLinkedList}{Linked\+List}$<$ Q\+Pair$<$ int, int $>$$>$}]{shape }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classAnnotationController_a4b9763e234bcf1a85acd0601a572c245}{Annotation\+Controller\+::add} Adds a new annotation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+{\em class\+Name} & \\
+\hline
+{\em shape} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnnotationController_a100896bbf893edd041ecad872ebee64f}\label{classAnnotationController_a100896bbf893edd041ecad872ebee64f}} 
+\index{Annotation\+Controller@{Annotation\+Controller}!get@{get}}
+\index{get@{get}!Annotation\+Controller@{Annotation\+Controller}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \hyperlink{classLinkedList}{Linked\+List}$<$ Q\+Pair$<$ Q\+String, \hyperlink{classLinkedList}{Shape} $>$ $>$ Annotation\+Controller\+::get (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{image\+Path }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classAnnotationController_a100896bbf893edd041ecad872ebee64f}{Annotation\+Controller\+::get} Get all annotations for an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of all annotations for an image. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

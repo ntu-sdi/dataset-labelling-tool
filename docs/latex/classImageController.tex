@@ -6,11 +6,12 @@
 
 
 
-Collaboration diagram for Image\+Controller\+:\nopagebreak
+Collaboration diagram for Image\+Controller\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=181pt]{classImageController__coll__graph}
+\includegraphics[height=550pt]{classImageController__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -18,6 +19,11 @@ Collaboration diagram for Image\+Controller\+:\nopagebreak
 \item 
 \hyperlink{classImageController_a317e49c29f50578a1001b73749151e3a}{Image\+Controller} (Ui\+\_\+\+Main\+View \&, \hyperlink{classImageModel}{Image\+Model} \&)
 \begin{DoxyCompactList}\small\item\em Constructs an \hyperlink{classImageController}{Image\+Controller}, which handles business logic, related to the image files. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageController_a3a300727ff5e30b19fcc0102427fdb30}\label{classImageController_a3a300727ff5e30b19fcc0102427fdb30}} 
+void \hyperlink{classImageController_a3a300727ff5e30b19fcc0102427fdb30}{update\+View} ()
+\begin{DoxyCompactList}\small\item\em Updates the view based on the sort option selected in the gui. \end{DoxyCompactList}\item 
+void \hyperlink{classImageController_a351762bc38206af05dc21dc6e183b1c3}{update\+View} (const Q\+String \&, bool=false)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classImageController_a3a300727ff5e30b19fcc0102427fdb30}{Image\+Controller\+::update\+View} Updates the view with the sorted and searched list of images. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classImageController_a203590172b061a2e20d09dc9f8f060b7}\label{classImageController_a203590172b061a2e20d09dc9f8f060b7}} 
 void \hyperlink{classImageController_a203590172b061a2e20d09dc9f8f060b7}{browse\+Folder} ()
 \begin{DoxyCompactList}\small\item\em Browses for a new folder containing images, then updates the view to reflect that. \end{DoxyCompactList}\item 
@@ -27,17 +33,36 @@ void {\bfseries search\+Loaded} (const Q\+String \&)
 \mbox{\Hypertarget{classImageController_aa27c122f5fa43ed32984077cc0f1871a}\label{classImageController_aa27c122f5fa43ed32984077cc0f1871a}} 
 void {\bfseries sort\+Loaded} ()
 \item 
-\mbox{\Hypertarget{classImageController_a81d44568235778fe6d5dc14fb377499a}\label{classImageController_a81d44568235778fe6d5dc14fb377499a}} 
-void {\bfseries select} (const Q\+String \&)
-\item 
+void \hyperlink{classImageController_a81d44568235778fe6d5dc14fb377499a}{select} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classImageController_a81d44568235778fe6d5dc14fb377499a}{Image\+Controller\+::select} Updates the information for the selected file. \end{DoxyCompactList}\item 
 void \hyperlink{classImageController_a3f5976d87977aa1cda7b5a9a7ad0f03b}{open} (const Q\+String \&)
-\begin{DoxyCompactList}\small\item\em Gets a filename from the Main\+Controler, opens image and displays it in the \hyperlink{classMainView}{Main\+View}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets a filename from the Main\+Controler, opens image and displays it in the \hyperlink{classMainView}{Main\+View}. \end{DoxyCompactList}\item 
+void \hyperlink{classImageController_adaade0712de089f06a9a267399004cab}{add\+Point} (const Q\+Point \&)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classImageController_adaade0712de089f06a9a267399004cab}{Image\+Controller\+::add\+Point} Adds a point to the annotation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageController_a399eff924a1b3b7cc0034ea1a0face7e}\label{classImageController_a399eff924a1b3b7cc0034ea1a0face7e}} 
+void \hyperlink{classImageController_a399eff924a1b3b7cc0034ea1a0face7e}{cancel\+Shape} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classImageController_a399eff924a1b3b7cc0034ea1a0face7e}{Image\+Controller\+::cancel\+Shape} Cancels the currently drawn shape. \end{DoxyCompactList}\item 
+Q\+Vector$<$ Q\+PointF $>$ \hyperlink{classImageController_aaabc0506bd421fc0abf5b06ffc1c7032}{finish\+Shape} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classImageController_aaabc0506bd421fc0abf5b06ffc1c7032}{Image\+Controller\+::finish\+Shape} Finishes the current shape by adding the last side. \end{DoxyCompactList}\item 
+void \hyperlink{classImageController_af9c9f284b985c7899a6bc3cf03e49191}{set\+Annotations} (\hyperlink{classLinkedList}{Linked\+List}$<$ Q\+Pair$<$ Q\+String, \hyperlink{classLinkedList}{Linked\+List}$<$ Q\+Pair$<$ int, int $>$$>$$>$$>$)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classImageController_af9c9f284b985c7899a6bc3cf03e49191}{Image\+Controller\+::set\+Annotations}. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{classImageController_a5f225db05c8ec80017a05494ada72974}{get\+Current\+File\+Name} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classImageController_a5f225db05c8ec80017a05494ada72974}{Image\+Controller\+::get\+Current\+File\+Name} Returns the currently opened file name. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classImageController_a3a300727ff5e30b19fcc0102427fdb30}\label{classImageController_a3a300727ff5e30b19fcc0102427fdb30}} 
-void \hyperlink{classImageController_a3a300727ff5e30b19fcc0102427fdb30}{update\+View} ()
-\begin{DoxyCompactList}\small\item\em Clears the list of loaded images in the G\+UI and refills them from the currently loaded images. \end{DoxyCompactList}\end{DoxyCompactItemize}
+Q\+Point \hyperlink{classImageController_a6f5f89e006b03028200798cc9e550dee}{map\+To\+Image} (Q\+Point)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classImageController_a6f5f89e006b03028200798cc9e550dee}{Image\+Controller\+::map\+To\+Image} Map \hyperlink{classGraphicsView}{Graphics\+View} coordinates to image coordinates. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageController_a7d1362696c9b966724a4f2ac51e44db8}\label{classImageController_a7d1362696c9b966724a4f2ac51e44db8}} 
+void \hyperlink{classImageController_a7d1362696c9b966724a4f2ac51e44db8}{draw\+Annotations} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classImageController_a7d1362696c9b966724a4f2ac51e44db8}{Image\+Controller\+::draw\+Annotations} Adds annotations to the \hyperlink{classGraphicsView}{Graphics\+View}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageController_ab25fda433092c9b6c758869a34c8813c}\label{classImageController_ab25fda433092c9b6c758869a34c8813c}} 
+void \hyperlink{classImageController_ab25fda433092c9b6c758869a34c8813c}{set\+Drawing\+Size} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classImageController_ab25fda433092c9b6c758869a34c8813c}{Image\+Controller\+::set\+Drawing\+Size} Set annotation drawing width proportional to the image size. \end{DoxyCompactList}\item 
+Q\+PointF \hyperlink{classImageController_aa34adc44b0ff9719cc998bc89d3bf5b0}{get\+Text\+Pos} (Q\+Vector$<$ Q\+PointF $>$, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classImageController_aa34adc44b0ff9719cc998bc89d3bf5b0}{Image\+Controller\+::get\+Text\+Pos} Calculates a position for the label. \end{DoxyCompactList}\item 
+void \hyperlink{classImageController_a4980cd42b6086ec8c4647e0043864b40}{draw\+Label} (Q\+String, Q\+Vector$<$ Q\+PointF $>$)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classImageController_a4980cd42b6086ec8c4647e0043864b40}{Image\+Controller\+::draw\+Label} Add a styled label to the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -46,6 +71,30 @@ Ui\+\_\+\+Main\+View {\bfseries ui}
 \item 
 \mbox{\Hypertarget{classImageController_a7b83dbab8de169f4c1d394a72280aec5}\label{classImageController_a7b83dbab8de169f4c1d394a72280aec5}} 
 \hyperlink{classImageModel}{Image\+Model} {\bfseries model}
+\item 
+\mbox{\Hypertarget{classImageController_a3389aebb69eca6fc69b6e8941833838c}\label{classImageController_a3389aebb69eca6fc69b6e8941833838c}} 
+Q\+Graphics\+Scene $\ast$ {\bfseries scene}
+\item 
+\mbox{\Hypertarget{classImageController_abbe3841123ea72ac5908481aa1a8bb78}\label{classImageController_abbe3841123ea72ac5908481aa1a8bb78}} 
+Q\+Vector$<$ Q\+PointF $>$ {\bfseries points}
+\item 
+\mbox{\Hypertarget{classImageController_a65207ea07bfafb60210dcaedba508613}\label{classImageController_a65207ea07bfafb60210dcaedba508613}} 
+Q\+String {\bfseries current\+File\+Name}
+\item 
+\mbox{\Hypertarget{classImageController_a9ceb4137ecb9d9e768da75721fbf34f1}\label{classImageController_a9ceb4137ecb9d9e768da75721fbf34f1}} 
+Q\+Pen {\bfseries pen}
+\item 
+\mbox{\Hypertarget{classImageController_aa6955d96d23c8077d3d4ec6bea43c582}\label{classImageController_aa6955d96d23c8077d3d4ec6bea43c582}} 
+Q\+Font {\bfseries font}
+\item 
+\mbox{\Hypertarget{classImageController_a89b0d15d554d591287eaa4e467d9846d}\label{classImageController_a89b0d15d554d591287eaa4e467d9846d}} 
+int {\bfseries image\+Height}
+\item 
+\mbox{\Hypertarget{classImageController_a5987d06965f6073f2b32f8e4a1797791}\label{classImageController_a5987d06965f6073f2b32f8e4a1797791}} 
+int {\bfseries image\+Width}
+\item 
+\mbox{\Hypertarget{classImageController_a62172cc78d8977b0d45b69c458ffafc7}\label{classImageController_a62172cc78d8977b0d45b69c458ffafc7}} 
+\hyperlink{classLinkedList}{Linked\+List}$<$ Q\+Pair$<$ Q\+String, Q\+Vector$<$ Q\+PointF $>$ $>$ $>$ {\bfseries annotations}
 \end{DoxyCompactItemize}
 
 
@@ -73,6 +122,109 @@ Constructs an \hyperlink{classImageController}{Image\+Controller}, which handles
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classImageController_adaade0712de089f06a9a267399004cab}\label{classImageController_adaade0712de089f06a9a267399004cab}} 
+\index{Image\+Controller@{Image\+Controller}!add\+Point@{add\+Point}}
+\index{add\+Point@{add\+Point}!Image\+Controller@{Image\+Controller}}
+\subsubsection{\texorpdfstring{add\+Point()}{addPoint()}}
+{\footnotesize\ttfamily void Image\+Controller\+::add\+Point (\begin{DoxyParamCaption}\item[{const Q\+Point \&}]{point }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classImageController_adaade0712de089f06a9a267399004cab}{Image\+Controller\+::add\+Point} Adds a point to the annotation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classImageController_a4980cd42b6086ec8c4647e0043864b40}\label{classImageController_a4980cd42b6086ec8c4647e0043864b40}} 
+\index{Image\+Controller@{Image\+Controller}!draw\+Label@{draw\+Label}}
+\index{draw\+Label@{draw\+Label}!Image\+Controller@{Image\+Controller}}
+\subsubsection{\texorpdfstring{draw\+Label()}{drawLabel()}}
+{\footnotesize\ttfamily void Image\+Controller\+::draw\+Label (\begin{DoxyParamCaption}\item[{Q\+String}]{content,  }\item[{Q\+Vector$<$ Q\+PointF $>$}]{shape }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{classImageController_a4980cd42b6086ec8c4647e0043864b40}{Image\+Controller\+::draw\+Label} Add a styled label to the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em content} & \\
+\hline
+{\em shape} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classImageController_aaabc0506bd421fc0abf5b06ffc1c7032}\label{classImageController_aaabc0506bd421fc0abf5b06ffc1c7032}} 
+\index{Image\+Controller@{Image\+Controller}!finish\+Shape@{finish\+Shape}}
+\index{finish\+Shape@{finish\+Shape}!Image\+Controller@{Image\+Controller}}
+\subsubsection{\texorpdfstring{finish\+Shape()}{finishShape()}}
+{\footnotesize\ttfamily Q\+Vector$<$ Q\+PointF $>$ Image\+Controller\+::finish\+Shape (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{class\+Name }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classImageController_aaabc0506bd421fc0abf5b06ffc1c7032}{Image\+Controller\+::finish\+Shape} Finishes the current shape by adding the last side. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+Vector$<$\+Q\+Point\+F$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImageController_a5f225db05c8ec80017a05494ada72974}\label{classImageController_a5f225db05c8ec80017a05494ada72974}} 
+\index{Image\+Controller@{Image\+Controller}!get\+Current\+File\+Name@{get\+Current\+File\+Name}}
+\index{get\+Current\+File\+Name@{get\+Current\+File\+Name}!Image\+Controller@{Image\+Controller}}
+\subsubsection{\texorpdfstring{get\+Current\+File\+Name()}{getCurrentFileName()}}
+{\footnotesize\ttfamily Q\+String Image\+Controller\+::get\+Current\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classImageController_a5f225db05c8ec80017a05494ada72974}{Image\+Controller\+::get\+Current\+File\+Name} Returns the currently opened file name. 
+
+\begin{DoxyReturn}{Returns}
+Q\+String 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImageController_aa34adc44b0ff9719cc998bc89d3bf5b0}\label{classImageController_aa34adc44b0ff9719cc998bc89d3bf5b0}} 
+\index{Image\+Controller@{Image\+Controller}!get\+Text\+Pos@{get\+Text\+Pos}}
+\index{get\+Text\+Pos@{get\+Text\+Pos}!Image\+Controller@{Image\+Controller}}
+\subsubsection{\texorpdfstring{get\+Text\+Pos()}{getTextPos()}}
+{\footnotesize\ttfamily Q\+PointF Image\+Controller\+::get\+Text\+Pos (\begin{DoxyParamCaption}\item[{Q\+Vector$<$ Q\+PointF $>$}]{points,  }\item[{qreal}]{text\+Width,  }\item[{qreal}]{text\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{classImageController_aa34adc44b0ff9719cc998bc89d3bf5b0}{Image\+Controller\+::get\+Text\+Pos} Calculates a position for the label. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & \\
+\hline
+{\em text\+Width} & \\
+\hline
+{\em text\+Height} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+PointF 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImageController_a6f5f89e006b03028200798cc9e550dee}\label{classImageController_a6f5f89e006b03028200798cc9e550dee}} 
+\index{Image\+Controller@{Image\+Controller}!map\+To\+Image@{map\+To\+Image}}
+\index{map\+To\+Image@{map\+To\+Image}!Image\+Controller@{Image\+Controller}}
+\subsubsection{\texorpdfstring{map\+To\+Image()}{mapToImage()}}
+{\footnotesize\ttfamily Q\+Point Image\+Controller\+::map\+To\+Image (\begin{DoxyParamCaption}\item[{Q\+Point}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{classImageController_a6f5f89e006b03028200798cc9e550dee}{Image\+Controller\+::map\+To\+Image} Map \hyperlink{classGraphicsView}{Graphics\+View} coordinates to image coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+Point 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classImageController_a3f5976d87977aa1cda7b5a9a7ad0f03b}\label{classImageController_a3f5976d87977aa1cda7b5a9a7ad0f03b}} 
 \index{Image\+Controller@{Image\+Controller}!open@{open}}
 \index{open@{open}!Image\+Controller@{Image\+Controller}}
@@ -85,7 +237,54 @@ Gets a filename from the Main\+Controler, opens image and displays it in the \hy
 
 
 \begin{DoxyParams}{Parameters}
-{\em filename} & \\
+{\em file\+Name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classImageController_a81d44568235778fe6d5dc14fb377499a}\label{classImageController_a81d44568235778fe6d5dc14fb377499a}} 
+\index{Image\+Controller@{Image\+Controller}!select@{select}}
+\index{select@{select}!Image\+Controller@{Image\+Controller}}
+\subsubsection{\texorpdfstring{select()}{select()}}
+{\footnotesize\ttfamily void Image\+Controller\+::select (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classImageController_a81d44568235778fe6d5dc14fb377499a}{Image\+Controller\+::select} Updates the information for the selected file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classImageController_af9c9f284b985c7899a6bc3cf03e49191}\label{classImageController_af9c9f284b985c7899a6bc3cf03e49191}} 
+\index{Image\+Controller@{Image\+Controller}!set\+Annotations@{set\+Annotations}}
+\index{set\+Annotations@{set\+Annotations}!Image\+Controller@{Image\+Controller}}
+\subsubsection{\texorpdfstring{set\+Annotations()}{setAnnotations()}}
+{\footnotesize\ttfamily void Image\+Controller\+::set\+Annotations (\begin{DoxyParamCaption}\item[{\hyperlink{classLinkedList}{Linked\+List}$<$ Q\+Pair$<$ Q\+String, \hyperlink{classLinkedList}{Linked\+List}$<$ Q\+Pair$<$ int, int $>$$>$$>$$>$}]{annotations }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classImageController_af9c9f284b985c7899a6bc3cf03e49191}{Image\+Controller\+::set\+Annotations}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em annotations} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classImageController_a351762bc38206af05dc21dc6e183b1c3}\label{classImageController_a351762bc38206af05dc21dc6e183b1c3}} 
+\index{Image\+Controller@{Image\+Controller}!update\+View@{update\+View}}
+\index{update\+View@{update\+View}!Image\+Controller@{Image\+Controller}}
+\subsubsection{\texorpdfstring{update\+View()}{updateView()}}
+{\footnotesize\ttfamily void Image\+Controller\+::update\+View (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{sort\+Option,  }\item[{bool}]{search = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classImageController_a3a300727ff5e30b19fcc0102427fdb30}{Image\+Controller\+::update\+View} Updates the view with the sorted and searched list of images. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sort\+Option} & \\
+\hline
+{\em search} & \\
 \hline
 \end{DoxyParams}
 

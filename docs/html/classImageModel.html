@@ -72,6 +72,8 @@ $(function() {
 Collaboration diagram for ImageModel:</div>
 <div class="dyncontent">
 <div class="center"><img src="classImageModel__coll__graph.png" border="0" usemap="#ImageModel_coll__map" alt="Collaboration graph"/></div>
+<map name="ImageModel_coll__map" id="ImageModel_coll__map">
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -92,6 +94,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a498623ffa9423fd249c62467c01edeee"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageModel.html#a498623ffa9423fd249c62467c01edeee">getAll</a> ()</td></tr>
 <tr class="memdesc:a498623ffa9423fd249c62467c01edeee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all loaded images in the <a class="el" href="classImageModel.html">ImageModel</a>.  <a href="#a498623ffa9423fd249c62467c01edeee">More...</a><br /></td></tr>
 <tr class="separator:a498623ffa9423fd249c62467c01edeee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8256d5e2baa8833788bb63043e936137"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, QFileInfo &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageModel.html#a8256d5e2baa8833788bb63043e936137">getAllWithDetails</a> ()</td></tr>
+<tr class="memdesc:a8256d5e2baa8833788bb63043e936137"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classImageModel.html#a8256d5e2baa8833788bb63043e936137" title="ImageModel::getAllWithDetails Returns all loaded images with their details. ">ImageModel::getAllWithDetails</a> Returns all loaded images with their details.  <a href="#a8256d5e2baa8833788bb63043e936137">More...</a><br /></td></tr>
+<tr class="separator:a8256d5e2baa8833788bb63043e936137"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0021794e5694bd76c76349b8af96428"><td class="memItemLeft" align="right" valign="top">QImage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageModel.html#ac0021794e5694bd76c76349b8af96428">getImage</a> (const QString &amp;)</td></tr>
 <tr class="memdesc:ac0021794e5694bd76c76349b8af96428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a way to get an actual image from the system.  <a href="#ac0021794e5694bd76c76349b8af96428">More...</a><br /></td></tr>
 <tr class="separator:ac0021794e5694bd76c76349b8af96428"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,6 +156,26 @@ QMap&lt; QString, QFileInfo &gt;&#160;</td><td class="memItemRight" valign="bott
 
 </div>
 </div>
+<a id="a8256d5e2baa8833788bb63043e936137"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8256d5e2baa8833788bb63043e936137">&#9670;&nbsp;</a></span>getAllWithDetails()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt; QString, QFileInfo &gt; ImageModel::getAllWithDetails </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classImageModel.html#a8256d5e2baa8833788bb63043e936137" title="ImageModel::getAllWithDetails Returns all loaded images with their details. ">ImageModel::getAllWithDetails</a> Returns all loaded images with their details. </p>
+<dl class="section return"><dt>Returns</dt><dd>QMap&lt;QString, QFileInfo&gt; </dd></dl>
+
+</div>
+</div>
 <a id="a38c8d5868b7a8f8acca235c4383c5102"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a38c8d5868b7a8f8acca235c4383c5102">&#9670;&nbsp;</a></span>getFileSize()</h2>
 
@@ -170,7 +195,7 @@ QMap&lt; QString, QFileInfo &gt;&#160;</td><td class="memItemRight" valign="bott
 <p>Provides a way to read file size of a given image file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Name</td><td>of a image file </td></tr>
+    <tr><td class="paramname">Name</td><td>of a image file</td></tr>
   </table>
   </dd>
 </dl>
@@ -198,7 +223,7 @@ QMap&lt; QString, QFileInfo &gt;&#160;</td><td class="memItemRight" valign="bott
 <p>Gets name of the image from <a class="el" href="classImageController.html">ImageController</a>, searches for file path using image file name from internal map. After that it creates Image object and returns it to <a class="el" href="classImageController.html">ImageController</a></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Name</td><td>of a image file </td></tr>
+    <tr><td class="paramname">Name</td><td>of a image file</td></tr>
   </table>
   </dd>
 </dl>
@@ -225,7 +250,7 @@ QMap&lt; QString, QFileInfo &gt;&#160;</td><td class="memItemRight" valign="bott
 <p>Provides a way to read resolution of a given image file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Name</td><td>of a image file </td></tr>
+    <tr><td class="paramname">Name</td><td>of a image file</td></tr>
   </table>
   </dd>
 </dl>

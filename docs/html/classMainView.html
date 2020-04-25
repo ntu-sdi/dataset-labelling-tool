@@ -59,6 +59,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-slots">Private Slots</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
@@ -72,22 +73,34 @@ $(function() {
 Inheritance diagram for MainView:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMainView__inherit__graph.png" border="0" usemap="#MainView_inherit__map" alt="Inheritance graph"/></div>
+<map name="MainView_inherit__map" id="MainView_inherit__map">
+</map>
 </div>
 <div class="dynheader">
 Collaboration diagram for MainView:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMainView__coll__graph.png" border="0" usemap="#MainView_coll__map" alt="Collaboration graph"/></div>
 <map name="MainView_coll__map" id="MainView_coll__map">
-<area shape="rect" id="node3" href="classMainController.html" title="{MainController\n||+ MainController()\l+ browseImages()\l+ searchLoadedImages()\l+ sortLoadedImages()\l+ selectImage()\l+ openImage()\l+ browseForClassFile()\l+ sortLoadedClasses()\l+ createClassFile()\l+ addClass()\land 7 more...\l&#45; getSelectedClass()\l}" alt="" coords="196,608,381,847"/>
-<area shape="rect" id="node4" href="classAnnotationController.html" title="{AnnotationController\n|&#45; ui\l&#45; points\l|+ AnnotationController()\l+ create()\l+ browse()\l+ addPoint()\l+ finishShape()\l+ cancelShape()\l}" alt="" coords="5,365,188,531"/>
-<area shape="rect" id="node5" href="classAnnotationModel.html" title="{AnnotationModel\n|&#45; currentFilePath\l|+ getCurrentFilePath()\l+ browse()\l+ browse()\l+ create()\l+ create()\l+ add()\l+ add()\l+ get()\l+ get()\l}" alt="" coords="13,49,180,244"/>
-<area shape="rect" id="node6" href="classImageController.html" title="{ImageController\n|&#45; ui\l|+ ImageController()\l+ browseFolder()\l+ searchLoaded()\l+ sortLoaded()\l+ select()\l+ open()\l&#45; updateView()\l}" alt="" coords="213,365,365,531"/>
-<area shape="rect" id="node7" href="classImageModel.html" title="{ImageModel\n|&#45; loadedImages\l|+ browseFolder()\l+ browseFolder()\l+ getResolution()\l+ getFileSize()\l+ getAll()\l+ getImage()\l}" alt="" coords="219,71,355,222"/>
-<area shape="rect" id="node8" href="classClassController.html" title="{ClassController\n|&#45; ui\l|+ ClassController()\l+ browse()\l+ create()\l+ sortLoaded()\l+ add()\l+ select()\l+ remove()\l+ getSelected()\l+ updateView()\l}" alt="" coords="390,351,537,545"/>
-<area shape="rect" id="node9" href="classClassModel.html" title="{ClassModel\n|&#45; selectedClass\l&#45; currentFilePath\l&#45; classes\l|+ browse()\l+ browse()\l+ create()\l+ create()\l+ addClass()\l+ removeClass()\l+ select()\l+ getSelected()\l+ getAll()\l+ getCurrentFilePath()\l&#45; save()\l&#45; writeLineToFile()\l&#45; writeLinesToFile()\l}" alt="" coords="380,5,547,288"/>
+<area shape="rect" id="node3" href="classMainController.html" title="{MainController\n||+ MainController()\l+ browseImages()\l+ searchLoadedImages()\l+ sortLoadedImages()\l+ selectImage()\l+ openImage()\l+ browseForClassFile()\l+ sortLoadedClasses()\l+ createClassFile()\l+ addClass()\land 8 more...\l+ annotationSavingThread()\l&#45; getSelectedClass()\l}" alt="" coords="183,1600,389,1853"/>
+<area shape="rect" id="node4" href="classAnnotationController.html" title="{AnnotationController\n|&#45; ui\l&#45; points\l|+ AnnotationController()\l+ create()\l+ browse()\l+ add()\l+ save()\l+ get()\l}" alt="" coords="5,1350,188,1515"/>
+<area shape="rect" id="node5" href="classAnnotationModel.html" title="{AnnotationModel\n|&#45; currentFilePath\l&#45; loadedAnnotations\l|+ getCurrentFilePath()\l+ browse()\l+ browse()\l+ load()\l+ save()\l+ create()\l+ create()\l+ add()\l+ add()\l+ get()\l+ get()\l}" alt="" coords="12,931,179,1170"/>
+<area shape="rect" id="node6" href="classImageController.html" title="{ImageController\n|&#45; ui\l&#45; scene\l&#45; points\l&#45; currentFileName\l&#45; pen\l&#45; font\l&#45; imageHeight\l&#45; imageWidth\l|+ ImageController()\l+ updateView()\l+ updateView()\l+ browseFolder()\l+ searchLoaded()\l+ sortLoaded()\l+ select()\l+ open()\l+ addPoint()\l+ cancelShape()\l+ finishShape()\l+ setAnnotations()\l+ getCurrentFileName()\l&#45; mapToImage()\l&#45; drawAnnotations()\l&#45; setDrawingSize()\l&#45; getTextPos()\l&#45; drawLabel()\l}" alt="" coords="393,836,571,1265"/>
+<area shape="rect" id="node7" href="classLinkedList.html" title="{LinkedList\&lt; QPair\&lt;\l QString, QVector\&lt; QPointF \&gt; \&gt; \&gt;\n|&#45; len\l|+ LinkedList()\l+ ~LinkedList()\l+ isEmpty()\l+ copy()\l+ operator[]()\l+ insert()\l+ at()\l+ length()\l+ getIndex()\l+ contains()\land 6 more...\l&#45; nodeAt()\l&#45; quicksort()\l&#45; isSorted()\l}" alt="" coords="579,491,822,773"/>
+<area shape="rect" id="node8" href="structLinkedList_1_1Node.html" title="{LinkedList\&lt; T \&gt;::Node\n|+ data\l|}" alt="" coords="387,5,555,83"/>
+<area shape="rect" id="node9" href="classLinkedList.html" title="{LinkedList\&lt; T \&gt;\n|&#45; len\l|+ LinkedList()\l+ ~LinkedList()\l+ isEmpty()\l+ copy()\l+ operator[]()\l+ insert()\l+ at()\l+ length()\l+ getIndex()\l+ contains()\land 6 more...\l&#45; nodeAt()\l&#45; quicksort()\l&#45; isSorted()\l}" alt="" coords="408,145,535,413"/>
+<area shape="rect" id="node13" href="classLinkedList.html" title="{LinkedList\&lt; QString \&gt;\n|&#45; len\l|+ LinkedList()\l+ ~LinkedList()\l+ isEmpty()\l+ copy()\l+ operator[]()\l+ insert()\l+ at()\l+ length()\l+ getIndex()\l+ contains()\land 6 more...\l&#45; nodeAt()\l&#45; quicksort()\l&#45; isSorted()\l}" alt="" coords="203,498,369,766"/>
+<area shape="rect" id="node10" href="classImageModel.html" title="{ImageModel\n|&#45; loadedImages\l|+ browseFolder()\l+ browseFolder()\l+ getResolution()\l+ getFileSize()\l+ getAll()\l+ getAllWithDetails()\l+ getImage()\l}" alt="" coords="393,549,555,715"/>
+<area shape="rect" id="node11" href="classClassController.html" title="{ClassController\n|&#45; ui\l|+ ClassController()\l+ browse()\l+ create()\l+ sortLoaded()\l+ add()\l+ select()\l+ remove()\l+ updateView()\l+ updateView()\l+ getSelected()\l}" alt="" coords="213,1328,359,1537"/>
+<area shape="rect" id="node12" href="classClassModel.html" title="{ClassModel\n|&#45; currentFilePath\l&#45; selectedClass\l|+ browse()\l+ browse()\l+ create()\l+ create()\l+ addClass()\l+ removeClass()\l+ select()\l+ clear()\l+ getSelected()\l+ getAll()\l+ getCurrentFilePath()\l&#45; save()\l&#45; writeLineToFile()\l&#45; writeLinesToFile()\l}" alt="" coords="203,909,369,1192"/>
 </map>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Public Slots</h2></td></tr>
+<tr class="memitem:ac12a2b5c72e5e1f0c924e13258186040"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainView.html#ac12a2b5c72e5e1f0c924e13258186040">setMousePosition</a> (QPoint)</td></tr>
+<tr class="memdesc:ac12a2b5c72e5e1f0c924e13258186040"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMainView.html#ac12a2b5c72e5e1f0c924e13258186040" title="MainView::setMousePosition Gets called on a mouse press event to add an annotation point...">MainView::setMousePosition</a> Gets called on a mouse press event to add an annotation point.  <a href="#ac12a2b5c72e5e1f0c924e13258186040">More...</a><br /></td></tr>
+<tr class="separator:ac12a2b5c72e5e1f0c924e13258186040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3e82d0020daca697d56361c68556d445"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainView.html#a3e82d0020daca697d56361c68556d445">MainView</a> (QWidget *parent=nullptr)</td></tr>
@@ -116,38 +129,53 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a8e170aa23a65f1c7f3ed3a7c08a99101"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function, which is triggered by the user clicking the "Browse" button in the image panel. <br /></td></tr>
 <tr class="separator:a8e170aa23a65f1c7f3ed3a7c08a99101"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa6cd08b912bcc873f9a7c04258f98bb"><td class="memItemLeft" align="right" valign="top"><a id="aaa6cd08b912bcc873f9a7c04258f98bb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>on_ClassAddButton_clicked</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainView.html#aaa6cd08b912bcc873f9a7c04258f98bb">on_ClassAddButton_clicked</a> ()</td></tr>
+<tr class="memdesc:aaa6cd08b912bcc873f9a7c04258f98bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function, triggered by user clicking on add class button. <br /></td></tr>
 <tr class="separator:aaa6cd08b912bcc873f9a7c04258f98bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67267813d7c408d32be5e6fef2251a6f"><td class="memItemLeft" align="right" valign="top"><a id="a67267813d7c408d32be5e6fef2251a6f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>on_ClassBrowseButton_clicked</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainView.html#a67267813d7c408d32be5e6fef2251a6f">on_ClassBrowseButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a67267813d7c408d32be5e6fef2251a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function, triggered when user clicks on browse class file button. <br /></td></tr>
 <tr class="separator:a67267813d7c408d32be5e6fef2251a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3edf1fc4556c571b3d2130db22da504e"><td class="memItemLeft" align="right" valign="top"><a id="a3edf1fc4556c571b3d2130db22da504e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>on_ClassCreateButton_clicked</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainView.html#a3edf1fc4556c571b3d2130db22da504e">on_ClassCreateButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a3edf1fc4556c571b3d2130db22da504e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function, triggered when user clicks on create class button. <br /></td></tr>
 <tr class="separator:a3edf1fc4556c571b3d2130db22da504e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4995ea260acd3abf8ac31f148f2415ca"><td class="memItemLeft" align="right" valign="top"><a id="a4995ea260acd3abf8ac31f148f2415ca"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>on_AnnotationBrowseButton_clicked</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainView.html#a4995ea260acd3abf8ac31f148f2415ca">on_AnnotationBrowseButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a4995ea260acd3abf8ac31f148f2415ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function, triggered when users clicks on browse annotation file button. <br /></td></tr>
 <tr class="separator:a4995ea260acd3abf8ac31f148f2415ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21afbf21cbe8fc3e444d57cd575e69b0"><td class="memItemLeft" align="right" valign="top"><a id="a21afbf21cbe8fc3e444d57cd575e69b0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>on_ImageList_itemClicked</b> (QListWidgetItem *)</td></tr>
+<tr class="memitem:abd9345221c7c8e2ebbc0703db1a05ddf"><td class="memItemLeft" align="right" valign="top"><a id="abd9345221c7c8e2ebbc0703db1a05ddf"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainView.html#abd9345221c7c8e2ebbc0703db1a05ddf">on_ShapesCancelButton_clicked</a> ()</td></tr>
+<tr class="memdesc:abd9345221c7c8e2ebbc0703db1a05ddf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMainView.html#abd9345221c7c8e2ebbc0703db1a05ddf" title="MainView::on_ShapesCancelButton_clicked Callback function, triggered when users click on the cancel b...">MainView::on_ShapesCancelButton_clicked</a> Callback function, triggered when users click on the cancel button. <br /></td></tr>
+<tr class="separator:abd9345221c7c8e2ebbc0703db1a05ddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a179305fe64065facf0fe655917a39378"><td class="memItemLeft" align="right" valign="top"><a id="a179305fe64065facf0fe655917a39378"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainView.html#a179305fe64065facf0fe655917a39378">on_ShapesFinishButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a179305fe64065facf0fe655917a39378"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMainView.html#a179305fe64065facf0fe655917a39378" title="MainView::on_ShapesFinishButton_clicked Callback function, triggered when users click on the finish b...">MainView::on_ShapesFinishButton_clicked</a> Callback function, triggered when users click on the finish button. <br /></td></tr>
+<tr class="separator:a179305fe64065facf0fe655917a39378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21afbf21cbe8fc3e444d57cd575e69b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainView.html#a21afbf21cbe8fc3e444d57cd575e69b0">on_ImageList_itemClicked</a> (QListWidgetItem *)</td></tr>
+<tr class="memdesc:a21afbf21cbe8fc3e444d57cd575e69b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function, triggered by user single clicking image name in image list pane.  <a href="#a21afbf21cbe8fc3e444d57cd575e69b0">More...</a><br /></td></tr>
 <tr class="separator:a21afbf21cbe8fc3e444d57cd575e69b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0af943bbf0d0806261bb8aa5444eb5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainView.html#ae0af943bbf0d0806261bb8aa5444eb5b">on_ImageList_itemDoubleClicked</a> (QListWidgetItem *)</td></tr>
 <tr class="memdesc:ae0af943bbf0d0806261bb8aa5444eb5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function, which is triggered by user double clicking on the image file name in the image pannel.  <a href="#ae0af943bbf0d0806261bb8aa5444eb5b">More...</a><br /></td></tr>
 <tr class="separator:ae0af943bbf0d0806261bb8aa5444eb5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2970c289fed50a4d86051135af81ba61"><td class="memItemLeft" align="right" valign="top"><a id="a2970c289fed50a4d86051135af81ba61"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>on_ClassesList_itemClicked</b> (QListWidgetItem *)</td></tr>
+<tr class="memitem:a2970c289fed50a4d86051135af81ba61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainView.html#a2970c289fed50a4d86051135af81ba61">on_ClassesList_itemClicked</a> (QListWidgetItem *)</td></tr>
+<tr class="memdesc:a2970c289fed50a4d86051135af81ba61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function, triggered when user single clicks on a class in class pane.  <a href="#a2970c289fed50a4d86051135af81ba61">More...</a><br /></td></tr>
 <tr class="separator:a2970c289fed50a4d86051135af81ba61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53645de6ba66e27080df09fc7cbbf3d6"><td class="memItemLeft" align="right" valign="top"><a id="a53645de6ba66e27080df09fc7cbbf3d6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>on_ClassesList_itemDoubleClicked</b> (QListWidgetItem *)</td></tr>
-<tr class="separator:a53645de6ba66e27080df09fc7cbbf3d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2b972e9dd92f3f3be8a7b4ac9380698"><td class="memItemLeft" align="right" valign="top"><a id="ab2b972e9dd92f3f3be8a7b4ac9380698"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>on_ImageListSortBox_currentTextChanged</b> (const QString &amp;)</td></tr>
-<tr class="separator:ab2b972e9dd92f3f3be8a7b4ac9380698"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb94b7f4f66f2c7f0bc841f9e95b4519"><td class="memItemLeft" align="right" valign="top"><a id="afb94b7f4f66f2c7f0bc841f9e95b4519"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>on_ClassListSortBox_currentTextChanged</b> (const QString &amp;)</td></tr>
-<tr class="separator:afb94b7f4f66f2c7f0bc841f9e95b4519"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9d5f1300bd6b2524f611873d68c938b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainView.html#aa9d5f1300bd6b2524f611873d68c938b">ProvideContextMenu</a> (const QPoint &amp;)</td></tr>
 <tr class="memdesc:aa9d5f1300bd6b2524f611873d68c938b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a context menu on right-click of the classes pane.  <a href="#aa9d5f1300bd6b2524f611873d68c938b">More...</a><br /></td></tr>
 <tr class="separator:aa9d5f1300bd6b2524f611873d68c938b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf443010a1d872e9260e174a9311a1a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainView.html#acf443010a1d872e9260e174a9311a1a0">on_ClassListSortBox_activated</a> (const QString &amp;arg1)</td></tr>
+<tr class="memdesc:acf443010a1d872e9260e174a9311a1a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function, triggered when user clicks on class list sort box.  <a href="#acf443010a1d872e9260e174a9311a1a0">More...</a><br /></td></tr>
+<tr class="separator:acf443010a1d872e9260e174a9311a1a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a682bc17938f71ec37ba9485fb3a0f71b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainView.html#a682bc17938f71ec37ba9485fb3a0f71b">on_ImageListSortBox_activated</a> (const QString &amp;arg1)</td></tr>
+<tr class="memdesc:a682bc17938f71ec37ba9485fb3a0f71b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function, triggered when user clicks on image list sort box.  <a href="#a682bc17938f71ec37ba9485fb3a0f71b">More...</a><br /></td></tr>
+<tr class="separator:a682bc17938f71ec37ba9485fb3a0f71b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8529f73ea1db1a678c9730495b444a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainView.html#ae8529f73ea1db1a678c9730495b444a9">on_SearchBox_textChanged</a> (const QString &amp;arg1)</td></tr>
+<tr class="memdesc:ae8529f73ea1db1a678c9730495b444a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function, triggered when user types a new letter in image seach box.  <a href="#ae8529f73ea1db1a678c9730495b444a9">More...</a><br /></td></tr>
+<tr class="separator:ae8529f73ea1db1a678c9730495b444a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a794221873e8dfab91659bfa088c6fa08"><td class="memItemLeft" align="right" valign="top"><a id="a794221873e8dfab91659bfa088c6fa08"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>on_SaveAnnotationFileButton_clicked</b> ()</td></tr>
+<tr class="separator:a794221873e8dfab91659bfa088c6fa08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -192,6 +220,108 @@ Ui::MainView *&#160;</td><td class="memItemRight" valign="bottom"><b>ui</b></td>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2970c289fed50a4d86051135af81ba61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2970c289fed50a4d86051135af81ba61">&#9670;&nbsp;</a></span>on_ClassesList_itemClicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainView::on_ClassesList_itemClicked </td>
+          <td>(</td>
+          <td class="paramtype">QListWidgetItem *&#160;</td>
+          <td class="paramname"><em>className</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback function, triggered when user single clicks on a class in class pane. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">className</td><td>Name of the class clicked </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acf443010a1d872e9260e174a9311a1a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf443010a1d872e9260e174a9311a1a0">&#9670;&nbsp;</a></span>on_ClassListSortBox_activated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainView::on_ClassListSortBox_activated </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>arg1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback function, triggered when user clicks on class list sort box. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg1</td><td>Sort option. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a21afbf21cbe8fc3e444d57cd575e69b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21afbf21cbe8fc3e444d57cd575e69b0">&#9670;&nbsp;</a></span>on_ImageList_itemClicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainView::on_ImageList_itemClicked </td>
+          <td>(</td>
+          <td class="paramtype">QListWidgetItem *&#160;</td>
+          <td class="paramname"><em>imageName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback function, triggered by user single clicking image name in image list pane. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imageName</td><td>Name of the image clicked on. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ae0af943bbf0d0806261bb8aa5444eb5b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae0af943bbf0d0806261bb8aa5444eb5b">&#9670;&nbsp;</a></span>on_ImageList_itemDoubleClicked</h2>
 
@@ -227,6 +357,74 @@ Ui::MainView *&#160;</td><td class="memItemRight" valign="bottom"><b>ui</b></td>
 
 </div>
 </div>
+<a id="a682bc17938f71ec37ba9485fb3a0f71b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a682bc17938f71ec37ba9485fb3a0f71b">&#9670;&nbsp;</a></span>on_ImageListSortBox_activated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainView::on_ImageListSortBox_activated </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>arg1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback function, triggered when user clicks on image list sort box. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg1</td><td>Sort option. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae8529f73ea1db1a678c9730495b444a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8529f73ea1db1a678c9730495b444a9">&#9670;&nbsp;</a></span>on_SearchBox_textChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainView::on_SearchBox_textChanged </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>arg1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback function, triggered when user types a new letter in image seach box. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg1</td><td>Search query. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa9d5f1300bd6b2524f611873d68c938b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9d5f1300bd6b2524f611873d68c938b">&#9670;&nbsp;</a></span>ProvideContextMenu</h2>
 
@@ -255,6 +453,40 @@ Ui::MainView *&#160;</td><td class="memItemRight" valign="bottom"><b>ui</b></td>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pos</td><td>Position of the cursor. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac12a2b5c72e5e1f0c924e13258186040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac12a2b5c72e5e1f0c924e13258186040">&#9670;&nbsp;</a></span>setMousePosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainView::setMousePosition </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classMainView.html#ac12a2b5c72e5e1f0c924e13258186040" title="MainView::setMousePosition Gets called on a mouse press event to add an annotation point...">MainView::setMousePosition</a> Gets called on a mouse press event to add an annotation point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td></td></tr>
   </table>
   </dd>
 </dl>

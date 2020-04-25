@@ -23,6 +23,12 @@ void \hyperlink{classAnnotationModel_aa43f69c5431ede4dc744ae9b61b49f6c}{browse} 
 \begin{DoxyCompactList}\small\item\em Prompts user to navigate to a annotation file on the system. \end{DoxyCompactList}\item 
 void \hyperlink{classAnnotationModel_a54f9ffa4151a1bdcaa1d5ab3dee87679}{browse} (const Q\+String \&)
 \begin{DoxyCompactList}\small\item\em Provides a way to enter path to annotation file as a parameter (Q\+String). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAnnotationModel_acccb7d1577b24c289e43bc4f4cd7c92d}\label{classAnnotationModel_acccb7d1577b24c289e43bc4f4cd7c92d}} 
+void \hyperlink{classAnnotationModel_acccb7d1577b24c289e43bc4f4cd7c92d}{load} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classAnnotationModel_acccb7d1577b24c289e43bc4f4cd7c92d}{Annotation\+Model\+::load} Load annotations from the current file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAnnotationModel_a4ae0ad72d52d23ad24b611eb50f14708}\label{classAnnotationModel_a4ae0ad72d52d23ad24b611eb50f14708}} 
+void \hyperlink{classAnnotationModel_a4ae0ad72d52d23ad24b611eb50f14708}{save} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classAnnotationModel_a4ae0ad72d52d23ad24b611eb50f14708}{Annotation\+Model\+::save} Saves annotations to the current file. \end{DoxyCompactList}\item 
 void \hyperlink{classAnnotationModel_ac4c6850c8d0f704c3bf5bef486992690}{create} ()
 \begin{DoxyCompactList}\small\item\em Prompts the user for a annotation file name. Creates a file using this name and path. \end{DoxyCompactList}\item 
 void \hyperlink{classAnnotationModel_ac5062c8663670a312132929f16e4be64}{create} (const Q\+String \&)
@@ -33,15 +39,19 @@ void {\bfseries add} (const Q\+String \&json\+File\+Path, const Q\+String \&imag
 \mbox{\Hypertarget{classAnnotationModel_a58af7fa7e9af062292bcb0ce531f95a6}\label{classAnnotationModel_a58af7fa7e9af062292bcb0ce531f95a6}} 
 void {\bfseries add} (const Q\+String \&image\+File\+Path, const Q\+String \&class\+Name, \hyperlink{classLinkedList}{Linked\+List}$<$ Q\+Pair$<$ int, int $>$$>$ \&coordinates)
 \item 
-Q\+Map$<$ Q\+String, \hyperlink{classLinkedList}{Shape} $>$ \hyperlink{classAnnotationModel_a242d12f3043434463c061b4a38d27c90}{get} (const Q\+String \&)
+\hyperlink{classLinkedList}{Linked\+List}$<$ Q\+Pair$<$ Q\+String, \hyperlink{classLinkedList}{Shape} $>$ $>$ \hyperlink{classAnnotationModel_a94c840624e8ad25d8c7d5abf1c0e255b}{get} (const Q\+String \&)
 \begin{DoxyCompactList}\small\item\em Provides a way to obtain annotations for a given image from currently loaded annotation file. \end{DoxyCompactList}\item 
-Q\+Map$<$ Q\+String, \hyperlink{classLinkedList}{Shape} $>$ \hyperlink{classAnnotationModel_afed52e5d48da396919f02ed88c94921a}{get} (const Q\+String \&, const Q\+String \&)
-\begin{DoxyCompactList}\small\item\em Provides a way to obtain annotations for a given image from a specified annotation file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{classAnnotationModel_a880c414938859f37f7690d90ac1ebe10}\label{classAnnotationModel_a880c414938859f37f7690d90ac1ebe10}} 
+Q\+Map$<$ Q\+String, \hyperlink{classLinkedList}{Shape} $>$ {\bfseries get} (const Q\+String \&, const Q\+String \&)
+\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classAnnotationModel_a204571a62dfdc60a405528ddc1db2a61}\label{classAnnotationModel_a204571a62dfdc60a405528ddc1db2a61}} 
 Q\+String {\bfseries current\+File\+Path}
+\item 
+\mbox{\Hypertarget{classAnnotationModel_aee0be27919046fe9a7009023c15d99a9}\label{classAnnotationModel_aee0be27919046fe9a7009023c15d99a9}} 
+Q\+Json\+Document {\bfseries loaded\+Annotations}
 \end{DoxyCompactItemize}
 
 
@@ -103,11 +113,11 @@ If file\+Path is empty, or file could not be created at wanted location std\+::i
 {\em file\+Path} & Q\+String path for a annotation file you want to create. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classAnnotationModel_a242d12f3043434463c061b4a38d27c90}\label{classAnnotationModel_a242d12f3043434463c061b4a38d27c90}} 
+\mbox{\Hypertarget{classAnnotationModel_a94c840624e8ad25d8c7d5abf1c0e255b}\label{classAnnotationModel_a94c840624e8ad25d8c7d5abf1c0e255b}} 
 \index{Annotation\+Model@{Annotation\+Model}!get@{get}}
 \index{get@{get}!Annotation\+Model@{Annotation\+Model}}
-\subsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Q\+Map$<$ Q\+String, \hyperlink{classLinkedList}{Linked\+List}$<$ Q\+Pair$<$ int, int $>$ $>$ $>$ Annotation\+Model\+::get (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{image\+Name }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \hyperlink{classLinkedList}{Linked\+List}$<$ Q\+Pair$<$ Q\+String, \hyperlink{classLinkedList}{Shape} $>$ $>$ Annotation\+Model\+::get (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{image\+Name }\end{DoxyParamCaption})}
 
 
 
@@ -118,28 +128,6 @@ Function searches for all annotations which are made for image name provided in 
 
 \begin{DoxyParams}{Parameters}
 {\em image\+Name} & Q\+String name of the image user wants to obtain. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Q\+Map of annotations, key being class name and value being \hyperlink{classLinkedList}{Linked\+List} of Q\+Pair. 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classAnnotationModel_afed52e5d48da396919f02ed88c94921a}\label{classAnnotationModel_afed52e5d48da396919f02ed88c94921a}} 
-\index{Annotation\+Model@{Annotation\+Model}!get@{get}}
-\index{get@{get}!Annotation\+Model@{Annotation\+Model}}
-\subsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Q\+Map$<$ Q\+String, \hyperlink{classLinkedList}{Linked\+List}$<$ Q\+Pair$<$ int, int $>$ $>$ $>$ Annotation\+Model\+::get (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{image\+Name,  }\item[{const Q\+String \&}]{file\+Path }\end{DoxyParamCaption})}
-
-
-
-Provides a way to obtain annotations for a given image from a specified annotation file. 
-
-Function searches for all annotations which are made for image name provided in a parameter. If provided image is not annotated in currenlly loaded annotation file, custom \hyperlink{classImageNotAnnotatedYet}{Image\+Not\+Annotated\+Yet} exception is thrown.
-
-
-\begin{DoxyParams}{Parameters}
-{\em image\+Name} & Q\+String name of the image user wants to obtain. \\
-\hline
-{\em file\+Path} & Q\+String path to annotation file where annotation for the image should be looked for. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

@@ -1,9 +1,12 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="node2" href="$classArrayEmptyError.html" title="ArrayEmptyError" alt="" coords="162,5,293,32"/>
-<area shape="rect" id="node3" href="$classFileNotFoundError.html" title="FileNotFoundError" alt="" coords="159,56,296,83"/>
-<area shape="rect" id="node4" href="$classFolderNotFoundError.html" title="FolderNotFoundError" alt="" coords="150,107,305,133"/>
-<area shape="rect" id="node5" href="$classImageNotAnnotatedYet.html" title="ImageNotAnnotatedYet" alt="" coords="141,157,313,184"/>
-<area shape="rect" id="node6" href="$classIndexOutOfBoundsError.html" title="IndexOutOfBoundsError" alt="" coords="140,208,315,235"/>
-<area shape="rect" id="node7" href="$classOperationCanceled.html" title="OperationCanceled" alt="" coords="154,259,301,285"/>
-<area shape="rect" id="node8" href="$classValueNotFoundError.html" title="ValueNotFoundError" alt="" coords="152,309,303,336"/>
+<area shape="rect" id="node3" href="$classClassNotFoundError.html" title="ClassNotFoundError" alt="" coords="152,56,303,83"/>
+<area shape="rect" id="node4" href="$classClassNotSelectedError.html" title="ClassNotSelectedError" alt="" coords="144,107,311,133"/>
+<area shape="rect" id="node5" href="$classDrawingIncomplete.html" title="DrawingIncomplete" alt="" coords="153,157,302,184"/>
+<area shape="rect" id="node6" href="$classFileNotFoundError.html" title="FileNotFoundError" alt="" coords="159,208,296,235"/>
+<area shape="rect" id="node7" href="$classFolderNotFoundError.html" title="FolderNotFoundError" alt="" coords="150,259,305,285"/>
+<area shape="rect" id="node8" href="$classImageNotAnnotatedYet.html" title="ImageNotAnnotatedYet" alt="" coords="141,309,313,336"/>
+<area shape="rect" id="node9" href="$classIndexOutOfBoundsError.html" title="IndexOutOfBoundsError" alt="" coords="140,360,315,387"/>
+<area shape="rect" id="node10" href="$classOperationCanceled.html" title="OperationCanceled" alt="" coords="154,411,301,437"/>
+<area shape="rect" id="node11" href="$classValueNotFoundError.html" title="ValueNotFoundError" alt="" coords="152,461,303,488"/>
 </map>

@@ -6,11 +6,12 @@
 
 
 
-Collaboration diagram for Class\+Model\+:\nopagebreak
+Collaboration diagram for Class\+Model\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=193pt]{classClassModel__coll__graph}
+\includegraphics[height=550pt]{classClassModel__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -19,27 +20,26 @@ Collaboration diagram for Class\+Model\+:\nopagebreak
 \mbox{\Hypertarget{classClassModel_a275d7d723cceff7cddea637e29bb5489}\label{classClassModel_a275d7d723cceff7cddea637e29bb5489}} 
 void \hyperlink{classClassModel_a275d7d723cceff7cddea637e29bb5489}{browse} ()
 \begin{DoxyCompactList}\small\item\em Opens a file system dialog window and prompts the user to select a class file. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classClassModel_a1fb7006db6a2aab398a7c82cab2da568}\label{classClassModel_a1fb7006db6a2aab398a7c82cab2da568}} 
-void {\bfseries browse} (const Q\+String \&)
-\item 
+void \hyperlink{classClassModel_a1fb7006db6a2aab398a7c82cab2da568}{browse} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classClassModel_a275d7d723cceff7cddea637e29bb5489}{Class\+Model\+::browse} Browse for a class file. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classClassModel_afb5c974408ff462e812df971588ea703}\label{classClassModel_afb5c974408ff462e812df971588ea703}} 
 void \hyperlink{classClassModel_afb5c974408ff462e812df971588ea703}{create} ()
 \begin{DoxyCompactList}\small\item\em Prompts the user for a class file name. Creates a class file using this name. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classClassModel_ad2e5262948d7491cf1f8bfd305dff829}\label{classClassModel_ad2e5262948d7491cf1f8bfd305dff829}} 
-void {\bfseries create} (const Q\+String \&)
-\item 
+void \hyperlink{classClassModel_ad2e5262948d7491cf1f8bfd305dff829}{create} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classClassModel_afb5c974408ff462e812df971588ea703}{Class\+Model\+::create} Creates a new class file. \end{DoxyCompactList}\item 
 void \hyperlink{classClassModel_ab96bae16ed8f02abf2eca0d7b89a8a62}{add\+Class} (Q\+String)
 \begin{DoxyCompactList}\small\item\em Adds a line to the current class file. \end{DoxyCompactList}\item 
 void \hyperlink{classClassModel_afe2266d404da4bab25bf193212fed198}{remove\+Class} (const Q\+String \&)
 \begin{DoxyCompactList}\small\item\em Removes a line from the current class file. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classClassModel_a2c8e221161022e6dbe09d07e7fea4422}\label{classClassModel_a2c8e221161022e6dbe09d07e7fea4422}} 
-void {\bfseries select} (const std\+::string \&)
+void \hyperlink{classClassModel_aa8c0739232fabe2dc589247155d4e49a}{select} (const Q\+String \&)
+\begin{DoxyCompactList}\small\item\em Sets the given class as selected class for annotating. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClassModel_ab67eab09542dc254103a72e7b1137f90}\label{classClassModel_ab67eab09542dc254103a72e7b1137f90}} 
+void {\bfseries clear} ()
 \item 
-\mbox{\Hypertarget{classClassModel_a935b07226c750dad2410d22fa516db1f}\label{classClassModel_a935b07226c750dad2410d22fa516db1f}} 
-std\+::string {\bfseries get\+Selected} ()
-\item 
-\mbox{\Hypertarget{classClassModel_a0a2c7f3e06cb56c9f3df36c3e8e48031}\label{classClassModel_a0a2c7f3e06cb56c9f3df36c3e8e48031}} 
-Q\+String\+List \hyperlink{classClassModel_a0a2c7f3e06cb56c9f3df36c3e8e48031}{get\+All} ()
+Q\+String \hyperlink{classClassModel_ab7ca25c9d73597d671bfbb1c34f92461}{get\+Selected} ()
+\begin{DoxyCompactList}\small\item\em Returns the currently selected class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClassModel_a38848b27dc86ca12fa4006c2ac53aa2f}\label{classClassModel_a38848b27dc86ca12fa4006c2ac53aa2f}} 
+\hyperlink{classLinkedList}{Linked\+List}$<$ Q\+String $>$ \hyperlink{classClassModel_a38848b27dc86ca12fa4006c2ac53aa2f}{get\+All} ()
 \begin{DoxyCompactList}\small\item\em Gets a Q\+String\+List of all the classes in the current class file. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classClassModel_aa952e5109a5246d443f7e83f8a7d75ac}\label{classClassModel_aa952e5109a5246d443f7e83f8a7d75ac}} 
 Q\+String \hyperlink{classClassModel_aa952e5109a5246d443f7e83f8a7d75ac}{get\+Current\+File\+Path} ()
@@ -50,21 +50,22 @@ Q\+String \hyperlink{classClassModel_aa952e5109a5246d443f7e83f8a7d75ac}{get\+Cur
 \mbox{\Hypertarget{classClassModel_ab229a1a8dacc1a892d3757965d6f1e3a}\label{classClassModel_ab229a1a8dacc1a892d3757965d6f1e3a}} 
 void {\bfseries save} ()
 \item 
-void \hyperlink{classClassModel_a4ef5baaf966305d2ebb44bf2c40ee533}{write\+Line\+To\+File} (const Q\+String \&filename, const Q\+String \&line)
-\begin{DoxyCompactList}\small\item\em Internal method to write a single line to a file. \end{DoxyCompactList}\item 
-void \hyperlink{classClassModel_af78dad5b5b8f214b5067fd1dd629b594}{write\+Lines\+To\+File} (const Q\+String \&filename, const Q\+String\+List \&lines)
+\mbox{\Hypertarget{classClassModel_a4ef5baaf966305d2ebb44bf2c40ee533}\label{classClassModel_a4ef5baaf966305d2ebb44bf2c40ee533}} 
+void {\bfseries write\+Line\+To\+File} (const Q\+String \&filename, const Q\+String \&line)
+\item 
+void \hyperlink{classClassModel_af443615d1dcb44d5345f1411e9822b25}{write\+Lines\+To\+File} (const Q\+String \&filename, \hyperlink{classLinkedList}{Linked\+List}$<$ Q\+String $>$ \&)
 \begin{DoxyCompactList}\small\item\em Internal method to write multiple lines to a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classClassModel_a3f55a12cc009fa4a06cd6c82d1ba2a25}\label{classClassModel_a3f55a12cc009fa4a06cd6c82d1ba2a25}} 
-std\+::string {\bfseries selected\+Class}
-\item 
 \mbox{\Hypertarget{classClassModel_a0fbc77cdbd9d9bc73720a83e21b36bc5}\label{classClassModel_a0fbc77cdbd9d9bc73720a83e21b36bc5}} 
 Q\+String {\bfseries current\+File\+Path}
 \item 
-\mbox{\Hypertarget{classClassModel_aa656a0e8e8f9e18a361b427700098405}\label{classClassModel_aa656a0e8e8f9e18a361b427700098405}} 
-Q\+String\+List {\bfseries classes}
+\mbox{\Hypertarget{classClassModel_ace0d48f097f2dd9423f6d0a8963f285d}\label{classClassModel_ace0d48f097f2dd9423f6d0a8963f285d}} 
+\hyperlink{classLinkedList}{Linked\+List}$<$ Q\+String $>$ {\bfseries classes}
+\item 
+\mbox{\Hypertarget{classClassModel_a889068a566bcefe28ef73c92aa40ce7c}\label{classClassModel_a889068a566bcefe28ef73c92aa40ce7c}} 
+Q\+String {\bfseries selected\+Class}
 \end{DoxyCompactItemize}
 
 
@@ -89,6 +90,51 @@ If there is no currently selected class file, the user is prompted by the browse
 {\em classname} & Name of the class to add. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classClassModel_a1fb7006db6a2aab398a7c82cab2da568}\label{classClassModel_a1fb7006db6a2aab398a7c82cab2da568}} 
+\index{Class\+Model@{Class\+Model}!browse@{browse}}
+\index{browse@{browse}!Class\+Model@{Class\+Model}}
+\subsubsection{\texorpdfstring{browse()}{browse()}}
+{\footnotesize\ttfamily void Class\+Model\+::browse (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{filepath }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classClassModel_a275d7d723cceff7cddea637e29bb5489}{Class\+Model\+::browse} Browse for a class file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classClassModel_ad2e5262948d7491cf1f8bfd305dff829}\label{classClassModel_ad2e5262948d7491cf1f8bfd305dff829}} 
+\index{Class\+Model@{Class\+Model}!create@{create}}
+\index{create@{create}!Class\+Model@{Class\+Model}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily void Class\+Model\+::create (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classClassModel_afb5c974408ff462e812df971588ea703}{Class\+Model\+::create} Creates a new class file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classClassModel_ab7ca25c9d73597d671bfbb1c34f92461}\label{classClassModel_ab7ca25c9d73597d671bfbb1c34f92461}} 
+\index{Class\+Model@{Class\+Model}!get\+Selected@{get\+Selected}}
+\index{get\+Selected@{get\+Selected}!Class\+Model@{Class\+Model}}
+\subsubsection{\texorpdfstring{get\+Selected()}{getSelected()}}
+{\footnotesize\ttfamily Q\+String Class\+Model\+::get\+Selected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the currently selected class. 
+
+If there is no class selected this function throws custom \hyperlink{classClassNotFoundError}{Class\+Not\+Found\+Error} exception.
+
+\begin{DoxyReturn}{Returns}
+Currently selected class name 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classClassModel_afe2266d404da4bab25bf193212fed198}\label{classClassModel_afe2266d404da4bab25bf193212fed198}} 
 \index{Class\+Model@{Class\+Model}!remove\+Class@{remove\+Class}}
 \index{remove\+Class@{remove\+Class}!Class\+Model@{Class\+Model}}
@@ -106,11 +152,28 @@ If there is no currently selected class file, the user is promted by the browse 
 {\em classname} & Name of the class to remove. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classClassModel_af78dad5b5b8f214b5067fd1dd629b594}\label{classClassModel_af78dad5b5b8f214b5067fd1dd629b594}} 
+\mbox{\Hypertarget{classClassModel_aa8c0739232fabe2dc589247155d4e49a}\label{classClassModel_aa8c0739232fabe2dc589247155d4e49a}} 
+\index{Class\+Model@{Class\+Model}!select@{select}}
+\index{select@{select}!Class\+Model@{Class\+Model}}
+\subsubsection{\texorpdfstring{select()}{select()}}
+{\footnotesize\ttfamily void Class\+Model\+::select (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{class\+Name }\end{DoxyParamCaption})}
+
+
+
+Sets the given class as selected class for annotating. 
+
+If the selected class is not present among currently loaded classes custom \hyperlink{classClassNotFoundError}{Class\+Not\+Found\+Error} is thrown.
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Name} & Name of the class to set as selected for annotating. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classClassModel_af443615d1dcb44d5345f1411e9822b25}\label{classClassModel_af443615d1dcb44d5345f1411e9822b25}} 
 \index{Class\+Model@{Class\+Model}!write\+Lines\+To\+File@{write\+Lines\+To\+File}}
 \index{write\+Lines\+To\+File@{write\+Lines\+To\+File}!Class\+Model@{Class\+Model}}
 \subsubsection{\texorpdfstring{write\+Lines\+To\+File()}{writeLinesToFile()}}
-{\footnotesize\ttfamily void Class\+Model\+::write\+Lines\+To\+File (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name,  }\item[{const Q\+String\+List \&}]{lines }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily void Class\+Model\+::write\+Lines\+To\+File (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name,  }\item[{\hyperlink{classLinkedList}{Linked\+List}$<$ Q\+String $>$ \&}]{lines }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -121,23 +184,6 @@ Internal method to write multiple lines to a file.
 {\em filename} & File name to write to. \\
 \hline
 {\em lines} & Lines to write. \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classClassModel_a4ef5baaf966305d2ebb44bf2c40ee533}\label{classClassModel_a4ef5baaf966305d2ebb44bf2c40ee533}} 
-\index{Class\+Model@{Class\+Model}!write\+Line\+To\+File@{write\+Line\+To\+File}}
-\index{write\+Line\+To\+File@{write\+Line\+To\+File}!Class\+Model@{Class\+Model}}
-\subsubsection{\texorpdfstring{write\+Line\+To\+File()}{writeLineToFile()}}
-{\footnotesize\ttfamily void Class\+Model\+::write\+Line\+To\+File (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name,  }\item[{const Q\+String \&}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Internal method to write a single line to a file. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em filename} & File name to write to. \\
-\hline
-{\em line} & Line to write. \\
 \hline
 \end{DoxyParams}
 

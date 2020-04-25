@@ -1,2 +1,5 @@
 <map id="ClassModel" name="ClassModel">
+<area shape="rect" id="node2" href="$classLinkedList.html" title="{LinkedList\&lt; QString \&gt;\n|&#45; len\l|+ LinkedList()\l+ ~LinkedList()\l+ isEmpty()\l+ copy()\l+ operator[]()\l+ insert()\l+ at()\l+ length()\l+ getIndex()\l+ contains()\land 6 more...\l&#45; nodeAt()\l&#45; quicksort()\l&#45; isSorted()\l}" alt="" coords="5,476,172,744"/>
+<area shape="rect" id="node3" href="$structLinkedList_1_1Node.html" title="{LinkedList\&lt; T \&gt;::Node\n|+ data\l|}" alt="" coords="26,5,194,83"/>
+<area shape="rect" id="node4" href="$classLinkedList.html" title="{LinkedList\&lt; T \&gt;\n|&#45; len\l|+ LinkedList()\l+ ~LinkedList()\l+ isEmpty()\l+ copy()\l+ operator[]()\l+ insert()\l+ at()\l+ length()\l+ getIndex()\l+ contains()\land 6 more...\l&#45; nodeAt()\l&#45; quicksort()\l&#45; isSorted()\l}" alt="" coords="133,145,260,413"/>
 </map>

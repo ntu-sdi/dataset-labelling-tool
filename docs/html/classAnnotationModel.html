@@ -87,6 +87,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a54f9ffa4151a1bdcaa1d5ab3dee87679"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnnotationModel.html#a54f9ffa4151a1bdcaa1d5ab3dee87679">browse</a> (const QString &amp;)</td></tr>
 <tr class="memdesc:a54f9ffa4151a1bdcaa1d5ab3dee87679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a way to enter path to annotation file as a parameter (QString).  <a href="#a54f9ffa4151a1bdcaa1d5ab3dee87679">More...</a><br /></td></tr>
 <tr class="separator:a54f9ffa4151a1bdcaa1d5ab3dee87679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acccb7d1577b24c289e43bc4f4cd7c92d"><td class="memItemLeft" align="right" valign="top"><a id="acccb7d1577b24c289e43bc4f4cd7c92d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnnotationModel.html#acccb7d1577b24c289e43bc4f4cd7c92d">load</a> ()</td></tr>
+<tr class="memdesc:acccb7d1577b24c289e43bc4f4cd7c92d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classAnnotationModel.html#acccb7d1577b24c289e43bc4f4cd7c92d" title="AnnotationModel::load Load annotations from the current file. ">AnnotationModel::load</a> Load annotations from the current file. <br /></td></tr>
+<tr class="separator:acccb7d1577b24c289e43bc4f4cd7c92d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ae0ad72d52d23ad24b611eb50f14708"><td class="memItemLeft" align="right" valign="top"><a id="a4ae0ad72d52d23ad24b611eb50f14708"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnnotationModel.html#a4ae0ad72d52d23ad24b611eb50f14708">save</a> ()</td></tr>
+<tr class="memdesc:a4ae0ad72d52d23ad24b611eb50f14708"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classAnnotationModel.html#a4ae0ad72d52d23ad24b611eb50f14708" title="AnnotationModel::save Saves annotations to the current file. ">AnnotationModel::save</a> Saves annotations to the current file. <br /></td></tr>
+<tr class="separator:a4ae0ad72d52d23ad24b611eb50f14708"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4c6850c8d0f704c3bf5bef486992690"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnnotationModel.html#ac4c6850c8d0f704c3bf5bef486992690">create</a> ()</td></tr>
 <tr class="memdesc:ac4c6850c8d0f704c3bf5bef486992690"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prompts the user for a annotation file name. Creates a file using this name and path.  <a href="#ac4c6850c8d0f704c3bf5bef486992690">More...</a><br /></td></tr>
 <tr class="separator:ac4c6850c8d0f704c3bf5bef486992690"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -99,18 +107,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>add</b> (const QStrin
 <tr class="memitem:a58af7fa7e9af062292bcb0ce531f95a6"><td class="memItemLeft" align="right" valign="top"><a id="a58af7fa7e9af062292bcb0ce531f95a6"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>add</b> (const QString &amp;imageFilePath, const QString &amp;className, <a class="el" href="classLinkedList.html">LinkedList</a>&lt; QPair&lt; int, int &gt;&gt; &amp;coordinates)</td></tr>
 <tr class="separator:a58af7fa7e9af062292bcb0ce531f95a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a242d12f3043434463c061b4a38d27c90"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, <a class="el" href="classLinkedList.html">Shape</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnnotationModel.html#a242d12f3043434463c061b4a38d27c90">get</a> (const QString &amp;)</td></tr>
-<tr class="memdesc:a242d12f3043434463c061b4a38d27c90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a way to obtain annotations for a given image from currently loaded annotation file.  <a href="#a242d12f3043434463c061b4a38d27c90">More...</a><br /></td></tr>
-<tr class="separator:a242d12f3043434463c061b4a38d27c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afed52e5d48da396919f02ed88c94921a"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, <a class="el" href="classLinkedList.html">Shape</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnnotationModel.html#afed52e5d48da396919f02ed88c94921a">get</a> (const QString &amp;, const QString &amp;)</td></tr>
-<tr class="memdesc:afed52e5d48da396919f02ed88c94921a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a way to obtain annotations for a given image from a specified annotation file.  <a href="#afed52e5d48da396919f02ed88c94921a">More...</a><br /></td></tr>
-<tr class="separator:afed52e5d48da396919f02ed88c94921a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94c840624e8ad25d8c7d5abf1c0e255b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classLinkedList.html">LinkedList</a>&lt; QPair&lt; QString, <a class="el" href="classLinkedList.html">Shape</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnnotationModel.html#a94c840624e8ad25d8c7d5abf1c0e255b">get</a> (const QString &amp;)</td></tr>
+<tr class="memdesc:a94c840624e8ad25d8c7d5abf1c0e255b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a way to obtain annotations for a given image from currently loaded annotation file.  <a href="#a94c840624e8ad25d8c7d5abf1c0e255b">More...</a><br /></td></tr>
+<tr class="separator:a94c840624e8ad25d8c7d5abf1c0e255b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a880c414938859f37f7690d90ac1ebe10"><td class="memItemLeft" align="right" valign="top"><a id="a880c414938859f37f7690d90ac1ebe10"></a>
+QMap&lt; QString, <a class="el" href="classLinkedList.html">Shape</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> (const QString &amp;, const QString &amp;)</td></tr>
+<tr class="separator:a880c414938859f37f7690d90ac1ebe10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a204571a62dfdc60a405528ddc1db2a61"><td class="memItemLeft" align="right" valign="top"><a id="a204571a62dfdc60a405528ddc1db2a61"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>currentFilePath</b></td></tr>
 <tr class="separator:a204571a62dfdc60a405528ddc1db2a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee0be27919046fe9a7009023c15d99a9"><td class="memItemLeft" align="right" valign="top"><a id="aee0be27919046fe9a7009023c15d99a9"></a>
+QJsonDocument&#160;</td><td class="memItemRight" valign="bottom"><b>loadedAnnotations</b></td></tr>
+<tr class="separator:aee0be27919046fe9a7009023c15d99a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Model, which is responsible for accessing annotation data. </p>
@@ -209,14 +220,14 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>currentFilePath</b
 
 </div>
 </div>
-<a id="a242d12f3043434463c061b4a38d27c90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a242d12f3043434463c061b4a38d27c90">&#9670;&nbsp;</a></span>get() <span class="overload">[1/2]</span></h2>
+<a id="a94c840624e8ad25d8c7d5abf1c0e255b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94c840624e8ad25d8c7d5abf1c0e255b">&#9670;&nbsp;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QMap&lt; QString, <a class="el" href="classLinkedList.html">LinkedList</a>&lt; QPair&lt; int, int &gt; &gt; &gt; AnnotationModel::get </td>
+          <td class="memname"><a class="el" href="classLinkedList.html">LinkedList</a>&lt; QPair&lt; QString, <a class="el" href="classLinkedList.html">Shape</a> &gt; &gt; AnnotationModel::get </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;&#160;</td>
           <td class="paramname"><em>imageName</em></td><td>)</td>
@@ -230,45 +241,6 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>currentFilePath</b
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">imageName</td><td>QString name of the image user wants to obtain. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>QMap of annotations, key being class name and value being <a class="el" href="classLinkedList.html">LinkedList</a> of QPair. </dd></dl>
-
-</div>
-</div>
-<a id="afed52e5d48da396919f02ed88c94921a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afed52e5d48da396919f02ed88c94921a">&#9670;&nbsp;</a></span>get() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QMap&lt; QString, <a class="el" href="classLinkedList.html">LinkedList</a>&lt; QPair&lt; int, int &gt; &gt; &gt; AnnotationModel::get </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>imageName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>filePath</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Provides a way to obtain annotations for a given image from a specified annotation file. </p>
-<p>Function searches for all annotations which are made for image name provided in a parameter. If provided image is not annotated in currenlly loaded annotation file, custom <a class="el" href="classImageNotAnnotatedYet.html">ImageNotAnnotatedYet</a> exception is thrown.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">imageName</td><td>QString name of the image user wants to obtain. </td></tr>
-    <tr><td class="paramname">filePath</td><td>QString path to annotation file where annotation for the image should be looked for. </td></tr>
   </table>
   </dd>
 </dl>

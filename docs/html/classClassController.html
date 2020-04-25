@@ -73,7 +73,10 @@ Collaboration diagram for ClassController:</div>
 <div class="dyncontent">
 <div class="center"><img src="classClassController__coll__graph.png" border="0" usemap="#ClassController_coll__map" alt="Collaboration graph"/></div>
 <map name="ClassController_coll__map" id="ClassController_coll__map">
-<area shape="rect" id="node2" href="classClassModel.html" title="{ClassModel\n|&#45; selectedClass\l&#45; currentFilePath\l&#45; classes\l|+ browse()\l+ browse()\l+ create()\l+ create()\l+ addClass()\l+ removeClass()\l+ select()\l+ getSelected()\l+ getAll()\l+ getCurrentFilePath()\l&#45; save()\l&#45; writeLineToFile()\l&#45; writeLinesToFile()\l}" alt="" coords="5,5,156,288"/>
+<area shape="rect" id="node2" href="classClassModel.html" title="{ClassModel\n|&#45; currentFilePath\l&#45; selectedClass\l|+ browse()\l+ browse()\l+ create()\l+ create()\l+ addClass()\l+ removeClass()\l+ select()\l+ clear()\l+ getSelected()\l+ getAll()\l+ getCurrentFilePath()\l&#45; save()\l&#45; writeLineToFile()\l&#45; writeLinesToFile()\l}" alt="" coords="5,807,172,1089"/>
+<area shape="rect" id="node3" href="classLinkedList.html" title="{LinkedList\&lt; QString \&gt;\n|&#45; len\l|+ LinkedList()\l+ ~LinkedList()\l+ isEmpty()\l+ copy()\l+ operator[]()\l+ insert()\l+ at()\l+ length()\l+ getIndex()\l+ contains()\land 6 more...\l&#45; nodeAt()\l&#45; quicksort()\l&#45; isSorted()\l}" alt="" coords="5,476,172,744"/>
+<area shape="rect" id="node4" href="structLinkedList_1_1Node.html" title="{LinkedList\&lt; T \&gt;::Node\n|+ data\l|}" alt="" coords="26,5,194,83"/>
+<area shape="rect" id="node5" href="classLinkedList.html" title="{LinkedList\&lt; T \&gt;\n|&#45; len\l|+ LinkedList()\l+ ~LinkedList()\l+ isEmpty()\l+ copy()\l+ operator[]()\l+ insert()\l+ at()\l+ length()\l+ getIndex()\l+ contains()\land 6 more...\l&#45; nodeAt()\l&#45; quicksort()\l&#45; isSorted()\l}" alt="" coords="133,145,260,413"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -96,19 +99,22 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>sortLoaded</b> ()</td
 <tr class="memitem:abd51fbe1d80458b68f2023742bb2723a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassController.html#abd51fbe1d80458b68f2023742bb2723a">add</a> (const QString &amp;)</td></tr>
 <tr class="memdesc:abd51fbe1d80458b68f2023742bb2723a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new class, and updates the view to reflect that.  <a href="#abd51fbe1d80458b68f2023742bb2723a">More...</a><br /></td></tr>
 <tr class="separator:abd51fbe1d80458b68f2023742bb2723a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18ab1138694d7ec3cb20ae6093491584"><td class="memItemLeft" align="right" valign="top"><a id="a18ab1138694d7ec3cb20ae6093491584"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>select</b> (const std::string &amp;)</td></tr>
-<tr class="separator:a18ab1138694d7ec3cb20ae6093491584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98a04b6200241406efd95504a2f5fa29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassController.html#a98a04b6200241406efd95504a2f5fa29">select</a> (const QString &amp;)</td></tr>
+<tr class="memdesc:a98a04b6200241406efd95504a2f5fa29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funtion delegates request to model in order to set provided class as selected class for annotating the image.  <a href="#a98a04b6200241406efd95504a2f5fa29">More...</a><br /></td></tr>
+<tr class="separator:a98a04b6200241406efd95504a2f5fa29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8d209c4e52899c11020f6a3b35f6416"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassController.html#ac8d209c4e52899c11020f6a3b35f6416">remove</a> (const QString &amp;)</td></tr>
 <tr class="memdesc:ac8d209c4e52899c11020f6a3b35f6416"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a class, and updates the view to reflect that.  <a href="#ac8d209c4e52899c11020f6a3b35f6416">More...</a><br /></td></tr>
 <tr class="separator:ac8d209c4e52899c11020f6a3b35f6416"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2d0c1757a9f67b7097ff6f4e38cd842"><td class="memItemLeft" align="right" valign="top"><a id="af2d0c1757a9f67b7097ff6f4e38cd842"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>getSelected</b> ()</td></tr>
-<tr class="separator:af2d0c1757a9f67b7097ff6f4e38cd842"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a286317364cc2fddb8c5c2419f38134"><td class="memItemLeft" align="right" valign="top"><a id="a1a286317364cc2fddb8c5c2419f38134"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassController.html#a1a286317364cc2fddb8c5c2419f38134">updateView</a> ()</td></tr>
 <tr class="memdesc:a1a286317364cc2fddb8c5c2419f38134"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the list of classes in the GUI and refills them from the currently loaded classes. <br /></td></tr>
 <tr class="separator:a1a286317364cc2fddb8c5c2419f38134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7296a8879b4aa942920d1fa77a146d5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassController.html#a7296a8879b4aa942920d1fa77a146d5b">updateView</a> (const QString &amp;)</td></tr>
+<tr class="memdesc:a7296a8879b4aa942920d1fa77a146d5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates a class pane in the user interface, based on the sort option provided.  <a href="#a7296a8879b4aa942920d1fa77a146d5b">More...</a><br /></td></tr>
+<tr class="separator:a7296a8879b4aa942920d1fa77a146d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9132aaebc5cbc174e6fc3c3a1d46c695"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassController.html#a9132aaebc5cbc174e6fc3c3a1d46c695">getSelected</a> ()</td></tr>
+<tr class="memdesc:a9132aaebc5cbc174e6fc3c3a1d46c695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns selected class from the model.  <a href="#a9132aaebc5cbc174e6fc3c3a1d46c695">More...</a><br /></td></tr>
+<tr class="separator:a9132aaebc5cbc174e6fc3c3a1d46c695"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -186,6 +192,26 @@ Ui_MainView&#160;</td><td class="memItemRight" valign="bottom"><b>ui</b></td></t
 
 </div>
 </div>
+<a id="a9132aaebc5cbc174e6fc3c3a1d46c695"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9132aaebc5cbc174e6fc3c3a1d46c695">&#9670;&nbsp;</a></span>getSelected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ClassController::getSelected </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns selected class from the model. </p>
+<dl class="section return"><dt>Returns</dt><dd>Selected class </dd></dl>
+
+</div>
+</div>
 <a id="ac8d209c4e52899c11020f6a3b35f6416"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac8d209c4e52899c11020f6a3b35f6416">&#9670;&nbsp;</a></span>remove()</h2>
 
@@ -206,6 +232,58 @@ Ui_MainView&#160;</td><td class="memItemRight" valign="bottom"><b>ui</b></td></t
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">classname</td><td>Name of the class to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a98a04b6200241406efd95504a2f5fa29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98a04b6200241406efd95504a2f5fa29">&#9670;&nbsp;</a></span>select()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClassController::select </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>className</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funtion delegates request to model in order to set provided class as selected class for annotating the image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">className</td><td>Name of the class to set as selected. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7296a8879b4aa942920d1fa77a146d5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7296a8879b4aa942920d1fa77a146d5b">&#9670;&nbsp;</a></span>updateView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClassController::updateView </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>sortOption</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates a class pane in the user interface, based on the sort option provided. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sortOption</td><td>Sort option to sort the class pane with </td></tr>
   </table>
   </dd>
 </dl>

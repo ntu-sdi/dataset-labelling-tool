@@ -6,11 +6,12 @@
 
 
 
-Collaboration diagram for Image\+Model\+:\nopagebreak
+Collaboration diagram for Image\+Model\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=172pt]{classImageModel__coll__graph}
+\includegraphics[width=201pt]{classImageModel__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -27,6 +28,8 @@ long \hyperlink{classImageModel_a38c8d5868b7a8f8acca235c4383c5102}{get\+File\+Si
 \begin{DoxyCompactList}\small\item\em Provides a way to read file size of a given image file. \end{DoxyCompactList}\item 
 Q\+String\+List \hyperlink{classImageModel_a498623ffa9423fd249c62467c01edeee}{get\+All} ()
 \begin{DoxyCompactList}\small\item\em Returns all loaded images in the \hyperlink{classImageModel}{Image\+Model}. \end{DoxyCompactList}\item 
+Q\+Map$<$ Q\+String, Q\+File\+Info $>$ \hyperlink{classImageModel_a8256d5e2baa8833788bb63043e936137}{get\+All\+With\+Details} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classImageModel_a8256d5e2baa8833788bb63043e936137}{Image\+Model\+::get\+All\+With\+Details} Returns all loaded images with their details. \end{DoxyCompactList}\item 
 Q\+Image \hyperlink{classImageModel_ac0021794e5694bd76c76349b8af96428}{get\+Image} (const Q\+String \&)
 \begin{DoxyCompactList}\small\item\em Provides a way to get an actual image from the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
@@ -69,6 +72,19 @@ Returns all loaded images in the \hyperlink{classImageModel}{Image\+Model}.
 \begin{DoxyReturn}{Returns}
 Q\+String\+List for every loaded image 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classImageModel_a8256d5e2baa8833788bb63043e936137}\label{classImageModel_a8256d5e2baa8833788bb63043e936137}} 
+\index{Image\+Model@{Image\+Model}!get\+All\+With\+Details@{get\+All\+With\+Details}}
+\index{get\+All\+With\+Details@{get\+All\+With\+Details}!Image\+Model@{Image\+Model}}
+\subsubsection{\texorpdfstring{get\+All\+With\+Details()}{getAllWithDetails()}}
+{\footnotesize\ttfamily Q\+Map$<$ Q\+String, Q\+File\+Info $>$ Image\+Model\+::get\+All\+With\+Details (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classImageModel_a8256d5e2baa8833788bb63043e936137}{Image\+Model\+::get\+All\+With\+Details} Returns all loaded images with their details. 
+
+\begin{DoxyReturn}{Returns}
+Q\+Map$<$\+Q\+String, Q\+File\+Info$>$ 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classImageModel_a38c8d5868b7a8f8acca235c4383c5102}\label{classImageModel_a38c8d5868b7a8f8acca235c4383c5102}} 
 \index{Image\+Model@{Image\+Model}!get\+File\+Size@{get\+File\+Size}}
 \index{get\+File\+Size@{get\+File\+Size}!Image\+Model@{Image\+Model}}
@@ -81,7 +97,7 @@ Provides a way to read file size of a given image file.
 
 
 \begin{DoxyParams}{Parameters}
-{\em Name} & of a image file \\
+{\em Name} & of a image file\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -101,7 +117,7 @@ Gets name of the image from \hyperlink{classImageController}{Image\+Controller},
 
 
 \begin{DoxyParams}{Parameters}
-{\em Name} & of a image file \\
+{\em Name} & of a image file\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -119,7 +135,7 @@ Provides a way to read resolution of a given image file.
 
 
 \begin{DoxyParams}{Parameters}
-{\em Name} & of a image file \\
+{\em Name} & of a image file\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

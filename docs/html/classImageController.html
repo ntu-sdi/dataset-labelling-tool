@@ -74,7 +74,10 @@ Collaboration diagram for ImageController:</div>
 <div class="dyncontent">
 <div class="center"><img src="classImageController__coll__graph.png" border="0" usemap="#ImageController_coll__map" alt="Collaboration graph"/></div>
 <map name="ImageController_coll__map" id="ImageController_coll__map">
-<area shape="rect" id="node2" href="classImageModel.html" title="{ImageModel\n|&#45; loadedImages\l|+ browseFolder()\l+ browseFolder()\l+ getResolution()\l+ getFileSize()\l+ getAll()\l+ getImage()\l}" alt="" coords="11,5,134,156"/>
+<area shape="rect" id="node2" href="classLinkedList.html" title="{LinkedList\&lt; QPair\&lt;\l QString, QVector\&lt; QPointF \&gt; \&gt; \&gt;\n|&#45; len\l|+ LinkedList()\l+ ~LinkedList()\l+ isEmpty()\l+ copy()\l+ operator[]()\l+ insert()\l+ at()\l+ length()\l+ getIndex()\l+ contains()\land 6 more...\l&#45; nodeAt()\l&#45; quicksort()\l&#45; isSorted()\l}" alt="" coords="5,491,248,773"/>
+<area shape="rect" id="node3" href="structLinkedList_1_1Node.html" title="{LinkedList\&lt; T \&gt;::Node\n|+ data\l|}" alt="" coords="64,5,232,83"/>
+<area shape="rect" id="node4" href="classLinkedList.html" title="{LinkedList\&lt; T \&gt;\n|&#45; len\l|+ LinkedList()\l+ ~LinkedList()\l+ isEmpty()\l+ copy()\l+ operator[]()\l+ insert()\l+ at()\l+ length()\l+ getIndex()\l+ contains()\land 6 more...\l&#45; nodeAt()\l&#45; quicksort()\l&#45; isSorted()\l}" alt="" coords="171,145,298,413"/>
+<area shape="rect" id="node5" href="classImageModel.html" title="{ImageModel\n|&#45; loadedImages\l|+ browseFolder()\l+ browseFolder()\l+ getResolution()\l+ getFileSize()\l+ getAll()\l+ getAllWithDetails()\l+ getImage()\l}" alt="" coords="273,549,434,715"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -83,6 +86,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a317e49c29f50578a1001b73749151e3a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageController.html#a317e49c29f50578a1001b73749151e3a">ImageController</a> (Ui_MainView &amp;, <a class="el" href="classImageModel.html">ImageModel</a> &amp;)</td></tr>
 <tr class="memdesc:a317e49c29f50578a1001b73749151e3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="classImageController.html">ImageController</a>, which handles business logic, related to the image files.  <a href="#a317e49c29f50578a1001b73749151e3a">More...</a><br /></td></tr>
 <tr class="separator:a317e49c29f50578a1001b73749151e3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a300727ff5e30b19fcc0102427fdb30"><td class="memItemLeft" align="right" valign="top"><a id="a3a300727ff5e30b19fcc0102427fdb30"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageController.html#a3a300727ff5e30b19fcc0102427fdb30">updateView</a> ()</td></tr>
+<tr class="memdesc:a3a300727ff5e30b19fcc0102427fdb30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the view based on the sort option selected in the gui. <br /></td></tr>
+<tr class="separator:a3a300727ff5e30b19fcc0102427fdb30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a351762bc38206af05dc21dc6e183b1c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageController.html#a351762bc38206af05dc21dc6e183b1c3">updateView</a> (const QString &amp;, bool=false)</td></tr>
+<tr class="memdesc:a351762bc38206af05dc21dc6e183b1c3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classImageController.html#a3a300727ff5e30b19fcc0102427fdb30" title="Updates the view based on the sort option selected in the gui. ">ImageController::updateView</a> Updates the view with the sorted and searched list of images.  <a href="#a351762bc38206af05dc21dc6e183b1c3">More...</a><br /></td></tr>
+<tr class="separator:a351762bc38206af05dc21dc6e183b1c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a203590172b061a2e20d09dc9f8f060b7"><td class="memItemLeft" align="right" valign="top"><a id="a203590172b061a2e20d09dc9f8f060b7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageController.html#a203590172b061a2e20d09dc9f8f060b7">browseFolder</a> ()</td></tr>
 <tr class="memdesc:a203590172b061a2e20d09dc9f8f060b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Browses for a new folder containing images, then updates the view to reflect that. <br /></td></tr>
@@ -93,19 +103,48 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>searchLoaded</b> (con
 <tr class="memitem:aa27c122f5fa43ed32984077cc0f1871a"><td class="memItemLeft" align="right" valign="top"><a id="aa27c122f5fa43ed32984077cc0f1871a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>sortLoaded</b> ()</td></tr>
 <tr class="separator:aa27c122f5fa43ed32984077cc0f1871a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81d44568235778fe6d5dc14fb377499a"><td class="memItemLeft" align="right" valign="top"><a id="a81d44568235778fe6d5dc14fb377499a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>select</b> (const QString &amp;)</td></tr>
+<tr class="memitem:a81d44568235778fe6d5dc14fb377499a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageController.html#a81d44568235778fe6d5dc14fb377499a">select</a> (const QString &amp;)</td></tr>
+<tr class="memdesc:a81d44568235778fe6d5dc14fb377499a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classImageController.html#a81d44568235778fe6d5dc14fb377499a" title="ImageController::select Updates the information for the selected file. ">ImageController::select</a> Updates the information for the selected file.  <a href="#a81d44568235778fe6d5dc14fb377499a">More...</a><br /></td></tr>
 <tr class="separator:a81d44568235778fe6d5dc14fb377499a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f5976d87977aa1cda7b5a9a7ad0f03b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageController.html#a3f5976d87977aa1cda7b5a9a7ad0f03b">open</a> (const QString &amp;)</td></tr>
 <tr class="memdesc:a3f5976d87977aa1cda7b5a9a7ad0f03b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a filename from the MainControler, opens image and displays it in the <a class="el" href="classMainView.html">MainView</a>.  <a href="#a3f5976d87977aa1cda7b5a9a7ad0f03b">More...</a><br /></td></tr>
 <tr class="separator:a3f5976d87977aa1cda7b5a9a7ad0f03b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaade0712de089f06a9a267399004cab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageController.html#adaade0712de089f06a9a267399004cab">addPoint</a> (const QPoint &amp;)</td></tr>
+<tr class="memdesc:adaade0712de089f06a9a267399004cab"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classImageController.html#adaade0712de089f06a9a267399004cab" title="ImageController::addPoint Adds a point to the annotation. ">ImageController::addPoint</a> Adds a point to the annotation.  <a href="#adaade0712de089f06a9a267399004cab">More...</a><br /></td></tr>
+<tr class="separator:adaade0712de089f06a9a267399004cab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a399eff924a1b3b7cc0034ea1a0face7e"><td class="memItemLeft" align="right" valign="top"><a id="a399eff924a1b3b7cc0034ea1a0face7e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageController.html#a399eff924a1b3b7cc0034ea1a0face7e">cancelShape</a> ()</td></tr>
+<tr class="memdesc:a399eff924a1b3b7cc0034ea1a0face7e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classImageController.html#a399eff924a1b3b7cc0034ea1a0face7e" title="ImageController::cancelShape Cancels the currently drawn shape. ">ImageController::cancelShape</a> Cancels the currently drawn shape. <br /></td></tr>
+<tr class="separator:a399eff924a1b3b7cc0034ea1a0face7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaabc0506bd421fc0abf5b06ffc1c7032"><td class="memItemLeft" align="right" valign="top">QVector&lt; QPointF &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageController.html#aaabc0506bd421fc0abf5b06ffc1c7032">finishShape</a> (const QString &amp;)</td></tr>
+<tr class="memdesc:aaabc0506bd421fc0abf5b06ffc1c7032"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classImageController.html#aaabc0506bd421fc0abf5b06ffc1c7032" title="ImageController::finishShape Finishes the current shape by adding the last side. ">ImageController::finishShape</a> Finishes the current shape by adding the last side.  <a href="#aaabc0506bd421fc0abf5b06ffc1c7032">More...</a><br /></td></tr>
+<tr class="separator:aaabc0506bd421fc0abf5b06ffc1c7032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9c9f284b985c7899a6bc3cf03e49191"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageController.html#af9c9f284b985c7899a6bc3cf03e49191">setAnnotations</a> (<a class="el" href="classLinkedList.html">LinkedList</a>&lt; QPair&lt; QString, <a class="el" href="classLinkedList.html">LinkedList</a>&lt; QPair&lt; int, int &gt;&gt;&gt;&gt;)</td></tr>
+<tr class="memdesc:af9c9f284b985c7899a6bc3cf03e49191"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classImageController.html#af9c9f284b985c7899a6bc3cf03e49191" title="ImageController::setAnnotations. ">ImageController::setAnnotations</a>.  <a href="#af9c9f284b985c7899a6bc3cf03e49191">More...</a><br /></td></tr>
+<tr class="separator:af9c9f284b985c7899a6bc3cf03e49191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f225db05c8ec80017a05494ada72974"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageController.html#a5f225db05c8ec80017a05494ada72974">getCurrentFileName</a> ()</td></tr>
+<tr class="memdesc:a5f225db05c8ec80017a05494ada72974"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classImageController.html#a5f225db05c8ec80017a05494ada72974" title="ImageController::getCurrentFileName Returns the currently opened file name. ">ImageController::getCurrentFileName</a> Returns the currently opened file name.  <a href="#a5f225db05c8ec80017a05494ada72974">More...</a><br /></td></tr>
+<tr class="separator:a5f225db05c8ec80017a05494ada72974"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a3a300727ff5e30b19fcc0102427fdb30"><td class="memItemLeft" align="right" valign="top"><a id="a3a300727ff5e30b19fcc0102427fdb30"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageController.html#a3a300727ff5e30b19fcc0102427fdb30">updateView</a> ()</td></tr>
-<tr class="memdesc:a3a300727ff5e30b19fcc0102427fdb30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the list of loaded images in the GUI and refills them from the currently loaded images. <br /></td></tr>
-<tr class="separator:a3a300727ff5e30b19fcc0102427fdb30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f5f89e006b03028200798cc9e550dee"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageController.html#a6f5f89e006b03028200798cc9e550dee">mapToImage</a> (QPoint)</td></tr>
+<tr class="memdesc:a6f5f89e006b03028200798cc9e550dee"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classImageController.html#a6f5f89e006b03028200798cc9e550dee" title="ImageController::mapToImage Map GraphicsView coordinates to image coordinates. ">ImageController::mapToImage</a> Map <a class="el" href="classGraphicsView.html">GraphicsView</a> coordinates to image coordinates.  <a href="#a6f5f89e006b03028200798cc9e550dee">More...</a><br /></td></tr>
+<tr class="separator:a6f5f89e006b03028200798cc9e550dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d1362696c9b966724a4f2ac51e44db8"><td class="memItemLeft" align="right" valign="top"><a id="a7d1362696c9b966724a4f2ac51e44db8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageController.html#a7d1362696c9b966724a4f2ac51e44db8">drawAnnotations</a> ()</td></tr>
+<tr class="memdesc:a7d1362696c9b966724a4f2ac51e44db8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classImageController.html#a7d1362696c9b966724a4f2ac51e44db8" title="ImageController::drawAnnotations Adds annotations to the GraphicsView. ">ImageController::drawAnnotations</a> Adds annotations to the <a class="el" href="classGraphicsView.html">GraphicsView</a>. <br /></td></tr>
+<tr class="separator:a7d1362696c9b966724a4f2ac51e44db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab25fda433092c9b6c758869a34c8813c"><td class="memItemLeft" align="right" valign="top"><a id="ab25fda433092c9b6c758869a34c8813c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageController.html#ab25fda433092c9b6c758869a34c8813c">setDrawingSize</a> ()</td></tr>
+<tr class="memdesc:ab25fda433092c9b6c758869a34c8813c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classImageController.html#ab25fda433092c9b6c758869a34c8813c" title="ImageController::setDrawingSize Set annotation drawing width proportional to the image size...">ImageController::setDrawingSize</a> Set annotation drawing width proportional to the image size. <br /></td></tr>
+<tr class="separator:ab25fda433092c9b6c758869a34c8813c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa34adc44b0ff9719cc998bc89d3bf5b0"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageController.html#aa34adc44b0ff9719cc998bc89d3bf5b0">getTextPos</a> (QVector&lt; QPointF &gt;, qreal, qreal)</td></tr>
+<tr class="memdesc:aa34adc44b0ff9719cc998bc89d3bf5b0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classImageController.html#aa34adc44b0ff9719cc998bc89d3bf5b0" title="ImageController::getTextPos Calculates a position for the label. ">ImageController::getTextPos</a> Calculates a position for the label.  <a href="#aa34adc44b0ff9719cc998bc89d3bf5b0">More...</a><br /></td></tr>
+<tr class="separator:aa34adc44b0ff9719cc998bc89d3bf5b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4980cd42b6086ec8c4647e0043864b40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageController.html#a4980cd42b6086ec8c4647e0043864b40">drawLabel</a> (QString, QVector&lt; QPointF &gt;)</td></tr>
+<tr class="memdesc:a4980cd42b6086ec8c4647e0043864b40"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classImageController.html#a4980cd42b6086ec8c4647e0043864b40" title="ImageController::drawLabel Add a styled label to the scene. ">ImageController::drawLabel</a> Add a styled label to the scene.  <a href="#a4980cd42b6086ec8c4647e0043864b40">More...</a><br /></td></tr>
+<tr class="separator:a4980cd42b6086ec8c4647e0043864b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -115,6 +154,30 @@ Ui_MainView&#160;</td><td class="memItemRight" valign="bottom"><b>ui</b></td></t
 <tr class="memitem:a7b83dbab8de169f4c1d394a72280aec5"><td class="memItemLeft" align="right" valign="top"><a id="a7b83dbab8de169f4c1d394a72280aec5"></a>
 <a class="el" href="classImageModel.html">ImageModel</a>&#160;</td><td class="memItemRight" valign="bottom"><b>model</b></td></tr>
 <tr class="separator:a7b83dbab8de169f4c1d394a72280aec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3389aebb69eca6fc69b6e8941833838c"><td class="memItemLeft" align="right" valign="top"><a id="a3389aebb69eca6fc69b6e8941833838c"></a>
+QGraphicsScene *&#160;</td><td class="memItemRight" valign="bottom"><b>scene</b></td></tr>
+<tr class="separator:a3389aebb69eca6fc69b6e8941833838c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbe3841123ea72ac5908481aa1a8bb78"><td class="memItemLeft" align="right" valign="top"><a id="abbe3841123ea72ac5908481aa1a8bb78"></a>
+QVector&lt; QPointF &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>points</b></td></tr>
+<tr class="separator:abbe3841123ea72ac5908481aa1a8bb78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65207ea07bfafb60210dcaedba508613"><td class="memItemLeft" align="right" valign="top"><a id="a65207ea07bfafb60210dcaedba508613"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>currentFileName</b></td></tr>
+<tr class="separator:a65207ea07bfafb60210dcaedba508613"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ceb4137ecb9d9e768da75721fbf34f1"><td class="memItemLeft" align="right" valign="top"><a id="a9ceb4137ecb9d9e768da75721fbf34f1"></a>
+QPen&#160;</td><td class="memItemRight" valign="bottom"><b>pen</b></td></tr>
+<tr class="separator:a9ceb4137ecb9d9e768da75721fbf34f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6955d96d23c8077d3d4ec6bea43c582"><td class="memItemLeft" align="right" valign="top"><a id="aa6955d96d23c8077d3d4ec6bea43c582"></a>
+QFont&#160;</td><td class="memItemRight" valign="bottom"><b>font</b></td></tr>
+<tr class="separator:aa6955d96d23c8077d3d4ec6bea43c582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89b0d15d554d591287eaa4e467d9846d"><td class="memItemLeft" align="right" valign="top"><a id="a89b0d15d554d591287eaa4e467d9846d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>imageHeight</b></td></tr>
+<tr class="separator:a89b0d15d554d591287eaa4e467d9846d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5987d06965f6073f2b32f8e4a1797791"><td class="memItemLeft" align="right" valign="top"><a id="a5987d06965f6073f2b32f8e4a1797791"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>imageWidth</b></td></tr>
+<tr class="separator:a5987d06965f6073f2b32f8e4a1797791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62172cc78d8977b0d45b69c458ffafc7"><td class="memItemLeft" align="right" valign="top"><a id="a62172cc78d8977b0d45b69c458ffafc7"></a>
+<a class="el" href="classLinkedList.html">LinkedList</a>&lt; QPair&lt; QString, QVector&lt; QPointF &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>annotations</b></td></tr>
+<tr class="separator:a62172cc78d8977b0d45b69c458ffafc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Sub-controller, which gets delegated tasks, relating to loading, storing and updating images. Communicates directly with the <a class="el" href="classImageModel.html">ImageModel</a>. </p>
@@ -157,6 +220,212 @@ Ui_MainView&#160;</td><td class="memItemRight" valign="bottom"><b>ui</b></td></t
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="adaade0712de089f06a9a267399004cab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaade0712de089f06a9a267399004cab">&#9670;&nbsp;</a></span>addPoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageController::addPoint </td>
+          <td>(</td>
+          <td class="paramtype">const QPoint &amp;&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classImageController.html#adaade0712de089f06a9a267399004cab" title="ImageController::addPoint Adds a point to the annotation. ">ImageController::addPoint</a> Adds a point to the annotation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4980cd42b6086ec8c4647e0043864b40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4980cd42b6086ec8c4647e0043864b40">&#9670;&nbsp;</a></span>drawLabel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageController::drawLabel </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>content</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QVector&lt; QPointF &gt;&#160;</td>
+          <td class="paramname"><em>shape</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classImageController.html#a4980cd42b6086ec8c4647e0043864b40" title="ImageController::drawLabel Add a styled label to the scene. ">ImageController::drawLabel</a> Add a styled label to the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">content</td><td></td></tr>
+    <tr><td class="paramname">shape</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaabc0506bd421fc0abf5b06ffc1c7032"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaabc0506bd421fc0abf5b06ffc1c7032">&#9670;&nbsp;</a></span>finishShape()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt; QPointF &gt; ImageController::finishShape </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>className</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classImageController.html#aaabc0506bd421fc0abf5b06ffc1c7032" title="ImageController::finishShape Finishes the current shape by adding the last side. ">ImageController::finishShape</a> Finishes the current shape by adding the last side. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">className</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>QVector&lt;QPointF&gt; </dd></dl>
+
+</div>
+</div>
+<a id="a5f225db05c8ec80017a05494ada72974"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f225db05c8ec80017a05494ada72974">&#9670;&nbsp;</a></span>getCurrentFileName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ImageController::getCurrentFileName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classImageController.html#a5f225db05c8ec80017a05494ada72974" title="ImageController::getCurrentFileName Returns the currently opened file name. ">ImageController::getCurrentFileName</a> Returns the currently opened file name. </p>
+<dl class="section return"><dt>Returns</dt><dd>QString </dd></dl>
+
+</div>
+</div>
+<a id="aa34adc44b0ff9719cc998bc89d3bf5b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa34adc44b0ff9719cc998bc89d3bf5b0">&#9670;&nbsp;</a></span>getTextPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF ImageController::getTextPos </td>
+          <td>(</td>
+          <td class="paramtype">QVector&lt; QPointF &gt;&#160;</td>
+          <td class="paramname"><em>points</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qreal&#160;</td>
+          <td class="paramname"><em>textWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qreal&#160;</td>
+          <td class="paramname"><em>textHeight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classImageController.html#aa34adc44b0ff9719cc998bc89d3bf5b0" title="ImageController::getTextPos Calculates a position for the label. ">ImageController::getTextPos</a> Calculates a position for the label. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">points</td><td></td></tr>
+    <tr><td class="paramname">textWidth</td><td></td></tr>
+    <tr><td class="paramname">textHeight</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>QPointF </dd></dl>
+
+</div>
+</div>
+<a id="a6f5f89e006b03028200798cc9e550dee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f5f89e006b03028200798cc9e550dee">&#9670;&nbsp;</a></span>mapToImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPoint ImageController::mapToImage </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classImageController.html#a6f5f89e006b03028200798cc9e550dee" title="ImageController::mapToImage Map GraphicsView coordinates to image coordinates. ">ImageController::mapToImage</a> Map <a class="el" href="classGraphicsView.html">GraphicsView</a> coordinates to image coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>QPoint </dd></dl>
+
+</div>
+</div>
 <a id="a3f5976d87977aa1cda7b5a9a7ad0f03b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3f5976d87977aa1cda7b5a9a7ad0f03b">&#9670;&nbsp;</a></span>open()</h2>
 
@@ -176,7 +445,96 @@ Ui_MainView&#160;</td><td class="memItemRight" valign="bottom"><b>ui</b></td></t
 <p>Gets a filename from the MainControler, opens image and displays it in the <a class="el" href="classMainView.html">MainView</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filename</td><td></td></tr>
+    <tr><td class="paramname">fileName</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a81d44568235778fe6d5dc14fb377499a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81d44568235778fe6d5dc14fb377499a">&#9670;&nbsp;</a></span>select()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageController::select </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classImageController.html#a81d44568235778fe6d5dc14fb377499a" title="ImageController::select Updates the information for the selected file. ">ImageController::select</a> Updates the information for the selected file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af9c9f284b985c7899a6bc3cf03e49191"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9c9f284b985c7899a6bc3cf03e49191">&#9670;&nbsp;</a></span>setAnnotations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageController::setAnnotations </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classLinkedList.html">LinkedList</a>&lt; QPair&lt; QString, <a class="el" href="classLinkedList.html">LinkedList</a>&lt; QPair&lt; int, int &gt;&gt;&gt;&gt;&#160;</td>
+          <td class="paramname"><em>annotations</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classImageController.html#af9c9f284b985c7899a6bc3cf03e49191" title="ImageController::setAnnotations. ">ImageController::setAnnotations</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">annotations</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a351762bc38206af05dc21dc6e183b1c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a351762bc38206af05dc21dc6e183b1c3">&#9670;&nbsp;</a></span>updateView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageController::updateView </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>sortOption</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>search</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classImageController.html#a3a300727ff5e30b19fcc0102427fdb30" title="Updates the view based on the sort option selected in the gui. ">ImageController::updateView</a> Updates the view with the sorted and searched list of images. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sortOption</td><td></td></tr>
+    <tr><td class="paramname">search</td><td></td></tr>
   </table>
   </dd>
 </dl>

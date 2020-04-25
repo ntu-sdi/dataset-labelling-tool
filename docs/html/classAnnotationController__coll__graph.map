@@ -1,3 +1,3 @@
 <map id="AnnotationController" name="AnnotationController">
-<area shape="rect" id="node2" href="$classAnnotationModel.html" title="{AnnotationModel\n|&#45; currentFilePath\l|+ getCurrentFilePath()\l+ browse()\l+ browse()\l+ create()\l+ create()\l+ add()\l+ add()\l+ get()\l+ get()\l}" alt="" coords="13,5,180,200"/>
+<area shape="rect" id="node2" href="$classAnnotationModel.html" title="{AnnotationModel\n|&#45; currentFilePath\l&#45; loadedAnnotations\l|+ getCurrentFilePath()\l+ browse()\l+ browse()\l+ load()\l+ save()\l+ create()\l+ create()\l+ add()\l+ add()\l+ get()\l+ get()\l}" alt="" coords="13,5,180,244"/>
 </map>

@@ -1,0 +1,4 @@
+<map id="LinkedList&lt; T &gt;" name="LinkedList&lt; T &gt;">
+<area shape="rect" id="node2" href="$classLinkedList.html" title="{LinkedList\&lt; QPair\&lt;\l QString, QVector\&lt; QPointF \&gt; \&gt; \&gt;\n|&#45; head\l&#45; len\l|+ LinkedList()\l+ ~LinkedList()\l+ isEmpty()\l+ copy()\l+ operator[]()\l+ insert()\l+ at()\l+ length()\l+ getIndex()\l+ contains()\land 6 more...\l&#45; nodeAt()\l&#45; quicksort()\l&#45; isSorted()\l}" alt="" coords="5,365,248,663"/>
+<area shape="rect" id="node3" href="$classLinkedList.html" title="{LinkedList\&lt; QString \&gt;\n|&#45; head\l&#45; len\l|+ LinkedList()\l+ ~LinkedList()\l+ isEmpty()\l+ copy()\l+ operator[]()\l+ insert()\l+ at()\l+ length()\l+ getIndex()\l+ contains()\land 6 more...\l&#45; nodeAt()\l&#45; quicksort()\l&#45; isSorted()\l}" alt="" coords="273,373,439,655"/>
+</map>
