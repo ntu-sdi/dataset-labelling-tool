@@ -60,14 +60,18 @@ private:
                 ++i;
             }
             while(this->at(j) > pivot) {
-                --j;
+                if(j>0){
+                    --j;
+                }
             }
             if(i <= j) {
                 temp = this->at(i);
                 this->replace(i, this->at(j));
                 this->replace(j, temp);
                 ++i;
-                --j;
+                if(j>0){
+                    --j;
+                }
             }
         }
         if(j > left) {
@@ -85,21 +89,21 @@ private:
      *
      * @return bool
      */
-    bool isSorted(LinkedList<T>& list)
+    bool isSorted()
     {
-        if(list.length() < 2) {
+        if(this->length() < 2) {
             return true;
         }
         T prev;
-        for(int i = 0; i <= list.length() - 1; ++i) {
+        for(int i = 0; i <= this->length() - 1; ++i) {
             if(i == 0) {
-                prev = list.at(i);
+                prev = this->at(i);
                 continue;
             }
-            if(list.at(i) < prev) {
+            if(this->at(i) < prev) {
                 return false;
             }
-            prev = list.at(i);
+            prev = this->at(i);
         }
         return true;
     }
@@ -364,7 +368,7 @@ public:
      */
     void sort()
     {
-        if(!this->isSorted(*this)) {
+        if(!this->isSorted()) {
             if(this->len > 1) {
                 this->quicksort(0, this->len - 1);
             }
@@ -383,5 +387,6 @@ public:
                 catch (IndexOutOfBoundsError &e) {
                 }
             }
-    }   }
+        }
+    }
 };
